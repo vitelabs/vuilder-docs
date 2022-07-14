@@ -1,0 +1,101 @@
+const path = require('path');
+
+const basePath = process.env.VUEPRESS_BASE || '/';
+
+module.exports = {
+    theme: "cosmos",
+    title: "Vite: Zero-Fee Blockchain for the World's Decentralized Economy",
+    base: basePath,
+
+    locales: {
+      "/": {
+        lang: "en-US"
+      },
+    },
+
+    head: [
+      ['link', { rel: 'icon', href: 'https://vite.org/icon.png' }]
+    ],
+
+    plugins: [
+      ["@vite/vuepress-plugin-mathjax"],
+      [
+        "sitemap",
+        {
+          hostname: "https://docs.vite.org"
+        }
+      ],
+      [require('./plugins/code-group.js')]
+    ],
+
+    themeConfig: {
+      repo: "vitelabs/vuilder-docs",
+      docsRepo: "vitelabs/vuilder-docs",
+      editLinks: true,
+      custom: true,
+      logo: {
+        src: path.join(basePath, '/logo.svg'),
+      },
+      algolia: {
+        id: "G2DPJ8OLAQ",
+        key: "27bf3768169db2b8b16ff4be4ebedf7e",
+        index: "docs-vite"
+      },
+      topbar: {
+        banner: false
+      },
+      sidebar: {
+        auto: true
+      },
+      footer: {
+        logo: path.join(basePath, "/logo.svg"),
+        textLink: {
+          text: "vite.org",
+          url: "https://vite.org"
+        },
+        services: [
+          {
+            service: "twitter",
+            url: "https://twitter.com/vitelabs"
+          },
+          {
+            service: "medium",
+            url: "https://medium.com/vitelabs"
+          },
+          {
+            service: "telegram",
+            url: "https://t.me/vite_ann"
+          },
+          {
+            service: "discord",
+            url: "https://discord.com/invite/CsVY76q"
+          },
+          {
+            service: "github",
+            url: "https://github.com/vitelabs"
+          }
+        ],
+        smallprint: `© ${new Date().getFullYear()} Vite Labs.`,
+        links: [
+          {
+            title: "Community",
+            children: [
+              {
+                title: "Blog",
+                url: "https://medium.com/vitelabs"
+              },
+            ]
+          },
+          {
+            title: "Community",
+            children: [
+              {
+                title: "Contributing to the docs",
+                url: "https://github.com/vitelabs/vite-docs/tree/master/DOCS_README.md"
+              },
+            ]
+          }
+        ]
+      }
+    },
+};
