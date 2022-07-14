@@ -9,7 +9,7 @@ order: 7
 - Mainnet: <https://vitescan.io/>
 - Testnet: <https://test.vitescan.io/>
 
-![](./ssets/explorers-01.png)
+![](./assets/explorers-01.png)
 
 ## ViteView.xyz
 
