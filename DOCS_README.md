@@ -16,7 +16,7 @@ The [config.js](.vuepress/config.js) generates the sidebar and table of contents
 
 ## Markdown configuration
 
-Markdown files can contain optional YAML frontmatter. Several properties are used:
+Markdown files can contain optional YAML FrontMatter. Several properties are used:
 
 ```
 ---
@@ -68,18 +68,15 @@ For example:
 - test4.md
 - test5.md
 - assets
-   - test1
-      - test1-01.png
-      - test1-02.png
-      - test1-03.png
-   - test2
-      - test2-01.png
-      - test2-02.png
-      - test2-03.png
-   - test3
-      - test3-01.png
-      - test3-02.png
-      - test3-03.png
+   - test1-01.png
+   - test1-02.png
+   - test1-03.png
+   - test2-01.png
+   - test2-02.png
+   - test2-03.png
+   - test3-01.png
+   - test3-02.png
+   - test3-03.png
 ```
 
 Here is a real example: https://github.com/vitelabs/vite-docs/tree/master/articles
