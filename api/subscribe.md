@@ -49,7 +49,9 @@ Topics are often used to search for certain event logs.
 * `[[A], [B]]` matches event logs having "A" as the first topic and "B" as the second topic
 * `[[A, B], [C, D]]` matches event logs having "A" or "B" as the first topic, and "C" or "D" as the second topic
 * `[[A, B], [C, D], [E]]` matches event logs having "A" or "B" as the first topic, "C" or "D" as the second topic, and "E" as the third topic
-* `[[T11, T12, ... , T1N], [T21, T22, ... , T2N], ... , [TN1, TN2, ... , TNN]]` matches event logs having T<sub>11</sub>, T<sub>12</sub> ... or T<sub>1N</sub> as the first topic, T<sub>21</sub>, T<sub>22</sub> ... or T<sub>2N</sub> as the second topic, ... and T<sub>N1</sub>, T<sub>N2</sub> ... or T<sub>NN</sub> as the N topic
+* `[[T11, T12, ... , T1M], [T21, T22, ... , T2M], ... , [TN1, TN2, ... , TNM]]` matches event logs having T<sub>11</sub>, T<sub>12</sub> ... or T<sub>1M</sub> as the first topic, T<sub>21</sub>, T<sub>22</sub> ... or T<sub>2M</sub> as the second topic, ... and T<sub>N1</sub>, T<sub>N2</sub> ... or T<sub>NM</sub> as the N topic (N <= 4)
+
+>Note: Solidity++ allows maximum 4 topics including one event signature and three indexed event fields 
 
 :::tip Tips
 Better use an SDK e.g. Vite.js to generate topic filters
@@ -556,7 +558,7 @@ Poll for new snapshot blocks, account blocks, unreceived blocks, or event logs b
 
 ## `subscribe_subscribe`
 
-This Websocket API should be used with the following event types
+This Websocket API should be used with the following event types. A single callback returns up to 128 blocks or logs.
 
 ### `newSnapshotBlock`
 Subscribe to new snapshot blocks. New snapshot blocks will be returned in callback
