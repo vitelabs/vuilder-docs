@@ -65,7 +65,7 @@ The callback function of `StakeForQuotaWithCallback`. This callback will be call
   * `id`: `bytes32`   Staking id 
   * `success`: `bool` This flag is used to indicate whether the staking is successful
 
-#### `CancelQuotaStakingWithCallback`
+### `CancelQuotaStakingWithCallback`
 
 Cancel a staking, retrieve locked VITE after the lock-up expires and release quota. This function is designed for calling from a contract. The contract should implement the callback in order to receive the cancel staking result.
 

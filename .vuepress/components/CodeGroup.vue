@@ -85,13 +85,12 @@ export default {
 <style lang="stylus" scoped>
   .theme-code-group {}
   .theme-code-group__nav {
-    margin-bottom: -65px;
-    background-color: $codeBgColor;
-    padding-bottom: 22px;
+    margin-bottom: -45px;
+    background-color: #282c34;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 10px 10px 0px;
+    overflow: auto;
   }
   .theme-code-group__ul {
     margin: auto 0;

@@ -92,6 +92,12 @@ The owner of a re-issuable token can initiate a transaction to make the token no
 Parameters for the transaction to disable re-issuance:
 * Token ID
 
+## Token Index
+
+Token can have the same symbol, e.g. "BTC". In order to distinguish tokens with the same symbol, a distinct index from `000` to `999` is allocated when the token is issued. Token index cannot exceed 999.
+
+Built-in tokens VITE, VX and VCP do not have index.
+
 ## Built-in Tokens on Vite
 
 **VITE** (Vite's native coin), **VX** (ViteX Coin -- the token for [ViteX](https://x.vite.net), a decentralized exchange on Vite) and **VCP** (Vite Community Points -- used for purchasing merch at the Vite store) are the initial set of tokens on Vite.
