@@ -54,7 +54,7 @@ Get go-vite information
     - `build_version`: `string`  Go-vite version
     - `commit_version`: `string`  Go-vite commit id
     - `nodeName`: `string`  Node name
-    - `rewardAddress`: `string`  If the node has registered in full node reward program, this field is the address to receive rewards, otherwise returns an empty string.
+    - `rewardAddress`: `string`  If the node has registered for full node reward program, this field is the address to receive rewards, otherwise returns an empty string.
     - `pid`: `int`  Go-vite process id
     
 - **Example**:

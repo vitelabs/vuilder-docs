@@ -1734,8 +1734,8 @@ Fetch a number of unreceived blocks by address
 
 - **Parameters**:
     * `address`: `address`  Account address
-    * `pageIndex`: `uint64`:  Page index, starting with 0
-    * `pageSize`: `uint64`:  Page size. Maximum 1000
+    * `pageIndex`: `uint64`  Page index, starting with 0
+    * `pageSize`: `uint64`  Page size. Maximum 1000
 
 - **Return**:
     * `List<AccountBlock>` See [AccountBlock](README.md#accountblock)

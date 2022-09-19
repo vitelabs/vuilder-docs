@@ -38,7 +38,7 @@ Add "subscribe" namespace in "PublicModules" and set `"SubscribeEnabled":true` i
 :::
 
 ## Topics
-Topics are 32 bytes event signature or indexed event fields of smart contract. For a non-anonymous Solidity++ event, the first topic is the event signature, and the rest (if has) are encoded indexed fields.
+Topics are 32 bytes event signature or indexed parameters of smart contract. For a non-anonymous Solidity++ event, the first topic is the event signature, and the rest (if has) are encoded indexed fields.
 
 Topics are often used to search for certain event logs.
 
@@ -51,10 +51,10 @@ Topics are often used to search for certain event logs.
 * `[[A, B], [C, D], [E]]` matches event logs having "A" or "B" as the first topic, "C" or "D" as the second topic, and "E" as the third topic
 * `[[T11, T12, ... , T1M], [T21, T22, ... , T2M], ... , [TN1, TN2, ... , TNM]]` matches event logs having T<sub>11</sub>, T<sub>12</sub> ... or T<sub>1M</sub> as the first topic, T<sub>21</sub>, T<sub>22</sub> ... or T<sub>2M</sub> as the second topic, ... and T<sub>N1</sub>, T<sub>N2</sub> ... or T<sub>NM</sub> as the N topic (N <= 4)
 
->Note: Solidity++ allows maximum 4 topics including one event signature and three indexed event fields 
+>Note: Solidity++ allows maximum 4 topics including one event signature and three indexed parameters 
 
 :::tip Tips
-Better use an SDK e.g. Vite.js to generate topic filters
+Use an SDK e.g. Vite.js to generate topic filters
 :::
 
 ## Example
@@ -430,7 +430,7 @@ Poll for new snapshot blocks, account blocks, unreceived blocks, or event logs b
         * `address`: `address`  Address of account
         * `vmlog`: `VmLog`  Event logs
             * `topics`: `Array<hash>`  Event signature and indexed fields
-            * `data`: `base64`  Encoded non-indexed event fields in base64 format
+            * `data`: `base64`  Encoded non-indexed parameters in base64 format
         * `removed`: `bool`  `true` means the event log was reverted
 ::: demo
 ```json tab:Request
@@ -777,7 +777,7 @@ Subscribe to smart contract event logs. New event logs will be returned in callb
         * `address`: `address`  Address of account
         * `vmlog`: `VmLog`  Event logs
             * `topics`: `Array<hash>`  Event signature and indexed fields
-            * `data`: `base64`  Encoded non-indexed event fields in base64 string
+            * `data`: `base64`  Encoded non-indexed parameters in base64 string
         * `removed`: `bool`  `true` means the event log was reverted
 
 ::: demo
