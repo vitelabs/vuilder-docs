@@ -7,9 +7,9 @@ title: Subscription
 
 Vite node provides two kinds of subscription RPC API: **Polling API** and **Websocket API**
 
-* **Polling API** returns a subscription filter. The client should explicitly call [`subscribe_getChangesByFilterId`](#subscribe-getchangesbyfilterid) with the filter id to obtain new events during the time. 
+* **Polling API** returns a subscription filter. The client should periodically call [`subscribe_getChangesByFilterId`](#subscribe-getchangesbyfilterid) with the filter id to request for new events. New events that were triggered since last request will be returned, otherwise server returns null.
 
-> Note: The filter will expire if not used for more than 5 minutes
+> Note: Filter will expire if not used for more than 5 minutes. If client does not send request for more than 5 minutes, subscription will close. Client must re-subscribe to the event in this situation.
 
 The following API are Polling API:
 - [`subscribe_newSnapshotBlockFilter`](#subscribe-newsnapshotblockfilter)
@@ -20,9 +20,9 @@ The following API are Polling API:
 - [`subscribe_uninstallFilter`](#subscribe-uninstallfilter)
 - [`subscribe_getChangesByFilterId`](#subscribe-getchangesbyfilterid)
 
-* **Websocket API** subscribes to new events through websocket. After the websocket connection is established, newly generated events will be returned in callbacks. 
+* **Websocket API** subscribes to new events through websocket connection. When new event is triggered, it will be automatically pushed to client through callbacks. Subscription will end once the connection is broken.
 
-> Note: Websocket API relies on "ws" or "wss" endpoint. It cannot be used for HTTP endpoint. The subscription will be cancelled if the websocket connection is closed or broken.
+> Note: Websocket API relies on "ws" or "wss" RPC endpoint. It cannot be used with HTTP.
 
 [`subscribe_subscribe`](#subscribe-subscribe) is Websocket API. It support for the following events:
 - [`newSnapshotBlock`](#newsnapshotblock)
