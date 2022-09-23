@@ -29,7 +29,7 @@ Node.js is a cross-platform, JavaScript runtime environment.
 node -v // check node.js version
 ```
 
-The node.js version required for our example is 14（e.g. v14.7.0). We recommend using `nvm` to install and manage the node.js environment. 
+The node.js version used for this project is v14.18.1. We recommend using `nvm` to install and manage the node.js environment. 
 
 Install `nvm` from https://github.com/nvm-sh/nvm.
 
@@ -41,8 +41,9 @@ Now close the current terminal and start a new one
 
 ```
 command -v nvm  // Check if the installation is successful
-nvm ls-remot    // Check available node.js versions 
-nvm install 14.7.0 // Install node.js 14.7.0
+nvm ls-remote // Check available node.js versions 
+nvm list // Check installed node.js versions 
+nvm install v14.18.1 // Install node.js v14.18.1
 ```
 
 ### Get the Source Code
@@ -137,7 +138,7 @@ Execute the following commands to launch the dapp:
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 A new browser window (http://localhost:3000/) should open and by clicking "Launch App", it will take you to this page:
@@ -149,6 +150,10 @@ A new browser window (http://localhost:3000/) should open and by clicking "Launc
 
 To start using the dapp, you will need your Vite Wallet app ([iOS](https://apps.apple.com/us/app/vite-multi-chain-wallet/id1437629486) / [Android](https://play.google.com/store/apps/details?id=net.vite.wallet)) ready. Then switch the node setting of your to testnet.
 ![](./assets/vite-express-06.png)
+
+### Vite Passport Browser Extension
+
+Alternatively, you can use the [Vite Passport](https://chrome.google.com/webstore/detail/vite-passport/eckbjklobbepbbcklkjjgkkkpdakglmf) browser extension. Be sure to switch the network to Testnet after creating a wallet for this tutorial.
 
 ### Buy a Coffee
 
@@ -390,35 +395,45 @@ The file structure of the frontend is as follows:
 
 ![](./assets/vite-express-12.png)
 
-The frontend app is rendered with `frontend/public/index.html` and `frontend/src/index.tsx`
-`frontend/public/index.html`:
+The frontend app is rendered with `frontend/index.html` and `frontend/src/main.tsx`
+`frontend/index.html`:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <!-- ... -->
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite Express</title>
+	</head>
 	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 		<div id="modal"></div>
 		<div id="toast"></div>
+		<script type="module" src="/src/main.tsx"></script>
 	</body>
 </html>
+
 ```
 
-`frontend/src/index.tsx`:
+`frontend/src/main.tsx`:
 ```tsx
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
 
-const root = ReactDOM.createRoot(
-	document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(<App />);
+
 ```
 
 ### App Component
 
-The `App` component is the root of the app and wraps the entire app with the `Provider` component, a global [context](https://reactjs.org/docs/context.html) which acts as the global state that any child component can connect to. Before rendering anything, it first uses your browser's `localStorage` to determine the initial app state; this includes the network type (i.e. mainnet, testnet, or localnet), language (initially only English, but you can add your own translations in the `frontend/src/i18n` folder), and `vcInstance` - an instance of the `VC` class (defined in `frontend/src/utils/viteConnect.ts`) which helps you manage the Vite Wallet app connected via ViteConnect.
+The `App` component is the root of the app and wraps the entire app with the `Provider` component, a global [context](https://reactjs.org/docs/context.html) which acts as the global state that any child component can connect to. Before rendering anything, it first uses your browser's `localStorage` to determine the initial app state; this includes:
+- `vcInstance` - An instance of the `VC` class defined in `frontend/src/utils/viteConnect.ts` which helps you manage the Vite Wallet app connected via ViteConnect
+- `vpAddress` - The address of the Vite Passport wallet if it is connected
+- `activeNetworkIndex` - The index of the active network in `networkList` in `frontend/src/utils/constants.ts`
+- `languageType` - Initially only English, but you can add your own translations in the `frontend/src/i18n` folder
+- `activeAddress` - The address from the connected Vite Passport or App wallet (Both shouldn't be able to connect at the same time)
 
 `frontend/src/App.tsx`:
 ```tsx
@@ -427,12 +442,28 @@ const App = () => {
 	useEffect(() => {
 		(async () => {
 			const vcSession = getValidVCSession();
-			const state: Pick<State, 'networkType' | 'languageType' | 'vcInstance'> =
-				{
-					networkType: localStorage.networkType || 'testnet',
-					languageType: localStorage.languageType || 'en',
-					vcInstance: vcSession ? initViteConnect(vcSession) : null,
-				};
+			const vcInstance = vcSession ? initViteConnect(vcSession) : undefined;
+			let vpAddress: undefined | string;
+			let activeNetworkIndex: undefined | number;
+
+			if (window?.vitePassport) {
+				vpAddress = await window.vitePassport.getConnectedAddress();
+				if (vpAddress) {
+					const activeNetwork = await window.vitePassport.getNetwork();
+					activeNetworkIndex = networkList.findIndex((n) => n.rpcUrl === activeNetwork.rpcUrl);
+				}
+			}
+			if (activeNetworkIndex === undefined || activeNetworkIndex === -1) {
+				activeNetworkIndex = localStorage.activeNetworkIndex || 0;
+			}
+
+			const state: Partial<State> = {
+				vcInstance,
+				vpAddress,
+				activeNetworkIndex,
+				languageType: localStorage.languageType || 'en',
+				activeAddress: vpAddress || vcInstance?.accounts?.[0],
+			};
 			initialStateSet(state);
 		})();
 	}, []);
@@ -478,35 +509,24 @@ type Props = State & { // `State` is the type of the global state, so only conta
 
 const PageContainer = ({
 	noPadding,
-	children,
-  // All the props below are passed by the `connect` HOC
-	networkType,
+	activeNetworkIndex,
 	languageType,
 	i18n,
 	setState,
+	children,
+	vpAddress,
+	activeAddress,
 }: Props) => {
 	const [theme, themeSet] = useState(localStorage.theme);
 
 	useEffect(() => {
-		if (!i18n) {
-			import(`../i18n/${languageType}.ts`).then((translation) => {
-				setState({ i18n: translation.default });
-			});
-		}
-	}, [setState, i18n, languageType]);
-
-	const networkTypes = useMemo(() => {
-		const arr: [NetworkTypes, string][] = [
-			['mainnet', i18n?.mainnet],
-			['testnet', i18n?.testnet],
-		];
-		!PROD && arr.push(['localnet', i18n?.localnet]);
-		return arr;
-	}, [i18n]);
+		import(`../i18n/${languageType}.ts`).then((translation) => {
+			setState({ i18n: translation.default });
+		});
+	}, [setState, languageType]);
 
 	const languages = [
 		['English', 'en'],
-		// ['English', 'en'], // add additional translations here
 	];
 
 	const themes: [typeof SunIcon, string][] = [
@@ -515,16 +535,41 @@ const PageContainer = ({
 		[DesktopComputerIcon, i18n?.system],
 	];
 
+	useEffect(() => {
+		let unsubscribe = () => {};
+		if (window?.vitePassport && vpAddress && vpAddress === activeAddress) {
+			unsubscribe = window.vitePassport.on('networkChange', (payload) => {
+				let activeNetworkIndex = networkList.findIndex(
+					(n) => n.rpcUrl === payload.activeNetwork.rpcUrl
+				);
+				if (activeNetworkIndex === -1) {
+					setState({ toast: i18n.vitePassportNetworkDoesNotMatchDappNetworkUrl });
+					activeNetworkIndex = 0;
+				}
+				setState({ activeNetworkIndex });
+			});
+		}
+		return unsubscribe;
+	}, [setState, vpAddress, activeAddress, i18n]);
+
+	useEffect(() => {
+		let unsubscribe = () => {};
+		if (window?.vitePassport) {
+			unsubscribe = window.vitePassport.on('accountChange', (payload) => {
+				setState({ vpAddress: payload.activeAddress });
+			});
+		}
+		return unsubscribe;
+	}, [setState]);
+
 	return !i18n ? null : (
 		<div className="h-0 min-h-screen relative flex flex-col">
 			<header className="fx px-2 h-12 justify-between top-[1px] w-full fixed z-50">
 				{/* header links/buttons */}
 			</header>
-			<main className={`flex-1 ${noPadding ? '' : 'px-4 pt-14'}`}>
-				{children}
-			</main>
+			<main className={`flex-1 ${noPadding ? '' : 'px-4 pt-14'}`}>{children}</main>
 			<div className="fx justify-end gap-2 mx-4 my-3 text-skin-muted text-sm">
-        {/* footer links */}
+				{/* footer links */}
 			</div>
 		</div>
 	);
@@ -555,13 +600,22 @@ Additional details about the `connect` higher-order component include:
 
 `frontend/src/utils/globalContext.tsx`:
 ```tsx
-export type setStateType = (
-	state: RecursivePartial<State>, // State type is in frontend/src/utils/types.ts
-	meta?: { deepMerge?: boolean }
-) => void;
+import React, { useCallback, useState } from 'react';
+import { State } from './types';
+
+// https://stackoverflow.com/a/51365037/13442719
+type RecursivePartial<T> = {
+	[P in keyof T]?: T[P] extends (infer U)[]
+		? RecursivePartial<U>[]
+		: T[P] extends object
+		? RecursivePartial<T[P]>
+		: T[P];
+};
+
+export type setStateType = (state: RecursivePartial<State>, meta?: { deepMerge?: boolean }) => void;
 
 type HOCProps = {
-	state: object;
+	state: Partial<State>;
 	setState: setStateType;
 };
 
@@ -570,52 +624,64 @@ const GlobalContext = React.createContext<HOCProps>(undefined!);
 
 type ProviderProps = {
 	children: React.ReactNode;
-	initialState?: object;
-	onSetState?: setStateType;
+	initialState?: Partial<State>;
 };
 
-export const Provider = ({
-	children,
-	initialState,
-	onSetState,
-}: ProviderProps) => {
-	const [state, stateSet] = useState({ ...(initialState || {}) });
-
-	const setState = useCallback<setStateType>(
-		(stateChanges, options = {}) => {
-			stateSet((prevState) => {
+export const Provider = ({ children, initialState = {} }: ProviderProps) => {
+	const [state, setState] = useState(initialState);
+	const setStateFunc = useCallback(
+		(stateChanges: object, options: { deepMerge?: boolean } = {}) => {
+			setState((prevState) => {
 				const newState = options.deepMerge
 					? deepMerge({ ...prevState }, stateChanges)
 					: { ...prevState, ...stateChanges };
-				onSetState && onSetState(newState, options);
 				return newState;
 			});
 		},
-		[onSetState]
+		[]
 	);
+
 	return (
-		<GlobalContext.Provider value={{ state, setState }}>
+		<GlobalContext.Provider
+			value={{
+				state,
+				setState: setStateFunc,
+			}}
+		>
 			{children}
 		</GlobalContext.Provider>
 	);
 };
 
-export const deepMerge = (
-	target: { [key: string]: any },
-	source: { [key: string]: any }
-) => {
-	// code for deep merging a source object into the target object
+export const deepMerge = (target: { [key: string]: any }, source: { [key: string]: any }) => {
+	if (target && source) {
+		for (const key in source) {
+			if (
+				source[key] instanceof Object &&
+				!Array.isArray(source[key]) // NB: DOES NOT DEEP MERGE ARRAYS
+			) {
+				Object.assign(source[key], deepMerge(target[key] || {}, source[key]));
+			}
+		}
+		Object.assign(target, source);
+		return target;
+	}
+	return target || source;
 };
 
+// https://stackoverflow.com/a/56989122/13442719
 export const connect = <T,>(Component: React.ComponentType<T>) => {
-	return (props: any) => (
+	// eslint-disable-next-line react/display-name
+	return (props: Omit<T, keyof State>) => (
 		<GlobalContext.Consumer>
-			{(value: { state: object; setState: setStateType }) => (
+			{(value: HOCProps) => (
+				// @ts-ignore
 				<Component {...props} {...value.state} setState={value.setState} />
 			)}
 		</GlobalContext.Consumer>
 	);
 };
+
 ```
 
 ### Light/Dark/System theme
@@ -773,11 +839,13 @@ const [promptTxConfirmation, promptTxConfirmationSet] = useState(false);
 promptTxConfirmationSet(true); // In a button's onClick event that shows the modal
 // ...
 {!!promptTxConfirmation && (
-  <Modal onClose={() => promptTxConfirmationSet(false)}>
-    <p className="text-center text-lg font-semibold">
-      {i18n.confirmTransactionOnYourViteWalletApp}
-    </p>
-  </Modal>
+	<Modal onClose={() => promptTxConfirmationSet(false)}>
+		<p className="text-center text-lg font-semibold">
+			{vpAddress
+				? i18n.confirmTransactionOnVitePassport
+				: i18n.confirmTransactionOnYourViteWalletApp}
+		</p>
+	</Modal>
 )}
 ```
 
@@ -795,11 +863,9 @@ const beneficiaryAddressRef = useRef<TextInputRefObject>();
 const amountRef = useRef<TextInputRefObject>();
 // ...
 <TextInput
-  _ref={beneficiaryAddressRef}
-  disabled={!vcInstance}
+  _ref={addressRef}
   label={i18n.beneficiaryAddress}
-  value={beneficiaryAddress}
-  onUserInput={(v) => beneficiaryAddressSet(v.trim())}
+  initialValue={searchParams.get('address')}
   getIssue={(v) => {
     if (!wallet.isValidAddress(v)) {
       return i18n.invalidAddress;
@@ -809,17 +875,11 @@ const amountRef = useRef<TextInputRefObject>();
 <TextInput
   numeric
   _ref={amountRef}
-  disabled={!vcInstance}
   label={i18n.amount}
-  value={amount}
-  maxDecimals={18}
-  onUserInput={(v) => amountSet(v)}
+  initialValue={searchParams.get('amount')}
   getIssue={(v) => {
     if (+v <= 0) {
       return i18n.amountMustBePositive;
-    }
-    if (+v % 1 !== 0) {
-      return i18n.positiveIntegersOnly;
     }
   }}
 />
@@ -831,11 +891,13 @@ const amountRef = useRef<TextInputRefObject>();
   onClick={async () => {
     if (validateInputs([beneficiaryAddressRef, amountRef])) {
       // The inputs are valid according to their getIssue prop and inputs without the `optional` prop have a truthy input value.
+			// Do stuff with `addressRef.value` and `amountRef.value`
     }
   }}
 >
   {i18n.buyCoffee}
 </button>
+
 ```
 
 ### Toast Component
@@ -869,12 +931,12 @@ The `Toast` component renders a small ephemeral notification at the top of the s
 </button>
 ```
 
-### ViteConnectButton Component
-The `ViteConnectButton` component will show a "Connect Wallet" button if a Vite Wallet app isn't connected via ViteConnect. If a Vite Wallet app is connected, the connected address will be displayed instead.
+### ConnectWalletButton Component
+The `ConnectWalletButton` component will show a "Connect Wallet" button if a Vite Wallet app or Vite Passport wallet isn't connected. If either one of those wallets is connected, the connected address will be displayed instead.
 
-If you disconnect from the frontend by logging out, the Vite Wallet app will also disconnect (i.e. ends the ViteConnect session). If you disconnect from the frontend via the Vite Wallet app, the frontend will log out for you (i.e. the address button changes back to the "Connect Wallet" button).
+If you disconnect from the frontend by logging out, the connected wallet (whether it is the app or extension) will also disconnect. If you disconnect from the frontend via the Vite Wallet app or Vite Passport, the frontend will log out for you (i.e. the address button changes back to the "Connect Wallet" button).
 
-If a Vite Wallet app is connected and the frontend is refreshed or otherwise exited and opened within a few minutes, the ViteConnect session will persist via `getValidVCSession` in `viteConnect.ts`
+If a Vite Wallet app is connected and the frontend is refreshed or otherwise exited and opened within a few minutes, the ViteConnect session will persist via `getValidVCSession` in `viteConnect.ts`. Dapps connected with Vite Passport will persist indefinitely until the user or dapp programmatically disconnects.
 
 `frontend/src/utils/viteConnect.ts`:
 ```ts
@@ -911,31 +973,42 @@ export function initViteConnect(session: object) {
 }
 ```
 
-`frontend/src/containers/ViteConnectButton.tsx`:
+`frontend/src/containers/ConnectWalletButton.tsx`:
 ```tsx
-const ViteConnectButton = ({ setState, i18n, vcInstance }: Props) => {
+const ConnectWalletButton = ({ setState, i18n, activeAddress, vcInstance, vpAddress }: Props) => {
 	const [connectURI, connectURISet] = useState('');
 
 	useEffect(() => {
 		if (vcInstance) {
-			vcInstance.on('disconnect', () => setState({ vcInstance: null }));
+			vcInstance.on('disconnect', () => setState({ vcInstance: undefined }));
 		}
-	}, [vcInstance]); // eslint-disable-line
+	}, [setState, vcInstance]);
 
-	return vcInstance ? (
+	useEffect(() => {
+		if (activeAddress) {
+			connectURISet('');
+		}
+	}, [activeAddress]);
+
+	return activeAddress ? (
 		<DropdownButton
-			buttonJsx={<p>{shortenAddress(vcInstance.accounts[0])}</p>}
+			buttonJsx={<p>{shortenAddress(activeAddress)}</p>}
 			dropdownJsx={
-				<div className="fx px-2 py-0.5 h-7 gap-2">
+				<button
+					className="fx px-2 py-0.5 h-7 gap-2"
+					onClick={() => {
+						if (vpAddress && window?.vitePassport) {
+							setState({ vpAddress: undefined });
+							window.vitePassport.disconnectWallet();
+						} else {
+							vcInstance!.killSession();
+						}
+					}}
+					onMouseDown={(e) => e.preventDefault()}
+				>
 					<LogoutIcon className="h-full text-skin-muted" />
-					<button
-						className="font-semibold"
-						onClick={() => vcInstance!.killSession()}
-						onMouseDown={(e) => e.preventDefault()}
-					>
-						{i18n.logOut}
-					</button>
-				</div>
+					<p className="font-semibold">{i18n.logOut}</p>
+				</button>
 			}
 		/>
 	) : (
@@ -943,30 +1016,49 @@ const ViteConnectButton = ({ setState, i18n, vcInstance }: Props) => {
 			<button
 				className="bg-skin-medlight h-8 px-3 rounded-md brightness-button font-semibold text-white shadow"
 				onClick={async () => {
-					const vcSession = getValidVCSession();
-					vcInstance = initViteConnect(vcSession);
+					vcInstance = initViteConnect();
 					connectURISet(await vcInstance.createSession());
-					vcInstance.on('connect', () => {
-						connectURISet('');
-						setState({ vcInstance });
-					});
+					vcInstance.on('connect', () => setState({ vcInstance }));
 				}}
 			>
 				<p>{i18n.connectWallet}</p>
 			</button>
 			{!!connectURI && (
 				<Modal onClose={() => connectURISet('')}>
-					<p className="text-center text-lg mb-3 font-semibold">
-						{i18n.scanWithYourViteWalletApp}
-					</p>
+					<p className="text-center text-lg mb-3 font-semibold">{i18n.scanWithYourViteWalletApp}</p>
 					<div className="xy">
 						<QR data={connectURI} />
 					</div>
+					<p className="text-center text-lg my-3 font-semibold">{i18n.or}</p>
+					<button
+						className="bg-skin-medlight h-8 w-full rounded-md brightness-button font-semibold text-white shadow"
+						onClick={async () => {
+							if (window?.vitePassport) {
+								try {
+									await window.vitePassport.connectWallet();
+									const activeNetwork = await window.vitePassport.getNetwork();
+									setState({
+										activeNetworkIndex: networkList.findIndex(
+											(n) => n.rpcUrl === activeNetwork.rpcUrl
+										),
+									});
+								} catch (error) {
+									setState({ toast: error });
+								}
+							} else {
+								setState({ toast: i18n.vitePassportNotDetected });
+							}
+						}}
+					>
+						{i18n.connectWithVitePassport}
+					</button>
 				</Modal>
 			)}
 		</>
 	);
 };
+
+export default connect(ConnectWalletButton);
 ```
 
 ### Contract Configuration
