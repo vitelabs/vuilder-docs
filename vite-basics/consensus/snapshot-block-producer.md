@@ -58,10 +58,10 @@ There are 1152 rounds in **a cycle**. On the Vite Mainnet, the first cycle start
 
 Total eligible rewards for an SBP (S) in one cycle (Q) is calculated as:
 
-$$Q = 0.5*\frac{l}{m}\frac{V}{W}XR + 0.5*lR$$
+$$Q = 0.5*\frac{n}{m}\frac{V}{W}XR + 0.5*n*R$$
 
 Here:
-* `l`: the number of blocks produced by the SBP S in one cycle
+* `n`: the number of blocks produced by the SBP S in one cycle
 * `m`: the number of blocks expected to be produced by the SBP S in one cycle. If no SBP successfully produces blocks in a round, m should be reduced by the target number of blocks produced for SBP S in that round.
 * `X`: the total number of blocks produced by all the SBPs in one cycle
 * `W`: the total votes received by the top 100 SBPs in the last round of a cycle, plus the total staked VITE for registration of all the top 100 SBPs (1M VITE for each SBP in the Mainnet)
