@@ -73,7 +73,7 @@ Please note that **Block Creation Address** is the CoinBase address you configur
 
 **SBP Name**
 
-Please choose your SBP name carefully. Once registered the SBP name cannot be changed anymore. A sub-optimal name will not be helpful in terms of recognition and attracting votes.
+Please choose your SBP name carefully. Once registered the SBP name cannot be changed anymore. Use an interesting name to gain recognition from the community and draw votes.
 
 **SBP Ranking List**
 
