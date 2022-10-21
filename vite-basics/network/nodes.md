@@ -73,8 +73,8 @@ Please note that **Block Creation Address** is the CoinBase address you configur
 
 After registration of the SBP, you may change the reward withdraw address in the following screens.
 
-![](./assets/nodes-04.png)
-![](./assets/nodes-05.png)
+![](./assets/nodes-04.jpg)
+![](./assets/nodes-05.jpg)
 
 **SBP Name**
 
