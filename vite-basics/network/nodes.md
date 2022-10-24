@@ -53,10 +53,12 @@ Before you continue reading, please see the [setup guide](./setup.md) on how to 
 There are three addresses associated with the operation of an SBP.
 
 * **Block Creation Address**: The SBP will be signing blocks from this address.
-* **Staking Address**: Each SBP is required to stake 1M VITE to be eligible for producing blocks and earning rewards.
+* **Staking Address**: Each SBP is required to stake 1M (1,000,000) VITE to be eligible for producing blocks and earning rewards.
 * **Reward Withdraw Address**: Block rewards can be retrieved at this address.
 
 Theoretically, all three addresses can be one and the same. But it is **STRONGLY RECOMMENDED** that the **Block Creation Address** be different from the **Staking Address**.
+
+Also, the owner of the **Block Creation Address** and the owner of the **Staking Address** can be different. This means the operator of the SBP can ask someone else to stake the 1M VITE on their behalf. The staking process (aka registration process) is described in a later section.
 
 ### Configuration
 
@@ -70,7 +72,7 @@ To reate the **Block Creation Address**, follow instructions [here](./rpc-ipc.md
 ### Registration
 
 :::tip
-Registering a new SBP requires staking 1,000,000 VITE. Please ensure you have the amount in your account.
+Registering a new SBP requires staking 1M (1,000,000) VITE. Please make sure you have at least this amount in your account.
 :::
 
 Log in [Vite Web Wallet](https://x.vite.net/) and navigate to **SBP Registration** page.
@@ -81,7 +83,7 @@ Please note that **Block Creation Address** is the CoinBase address you configur
 
 ![](./assets/nodes-03.png)
 
-After registration of the SBP, you may change the **Reward Withdraw Address** in the following screens.
+After registration of the SBP, you may change the **Reward Withdraw Address** (as well as the **Block Creation Address**) via the following screens.
 
 ![](./assets/nodes-04.jpg)
 ![](./assets/nodes-05.jpg)
