@@ -52,9 +52,9 @@ Before you continue reading, please see the [setup guide](./setup.md) on how to 
 
 There are three addresses associated with the operation of an SBP.
 
-**Block Creation Address**: The SBP will be signing blocks from this address.
-**Staking Address**: Each SBP is required to stake 1M VITE to be eligible for producing blocks and earning rewards.
-**Reward Withdraw Address**: Block rewards can be retrieved at this address.
+* **Block Creation Address**: The SBP will be signing blocks from this address.
+* **Staking Address**: Each SBP is required to stake 1M VITE to be eligible for producing blocks and earning rewards.
+* **Reward Withdraw Address**: Block rewards can be retrieved at this address.
 
 Theoretically, all three addresses can be one and the same. But it is **STRONGLY RECOMMENDED** that the Block Creation Address be different from the Staking Address.
 
