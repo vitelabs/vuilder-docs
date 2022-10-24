@@ -48,14 +48,24 @@ A Snapshot Block Producer (SBP) is a delegated node in the Vite network. The pri
 Before you continue reading, please see the [setup guide](./setup.md) on how to install gvite.
 :::
 
+### Terminology of SBP Addresses
+
+There are three addresses associated with the operation of an SBP.
+
+**Block Creation Address**: The SBP will be signing blocks from this address.
+**Staking Address**: Each SBP is required to stake 1M VITE to be eligible for producing blocks and earning rewards.
+**Reward Withdraw Address**: Block rewards can be retrieved at this address.
+
+Theoretically, all three addresses can be one and the same. But it is **STRONGLY RECOMMENDED** that the Block Creation Address be different from the Staking Address.
+
 ### Configuration
 
-Create a wallet as explained [here](./rpc-ipc.md#create-wallet) and append 4 properties in **node_config.json**
+To reate the **Block Creation Address**, follow instructions [here](./rpc-ipc.md#create-wallet). Take the output from the wallet creation process and append the below 4 properties in **node_config.json**:
 
 * Set `Miner` as `true`
-* Set `CoinBase` in format of `index:address`. For example: `0:vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
-* Set `EntropyStorePath` as your mining address. For example: `vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
-* Set `EntropyStorePassword` as your keystore password corresponding to above address.
+* Set `CoinBase` to the **Block Creation Address**, in the format of `index:address`. For example: `0:vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
+* Set `EntropyStorePath` to the **Block Creation Address**. For example: `vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
+* Set `EntropyStorePassword` as the password you used to generate the **Block Creation Address**. This password is also called your keystore password corresponding to the **Block Creation Address**.
 
 ### Registration
 
@@ -71,7 +81,7 @@ Please note that **Block Creation Address** is the CoinBase address you configur
 
 ![](./assets/nodes-03.png)
 
-After registration of the SBP, you may change the reward withdraw address in the following screens.
+After registration of the SBP, you may change the **Reward Withdraw Address** in the following screens.
 
 ![](./assets/nodes-04.jpg)
 ![](./assets/nodes-05.jpg)
