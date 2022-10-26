@@ -67,7 +67,9 @@ To reate the **Block Creation Address**, follow instructions [here](./rpc-ipc.md
 * Set `Miner` as `true`
 * Set `CoinBase` to the **Block Creation Address**, in the format of `index:address`. For example: `0:vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
 * Set `EntropyStorePath` to the **Block Creation Address**. For example: `vite_f1c2d944b1e5b8cbfcd5f90f94a0e877beafeced1f331d9acf`.
-* Set `EntropyStorePassword` as the password you used to generate the **Block Creation Address** (This password is sometimes referred to as the "keystore password" corresponding to the **Block Creation Address**. This password, when combined with `EntropyStorePath`, can derive the SBP's private key for signing blocks produced)
+* Set `EntropyStorePassword` as the password you used to generate the **Block Creation Address**
+  * Note: This password is sometimes referred to as the "keystore password" corresponding to the **Block Creation Address**.
+  * Note: This password, when combined with `EntropyStorePath`, can derive the SBP's private key for signing blocks produced
 
 ### Registration
 
