@@ -23,11 +23,15 @@ The file `gvite.ipc` will only exist while the node is running and `IPCEnabled` 
 
 ## Wallet Management
 
-Please make sure to add the `wallet` module to the `PublicModules` list in the `node_config.json` before starting the node. Otherwise the following command will fail with: `The method wallet_createEntropyFile does not exist/is not available`
+::: tip Please make sure to add the `wallet` module to the `PublicModules` list in the `node_config.json` before starting the node. Otherwise the following command will fail with: `The method wallet_createEntropyFile does not exist/is not available`.
+:::
+
+::: tip Remember to remove said `wallet` module from `PublicModules` when the setup is completed, for safety purposes.
+:::
 
 ### Create Wallet
   
-Execute the following command
+Execute the following command:
 
 ```javascript
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_createEntropyFile '["Your_Password"]'
@@ -53,7 +57,7 @@ This will produce a similar result:
 
 ### Recover Wallet from Mnemonic
 
-Execute the following command
+Execute the following command:
 
 ```javascript
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_recoverEntropyFile '["Your_Mnemonic", "Your_Password"]'
