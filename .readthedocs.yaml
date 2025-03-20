@@ -13,6 +13,6 @@
                 # and following the official guide
                 # https://vitepress.dev/guide/getting-started
                 - ./node_modules/.bin/vitepress build .
-                - find ./.vitepress/dist -name "README.html" -exec sh -c 'mv "$1" "$(dirname $1)/index.html"' _ {} \;
+                - for file in $(find ./.vitepress/dist -type f -name "README.html"); do mv "$file" "${file%/*}/index.html"; done
                 - mkdir -p $READTHEDOCS_OUTPUT/
                 - mv ./.vitepress/dist $READTHEDOCS_OUTPUT/html
