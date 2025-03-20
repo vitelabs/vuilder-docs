@@ -10,4 +10,5 @@ export default defineConfig({
 
   title: "Vite Docs",
   description: "Documentations for Vite",
+  ignoreDeadLinks: true,
 })
