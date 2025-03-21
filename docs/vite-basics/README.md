@@ -1,11 +1,3 @@
----
-order: 1
-title: Vite 101
-parent:
-    title: Vite Basics
-    order: 1
----
-
 # What Is Vite And What Makes Vite Different
 
 Blockchain is a technology that allows users to trust that the Internet computer programs they interact with will operate "as is." This means the blockchain gives assurance that the programs will be executed according to the associated open source code. This is made possible due to the tamper-resistant nature of the data and code instructions ("smart contracts") stored on the blockchain. Any attacker will have a hard time altering said data and smart contracts once they have been added to the blockchain.

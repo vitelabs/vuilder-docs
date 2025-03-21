@@ -1,0 +1,109 @@
+site_name: Vite Documentation
+theme:
+  name: material
+  features:
+    - content.tabs
+    - content.code.copy
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+plugins:
+  - search
+  - awesome-pages:
+      collapse_single_pages: true
+
+nav:
+  - Introduction: README.md
+
+  - Vite Basics:
+    - Ledger Model: 
+      - vite-basics/ledger/dag-ledger.md
+      - vite-basics/ledger/snapshot-chain.md
+    - Consensus:
+      - vite-basics/consensus/snapshot-block-producer.md
+      - vite-basics/consensus/snapshot.md
+      - vite-basics/consensus/voting.md
+    - Cryptography:
+      - vite-basics/cryptography/hash-algorithm.md
+      - vite-basics/cryptography/signing.md
+      - vite-basics/cryptography/address-derivation.md
+    - vite-basics/token-model.md
+    - vite-basics/smart-contract.md
+
+    - Quota and Fee:
+      - vite-basics/quota/quota.md
+      - vite-basics/quota/fee.md
+
+    - Network and Node:
+      - vite-basics/network/introduction.md
+      - vite-basics/network/nodes.md
+      - vite-basics/network/setup.md
+      - vite-basics/network/configuration.md
+      - vite-basics/network/rpc-ipc.md
+      - vite-basics/network/debug-faq.md
+      - vite-basics/network/explorers.md
+
+  - Solidity++:
+    - Solidity++ Fundamentals:
+      - soliditypp/fundamentals/README.md
+      - soliditypp/fundamentals/request-response-model.md
+      - soliditypp/fundamentals/types.md
+      - soliditypp/fundamentals/sync-async-functions.md
+      - soliditypp/fundamentals/callbacks.md
+      - soliditypp/fundamentals/promise-await.md
+      - soliditypp/fundamentals/function-call-options.md
+      - soliditypp/fundamentals/error-handling.md
+
+      - soliditypp/fundamentals/abi.md
+      - soliditypp/fundamentals/global-variables.md
+      - soliditypp/fundamentals/randomness.md
+      - soliditypp/fundamentals/inline-assembly.md
+      - soliditypp/fundamentals/event-subscription.md
+
+    - Compiler:
+      - soliditypp/compiler/solppc-js.md
+
+    - soliditypp/vuilder/README.md
+
+    - IDE:
+      - soliditypp/IDE/README.md
+      - soliditypp/IDE/know-more.md
+
+    - Advanced:
+      - soliditypp/advanced/README.md
+      - soliditypp/advanced/vite-vm.md
+      - soliditypp/advanced/vite-vm-instructions.md
+
+  - Vite SDK:
+    - Vite.js:
+      - SDK/vitejs/README.md
+      - SDK/vitejs/providers.md
+      - SDK/vitejs/viteapi-class.md
+      - Wallet:
+        - SDK/vitejs/wallet/README.md
+        - SDK/vitejs/wallet/wallet-class.md
+      - Account Block:
+        - SDK/vitejs/account-block/README.md
+        - SDK/vitejs/account-block/account-block-class.md
+        - SDK/vitejs/account-block/account.md
+        - SDK/vitejs/account-block/receive-task.md
+      - SDK/vitejs/abi.md
+      - SDK/vitejs/utility-funcs.md
+      - SDK/vitejs/constants-and-errors.md
+      - SDK/vitejs/common-patterns.md
+      - SDK/vitejs/types.md
+
+    - SDK/vite-connect/README.md
+
+  - common-patterns/README.md
+
+  - best-practices/README.md
+
+  - Example Project: vite-express/README.md
+
