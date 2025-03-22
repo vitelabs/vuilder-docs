@@ -48,6 +48,20 @@ nav:
       - vite-basics/network/rpc-ipc.md
       - vite-basics/network/debug-faq.md
       - vite-basics/network/explorers.md
+  - API:
+    - api/README.md
+    - api/ledger.md
+    - Contract:
+      - api/contract/README.md
+      - api/contract/contract.md
+      - Built-in Contracts:
+        - api/contract/built-in-contracts/quota.md
+        - api/contract/built-in-contracts/consensus.md
+        - api/contract/built-in-contracts/asset.md
+    - api/wallet.md
+    - api/net.md
+    - api/subscribe.md
+    - api/util.md
 
   - Solidity++:
     - Solidity++ Fundamentals:

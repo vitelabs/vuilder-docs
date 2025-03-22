@@ -1,12 +1,12 @@
 ---
 order: 1
-title: Start
+title: Overview
 parent:
     title: Contract
     order: 3
 ---
 
-# Start
+# Get Started
 
 :::tip Tip
 It is easier to use an SDK. e.g. [Vite.js](../../SDK/vitejs/README.md) or ViteJ to create or call smart contracts
