@@ -1,0 +1,2737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Net - Vite Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#net-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vite Documentation" class="md-header__button md-logo" aria-label="Vite Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vite Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Net
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vite Documentation" class="md-nav__button md-logo" aria-label="Vite Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vite Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vite Basics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vite Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ledger Model
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ledger Model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/ledger/dag-ledger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vite's DAG Ledger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/ledger/snapshot-chain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot Chain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Consensus
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Consensus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/consensus/snapshot-block-producer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot Block Producer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/consensus/snapshot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/consensus/voting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Voting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cryptography
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cryptography
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/cryptography/hash-algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hashing Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/cryptography/signing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Signing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/cryptography/address-derivation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Address Derivation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/token-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Token Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/smart-contract/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smart Contract
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quota and Fee
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Quota and Fee
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/quota/quota/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quota
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/quota/fee/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fees
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Node
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Node
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/rpc-ipc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPC / IPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/debug-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug / FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-basics/network/explorers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Block Explorers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solidity++
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Solidity++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solidity++ Fundamentals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Solidity++ Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/request-response-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request / Response Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types and Units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/sync-async-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sync / Async Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/callbacks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Callbacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/promise-await/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Promise and Await
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/function-call-options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Call Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/error-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/abi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/global-variables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Variables, Functions and Members
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/randomness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Randomness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/inline-assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inline Assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/fundamentals/event-subscription/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event Subscription
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Compiler
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Compiler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/compiler/solppc-js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    solppc-js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/vuilder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vuilder Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IDE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            IDE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/IDE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/IDE/know-more/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Know More about the Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Objectives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/advanced/vite-vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vite VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soliditypp/advanced/vite-vm-instructions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vite VM Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vite SDK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Vite SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vite.js
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vite.js
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/providers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Providers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/viteapi-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ViteAPI Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_4" id="__nav_4_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wallet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/wallet/wallet-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_5" id="__nav_4_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Account Block
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Account Block
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/account-block/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/account-block/account-block-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AccountBlock Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/account-block/account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Account Instance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/account-block/receive-task/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReceiveAccountBlockTask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/abi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ABI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/utility-funcs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utility Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/constants-and-errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constants and Errors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/common-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vitejs/types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type Definition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDK/vite-connect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use ViteConnect
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vite-express/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Project
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#net_syncinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      net_syncInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net_syncdetail" class="md-nav__link">
+    <span class="md-ellipsis">
+      net_syncDetail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net_nodeinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      net_nodeInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net_nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      net_nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net_peercount" class="md-nav__link">
+    <span class="md-ellipsis">
+      net_peerCount
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="net-api">Net API</h1>
+<p>:::tip
+To enable Net RPC API on the node, add "net" namespace in "PublicModules" in node_config.json
+:::</p>
+<p>Definitions:
+* <strong>Node Id</strong>: A 32 bytes Ed25519 public key derived from the 64-byte private key stored in "~/.gvite/maindata/net/peerKey" or specified in "PeerKey" in node_config.json
+* <strong>Node Name</strong>: A human-readable name specified in "Identity" in node_config.json
+* <strong>Node Address</strong>: Node's IP address + port
+* <strong>Net Id</strong>: "NetID" configured in node_config.json. "1" stands for mainnet.
+* <strong>Block Propagate Latency</strong>: The time difference between the broadcast time of the snapshot block and the block timestamp. In milliseconds.
+* <strong>Reliable Peer</strong>: When "WhiteBlockList" is configured in node_config.json, for each peer whose height does not exceed the sum of 86400 and the maximum height in the list, each snapshot block in the whitelist will be checked on the peer. If the check fails, the peer is considered unreliable. Or when "BlackBlockHashList" is set, if a block in the blacklist can be obtained from the peer, the peer is also considered unreliable. All peers are reliable by default.
+* <strong>Sync Start Height</strong>: The height at which the current synchronization loop starts. The value is the current height of the node rounded down by 100 and added by 1. If the snapshot block at the height cannot be obtained from peers, the synchronizer will try 100 blocks backward again, or will start from the irreversible height of the node. For new nodes the value is 0.
+* <strong>Sync End Height</strong>: The height of the median node sorted by peer's height at which the current synchronization loop ends. For new nodes the value is 0.
+* <strong>Irreversible Height</strong>: In each <a href="../../vite-basics/consensus/snapshot-block-producer/">round</a>, starting from the first snapshot block height, when more than two-thirds of SBPs have produced blocks, we call the height at this block irreversible height for the round.
+* <strong>Chunk</strong>: A chunk is a continuous range of snapshot blocks represented by a starting block and an ending block.</p>
+<blockquote>
+<p>Note: For synced nodes (state = 2), the sync start height and end height will not change.</p>
+</blockquote>
+<h2 id="net_syncinfo"><code>net_syncInfo</code></h2>
+<p>Get node's synchronization status</p>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>: <code>SyncInfo</code></p>
+<ul>
+<li><code>from</code>: <code>string</code> Sync start height</li>
+<li><code>to</code>: <code>string</code> Sync end height</li>
+<li><code>current</code>: <code>string</code> Node's current height</li>
+<li><code>state</code>: <code>uint</code> Sync state: 0 - not start, 1 - syncing, 2 - complete, 3 - error, 4 - cancelled</li>
+<li><code>status</code>: <code>string</code> Sync state description</li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<p>::: demo</p>
+<p>```json tab:Request
+{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "net_syncInfo",
+    "params": null
+}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>```json tab:Response
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;id&quot;: 2,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &quot;result&quot;: {
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;from&quot;: &quot;100917901&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        &quot;to&quot;: &quot;100918103&quot;,
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        &quot;current&quot;: &quot;100917954&quot;,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;state&quot;: 1,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        &quot;status&quot;: &quot;Synchronising&quot;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
+</code></pre></div></p>
+<p>:::</p>
+<h2 id="net_syncdetail"><code>net_syncDetail</code></h2>
+<p>Get node's synchronization status in detail</p>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>: <code>SyncDetail</code></p>
+<ul>
+<li><code>from</code>: <code>string</code>  Sync start height</li>
+<li><code>to</code>: <code>string</code>  Sync end height</li>
+<li><code>current</code>: <code>string</code>  Node's current height</li>
+<li><code>state</code>: <code>string</code>  Sync state. This field returns the same value with <code>status</code></li>
+<li><code>status</code>: <code>string</code>  Sync state description</li>
+<li><code>tasks</code>: <code>Array&lt;string&gt;</code>  Current download tasks. Only nodes in synchronising state have download tasks.</li>
+<li><code>connections</code>: <code>Array&lt;SyncConnectionStatus&gt;</code><ul>
+<li><code>address</code>: <code>string</code>  Connected peer address, consisting of the first 16-byte of node id + "@" + node's ip address + port</li>
+<li><code>speed</code>: <code>string</code>  Downloading speed from the peer</li>
+<li><code>task</code>: <code>string</code>  Current download task</li>
+</ul>
+</li>
+<li><code>chunks</code>: <code>Array&lt;SnapshotRange&gt;</code>  Verified snapshot chunks waiting for inserting into local ledger<ul>
+<li><code>height</code>: <code>uint64</code>  Snapshot block height</li>
+<li><code>hash</code>: <code>hash</code>  Snapshot block hash</li>
+</ul>
+</li>
+<li><code>caches</code>: <code>Array&lt;Segment&gt;</code>  Unverified snapshot chunks stored in cache<ul>
+<li><code>From</code>: <code>uint64</code>  Start snapshot block height</li>
+<li><code>To</code>: <code>uint64</code>  End snapshot block height</li>
+<li><code>Hash</code>: <code>hash</code>  Segment hash</li>
+<li><code>PreHash</code>: <code>hash</code>  Previous segment hash</li>
+<li><code>Points</code>: <code>Array&lt;HashHeight&gt;</code>  Hash height points contained in the segment<ul>
+<li><code>height</code>: <code>uint64</code>  Snapshot block height</li>
+<li><code>hash</code>: <code>hash</code>  Snapshot block hash</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>:</p>
+</li>
+</ul>
+<p>::: demo</p>
+<p>```json tab:Request
+{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "net_syncDetail",
+    "params": null
+}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>```json tab:Response
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;id&quot;: 4,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;result&quot;: {
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;from&quot;: 692001,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;to&quot;: 727000,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;current&quot;: 692084,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;state&quot;: &quot;Synchronising&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;status&quot;: &quot;Synchronising&quot;,
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        &quot;tasks&quot;: [
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            &quot;692001-693000 done&quot;,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            &quot;693001-694000 pending&quot;
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        ],
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        &quot;connections&quot;: [
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            {
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                &quot;address&quot;: &quot;24a160122317e6e4940ef2a91242b07f@118.25.49.80:8484&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>                &quot;speed&quot;: &quot;0.00 Byte/s&quot;,
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                &quot;task&quot;: &quot;&quot;
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            },
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            {
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                &quot;address&quot;: &quot;04508fbe0512c01a48c8a450425547de@118.24.112.185:8484&quot;,
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                &quot;speed&quot;: &quot;0.00 Byte/s&quot;,
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                &quot;task&quot;: &quot;&quot;
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            }
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        ],
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        &quot;chunks&quot;: [
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>            [
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                {
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>                    &quot;height&quot;: 692000,
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>                    &quot;hash&quot;: &quot;74add6f7f61c33dd741276d97d8ade4456c47485da78752587aef8a209fe7e88&quot;
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                },
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>                {
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                    &quot;height&quot;: 693000,
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                    &quot;hash&quot;: &quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                }
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            ]
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        ],
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        &quot;caches&quot;: [
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>            {
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                &quot;From&quot;: 691001,
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>                &quot;To&quot;: 693000,
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>                &quot;Hash&quot;: &quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;,
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>                &quot;PrevHash&quot;: &quot;028e2730c8fad34b53b8d8f5a41881024fa8b87a97a9cfc61f0e0c83984336a0&quot;
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>            },
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>            {
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>                &quot;From&quot;: 694001,
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>                &quot;To&quot;: 696000,
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>                &quot;Hash&quot;: &quot;e14662c3e9a9751b28822f2640be79cf13bd778c6b3158c8f6ff584fbf89fa24&quot;,
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>                &quot;PrevHash&quot;: &quot;c6cd65717345f017309ee961a6bcda9ba021e0ed5913d8111471ff09fc95590c&quot;
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>            },
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>            {
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>                &quot;From&quot;: 698001,
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                &quot;To&quot;: 699000,
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                &quot;Hash&quot;: &quot;4e067e54b9e966b264053c271c7d976065b8a0796d6995b9dda45e11339e0b57&quot;,
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>                &quot;PrevHash&quot;: &quot;26a6bdcfd3d9f58951eb76ebd4784160e98098564cc31e236618f045cb90f365&quot;
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>            }
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>        ]
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    }
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>}
+</code></pre></div></p>
+<p>:::</p>
+<h2 id="net_nodeinfo"><code>net_nodeInfo</code></h2>
+<p>Get the detailed information of the node and connected peers</p>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>: <code>NodeInfo</code></p>
+<ul>
+<li><code>id</code>: <code>string</code> Node id</li>
+<li><code>name</code>: <code>string</code> Node name</li>
+<li><code>netId</code>: <code>int</code>  Network id </li>
+<li><code>version</code>: <code>int</code>  Node version. Returns 0 for all nodes.</li>
+<li><code>address</code>: <code>string</code>  Node address. Not implemented. Returns empty string at the moment</li>
+<li><code>peerCount</code>: <code>int</code>  Number of peers connected</li>
+<li><code>peers</code>: <code>Array&lt;PeerInfo&gt;</code> Peers connected<ul>
+<li><code>id</code>: <code>string</code>  Peer id</li>
+<li><code>name</code>: <code>string</code>  Peer name</li>
+<li><code>version</code>: <code>int</code>  Peer version. Returns 0 for all nodes.</li>
+<li><code>height</code>: <code>int</code>  Peer's current height</li>
+<li><code>address</code>: <code>string</code>  Peer's ip address + port</li>
+<li><code>flag</code>: <code>byte</code>  Connect type. 0 - inbound, 1 - outbound</li>
+<li><code>superior</code>: <code>bool</code>  <code>true</code> means the peer is an SBP</li>
+<li><code>reliable</code>: <code>bool</code>  <code>true</code> means the peer is reliable</li>
+<li><code>createAt</code> : <code>string</code>  The datetime when this peer was connected</li>
+<li><code>readQueue</code>: <code>int</code>  The current message queue length to be read by the peer</li>
+<li><code>writeQueue</code>: <code>int</code>  The peer's current message queue length to be written to other peers</li>
+<li><code>peers</code>: <code>Array&lt;string&gt;</code>  List of peer ids that the peer is currently connected to</li>
+</ul>
+</li>
+<li><code>height</code>: <code>uint64</code> Node height</li>
+<li><code>nodes</code>: <code>int</code>  Node table size. Not implemented. Returns 0 at the moment.</li>
+<li><code>latency</code>: <code>Array&lt;int&gt;</code>  An array of 4 integers in order containing the current block broadcast latency, the average block broadcast latency within 1 hour, the average block broadcast latency within 12 hours, and the average block broadcast latency within 24 hours. In milliseconds.</li>
+<li><code>broadCheckFailedRatio</code>: <code>float32</code>  The ratio of account blocks received within 16 seconds with confirmations exceeding 100</li>
+<li><code>server</code>: <code>Array&lt;SyncConnectionStatus&gt;</code> Not implemented. Returns empty array at the moment.</li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>: </p>
+</li>
+</ul>
+<p>::: demo
+```json tab:Request
+{
+    "jsonrpc": "2.0",
+    "id": 3,
+    "method": "net_nodeInfo",
+    "params": null
+}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>```json tab:Response
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    &quot;id&quot;: 0,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &quot;result&quot;: {
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        &quot;id&quot;: &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;name&quot;: &quot;ESP-FullNode.001&quot;,
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        &quot;netId&quot;: 1,
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        &quot;version&quot;: 0,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        &quot;address&quot;: &quot;&quot;,
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        &quot;peerCount&quot;: 3,
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        &quot;peers&quot;: [
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            {
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                &quot;id&quot;: &quot;8d8b0b17411b85e943043759ddca4e641a8cc9f6ae47d4b3f767635358c42e76&quot;,
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                &quot;name&quot;: &quot;MIK33&quot;,
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                &quot;version&quot;: 0,
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                &quot;height&quot;: 100933254,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                &quot;address&quot;: &quot;173.212.248.239:56996&quot;,
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                &quot;flag&quot;: 0,
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                &quot;superior&quot;: false,
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                &quot;reliable&quot;: true,
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                &quot;createAt&quot;: &quot;2022-08-19 16:07:16&quot;,
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                &quot;readQueue&quot;: 0,
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>                &quot;writeQueue&quot;: 0,
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>                &quot;peers&quot;: [
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>                    &quot;836c6ccf6582a9c8d2bc96aa7d2aed8e8e693e4050af0b4f01ad7375d9739aac&quot;,
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>                    &quot;918a47b9b0958412659723a3459c50e0197dc4239eafa57e540cacd2ab418f96&quot;,
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                    &quot;8e1521741c92b2b9c502996d3c7424c6e500e52ed1c065ffa0378b2835a12dc1&quot;,
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>                    &quot;aa0e28a73212030ce62cf2c2090134ca90fb5e5a37e98513266551462e0dcf25&quot;,
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>                    &quot;bf14738360ff11517769b3a6f09fc41f81be77f8d8e4494cba9a7a5ddd845929&quot;,
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>                    &quot;9e41b1a3ff686074515db5fdf7de9515d04adc110b4ceefaa84409dfa5bc759e&quot;,
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>                    &quot;e3245a342927df824aa72ec392a74ea5312f165700552057c9f40a9ff22f0589&quot;,
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>                    &quot;9a85aa364ae14c6b9c64180ce1fb97d0debd1b433f5aa734f42d73feeba52b6c&quot;
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>                ]
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>            },
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>            {
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>                &quot;id&quot;: &quot;9402381bbdc2cbc3280e38dbcbb76cc293f802789e6c4fcb0f339f540ba47548&quot;,
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>                &quot;name&quot;: &quot;concat0&quot;,
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>                &quot;version&quot;: 0,
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>                &quot;height&quot;: 100933253,
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>                &quot;address&quot;: &quot;144.91.84.68:39782&quot;,
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>                &quot;flag&quot;: 0,
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>                &quot;superior&quot;: false,
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>                &quot;reliable&quot;: true,
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>                &quot;createAt&quot;: &quot;2022-03-01 14:05:47&quot;,
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>                &quot;readQueue&quot;: 0,
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>                &quot;writeQueue&quot;: 0,
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>                &quot;peers&quot;: [
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>                    &quot;a5df8cab8c6996322553c360f490adca265bdbaccf964425f8137283d7f89272&quot;,
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>                    &quot;db9ec3aa4c8637c2dadb8f2898e84d91ab29795ae56b2b2b05dd5a8b39d977df&quot;,
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>                    &quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;,
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>                    &quot;e2c87c9eb5966f1d7de679bc9d72abdd19557c6ca235b85de38565a4e7cca7e7&quot;,
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>                    &quot;a15e0067d90ff678052ebe55fbbf89468b1d80e8ffc1b76cd0d6e0285117f70d&quot;,
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>                    &quot;9c560323d72b643742f120f498791cc7a0d107e55e632d3dc8244f3feba95833&quot;,
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>                    &quot;89d433317c349235a429966a47b17039708429b3ab06283e6ad43af1312e0ab9&quot;,
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>                    &quot;d13da3047b319c7da19f96200473a8cd08e43641081d37a93691ff38c13587e2&quot;,
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>                    &quot;9ffb393ba09f56db9aea74300562360911b64fddfdc463b262dbc37ecad6fb86&quot;
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>                ]
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>            },
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>            {
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>                &quot;id&quot;: &quot;9508ce5c35989d6df24757f5c14cfe775449fe03fae69da4a96e001aacd4a426&quot;,
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>                &quot;name&quot;: &quot;nimu&quot;,
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>                &quot;version&quot;: 0,
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>                &quot;height&quot;: 100933253,
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>                &quot;address&quot;: &quot;207.180.250.64:51858&quot;,
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>                &quot;flag&quot;: 0,
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>                &quot;superior&quot;: false,
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>                &quot;reliable&quot;: true,
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>                &quot;createAt&quot;: &quot;2022-08-19 06:46:23&quot;,
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>                &quot;readQueue&quot;: 0,
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>                &quot;writeQueue&quot;: 0,
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>                &quot;peers&quot;: [
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>                    &quot;8e20a38270d2e19c186d37f113f075bf6cd6b6949ffa9790b4c0281e215de1b2&quot;,
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>                    &quot;99f746721c7aeacfb3587859e0cdfae1049b7b0875400e58c7d476fefa7155c8&quot;,
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>                    &quot;9dc1ba02d3592de3f1506a09c4c416b7e6cb4ffae5fc8654432b3efcedf799f7&quot;,
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a>                    &quot;08e69aca38eb71c155234a93a32a7a642f4bb2efebd9837227dcf57892ff1d26&quot;,
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a>                    &quot;0f6c334025afa0db6583f1d86b314ed0778031b9e42a5f6bf834ef4e102feb70&quot;,
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>                    &quot;96feeb78b2bcd4fd55bc47b4fb49f039e12e3a68a7acac78b909dbace39f0954&quot;,
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>                    &quot;97266099862560c6cde73e767add04e391e37fc86fe52fdd9372b01ac9e4af38&quot;,
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>                    &quot;805dcb1cdc2514b4fdecfd9cbfd2291e2bfb17a75fcad46153703db08fdbd341&quot;,
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>                    &quot;97275bef2b7dcaf023c75fa5b8fea4fb9550d6b74b7a18faa9b4e12caf33df49&quot;
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>                ]
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>            }
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a>        ],
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>        &quot;height&quot;: 100933262,
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>        &quot;nodes&quot;: 0,
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>        &quot;latency&quot;: [
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>            23,
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>            77,
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>            74,
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>            72
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>        ],
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>        &quot;broadCheckFailedRatio&quot;: 0.027027028,
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>        &quot;server&quot;: {
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>            &quot;connections&quot;: []
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>        }
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>    }
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>}
+</code></pre></div></p>
+<p>:::</p>
+<h2 id="net_nodes"><code>net_nodes</code></h2>
+<p>Get all alive peers in node table</p>
+<blockquote>
+<p>Note: Alive peers are not connected peers. Alive peers are nodes stored in node's peer table and can be pinged through</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>: </p>
+<ul>
+<li><code>Count</code>: <code>int</code> Number of alive peers</li>
+<li><code>Nodes</code>: <code>Array&lt;Node&gt;</code><ul>
+<li><code>id</code>: <code>string</code>  Node id</li>
+<li><code>address</code>: <code>string</code>  Node's IP address + port</li>
+<li><code>net</code>: <code>int</code>  Network id</li>
+<li><code>ext</code>: <code>Array&lt;byte&gt;</code>  Additional message. Default is null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>: </p>
+</li>
+</ul>
+<p>::: demo
+```json tab:Request
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "net_nodes",
+    "params": null
+}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>```json tab:Response
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;id&quot;: 0,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;result&quot;: {
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        &quot;Count&quot;: 13,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        &quot;Nodes&quot;: [
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            {
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                &quot;id&quot;: &quot;95d52a0b506cd29a8153b4777a9c1d3852a15ae604daeb3376260201661c0259&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                &quot;address&quot;: &quot;173.249.53.109:8483&quot;,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            },
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            {
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                &quot;id&quot;: &quot;c537033862e4a4178260536bfebfc5898d94dcde0a2c7c894df341c6871974dd&quot;,
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                &quot;address&quot;: &quot;144.91.86.89:8483&quot;,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            },
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            {
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                &quot;id&quot;: &quot;e9dcad1603c29de4fb636707d60c76c9f1ff28eb4040d5602576aab78c94db69&quot;,
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                &quot;address&quot;: &quot;161.35.129.182:8483&quot;,
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                &quot;ext&quot;: &quot;3MLy0o+z4lmDN4NrF8yK65PFtM9A683ElMU7Y55bXY2w4oNw9O3aGQQ5r+8Bf8E91lFATMrT1DrD4spEmHgRs/GoSCdKX16t8d3TU9oBVgrQW2Hk6QQ4gh2dHBLzb9QC&quot;
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            },
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            {
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                &quot;id&quot;: &quot;f738db16fb0b8b15efff3e367c05d49d3993b67b2cd3b8ddd96a6b01cf6a7af7&quot;,
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                &quot;address&quot;: &quot;163.47.117.157:8483&quot;,
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            },
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            {
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                &quot;id&quot;: &quot;8ff65551f0dbe604f8cf9c18322cd85ddf5bfc0362e1df3e426d3032fd843b94&quot;,
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                &quot;address&quot;: &quot;173.249.45.46:8483&quot;,
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>            },
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>            {
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                &quot;id&quot;: &quot;874c9e4f5b34d0c26b7e6ad27bec231948c11157f1dc2977dffed88361280d31&quot;,
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                &quot;address&quot;: &quot;95.216.50.183:8483&quot;,
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>            },
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            {
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                &quot;id&quot;: &quot;9fb855389ddb6fb9b3a3e6ec4f3121e2216354a12203581105889323518ba812&quot;,
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                &quot;address&quot;: &quot;161.97.153.45:8483&quot;,
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>            },
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>            {
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>                &quot;id&quot;: &quot;993d43801d63433657cb35d4f5c75bdd92a62f646e19ef961a193a558c4ab007&quot;,
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>                &quot;address&quot;: &quot;173.249.5.87:8483&quot;,
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>            },
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>            {
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>                &quot;id&quot;: &quot;9c724d1179c5b6e09733651ff83a61227320bee604d6cd220d67799556b8f19f&quot;,
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>                &quot;address&quot;: &quot;5.189.150.247:8483&quot;,
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>            },
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>            {
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>                &quot;id&quot;: &quot;9d1bfbbdd92e8c520703a4f76da9ce8cc5954dc584eb21663606cfbc78d381bd&quot;,
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>                &quot;address&quot;: &quot;3.143.25.47:8483&quot;,
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>            },
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>            {
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>                &quot;id&quot;: &quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;,
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>                &quot;address&quot;: &quot;161.97.118.202:8483&quot;,
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>            },
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>            {
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>                &quot;id&quot;: &quot;9d0f2f7545c0f997cc752d72c2a1f37bb294bd9293e2ff489c4a31fe646cfaff&quot;,
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>                &quot;address&quot;: &quot;62.171.182.175:8483&quot;,
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>            },
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>            {
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>                &quot;id&quot;: &quot;99c52026f5469c95c85796c4495c5e804ec57fbfc306f09a512d83fdfdb9ab93&quot;,
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>                &quot;address&quot;: &quot;135.181.51.68:8483&quot;,
+<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>                &quot;net&quot;: 1,
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>                &quot;ext&quot;: null
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>            }
+<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>        }
+<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>    }
+<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>}
+</code></pre></div></p>
+<p>:::</p>
+<h2 id="net_peercount"><code>net_peerCount</code></h2>
+<p>Get the number of connected peers</p>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>: </p>
+<ul>
+<li><code>int</code>  Number of peers connected</li>
+</ul>
+</li>
+<li>
+<p><strong>Example</strong>: </p>
+</li>
+</ul>
+<p>::: demo
+```json tab:Request
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "net_peerCount",
+    "params": null
+}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>```json tab:Response
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;id&quot;: 0,
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;result&quot;: 8
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
+</code></pre></div></p>
+<p>:::</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
