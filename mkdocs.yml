@@ -19,7 +19,7 @@ plugins:
       collapse_single_pages: true
 
 nav:
-  - Introduction: README.md
+  - Overview: README.md
 
   - Vite Basics:
     - Ledger Model: 
