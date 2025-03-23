@@ -2,7 +2,7 @@
 order: 3
 ---
 
-# Setup
+# Node Setup
 
 ## Recommended Specs
 * SBP (Snapshot Block Producer / Supernode) - 2 CPUs / 8 GB RAM

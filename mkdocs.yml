@@ -1,6 +1,7 @@
 site_name: Vite Documentation
 theme:
   name: material
+  logo: assets/logo.svg
   features:
     - content.tabs
     - content.code.copy
@@ -21,7 +22,7 @@ plugins:
 nav:
   - Overview: README.md
 
-  - Vite Basics:
+  - Concepts:
     - Ledger Model: 
       - vite-basics/ledger/dag-ledger.md
       - vite-basics/ledger/snapshot-chain.md
@@ -40,15 +41,16 @@ nav:
       - vite-basics/quota/quota.md
       - vite-basics/quota/fee.md
 
-    - Network and Node:
-      - vite-basics/network/introduction.md
-      - vite-basics/network/nodes.md
-      - vite-basics/network/setup.md
-      - vite-basics/network/configuration.md
-      - vite-basics/network/rpc-ipc.md
-      - vite-basics/network/debug-faq.md
-      - vite-basics/network/explorers.md
-  - API:
+  - Network and Node:
+    - vite-basics/network/introduction.md
+    - vite-basics/network/nodes.md
+    - vite-basics/network/setup.md
+    - vite-basics/network/configuration.md
+    - vite-basics/network/rpc-ipc.md
+    - vite-basics/network/debug-faq.md
+    - vite-basics/network/explorers.md
+
+  - Vite API:
     - api/README.md
     - api/ledger.md
     - Contract:
@@ -63,7 +65,38 @@ nav:
     - api/subscribe.md
     - api/util.md
 
-  - Solidity++:
+  - Vite SDK:
+    - Javascript SDK:
+      - SDK/vitejs/README.md
+      - SDK/vitejs/providers.md
+      - SDK/vitejs/viteapi-class.md
+      - Wallet:
+        - SDK/vitejs/wallet/README.md
+        - SDK/vitejs/wallet/wallet-class.md
+      - Account Block:
+        - SDK/vitejs/account-block/README.md
+        - SDK/vitejs/account-block/account-block-class.md
+        - SDK/vitejs/account-block/account.md
+        - SDK/vitejs/account-block/receive-task.md
+      - SDK/vitejs/abi.md
+      - SDK/vitejs/utility-funcs.md
+      - SDK/vitejs/constants-and-errors.md
+      - SDK/vitejs/common-patterns.md
+      - SDK/vitejs/types.md
+    - Java SDK:
+      - SDK/vitej/README.md
+      - SDK/vitej/modules/rpc.md
+      - SDK/vitej/modules/wallet.md
+      - SDK/vitej/modules/asset.md
+      - SDK/vitej/modules/quota.md
+      - SDK/vitej/modules/sbp.md
+      - SDK/vitej/modules/subscribe.md
+      - SDK/vitej/modules/utils.md
+      - SDK/vitej/other/types.md
+
+    - ViteConnect: SDK/vite-connect/README.md
+
+  - Developers:
     - Solidity++ Fundamentals:
       - soliditypp/fundamentals/README.md
       - soliditypp/fundamentals/request-response-model.md
@@ -88,36 +121,28 @@ nav:
     - IDE:
       - soliditypp/IDE/README.md
       - soliditypp/IDE/know-more.md
+    
+    - common-patterns/README.md
+    - best-practices/README.md
+    - Example Project: vite-express/README.md
 
-    - Advanced:
-      - soliditypp/advanced/README.md
+  - Advanced Topics:
+    - Overview: soliditypp/advanced/README.md
+    - Virtual Machine Implementation:
       - soliditypp/advanced/vite-vm.md
       - soliditypp/advanced/vite-vm-instructions.md
-
-  - Vite SDK:
-    - Vite.js:
-      - SDK/vitejs/README.md
-      - SDK/vitejs/providers.md
-      - SDK/vitejs/viteapi-class.md
-      - Wallet:
-        - SDK/vitejs/wallet/README.md
-        - SDK/vitejs/wallet/wallet-class.md
-      - Account Block:
-        - SDK/vitejs/account-block/README.md
-        - SDK/vitejs/account-block/account-block-class.md
-        - SDK/vitejs/account-block/account.md
-        - SDK/vitejs/account-block/receive-task.md
-      - SDK/vitejs/abi.md
-      - SDK/vitejs/utility-funcs.md
-      - SDK/vitejs/constants-and-errors.md
-      - SDK/vitejs/common-patterns.md
-      - SDK/vitejs/types.md
-
-    - SDK/vite-connect/README.md
-
-  - common-patterns/README.md
-
-  - best-practices/README.md
-
-  - Example Project: vite-express/README.md
+      - soliditypp/advanced/await-operator.md
+    - Vite Enhancement Proposals:
+      - vep/vep-3.md
+      - vep/vep-5.md
+      - vep/vep-6.md
+      - vep/vep-7.md
+      - vep/vep-8.md
+      - vep/vep-10.md
+      - vep/vep-12.md
+      - vep/vep-13.md
+      - vep/vep-15.md
+      - vep/vep-16.md
+      - vep/vep-19.md
+      - vep/vep-21.md
 

@@ -2,7 +2,7 @@
 order: 1
 ---
 
-# Introduction
+# Overview
 
 Vite is a decentralized network consisting of many nodes run by independent individuals. But what are nodes exactly and why are they needed? First we need to understand the difference between a client and a node. In the computing world, a "client" refers to any type of software that is downloaded onto your computer and helps you interact with another type of software or service provided by a server. For example, Thunderbird is a software client that connects to an email server and allows users to send and receive emails.
 

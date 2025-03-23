@@ -2,7 +2,7 @@
 order: 4
 ---
 
-# Configuration
+# Node Configurations
 
 This section introduces how to manually configure a node on your machine. However, if you just want to develop locally, it's recommended you get [Visual Studio Code Solidity++ Extension](https://marketplace.visualstudio.com/search?term=Soliditypp&target=VSCode&category=All%20categories&sortBy=Relevance) which includes a local development node.
 

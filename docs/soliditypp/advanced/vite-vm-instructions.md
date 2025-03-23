@@ -2,7 +2,7 @@
 order: 3
 ---
 
-# Vite VM Instructions
+# Instructions
 
 Vite VM retains semantics of most EVM instructions. However, since Vite adopts different ledger structure and transaction definition that are different from Ethereum, some EVM instructions need to be redefined, such as those to query block information.
 
