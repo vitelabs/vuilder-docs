@@ -156,7 +156,8 @@ await block.autoSend();
 ## How to read contract event logs
 Getting a contract's event log first involves fetching them from a Vite node's [RPC API](https://docs.vite.org/vite-docs/api/rpc/ledger_v2.html). Then decoding them into a human-readable format.
 
-> Note: The following example has been adapted from the [Vuilder Kit](https://github.com/vitelabs/vuilder/blob/master/src/contract.ts#L227).
+!!! note
+    The following example has been adapted from the [Vuilder Kit](https://github.com/vitelabs/vuilder/blob/master/src/contract.ts#L227).
 
 ```js
 import { abi } from '@vite/vitejs';
@@ -224,7 +225,8 @@ const getPastEvents = async (
 ## How to read contract state
 Prior to Solidity++ 0.8, contracts had "off-chain" functions. These were used for querying the contracts written in Solidity++ 0.4. Starting in Solidity++ 0.8, off-chain methods were deprecated. Because of this, the RPC method for querying contracts written in 0.4 vs 0.8 are different - `contract_callOffChainMethod` and `contract_query` respectively.
 
-> Note: The following example has been adapted from the [Vuilder Kit](https://github.com/vitelabs/vuilder/blob/master/src/contract.ts#L169).
+!!! note
+    The following example has been adapted from the [Vuilder Kit](https://github.com/vitelabs/vuilder/blob/master/src/contract.ts#L169).
 
 ```js
 import { abi, utils } from '@vite/vitejs';
@@ -267,6 +269,5 @@ const queryContract = async (methodName: string, params: any[]) => {
 };
 ```
 
-:::tip Tips
-You can also use `callOffChainContract` and `queryContractState` in [ViteAPI](6.%20Vite%20API.md) class.
-:::
+!!! tip "Tips"
+    You can also use `callOffChainContract` and `queryContractState` in [ViteAPI](6.%20Vite%20API.md) class.

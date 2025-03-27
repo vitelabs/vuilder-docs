@@ -65,9 +65,8 @@ For example, performing a send transaction with a comment of '0x0001' (two bytes
 
 An epoch on Vite refers to continuous 75 snapshot blocks, approximately 75 seconds. Epoch is used to measure available Quota and transaction processing capacity for an address.
 
-:::tip Epoch v.s Round
-A [Round](../consensus/snapshot-block-producer.md#how-an-sbp-works) is precisely 75 seconds, and it reflects the timeframe how often the SBPs are selected, while an Epoch stands for 75 snapshot blocks, it could be longer than 75 seconds if one or more of the SBPs misses to produce the block.
-:::
+!!! tip "Epoch v.s Round"
+    A [Round](../consensus/snapshot-block-producer.md#how-an-sbp-works) is precisely 75 seconds, and it reflects the timeframe how often the SBPs are selected, while an Epoch stands for 75 snapshot blocks, it could be longer than 75 seconds if one or more of the SBPs misses to produce the block.
 
 ## Quota Calculation
 
@@ -114,9 +113,8 @@ $$UTPE=UTPS \times 75$$
 
 The **Available Quota** of an address is determined by UTPS, Quota consumption during the last 74 snapshot blocks, and PoW. For example, Address<sub>A</sub> locked 10000 VITE and obtains 1 UTPS Quota (non-accumulated), and if the address has no transaction in the last 74 snapshot blocks, the Available Quota for Address<sub>A</sub> is 75 Quota. Similarly, Address<sub>B</sub> locked 10000 VITE and obtains 1 UTPS Quota (non-accumulated), and there is no transaction for the address in the last 74 snapshot blocks, meanwhile it also calculated a PoW that is equivalent to 2 Quota. In this case, the available Quota of Address<sub>B</sub> is 77 Quota.
 
-:::tip Quota Cap for a Single Transaction
-For a single transaction, the maximum quota it can consume is $\frac{Qm}{21000}\approx47.62$ Quota
-:::
+!!! tip "Quota Cap for a Single Transaction"
+    For a single transaction, the maximum quota it can consume is $\frac{Qm}{21000}\approx47.62$ Quota
 
 For practical use, we calculated $(\xi d \times \rho d)$ or $(\xi s \times \rho s)$ under different parameters and mapped the values to Quota, UTPS and UTPE, as displayed in the following table:
 

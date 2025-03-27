@@ -44,6 +44,5 @@ One can NOT
 
 Voting can or cannot have rewards. Distributing voting rewards to individual voters is not built in Vite's protocol. Thus, it is completely the responsibility of every SBP (or delegate node in delegated consensus group) to decide whether (and how) to distribute voting rewards to the voters.
 
-:::tip List of SBPs that distribute rewards
-Vite community maintains a list on which the SBPs distribute voting rewards to supporters. Ask the CM for the list!
-:::
+!!! tip "List of SBPs that distribute rewards"
+    Vite community maintains a list on which the SBPs distribute voting rewards to supporters. Ask the CM for the list!

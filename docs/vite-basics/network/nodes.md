@@ -24,9 +24,8 @@ For safety purpose, node owners are recommended to use 2 separate Vite addresses
 
 A Snapshot Block Producer (SBP) is a delegated node in the Vite network. The primary function of SBP is to secure the network by producing snapshot blocks that store a state snapshot of the Vite ledger. This includes the balance of the account, the Merkle root of the contract state, and the hash of the last block of each account chain. To find out how an SBP works, please refer to [Consensus](../consensus/snapshot-block-producer.md#how-an-sbp-works).
 
-:::tip
-Before you continue reading, please see the [setup guide](./setup.md) on how to install gvite.
-:::
+!!! tip
+  Before continue reading, please see the [setup guide](./setup.md) on how to install gvite.
 
 ### Terminology of SBP Addresses
 
@@ -53,9 +52,8 @@ To reate the **Block Creation Address**, follow instructions [here](./rpc-ipc.md
 
 ### Registration
 
-:::tip
-Registering a new SBP requires staking 1M (1,000,000) VITE. Please make sure you have at least this amount in your account.
-:::
+!!! tip
+  Registering a new SBP requires staking 1M (1,000,000) VITE. Please make sure you have at least this amount in your account.
 
 Log in [Vite Web Wallet](https://x.vite.net/) and navigate to **SBP Registration** page.
 

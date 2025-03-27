@@ -114,9 +114,8 @@ Sending a transaction (by `sendTransaction` method) includes the following steps
 2. Calculate quota consumption. If the available quota of the account is insufficient and having `autoPoW`=`true`, do a PoW puzzle to get temporary quota;
 3. Create transaction hash, then sign the transaction.
 
-:::tip Module Required
-Make sure `util` is configured in `PublicModules` in `node_config.json` on your node when `autoPoW`=`true`.
-:::
+!!! tip "Module Required"
+    Make sure `util` is configured in `PublicModules` in `node_config.json` on your node when `autoPoW`=`true`.
 
 #### Send a Transfer
 ```java

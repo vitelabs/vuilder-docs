@@ -20,9 +20,8 @@ The method consists of the following steps:
 2. Verify if the request transaction contained in send block is valid contract call transaction (`toAddress` is contract address and block type is `SEND_CALL` or `SEND_CREATE`). Return `false` if no;
 3. Check if the request has been accepted by smart contract (valid `receiveBlockHash` is contained in send block). If no, loop for up to 10 times retry by default until correct `receiveBlockHash` is set. If maximum retry is reached and `receiveBlockHash` is still not set, return `false`; 
 
-:::tip Tips
-The possible reason could be contract is short of quota, or `ResponseLatency`/`randomDegree` for the contract is too high so that in-coming request can only be accepted after certain waiting number is reached.
-:::
+!!! tip
+    The possible reason could be contract is short of quota, or `ResponseLatency`/`randomDegree` for the contract is too high so that in-coming request can only be accepted after certain waiting number is reached.
 
 4. Confirm the smart contract is executed as expected (value of the 33th byte of data field of response transaction should be `0`; any non-zero value indicates execution failure). If the value is not zero, return `false`;
 5. Confirm all in-contract request transactions (RS blocks) are executed successfully, if any. Then return `true`.

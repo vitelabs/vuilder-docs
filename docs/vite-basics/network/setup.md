@@ -4,78 +4,81 @@ order: 3
 
 # Node Setup
 
-## Recommended Specs
+## Recommended Specifications
 * SBP (Snapshot Block Producer / Supernode) - 2 CPUs / 8 GB RAM
-* Full node - 1 CPU / 4 GB RAM
+* Full Node - 1 CPU / 4 GB RAM
 
-A minimum of 5 Mbit/s stable internet connection is required.
+A stable internet connection with a minimum speed of 5 Mbit/s is required.
 
 ## Minimal Installation
 
-You can start a full node on the Vite mainnet quickly by following the steps below. While this is a convenient way to check if everything is working as intended, you should change the default configuration to your needs. All configuration options are described [here](./configuration.md).
+You can quickly start a full node on the Vite mainnet by following the steps below. While this is a convenient way to verify that everything is functioning correctly, you should customize the default configuration to suit your needs. All configuration options are described [here](./configuration.md).
 
-1. Download & extract the latest release of [go-vite](https://github.com/vitelabs/go-vite/releases)
-2. Open a terminal and cd into the installation directory
-3. Run `./gvite` to start the full node with the default configuration
+1. Download and extract the latest release of [go-vite](https://github.com/vitelabs/go-vite/releases).
+2. Open a terminal and navigate to the installation directory.
+3. Run `./gvite` to start the full node with the default configuration.
 
-The following result should be displayed:
-```
+The following message should appear:
+```bash
 Vite RPC service started successfully!
 ```
 
-It can take some time until the node starts syncing the distributed ledger but eventually the following output should appear:
-```
+It may take some time for the node to start syncing the distributed ledger. Eventually, you should see output similar to the following:
+```log
 [Snapshot Stats] Height:10001, Hash:ec543ff3f7397876b6c67a41a170c0e1f97ac637fee4c4db3d1903087f42312e, Timestamp:2019-05-22 01:20:13 +0000 UTC, Producer:vite_dff5ee13c87ed2f205ef87d820b3cd8e97c181b1bb6781c602, Time:2022-05-29 12:16:09.19895974 +0000 UTC m=+51.489945950
 ```
 
-To estimate the time needed to sync the entire ledger, you can check the current height with one of the available explorers and compare it to the height above.
+To estimate the time required to sync the entire ledger, check the current height using one of the available explorers and compare it to the height shown above.
 
 ## Directory Structure
 
-### Installation directory
-Refers to the folder where gvite boot script and configuration files are located. For example, `~/gvite-${version}-${os}` is an installation directory.
+### Installation Directory
+This refers to the folder where the `gvite` executable and configuration files are located. For example, `~/gvite-${version}-${os}` is an installation directory.
 
-`gvite` : Gvite executable file
-`bootstrap` : Optional boot script to start the node
-`node_config.json` : Configuration file
+- `gvite`: The Gvite executable file.
+- `bootstrap`: An optional boot script to start the node.
+- `node_config.json`: The configuration file.
 
-### Working directory
-The working directory contains sub-directories/files such as "ledger", "ledger_files", "LOCK", "net", "rpclog", "runlog" and "wallet".
+### Working Directory
+The working directory contains subdirectories and files such as "ledger", "ledger_files", "LOCK", "net", "rpclog", "runlog", and "wallet".
 
-```
+```bash
 cd ~/.gvite/maindata
 ```
 
-`ledger` : Ledger directory for storing transactions and snapshot blocks.
-`rpclog` : Directory for storing RPC logs
-`runlog` : Directory for storing run-time logs
-`wallet` : Wallet keystore directory for storing keystore files that secure private keys. Do remember **KEEP YOUR PRIVATE KEY SAFE**.
+- `ledger`: Directory for storing transactions and snapshot blocks.
+- `rpclog`: Directory for storing RPC logs.
+- `runlog`: Directory for storing runtime logs.
+- `wallet`: Wallet keystore directory for storing keystore files that secure private keys. 
 
-## Stop/Reboot Node
+!!! danger 
+    Keep your private key safe.
 
-If you started the node with the `./boostrap` script, you might need the following instructions to stop or reboot your node.
+## Stopping or Rebooting the Node
 
-Execute the following command
+If you started the node using the `./bootstrap` script, follow these instructions to stop or reboot your node.
+
+Run the following command to obtain the `gvite` process ID:
 ```bash
-ps -ef|grep gvite
+ps -ef | grep gvite
 ```
 
-to obtain the gvite process id
+Example output:
 ```bash
 ubuntu   27268     1 99 16:00 ?        01:54:56 ./gvite -pprof 
 ```
 
-Kill it with
+Kill the process using:
 ```bash
 kill -9 27268
 ```
 
-Then reboot
+Then reboot the node:
 ```bash
 ./bootstrap
 ```
 
-To check if gvite has rebooted successfully, run:
+To verify that `gvite` has restarted successfully, run:
 ```bash
-ps -ef|grep gvite
+ps -ef | grep gvite
 ```

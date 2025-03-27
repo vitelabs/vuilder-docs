@@ -72,13 +72,11 @@ Creates a new ViteConnect session. After this method is called, it will wait unt
 	// renderQRCode(qrCodeData);
 	```
 
-:::warning Important
-It is crucial that you call `createSession` before using `vcInstance.uri` otherwise the Vite Wallet will not be able to connect.
-:::
+!!! warning "Important"
+	It is crucial that you call `createSession` before using `vcInstance.uri` otherwise the Vite Wallet will not be able to connect.
 
-:::tip
-To persist a session after your Web App stops, you can store the `session` data in `localStorage` and add it to the config object when instantiating `Connector` to restore the session.
-:::
+!!! tip
+	To persist a session after your Web App stops, you can store the `session` data in `localStorage` and add it to the config object when instantiating `Connector` to restore the session.
 
 ```js
 localStorage.setItem('vcSession', vcInstance.session);
@@ -150,9 +148,8 @@ Start sending heartbeat messages
 	```js
 	vcInstance.startBizHeartBeat();
 	```
-:::tip Heartbeat
-If the Web App hasn't sent a message for more than 10s after the connection is established, the session could be closed because the Wallet will send a disconnect message for not receiving your messages within 10s. You do not need to call this method - it will be called automatically when a session is created or updated.
-:::
+!!!tip "Heartbeat"
+	If the Web App hasn't sent a message for more than 10s after the connection is established, the session could be closed because the Wallet will send a disconnect message for not receiving your messages within 10s. You do not need to call this method - it will be called automatically when a session is created or updated.
 
 ### `stopBizHeartBeat`
 Stop sending heartbeat messages
@@ -248,16 +245,17 @@ Update the current session with new chain id or connected account is changed.
 Trigger callback functions for various events.
 - **Parameters**: 
 	- `event: string`
-		- `'connect'` When `approveSession` is called for a new session request or the user connects his Wallet
-		- `'disconnect'` When `killSession` or `rejectSession` is called or the user logs out from his Wallet
-		- `'session_request'` When `createSession` request is received 
-		- `'session_update'` When `updateSession` is called or `approveSession` is called for a session update request
-		- `'vc_peerPing'` When a heartbeat message is received
-		- `'error'` When `vc_sessionRequest` or `connect` returns error
+	- `'connect'` When `approveSession` is called for a new session request or the user connects his Wallet
+	- `'disconnect'` When `killSession` or `rejectSession` is called or the user logs out from his Wallet
+	- `'session_request'` When `createSession` request is received 
+	- `'session_update'` When `updateSession` is called or `approveSession` is called for a session update request
+	- `'vc_peerPing'` When a heartbeat message is received
+	- `'error'` When `vc_sessionRequest` or `connect` returns error
 	- `callback: (error: Error | null, payload: any | null) => void` The callback function to call when the `event` is triggered
 - **Returns**:
 	- `void`
-- **Example**
+	
+!!! example
 	```js
 	vcInstance.on('connect', (err, payload) => {
 		// vcInstance can start prompting transactions on the user's Vite Wallet app

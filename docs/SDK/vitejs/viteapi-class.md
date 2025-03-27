@@ -7,9 +7,8 @@ order: 6
 ## `ViteAPI`
 Class of `ViteAPI`, along with the inherited `Provider` class, wraps and extends the full node's [RPC API](https://docs.vite.org/vite-docs/api/rpc/)
 
-:::tip
-Do NOT confuse the Provider class with Connection Providers we covered in last chapter. `Provider` wraps an instance of Connection Provider and provides a few convenient methods to interact with full node through the connection provider.
-:::
+!!! tip
+    Do NOT confuse the Provider class with Connection Providers we covered in last chapter. `Provider` wraps an instance of Connection Provider and provides a few convenient methods to interact with full node through the connection provider.
 
 - **Constructor**
 	- `provider: Connection Provider` Learn more in [Connection Providers](./5.%20Providers.md)
@@ -31,7 +30,8 @@ Do NOT confuse the Provider class with Connection Providers we covered in last c
 	});
 	```
 
-> Note: `onConnectCallback` is added in 2.3.19.
+!!! note
+    `onConnectCallback` is added in 2.3.19.
 
 ## Methods
 
@@ -98,7 +98,8 @@ Extend the default [contract methods](https://github.com/vitelabs/vite.js/blob/m
 ### `callOffChainContract`
 Call an offchain function of the contract.
 
-> Note: Offchain function is deprecated and replaced by view function in Solidity++ 0.8. If your contract is written with 0.8 or above version, use `queryContractState` instead.
+!!! note
+    Offchain function is deprecated and replaced by view function in Solidity++ 0.8. If your contract is written with 0.8 or above version, use `queryContractState` instead.
 
 - **Parameters** 
     * `object`
@@ -120,7 +121,8 @@ Call an offchain function of the contract.
 ### `queryContractState`
 Call a view function or query a public state of the contract.
 
-> Note: Added in 2.3.18.
+!!! note
+    Added in 2.3.18.
 
 - **Parameters** 
     * `object`

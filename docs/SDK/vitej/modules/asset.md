@@ -57,9 +57,8 @@ Preconditions.checkArgument(ProtocolUtils.checkCallContractResult(vitej, ((Trans
 
 Change a re-issuable token to non-reissuable. 
 
-:::warning One-way Operation
-Be careful with this method. The operation can not be reversed.
-:::
+!!! warning "One-way Operation"
+    Be careful with this method. The operation can not be reversed.
 
 ```java
 Vitej vitej = new Vitej(new HttpService());

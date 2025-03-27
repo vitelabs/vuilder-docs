@@ -363,11 +363,12 @@ Block type for burning tokens
 ### `disableReIssueToken`
 Block type for changing a re-issuable token to non-re-issuable
 
-> Note: only the owner of the token can do this.
+!!! note
+	Only the owner of the token can do this.
 
-:::warning
-This action cannot be reversed
-:::
+!!! warning
+	This action cannot be reversed
+
 - **Parameters** 
 	- `object`
 		- `address: Address` Address of account (i.e. token owner)
@@ -510,9 +511,8 @@ Determine if an account block is complete and ready to be sent
 ### `getAccountBlockHash`
 Calculate the hash of an account block
 
-:::tip
-Prefer using `block.hash` as this will give you the hash of a valid account block. If a block is invalid, `block.hash` will return `null`.
-:::
+!!! tip
+	Prefer using `block.hash` as this will give you the hash of a valid account block. If a block is invalid, `block.hash` will return `null`.
 
 - **Parameters**
 	- `accountBlock: object` Fields are described above in [Properties](account-block-class.md#properties)
@@ -558,9 +558,8 @@ Prefer using `block.hash` as this will give you the hash of a valid account bloc
 ### `signAccountBlock`
 Calculate the signature of a signed account block. 
 
-:::tip
-Use the `block.sign` method to automatically set the signature and public key of the block. See [here](account-block-class.md#sign) for details.
-:::
+!!! tip
+	Use the `block.sign` method to automatically set the signature and public key of the block. See [here](account-block-class.md#sign) for details.
 
 - **Parameters**
 	- `accountBlock: object` Fields are described above in [Properties](account-block-class.md#properties)

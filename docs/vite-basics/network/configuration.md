@@ -10,10 +10,8 @@ This section introduces how to manually configure a node on your machine. Howeve
 
 When downloading the [latest release of go-vite](https://github.com/vitelabs/go-vite/releases) the following `node_config.json` is included:
 
-:::warning
-You can make your own config based on the example below but remember to remove the text comments following after "//". 
-The purpose of the comments is to explain certain configuration settings but they are not part of the node config itself and should always be removed.
-:::
+!!! warning
+    When writing your own configuration file, you need to remove comments (text starting with "//") to make the configuration file valid.
 
 ```javascript
 {
@@ -80,10 +78,9 @@ Other configuration options:
 - `WhiteBlockList`: A list of block hashes to be whitelisted (optional)
 - `VmLogWhiteList`: A list of contract addresses which are allowed to save VM logs (optional)
 
-:::danger Important:
-* Don't use ***same address*** for both SBP address and SBP registration address
-* Don't use ***same mnemonics*** to generate both SBP address and SBP registration address
-:::
+!!! danger
+    * Don't use ***same address*** for both SBP address and SBP registration address
+    * Don't use ***same mnemonics*** to generate both SBP address and SBP registration address
 
 **Default public modules**
 
@@ -121,9 +118,8 @@ They can be added as needed to the `PublicModules` list.
 
 `private_onroad`, `public_onroad`, `debug`, `consensusGroup`
 
-:::tip
-You might find the [node_config.json](https://github.com/vitelabs/soliditypp-vscode/blob/master/bin/vite/node_config.json) used by our VSCode Solidity++ Extension helpful.
-:::
+!!! tip
+    You might find the [node_config.json](https://github.com/vitelabs/soliditypp-vscode/blob/master/bin/vite/node_config.json) used by our VSCode Solidity++ Extension helpful.
 
 ## Genesis
 
@@ -138,10 +134,9 @@ The genesis block is the start of the blockchain, and the `genesis.json` is the 
 - 2 initial staking accounts
 - 3 initial accounts (including 2 built-in contracts)
 
-:::warning
-You can make your own config based on the example below but remember to remove the text comments following after "//". 
-The purpose of the comments is to explain certain configuration settings but they are not part of the genesis config itself and should always be removed.
-:::
+!!! warning
+    You can make your own config based on the example below but remember to remove the text comments following after "//". 
+    The purpose of the comments is to explain certain configuration settings but they are not part of the genesis config itself and should always be removed.
 
 ```javascript
 {
@@ -281,6 +276,5 @@ The purpose of the comments is to explain certain configuration settings but the
 }
 ```
 
-:::tip
-You might find the default [genesis.json](https://github.com/vitelabs/go-vite/blob/master/common/config/genesis_json.go) of go-vite or the [genesis.json](https://github.com/vitelabs/soliditypp-vscode/blob/master/bin/vite/genesis.json) used by our VSCode Solidity++ Extension helpful.
-:::
+!!! tip
+    You might find the default [genesis.json](https://github.com/vitelabs/go-vite/blob/master/common/config/genesis_json.go) of go-vite or the [genesis.json](https://github.com/vitelabs/soliditypp-vscode/blob/master/bin/vite/genesis.json) used by our VSCode Solidity++ Extension helpful.

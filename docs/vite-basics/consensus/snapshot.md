@@ -62,6 +62,5 @@ struct SnapshotBlock {
 }
 ```
 
-:::tip Note
-For each snapshotted account, if more than one transaction took place during the snapshot, only the last transaction is included in the snapshot block, while the previous transactions can be fetched through a ledger API.
-:::
+!!! note
+    For each snapshotted account, if more than one transaction took place during the snapshot, only the last transaction is included in the snapshot block, while the previous transactions can be fetched through a ledger API.

@@ -21,7 +21,8 @@ IPC provider is a good option when using a local node since it gives the most se
 npm i @vite/vitejs-ws
 ```
 
-> Starting from 2.3.19, package @vite/vitejs-ws is consolidated into @vite/vitejs, so there's no need to install it separately. 
+!!! note
+    Starting from 2.3.19, package @vite/vitejs-ws is consolidated into @vite/vitejs, so there's no need to install it separately. 
 
 ### Module Import
 ```js
@@ -57,9 +58,8 @@ import WS_RPC from "@vite/vitejs";
 
 In 2.3.19, `ReconnectHandler`, `AlwaysReconnect` and `RenewSubscription` are added to support flexible reconnection mechanism and subscription renewal.
 
-:::warning Breaking Change
-`retryTimes` and `retryInterval` are moved from the options of provider to `ReconnectHandler`'s constructor. 
-:::
+!!! warning "Breaking Change"
+    `retryTimes` and `retryInterval` are moved from the options of provider to `ReconnectHandler`'s constructor.
 
 Let's see a few examples.
 

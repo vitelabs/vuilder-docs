@@ -268,9 +268,8 @@ Run the test script and watch results.
 npx vuilder test
 ```
 
-::: tip
-For more examples, please refer to [soliditypp-examples](https://github.com/vitelabs/soliditypp-examples)
-:::
+!!! tip
+    For more examples, please refer to [soliditypp-examples](https://github.com/vitelabs/soliditypp-examples)
 
 ## Deployment
 
@@ -333,9 +332,9 @@ npx ts-node scripts/deploy.ts
 
 We can get the contract address on the console. 
 
-:::tip
-To ensure the contract is deployed successfully on the chain, you can check the address on a [Vite Explorer](http://viteview.xyz/).
-:::
+!!! tip
+  To ensure the contract is deployed successfully on the chain, you can check the address on a [Vite Explorer](http://viteview.xyz/).
+
 ![](./assets/vuilder-02.png)
 
 

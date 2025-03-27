@@ -130,9 +130,8 @@ The contract's directory structure is as below.
 
 Most Solidity code can be directly used in Solidity++ without any change. This also applies to most contracts in OpenZeppelin library except the "ERCxxx" token contracts in Ethereum. In the example, CollateralVault extends `Ownable.sol` so that the `onlyOwner` modifier can be used in the contract. `Ownable.sol` is an standard OpenZeppelin contract written in Solidity.
 
-:::tip
-Vite implements a native token issuance model. Issuing or minting a new token doesn't need a "Token Contract" as in Ethereum.
-:::
+!!! tip
+    Vite implements a native token issuance model. Issuing or minting a new token doesn't need a "Token Contract" as in Ethereum.
 
 ```solidity
 /// @notice Allows the owner to set a new oracle
@@ -201,9 +200,8 @@ contract MockedTokenMinter is ITokenMinter {
 
 `CollateralVault` calls the price oracle contract to obtain the current price. For example, `await oracle.getLatestPrice()` calls the `getLatestPrice()` function on the oracle and returns the price. The `await` operator indicates the call is synchronous. The execution will pause until the price is returned from the oracle. 
 
-:::warning Await operator and Solidity
-The `await` operator is introduced in Solidity++ v0.8.1. It is a powerful tool that makes synchronous-like calls on Vite possible. Basically, it behaves similarly to a function call in Ethereum, and gives the same execution result. However, due to the asynchronous nature of Vite, in some execution context it might give unexpected results (compared to that in Ethereum). We will explain these pitfalls in the next chapter. 
-:::
+!!! warning "Await operator and Solidity"
+    The `await` operator is introduced in Solidity++ v0.8.1. It is a powerful tool that makes synchronous-like calls on Vite possible. Basically, it behaves similarly to a function call in Ethereum, and gives the same execution result. However, due to the asynchronous nature of Vite, in some execution context it might give unexpected results (compared to that in Ethereum). We will explain these pitfalls in the next chapter. 
 
 ```solidity
 function getMintAmount(uint256 _depositAmount) view override returns(uint256 mintAmount) {

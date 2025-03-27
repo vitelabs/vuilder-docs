@@ -4,40 +4,39 @@ order: 5
 
 # RPC / IPC
 
-Some sort of interface is needed to communicate with a node. For this purpose, the client offers a set of RPC/IPC methods that can be called.
+An interface is required to communicate with a node. For this purpose, the client provides a set of RPC/IPC methods that can be invoked.
 
-::: tip
-Definitions of Terms:
-* **RPC**: Remote Procedure Call - is a particular type of communication, but can be on a single machine, or across a network between machines.
-* **IPC**: Inter-Process Communication - is a general term for communication between different processes (which are usually on a single machine).
-:::
+!!! tip "Definitions of Terms"
+	=== "RPC"
+      *Remote Procedure Call*: A type of communication that can occur on a single machine or across a network between machines.
+	=== "IPC"
+      *Inter-Process Communication*: A general term for communication between different processes, usually on a single machine.
 
-## Get started
+## Getting Started
 
-* Start a full node as instructed [here](./setup.md)
-* Navigate to the [installation directory](setup.md#installation-directory) and execute one of the following commands
+* Start a full node as instructed [here](./setup.md).
+* Navigate to the [installation directory](setup.md#installation-directory) and execute one of the following commands.
 
-:::tip
-The file `gvite.ipc` will only exist while the node is running and `IPCEnabled` is set to `true` in the `node_config.json` file.
-:::
+!!! tip
+	The file `gvite.ipc` will only exist while the node is running and `IPCEnabled` is set to `true` in the `node_config.json` file.
 
 ## Wallet Management
 
-::: tip Please make sure to add the `wallet` module to the `PublicModules` list in the `node_config.json` before starting the node. Otherwise the following command will fail with: `The method wallet_createEntropyFile does not exist/is not available`.
-:::
+!!! tip 
+	Ensure that the `wallet` module is added to the `PublicModules` list in the `node_config.json` before starting the node. Otherwise, the following command will fail with: `The method wallet_createEntropyFile does not exist/is not available`.
 
-::: tip Remember to remove said `wallet` module from `PublicModules` when the setup is completed, for safety purposes.
-:::
+!!! tip 
+	For security reasons, remove the `wallet` module from `PublicModules` after completing the setup.
 
-### Create Wallet
+### Creating a Wallet
   
-Execute the following command:
+Run the following command:
 
 ```javascript
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_createEntropyFile '["Your_Password"]'
 ```
 
-This will produce a similar result:
+This will produce output similar to the following:
 
 ```json
 {
@@ -51,13 +50,13 @@ This will produce a similar result:
 }
 ```
 
-* `mnemonics`: Mnemonic phrase. Please keep it safe
-* `primaryAddress`: Vite address at index 0 corresponding to the mnemonic
-* `filePath`: The location of the keyStore file
+- `mnemonics`: The mnemonic phrase. Keep it secure.
+- `primaryAddress`: The Vite address at index 0 corresponding to the mnemonic.
+- `filePath`: The location of the keystore file.
 
-### Recover Wallet from Mnemonic
+### Recovering a Wallet from a Mnemonic
 
-Execute the following command:
+Run the following command:
 
 ```javascript
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_recoverEntropyFile '["Your_Mnemonic", "Your_Password"]'
@@ -65,7 +64,7 @@ e.g.
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_recoverEntropyFile '["utility client point estate auction region jump hat sick blast tomorrow pottery detect mixture clog able person matrix blast volume decide april congress resource", "123456"]'
 ```
 
-This will result in the following output:
+This will produce output similar to the following:
 
 ```json
 {
@@ -79,11 +78,11 @@ This will result in the following output:
 }
 ```
 
-Now the keystore file "vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0" has been regenerated under "~/.gvite/maindata/wallet/".
+The keystore file "vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0" will now be regenerated under `~/.gvite/maindata/wallet/`.
 
 ### Recover Mnemonic from Wallet
 
-Command:
+Run the following command:
 
 ```javascript
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_extractMnemonic '["Your_Address", "Your_Password"]'
@@ -91,7 +90,7 @@ e.g.
 ./gvite rpc ~/.gvite/maindata/gvite.ipc wallet_extractMnemonic '["vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0", "123456"]'
 ```
 
-Result:
+This will produce output similar to the following:
 
 ```json
 {
@@ -103,19 +102,24 @@ Result:
 
 ## Monitoring
 
-### Query snapshot block height
+### Querying Snapshot Block Height
 
-Linux/Unix:
+For Linux/Unix:
 ```bash
 ./gvite rpc ~/.gvite/maindata/gvite.ipc ledger_getSnapshotChainHeight
 ```
-Windows:
+
+For Windows:
 ```bash
 gvite-windows-amd64.exe rpc \\.\pipe\gvite.ipc ledger_getSnapshotChainHeight
 ```
 
 The following result will be displayed:
+```json
+{
+   "jsonrpc":"2.0",
+   "id":1,
+   "result":"1021388"
+}
 ```
-{"jsonrpc":"2.0","id":1,"result":"1021388"}
-```
-1021388 is the current snapshot block height.
+Here, `1021388` is the current snapshot block height.

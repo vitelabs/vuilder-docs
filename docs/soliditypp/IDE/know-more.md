@@ -10,13 +10,13 @@ order: 2
 
 * **Start:** Press `F5` in VSCode to launch the debugger. This will compile your current contract and load the debugging interface in a browser window. 
 
-> Note: The extension has a local `gvite` node. Selecting "debug" in the network dropdown list to use this node.
+!!! note
+    The extension has a local `gvite` node. Selecting "debug" in the network dropdown list to use this node.
 
 * **Stop:** Press `Shift+F5` in VSCode to stop the debugger.
 
-:::warning
-Please note that all the contracts deployed will be cleaned up on the local debug node after the debugger is stopped.
-:::
+!!! warning
+    Please note that all the contracts deployed will be cleaned up on the local debug node after the debugger is stopped.
 
 ## Layout
 
@@ -31,7 +31,8 @@ The debugger UI has several areas.
 > `custom` is added in **Solidity++ 0.8**, which allows to use a customized node.
 
 * **Current Node**: Shows the current connected network's RPC endpoint.
-> Tips: you can add this endpoint into the desktop wallet's network setting to send or receive transactions on the node.
+!!! tip
+    you can add this endpoint into the desktop wallet's network setting to send or receive transactions on the node.
 
 * **Snapshot Block Height**: Shows the snapshot block height for the connected network. The local `debug` network will start at 1 each time the debugger is launched.
 
@@ -49,16 +50,17 @@ The debugger UI has several areas.
 
 * **amount**: Send a certain amount of token to the contract upon deployment.
 
-> Note: The contract constructor ***must*** be `payable` to accept token transfer on deployment. Otherwise the deployment will fail.
+!!! note
+    The contract constructor ***must*** be `payable` to accept token transfer on deployment. Otherwise the deployment will fail.
 
 * **Response Latency Time**: 
 This parameter specifies the required confirmation depth (i.e. number of snapshot blocks) on any request transaction before the deployed contract will send a response transaction. This value ranges from 0 to 75, where 0 means there is no waiting period and respond block will be produced immediately.
 
-> Note: Larger response latency means slower contract response
+!!! note
+    Larger response latency means slower contract response
 
-:::tip 
-If the contract uses timestamp, snapshot block height, or random numbers, this parameter ***must*** be above 0. 
-:::
+!!! tip 
+    If the contract uses timestamp, snapshot block height, or random numbers, this parameter ***must*** be above 0. 
 
 * **Quota multiplier**: This parameter modifies the amount of quota consumed by all request transactions that call the contract. Quota charged on the contract's response transactions are not affected. The Quota multiplier has a range from 10 to 100, which corresponds to a range of 1x to 10x quota consumption. For example, a value of 15 means that the requested transaction to the contract uses 1.5x the default rate.
 
@@ -71,7 +73,8 @@ If the contract uses timestamp, snapshot block height, or random numbers, this p
 
 * **show offchain code**: Shows the contract's compiled offchain code. 
 
-> Note: offchain (getter) function has been deprecated in Solidity++ 0.8. Developer should use `query` function to access the public fields of the contract.
+!!! note
+    offchain (getter) function has been deprecated in Solidity++ 0.8. Developer should use `query` function to access the public fields of the contract.
 
 ### Interact with Contract
 
@@ -79,9 +82,8 @@ If the contract uses timestamp, snapshot block height, or random numbers, this p
 
 This area will only appear after the contract has been deployed or loaded, and is used to call functions on a given contract.
 
-:::tip Load an existing contract
-You can load a previously deployed contract by filling in the address and hit the "Load Contract" button. This is very useful to load an old contract deployed on the testnet or mainnet.
-:::
+!!! tip "Load an existing contract"
+    You can load a previously deployed contract by filling in the address and hit the "Load Contract" button. This is very useful to load an old contract deployed on the testnet or mainnet.
 
 * **Contract Name/Address**: Shows the address of deployed contracts.
 
@@ -91,15 +93,16 @@ You can load a previously deployed contract by filling in the address and hit th
 
 The log area shows the details of `Send` or `Receive` transactions for the current address. In general, a `Send` transaction corresponds the request to call the contract and `Receive` transaction is the execution.
 
-> Note: If your contract emits `Event`, the event can be found in the corresponding `Receive` transaction. 
+!!! note
+    If your contract emits `Event`, the event can be found in the corresponding `Receive` transaction. 
 
 ## Debugger Settings
 
 * **Mnemonic Words**: Shows the mnemonic phrase that are used to generate the wallet addresses in the extension.
 
-:::danger Do NOT use your primary wallet for testing
-Keep your wallet's mnemonic words safe. Do NOT use your primary wallet (that have large funds in the mainnet or any wallet you will use normally in the web/desktop/app wallet) for debugging/testing purpose. You should generate a separate test wallet or use Vite Connect(on mainnet). 
-:::
+!!! danger "Do NOT use your primary wallet for testing"
+    Keep your wallet's mnemonic words safe. Do NOT use your primary wallet (that have large funds in the mainnet or any wallet you will use normally in the web/desktop/app wallet) for debugging/testing purpose. You should generate a separate test wallet or use Vite Connect(on mainnet). 
+
 
 * **Vite Connect**: Instead of using the local wallet generated from mnemonic words, this option allows to use ViteConnect to connect a wallet in the Vite Wallet app.
 

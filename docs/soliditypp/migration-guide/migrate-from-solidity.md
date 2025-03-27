@@ -65,9 +65,8 @@ is equivalents to
 feed.info{token: "tti_5649544520544f4b454e6e40", value: 1e18}();
 ```
 
-::: tip Notice
-Property `gas` and `salt` in call option are not supported in Solidity++.
-:::
+!!! note
+    Property `gas` and `salt` in call option are not supported in Solidity++.
 
 ## Units
 

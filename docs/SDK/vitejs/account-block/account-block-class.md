@@ -6,9 +6,8 @@ order: 2
 
 Instance of `AccountBlock` represents an account block on the Vite blockchain. 
 
-:::tip Account Block and Transaction
-On Vite, usually one account block contains only one transaction. So in many cases when we say account block, it also refers to a transaction, and vise versa. However, this rule doesn't apply to RS blocks, which are special account blocks produced by smart contracts containing more than one transaction. See [RS Blocks](../../../soliditypp/fundamentals/request-response-model.md#rs-receive-send-blocks) for details.
-:::
+!!! tip "Account Block and Transaction"
+	On Vite, usually one account block contains only one transaction. So in many cases when we say account block, it also refers to a transaction, and vise versa. However, this rule doesn't apply to RS blocks, which are special account blocks produced by smart contracts containing more than one transaction. See [RS Blocks](../../../soliditypp/fundamentals/request-response-model.md#rs-receive-send-blocks) for details.
 
 ## Block Types
 

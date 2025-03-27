@@ -148,9 +148,8 @@ The private key of block creation address is saved on the node (corresponding to
 
 Reward withdrawal address is used to withdraw SBP rewards. 
 
-:::tip Tip
-It is highly recommended to separate staking address from block creation address. Do NOT store assets in block creation address.
-:::
+!!! tip
+  It is highly recommended to separate staking address from block creation address. Do NOT store assets in block creation address.
 
 ### Do I need to upgrade my node when there is a new release? 
 There are two types of gvite release. For the releases tagged "Upgrade is required", you should complete the upgrade within the time in order to be compatible with the hard fork. No worries, you have enough time to finish the upgrade. Announcements will be declared on Vite social channels including Telegram group, Discord channel, Vite block explorer notifications, and Vite forum usually one month ahead of the hard fork.
@@ -160,9 +159,8 @@ If there are no special instruction in the announcement, to upgrade a node you s
 
 After reboot, watch if the snapshot chain height is increasing (for full node and SBP node) and snapshot blocks are produced normally (for SBP node). If yes, the upgrade is successful.
 
-:::tip Tip
-To avoid unnecessary block missing for SBP node during upgrade, replace gvite file first then reboot the node.
-:::
+!!! tip
+  To avoid unnecessary block missing for SBP node during upgrade, replace gvite file first then reboot the node.
 
 ### How to check sync status?
 You have two alternatives.

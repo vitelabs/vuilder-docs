@@ -6,9 +6,8 @@ order: 2
 
 An instance of `Wallet` is a BIP-44 HD wallet that holds a BIP-39 mnemonic phrase and is capable of deriving addresses and Ed25519 keypairs with BIP-32 paths. 
 
-:::tip
-The `Wallet` class doesn't expose constructor. Use [`createWallet`](7.%20Wallet.md#createwallet) or [`getWallet`](7.%20Wallet.md#getwallet) to get a wallet instance.
-:::
+!!! tip
+	The `Wallet` class doesn't expose constructor. Use [`createWallet`](./README.md#createwallet) or [`getWallet`](./README.md#getwallet) to get a wallet instance.
 
 The class has the following properties:
 

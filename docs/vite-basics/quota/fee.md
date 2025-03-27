@@ -14,9 +14,8 @@ The contract creation fee will be burned.
 
 Contract execution consumes quota instead of VITE tokens. Calling a contract, aka the request transaction, will cost quota from the caller's address. However, unlike Ethereum and other smart contract platforms, the contract execution, aka the response transaction, costs quota from the contract address. 
 
-:::tip
-NEVER forget to supply quota for your smart contract.
-:::
+!!! tip
+    NEVER forget to supply quota for your smart contract.
 
 If the contract runs out of quota, it will stop accepting requests until the quota is restored.
 

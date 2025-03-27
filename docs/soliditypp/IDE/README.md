@@ -17,9 +17,8 @@ Launch VSCode, navigate to the **Extensions** panel and search for "soliditypp",
 
 That's it! Now you can proceed to test your environment by deploying a contract.
 
-:::tip Legacy Extension
-At current time, two versions of solidity++ extension will be returned. If you are working with a 0.4.x Solidity++ contract, install **Solidityppcc**.
-:::
+!!! tip "Legacy Extension"
+    At current time, two versions of solidity++ extension will be returned. If you are working with a 0.4.x Solidity++ contract, install **Solidityppcc**.
 
 ## Write Contract
 
@@ -47,44 +46,44 @@ contract HelloWorld {
 
 The contract has a `set` function setting an input value `a` to public state field `data`.
 
-> Note: Public field can be visited with an implicit view function in the same name. 
+!!! note
+    Public field can be visited with an implicit view function in the same name. 
 
-:::tip Generate Examples
-The legacy extension provides a command to generate a `HelloWorld.solpp` contract by pressing `⇧⌘P` (on Mac) or `Ctrl+Shift+P` (on Windows) to open the Command Palette, then choosing the command `>soliditypp: Generate HelloWorld`. This has been replaced by `>soliditypp: Generate Examples` in extension Solidity++ 0.8.
-![](./assets/ide-04.png)
+!!! example
+    The legacy extension provides a command to generate a `HelloWorld.solpp` contract by pressing `⇧⌘P` (on Mac) or `Ctrl+Shift+P` (on Windows) to open the Command Palette, then choosing the command `>soliditypp: Generate HelloWorld`. This has been replaced by `>soliditypp: Generate Examples` in extension Solidity++ 0.8.
+    ![](./assets/ide-04.png)
 You can also fetch the examples from https://github.com/vitelabs/soliditypp-examples
-:::
 
 ## Debugging
 Launch the debugger by pressing `F5`. This will automatically compile the contract and launch a debugger browser window. 
 
-> Note: the extension will download `gvite` node for the first launch, stay patient!
+!!! note
+    The extension will download `gvite` node for the first launch, stay patient!
 
 ![](./assets/ide-05.png)
 
-:::tip Compiling Errors
-If the debugger interface doesn't launch, check the debug console for any errors.
-:::
-![](./assets/ide-06.png)
+!!! tip "Compiling Errors"
+    If the debugger interface doesn't launch, check the debug console for any errors.
 
-:::tip Gvite Version
-Since 0.2.5, it's possible to specify the gvite release version by adding `gviteVersion` in launch.json in your working directory as below.
+    ![](./assets/ide-06.png)
 
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "soliditypp",
-            "request": "launch",
-            "name": "Soliditypp Debug",
-            "program": "${file}",
-            "gviteVersion": "v2.12.0-nightly-202204012212"
-        }
-    ]
-}
-```
-:::
+!!! tip "Gvite Version"
+    Since 0.2.5, it's possible to specify the gvite release version by adding `gviteVersion` in launch.json in your working directory as below.
+
+    ```json
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "soliditypp",
+                "request": "launch",
+                "name": "Soliditypp Debug",
+                "program": "${file}",
+                "gviteVersion": "v2.12.0-nightly-202204012212"
+            }
+        ]
+    }
+    ```
 
 ## Deployment
 

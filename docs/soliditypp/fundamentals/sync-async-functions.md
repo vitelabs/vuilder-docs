@@ -88,6 +88,5 @@ contract B is Listener {
 5. When the `sender.sum(last)` statement is executed, a new request transaction S3 (contract A -> contract B) is triggered to send the result back to B. (S3 will be merged into R2).
 6. When S3 is accepted by contract B, the code of `B.sum(uint result)` is executed. The value of storage variable `total` is increased by the value from the calldata of S3. After the execution, a response transaction R3 will be initiated.
 
-:::tip Notice
-Retrieving the last value with `contractA.last()` in contract B will be possible when the `async` keyword is be introduced with v0.8.1 of Solidity++. Refer to [Promise and Await](promise-await.md) for details.
-:::
+!!! note
+    Retrieving the last value with `contractA.last()` in contract B will be possible when the `async` keyword is be introduced with v0.8.1 of Solidity++. Refer to [Promise and Await](promise-await.md) for details.

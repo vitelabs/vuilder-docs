@@ -267,11 +267,12 @@ Burn tokens
 ### `disableReIssueToken`
 Change a re-issuable token to non-re-issuable
 
-> Note: only the owner of the token can do this.
+!!! note
+	Only the owner of the token can do this.
 
-:::warning
-This action cannot be reversed
-:::
+!!! warning
+	This action cannot be reversed
+
 - **Parameters** 
 	- `object`
 		- `tokenId: TokenId` Token id
@@ -285,7 +286,9 @@ This action cannot be reversed
 ### `transferTokenOwnership`
 Block type for transferring a token's ownership
 
-> Note: only applicable to re-issuable tokens and only the owner of the token can do this.
+!!! note
+	Only applicable to re-issuable tokens and only the owner of the token can do this.
+	
 - **Parameters** 
 	- `object`
 		- `tokenId`: `string tokenId` Token id

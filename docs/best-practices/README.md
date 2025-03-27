@@ -1,10 +1,3 @@
----
-order: false
-parent:
-    title: Best Practices
-    order: 5
----
-
 # Best Practices
 
 This document aims to provide the best practices of smart contract development for Vite developers, including common functional practices for smart contracts, and a few examples of pitfalls that must be avoided.

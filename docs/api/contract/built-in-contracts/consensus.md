@@ -27,9 +27,8 @@ title: Consensus
 ]
 ```
 
-:::warning
-Due to historical reason, this contract also contains a number of other ABIs that are NOT listed in this page. These functions are deprecated and no longer in use. Do NOT use them in your code.
-:::
+!!! warning
+    Due to historical reasons, this contract also contains a number of other ABIs that are NOT listed on this page. These functions are deprecated and no longer in use. Do NOT use them in your code.
 
 ### `RegisterSBP`
 

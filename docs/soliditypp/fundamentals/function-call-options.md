@@ -45,6 +45,6 @@ is equivalent to:
 feed.info{token: "tti_5649544520544f4b454e6e40", value: 1e18}();
 ```
 
-::: tip Notice
-The `gas`,`salt` keys in a call option are not supported in Solidity++.
-:::
+!!! note
+    The `gas`,`salt` keys in a call option are not supported in Solidity++.
+

@@ -14,9 +14,8 @@ We propose to set a 2-byte content type flag at beginning of data field to indic
 
 Content type is a `uint16` number stored in big endian format. Number **1 (0x0001)** - **2048 (0x0800)** are reserved and should not be used by a third party.
 
-::: warning Restriction
-It is known that content type might be occasionally mis-recognized under the situation calling a smart contract, due to messing-up with the first 2 bytes of a hitting method hash.
-:::
+!!! warning "Restriction"
+    It is known that content type might be occasionally mis-recognized under the situation calling a smart contract, due to messing-up with the first 2 bytes of a hitting method hash.
 
 ## Defined Types
 

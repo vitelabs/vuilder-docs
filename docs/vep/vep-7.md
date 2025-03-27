@@ -31,9 +31,8 @@ Meanwhile, since all the transactions must be propagated independently in the ne
 
 * Data redundancy has been caused on chain due to duplicated information stored both in response and requests. This includes block producer, block height, previous block hash and etc.
 
-::: tip
-Currently in TestNet, ACID on contract response-requests is guaranteed by removing signatures on in-contract request transactions, discarding in-contract request transactions received from the network but generating them by each node itself upon verification (the virtual machine will ensure the same transactions are generated on each node). 
-:::
+!!! tip
+    Currently in TestNet, ACID on contract response-requests is guaranteed by removing signatures on in-contract request transactions, discarding in-contract request transactions received from the network but generating them by each node itself upon verification (the virtual machine will ensure the same transactions are generated on each node). 
 
 ## Pros and Cons of Proposed Design
 

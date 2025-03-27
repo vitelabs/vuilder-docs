@@ -12,6 +12,12 @@ import { constant, error } from '@vite/vitejs';
 const { Contracts, Vite_TokenId } = constant;
 ```
 
+!!! note
+    Starting from 2.3.19, all the modules are consolidated into `@vite/vitejs`.
+
+!!! note
+    Starting from 2.4.0, the following packages will no longer be published. The related resources should be imported from `@vite/vitejs` instead.
+
 ## Constants
 
 The constant module consist of the following information:
