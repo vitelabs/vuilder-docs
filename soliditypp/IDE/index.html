@@ -15,7 +15,7 @@
         <link rel="next" href="know-more/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3267,9 +3303,10 @@
 <p>Launch VSCode, navigate to the <strong>Extensions</strong> panel and search for "soliditypp", install the <strong>Solidity++ 0.8 Preview</strong> extension.
 <img alt="" src="assets/ide-01.png" /></p>
 <p>That's it! Now you can proceed to test your environment by deploying a contract.</p>
-<p>:::tip Legacy Extension
-At current time, two versions of solidity++ extension will be returned. If you are working with a 0.4.x Solidity++ contract, install <strong>Solidityppcc</strong>.
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Legacy Extension</p>
+<p>At current time, two versions of solidity++ extension will be returned. If you are working with a 0.4.x Solidity++ contract, install <strong>Solidityppcc</strong>.</p>
+</div>
 <h2 id="write-contract">Write Contract</h2>
 <p>First create or specify a folder for your Solidity++ project.</p>
 <p>Open the debug panel, and click on <code>create a launch.json file</code> link. 
@@ -3277,52 +3314,57 @@ At current time, two versions of solidity++ extension will be returned. If you a
 Then choose <strong>"Soliditypp"</strong> for the environment.This automatically generates a <code>launch.json</code> file which is used by VSCode to configure the debugger.
 <img alt="" src="assets/ide-03.png" /></p>
 <p>Create a new file named <code>HelloWorld.solpp</code> and type in the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">HelloWorld</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">123</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">set</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">HelloWorld</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">123</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">set</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The contract has a <code>set</code> function setting an input value <code>a</code> to public state field <code>data</code>.</p>
-<blockquote>
-<p>Note: Public field can be visited with an implicit view function in the same name. </p>
-</blockquote>
-<p>:::tip Generate Examples
-The legacy extension provides a command to generate a <code>HelloWorld.solpp</code> contract by pressing <code>⇧⌘P</code> (on Mac) or <code>Ctrl+Shift+P</code> (on Windows) to open the Command Palette, then choosing the command <code>&gt;soliditypp: Generate HelloWorld</code>. This has been replaced by <code>&gt;soliditypp: Generate Examples</code> in extension Solidity++ 0.8.
-<img alt="" src="assets/ide-04.png" />
-You can also fetch the examples from https://github.com/vitelabs/soliditypp-examples
-:::</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Public field can be visited with an implicit view function in the same name. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The legacy extension provides a command to generate a <code>HelloWorld.solpp</code> contract by pressing <code>⇧⌘P</code> (on Mac) or <code>Ctrl+Shift+P</code> (on Windows) to open the Command Palette, then choosing the command <code>&gt;soliditypp: Generate HelloWorld</code>. This has been replaced by <code>&gt;soliditypp: Generate Examples</code> in extension Solidity++ 0.8.
+<img alt="" src="assets/ide-04.png" /></p>
+</div>
+<p>You can also fetch the examples from https://github.com/vitelabs/soliditypp-examples</p>
 <h2 id="debugging">Debugging</h2>
 <p>Launch the debugger by pressing <code>F5</code>. This will automatically compile the contract and launch a debugger browser window. </p>
-<blockquote>
-<p>Note: the extension will download <code>gvite</code> node for the first launch, stay patient!</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The extension will download <code>gvite</code> node for the first launch, stay patient!</p>
+</div>
 <p><img alt="" src="assets/ide-05.png" /></p>
-<p>:::tip Compiling Errors
-If the debugger interface doesn't launch, check the debug console for any errors.
-:::
-<img alt="" src="assets/ide-06.png" /></p>
-<p>:::tip Gvite Version
-Since 0.2.5, it's possible to specify the gvite release version by adding <code>gviteVersion</code> in launch.json in your working directory as below.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soliditypp&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soliditypp Debug&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${file}&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&quot;gviteVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.12.0-nightly-202204012212&quot;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
-</code></pre></div>
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Compiling Errors</p>
+<p>If the debugger interface doesn't launch, check the debug console for any errors.</p>
+<p><img alt="" src="assets/ide-06.png" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Gvite Version</p>
+<p>Since 0.2.5, it's possible to specify the gvite release version by adding <code>gviteVersion</code> in launch.json in your working directory as below.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soliditypp&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Soliditypp Debug&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${file}&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&quot;gviteVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.12.0-nightly-202204012212&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
 <h2 id="deployment">Deployment</h2>
 <p>To deploy your contract to the local (debug) node, simply hit on <strong>Deploy</strong> as shown below. There are several options available, let's use the default values here.</p>
 <p><img alt="" src="assets/ide-07.png" /></p>

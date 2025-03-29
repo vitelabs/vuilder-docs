@@ -15,7 +15,7 @@
         <link rel="next" href="../quota/quota/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -1018,7 +1054,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1098,7 +1134,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3290,11 +3326,11 @@
 <h2 id="random-degrees">Random Degrees</h2>
 <p>When deploying a smart contract, the Random Degree parameter specifies the degree of confidence in the randomness being generated. The bigger random degree, the more secure the random number generation process, and the slower the contract producing response block. The value of random degree is between 0 and 75. If your contract uses random numbers, this parameter must be positive. Select a random degree that befits your contract's needs.</p>
 <p>There are two functions for getting random numbers in Solidity++.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// return a random number. The value returned does not change if called within the same transaction
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>uint64 random = random64();
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>// return a random number. The value returned is different with each call
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>uint64 random = nextrandom();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// return a random number. The value returned does not change if called within the same transaction
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>uint64 random = random64();
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>// return a random number. The value returned is different with each call
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>uint64 random = nextrandom();
+</span></code></pre></div>
 <p>For any given contract, it must hold $0 \le RandomDegree \le ResponseLatency \le 75$</p>
 <p>Refer to <a href="../../vep/vep-12.html">VEP 12: The Implementation of Random Numbers in Vite</a> for details of random numbers.</p>
 <h2 id="quota-multiplier">Quota Multiplier</h2>
@@ -3312,29 +3348,29 @@
 <li>Cannot inherit or be inherited</li>
 </ul>
 <p>Libraries allow adding functionality to types. For example, one can use the SafeMath library to enhance the functionality of a <code>uint</code> variable in a contract.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>using<span class="w"> </span>SafeMath<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>using<span class="w"> </span>SafeMath<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint</span><span class="p">;</span>
+</span></code></pre></div>
 <p>Using a library in the smart contract is called library linking. The following example shows Contract A using a library L to compute $2\times a$</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">library</span><span class="w"> </span>L<span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">double</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">self</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="c1">// do something with side effects</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>self<span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>using<span class="w"> </span>L<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint</span><span class="p">;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="p">;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="p">.</span>double<span class="p">();</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>data<span class="p">;</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">library</span><span class="w"> </span>L<span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">double</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">self</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="c1">// do something with side effects</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>self<span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>using<span class="w"> </span>L<span class="w"> </span><span class="kt">for</span><span class="w"> </span><span class="kt">uint</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">f</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="p">.</span>double<span class="p">();</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>data<span class="p">;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 

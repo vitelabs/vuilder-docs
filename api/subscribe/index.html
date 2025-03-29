@@ -15,7 +15,7 @@
         <link rel="next" href="../util/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1012,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -1298,7 +1334,7 @@
           <li class="md-nav__item">
   <a href="#using-websocket-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Using Websocket API
+      Using WebSocket API
     </span>
   </a>
   
@@ -1401,9 +1437,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#newaccountblock" class="md-nav__link">
+    <span class="md-ellipsis">
+      newAccountBlock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#newaccountblockbyaddress" class="md-nav__link">
     <span class="md-ellipsis">
       newAccountBlockByAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newunreceivedblockbyaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      newUnreceivedBlockByAddress
     </span>
   </a>
   
@@ -3369,7 +3423,7 @@
           <li class="md-nav__item">
   <a href="#using-websocket-api" class="md-nav__link">
     <span class="md-ellipsis">
-      Using Websocket API
+      Using WebSocket API
     </span>
   </a>
   
@@ -3472,9 +3526,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#newaccountblock" class="md-nav__link">
+    <span class="md-ellipsis">
+      newAccountBlock
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#newaccountblockbyaddress" class="md-nav__link">
     <span class="md-ellipsis">
       newAccountBlockByAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#newunreceivedblockbyaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      newUnreceivedBlockByAddress
     </span>
   </a>
   
@@ -3511,14 +3583,14 @@
 
 
 <h1 id="subscription-api">Subscription API</h1>
-<p>Vite node provides two kinds of subscription RPC API: <strong>Polling API</strong> and <strong>Websocket API</strong></p>
+<p>Vite nodes provide two types of subscription RPC APIs: <strong>Polling API</strong> and <strong>WebSocket API</strong>.</p>
 <ul>
-<li><strong>Polling API</strong> returns a subscription filter. The client should periodically call <a href="#subscribe-getchangesbyfilterid"><code>subscribe_getChangesByFilterId</code></a> with the filter id to request for new events. New events that were triggered since last request will be returned, otherwise server returns null.</li>
+<li><strong>Polling API</strong> returns a subscription filter. The client must periodically call <a href="#subscribe-getchangesbyfilterid"><code>subscribe_getChangesByFilterId</code></a> with the filter ID to fetch new events. If no new events have occurred since the last request, the server returns <code>null</code>.</li>
 </ul>
 <blockquote>
-<p>Note: Filter will expire if not used for more than 5 minutes. If client does not send request for more than 5 minutes, subscription will close. Client must re-subscribe to the event in this situation.</p>
+<p>Note: Filters expire if unused for more than 5 minutes. If the client does not send a request within this time, the subscription will close, and the client must re-subscribe.</p>
 </blockquote>
-<p>The following API are Polling API:
+<p>Polling APIs include:
 - <a href="#subscribe-newsnapshotblockfilter"><code>subscribe_newSnapshotBlockFilter</code></a>
 - <a href="#subscribe-newaccountblockfilter"><code>subscribe_newAccountBlockFilter</code></a>
 - <a href="#subscribe-newaccountblockbyaddressfilter"><code>subscribe_newAccountBlockByAddressFilter</code></a>
@@ -3527,165 +3599,171 @@
 - <a href="#subscribe-uninstallfilter"><code>subscribe_uninstallFilter</code></a>
 - <a href="#subscribe-getchangesbyfilterid"><code>subscribe_getChangesByFilterId</code></a></p>
 <ul>
-<li><strong>Websocket API</strong> subscribes to new events through websocket connection. When new event is triggered, it will be automatically pushed to client through callbacks. Subscription will end once the connection is broken.</li>
+<li><strong>WebSocket API</strong> subscribes to new events via a WebSocket connection. When a new event occurs, it is automatically pushed to the client through callbacks. The subscription ends if the connection is broken.</li>
 </ul>
-<blockquote>
-<p>Note: Websocket API relies on "ws" or "wss" RPC endpoint. It cannot be used with HTTP.</p>
-</blockquote>
-<p><a href="#subscribe-subscribe"><code>subscribe_subscribe</code></a> is Websocket API. It support for the following events:
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WebSocket APIs require "ws" or "wss" RPC endpoints and cannot be used with HTTP.</p>
+</div>
+<p>The WebSocket API <a href="#subscribe-subscribe"><code>subscribe_subscribe</code></a> supports the following events:
 - <a href="#newsnapshotblock"><code>newSnapshotBlock</code></a>
 - <a href="#newaccountblock"><code>newAccountBlock</code></a>
 - <a href="#newaccountblockbyaddress"><code>newAccountBlockByAddress</code></a>
 - <a href="#newunreceivedblockbyaddress"><code>newUnreceivedBlockByAddress</code></a>
 - <a href="#newvmlog"><code>newVmLog</code></a></p>
-<p>Note that events might be reverted. If an event was reverted, the <code>removed</code> field of the event is marked true.</p>
-<p>:::tip
-Add "subscribe" namespace in "PublicModules" and set <code>"SubscribeEnabled":true</code> in node_config.json to enable subscription API
-:::</p>
+<p>Note: Events may be reverted. If an event is reverted, the <code>removed</code> field of the event is set to <code>true</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Add the "subscribe" namespace to "PublicModules" and set <code>"SubscribeEnabled": true</code> in <code>node_config.json</code> to enable subscription APIs</p>
+</div>
 <h2 id="topics">Topics</h2>
-<p>Topics are 32 bytes event signature or indexed parameters of smart contract. For a non-anonymous Solidity++ event, the first topic is the event signature, and the rest (if has) are encoded indexed fields.</p>
-<p>Topics are often used to search for certain event logs.</p>
+<p>Topics are 32-byte event signatures or indexed parameters of a smart contract. For a non-anonymous Solidity++ event, the first topic is the event signature, and the rest (if any) are encoded indexed fields.</p>
+<p>Topics are often used to search for specific event logs.</p>
 <h3 id="topic-matching-rules">Topic Matching Rules</h3>
 <ul>
 <li><code>[]</code> matches all event logs</li>
-<li><code>[[A]]</code> matches event logs having "A" as the first topic</li>
-<li><code>[[], [B]]</code> matches event logs having "B" as the second topic</li>
-<li><code>[[A], [B]]</code> matches event logs having "A" as the first topic and "B" as the second topic</li>
-<li><code>[[A, B], [C, D]]</code> matches event logs having "A" or "B" as the first topic, and "C" or "D" as the second topic</li>
-<li><code>[[A, B], [C, D], [E]]</code> matches event logs having "A" or "B" as the first topic, "C" or "D" as the second topic, and "E" as the third topic</li>
-<li><code>[[T11, T12, ... , T1M], [T21, T22, ... , T2M], ... , [TN1, TN2, ... , TNM]]</code> matches event logs having T<sub>11</sub>, T<sub>12</sub> ... or T<sub>1M</sub> as the first topic, T<sub>21</sub>, T<sub>22</sub> ... or T<sub>2M</sub> as the second topic, ... and T<sub>N1</sub>, T<sub>N2</sub> ... or T<sub>NM</sub> as the N topic (N &lt;= 4)</li>
+<li><code>[[A]]</code> matches event logs with "A" as the first topic</li>
+<li><code>[[], [B]]</code> matches event logs with "B" as the second topic</li>
+<li><code>[[A], [B]]</code> matches event logs with "A" as the first topic and "B" as the second topic</li>
+<li><code>[[A, B], [C, D]]</code> matches event logs with "A" or "B" as the first topic, and "C" or "D" as the second topic</li>
+<li><code>[[A, B], [C, D], [E]]</code> matches event logs with "A" or "B" as the first topic, "C" or "D" as the second topic, and "E" as the third topic</li>
+<li><code>[[T11, T12, ... , T1M], [T21, T22, ... , T2M], ... , [TN1, TN2, ... , TNM]]</code> matches event logs with T<sub>11</sub>, T<sub>12</sub> ... or T<sub>1M</sub> as the first topic, T<sub>21</sub>, T<sub>22</sub> ... or T<sub>2M</sub> as the second topic, ... and T<sub>N1</sub>, T<sub>N2</sub> ... or T<sub>NM</sub> as the N topic (N &lt;= 4)</li>
 </ul>
-<blockquote>
-<p>Note: Solidity++ allows maximum 4 topics including one event signature and three indexed parameters </p>
-</blockquote>
-<p>:::tip Tips
-Use an SDK e.g. Vite.js to generate topic filters
-:::</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Solidity++ allows a maximum of 4 topics, including one event signature and three indexed parameters </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use an SDK like Vite.js to generate topic filters</p>
+</div>
 <h2 id="example">Example</h2>
 <p>Assume address "vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f" is a smart contract and we want to obtain its event logs.</p>
-<h3 id="using-websocket-api">Using Websocket API</h3>
+<h3 id="using-websocket-api">Using WebSocket API</h3>
 <p>Create a <code>newVmLog</code> subscription on the contract address by calling <code>subscribe_subscribe</code> with event type <code>newVmLog</code>. 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="s2">&quot;newVmLog&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="nt">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="s2">&quot;newVmLog&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">                </span><span class="nt">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
+</span></code></pre></div>
 It returns a subscription id "0x4b97e0674a5ebef942dbb07709c4a608"
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
-</code></pre></div>
-When a new event log is generated, it will be returned in callback named <code>subscribe_subscription</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                    </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">                        </span><span class="s2">&quot;aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">                        </span><span class="s2">&quot;000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935&quot;</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                    </span><span class="p">],</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">                    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo=&quot;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                </span><span class="p">},</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">                </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23ea04b0dea4b9d0aa4d1f84b246b298a30faba753fa48303ad2deb29cd27f40&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">                </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="p">]</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>:::tip Subscription Broken
-Broken network connection may cause websocket subscription accidentally closed. In this situation, you should resume the subscription first, and in order to get the missing blocks or events, you need to call the corresponding Ledger API <a href="../ledger/#ledger-getsnapshotblocks"><code>ledger_getSnapshotBlocks</code></a>, <a href="../ledger/#ledger-getaccountblocks"><code>ledger_getAccountBlocks</code></a>, <a href="../ledger/#ledger-getunreceivedblocksbyaddress"><code>ledger_getUnreceivedBlocksByAddress</code></a> or <a href="../ledger/#ledger-getvmlogsbyfilter"><code>ledger_getVmLogsByFilter</code></a> to fetch the missing blocks during the time.
-:::</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+When a new event log is generated, it will be returned in a callback named <code>subscribe_subscription</code>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                    </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">                        </span><span class="s2">&quot;aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb&quot;</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">                        </span><span class="s2">&quot;000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                    </span><span class="p">],</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">                    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo=&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">                </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23ea04b0dea4b9d0aa4d1f84b246b298a30faba753fa48303ad2deb29cd27f40&quot;</span><span class="p">,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">                </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">,</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A broken network connection may cause the WebSocket subscription to close accidentally. In this situation, you should resume the subscription first. To get the missing blocks or events, call the corresponding Ledger API <a href="../ledger/#ledger-getsnapshotblocks"><code>ledger_getSnapshotBlocks</code></a>, <a href="../ledger/#ledger-getaccountblocks"><code>ledger_getAccountBlocks</code></a>, <a href="../ledger/#ledger-getunreceivedblocksbyaddress"><code>ledger_getUnreceivedBlocksByAddress</code></a>, or <a href="../ledger/#ledger-getvmlogsbyfilter"><code>ledger_getVmLogsByFilter</code></a> to fetch the missing blocks during the downtime.</p>
+</div>
 <h3 id="using-polling-api">Using Polling API</h3>
-<p>First create a filter for the contract address
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newVmLogFilter&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">                </span><span class="nt">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
-</code></pre></div>
+<p>First, create a filter for the contract address
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newVmLogFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">                </span><span class="nt">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+</span></code></pre></div>
 It returns a filter id "0x61d780619649fb0872e1f94a40cec713"
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
 We call <code>subscribe_getChangesByFilterId</code> to poll for new events with the filter id
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_getChangesByFilterId&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
-</code></pre></div>
-If there are new event logs generated since last polling, the logs will be returned
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">            </span><span class="p">{</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">                </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">                    </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">                        </span><span class="s2">&quot;96a65b1cd08da045d0318cafda7b8c8436092851d5a4b7e75054c005a296e3fb&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">                        </span><span class="s2">&quot;0000000000000000000000ab24ef68b84e642c0ddca06beec81c9acb1977bb00&quot;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">                    </span><span class="p">],</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">                    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4Lazp2QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF&quot;</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">                </span><span class="p">},</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">                </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;802b82821ec52bdadb8b79a53363bf2f90645caef95a83c34af20c640a6c320b&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">                </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="p">],</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="p">}</span>
-</code></pre></div>
-Note that if <code>subscribe_getChangesByFilterId</code> is not be called for more than 5 minutes, the filter will expire. Always remember to call the API within every 5 minutes to keep it alive.</p>
-<p>In addition, we can also call <code>subscribe_uninstallFilter</code> to stop a filter if necessary. 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_uninstallFilter&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
-</code></pre></div></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_getChangesByFilterId&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
+If there are new event logs generated since the last polling, the logs will be returned
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">                </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">                    </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">                        </span><span class="s2">&quot;96a65b1cd08da045d0318cafda7b8c8436092851d5a4b7e75054c005a296e3fb&quot;</span><span class="p">,</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">                        </span><span class="s2">&quot;0000000000000000000000ab24ef68b84e642c0ddca06beec81c9acb1977bb00&quot;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">                    </span><span class="p">],</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">                    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4Lazp2QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="s2">AAAAAAAAAAAAAF&quot;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">                </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;802b82821ec52bdadb8b79a53363bf2f90645caef95a83c34af20c640a6c320b&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">                </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">,</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="p">}</span>
+</span></code></pre></div>
+Note that if <code>subscribe_getChangesByFilterId</code> is not called for more than 5 minutes, the filter will expire. Always remember to call the API within every 5 minutes to keep it alive.</p>
+<p>Additionally, we can call <code>subscribe_uninstallFilter</code> to stop a filter if necessary. 
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_uninstallFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="s2">&quot;0x61d780619649fb0872e1f94a40cec713&quot;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <hr />
 <h2 id="subscribe_newsnapshotblockfilter"><code>subscribe_newSnapshotBlockFilter</code></h2>
 <p>Create a filter for new snapshot blocks.</p>
@@ -3700,22 +3778,30 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_newSnapshotBlockFilter",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>```json tab:Response
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    &quot;result&quot;: &quot;0xf90906914486a9c22d620e50022b38d5&quot;
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newSnapshotBlockFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_newaccountblockfilter"><code>subscribe_newAccountBlockFilter</code></h2>
 <p>Create a filter for new transactions (account blocks) for all accounts</p>
 <ul>
@@ -3729,22 +3815,30 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_newAccountBlockFilter",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>```json tab:Response
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    &quot;result&quot;: &quot;0xf90906914486a9c22d620e50022b38d5&quot;
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Request</label><label for="__tabbed_2_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newAccountBlockFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_newaccountblockbyaddressfilter"><code>subscribe_newAccountBlockByAddressFilter</code></h2>
 <p>Create a filter for new account blocks by address</p>
 <ul>
@@ -3761,24 +3855,32 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_newAccountBlockByAddressFilter",
-    "params": [
-        "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>```json tab:Response
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    &quot;result&quot;: &quot;0x4f18a08c6e6801aeb7a8cfbad0ca90af&quot;
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Request</label><label for="__tabbed_3_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newAccountBlockByAddressFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4f18a08c6e6801aeb7a8cfbad0ca90af&quot;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_newunreceivedblockbyaddressfilter"><code>subscribe_newUnreceivedBlockByAddressFilter</code></h2>
 <p>Create a filter for new unreceived blocks by address</p>
 <ul>
@@ -3795,24 +3897,32 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_newUnreceivedBlockByAddressFilter",
-    "params": [
-        "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>```json tab:Response
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    &quot;result&quot;: &quot;0x64e1eb3d26517a0d736b3d85ae9ce299&quot;
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Request</label><label for="__tabbed_4_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newUnreceivedBlockByAddressFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x64e1eb3d26517a0d736b3d85ae9ce299&quot;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_newvmlogfilter"><code>subscribe_newVmLogFilter</code></h2>
 <p>Create a filter for new event logs</p>
 <ul>
@@ -3837,41 +3947,49 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_newVmLogFilter",
-    "params": [
-        {
-            "addressHeightRange": {
-                "vite_79ac3daebdfed6947c0aaeacd418eadf38a94dddefbd4acec1": {
-                    "fromHeight": "1",
-                    "toHeight": "0"
-                }
-            },
-            "topics": [
-                [
-                    "360bba44e4490fae37d6444482aa67cf5ec7418850531522450c3805b8e5425c",
-                    "1d8e14596183a6d73bc8760a43cdaf6992e6cb318cecec67f4b6bcb31fe039d5"
-                ],
-                [
-                    "91ac0b2bf8c6dc8d37d0bc48a0eacaf6a7ed5bec9be59086116c6f23eca8aaf0",
-                    "3adaf70d6a60eba6aaa6a1884c382ae32b223557ccaa2f3fcab6aec6c2fca21f"
-                ]
-            ]
-        }
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>```json tab:Response
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    &quot;result&quot;: &quot;0x8f34ddeb22b87fdfd2acb6c9f5a2b50d&quot;
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Request</label><label for="__tabbed_5_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_newVmLogFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">                </span><span class="nt">&quot;vite_79ac3daebdfed6947c0aaeacd418eadf38a94dddefbd4acec1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">            </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">                </span><span class="p">[</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">                    </span><span class="s2">&quot;360bba44e4490fae37d6444482aa67cf5ec7418850531522450c3805b8e5425c&quot;</span><span class="p">,</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">                    </span><span class="s2">&quot;1d8e14596183a6d73bc8760a43cdaf6992e6cb318cecec67f4b6bcb31fe039d5&quot;</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">                </span><span class="p">],</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">                </span><span class="p">[</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">                    </span><span class="s2">&quot;91ac0b2bf8c6dc8d37d0bc48a0eacaf6a7ed5bec9be59086116c6f23eca8aaf0&quot;</span><span class="p">,</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">                    </span><span class="s2">&quot;3adaf70d6a60eba6aaa6a1884c382ae32b223557ccaa2f3fcab6aec6c2fca21f&quot;</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">                </span><span class="p">]</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x8f34ddeb22b87fdfd2acb6c9f5a2b50d&quot;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_uninstallfilter"><code>subscribe_uninstallFilter</code></h2>
 <p>Uninstall the filter and stop subscription</p>
 <ul>
@@ -3888,26 +4006,34 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_uninstallFilter",
-    "params": [
-        "0x8f34ddeb22b87fdfd2acb6c9f5a2b50d"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>```json tab:Response
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    &quot;result&quot;: true
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Request</label><label for="__tabbed_6_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_uninstallFilter&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="s2">&quot;0x8f34ddeb22b87fdfd2acb6c9f5a2b50d&quot;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_getchangesbyfilterid"><code>subscribe_getChangesByFilterId</code></h2>
-<p>Poll for new snapshot blocks, account blocks, unreceived blocks, or event logs by filter id. Returns empty array if no update.</p>
+<p>Poll for new snapshot blocks, account blocks, unreceived blocks, or event logs by filter id. Returns an empty array if no update.</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>:</p>
@@ -3975,133 +4101,148 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 <li><code>data</code>: <code>base64</code>  Encoded non-indexed parameters in base64 format</li>
 </ul>
 </li>
-<li><code>removed</code>: <code>bool</code>  <code>true</code> means the event log was reverted
-::: demo
-<code>json tab:Request
-{
-"jsonrpc": "2.0",
-"id": 1,
-"method": "subscribe_getChangesByFilterId",
-"params": [
-"0xf90906914486a9c22d620e50022b38d5"
-]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>```json tab:subscribe_newSnapshotBlockFilter
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>      &quot;result&quot;: [
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>          {
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>              &quot;hash&quot;: &quot;5d47f2e0a532923f7ee53e7b465381f197a669e86155d541b3b7f3d63f07a0e2&quot;,
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>              &quot;height&quot;: &quot;124&quot;,
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>              &quot;removed&quot;: false
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>          },
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>          {
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>              &quot;hash&quot;: &quot;78b19cb84ac293d4af3f36e741938929f6d3311362e1265e87bbaa74e5fcef09&quot;,
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>              &quot;height&quot;: &quot;125&quot;,
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>              &quot;removed&quot;: false
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>          },
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>          {
-<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>              &quot;hash&quot;: &quot;94437996b3e70afd5d8593e2020ae56f63dbbc538df1ead1633340393bd52c1a&quot;,
-<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>              &quot;height&quot;: &quot;126&quot;,
-<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>              &quot;removed&quot;: false
-<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>          }
-<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>      ],
-<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>      &quot;subscription&quot;: &quot;0xf90906914486a9c22d620e50022b38d5&quot;
-<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    }
-<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>}
-</code></pre></div></code>json tab:subscribe_newAccountBlockFilter
-{
-"jsonrpc": "2.0",
-"id": 1,
-"result": {
-  "result": [
-  {
-      "hash": "9cc9ba996a4192e35ddbfe3ba448611fc06f6342463e21d3300e58e9772b348f",
-      "removed": false
-  },
-  {
-      "hash": "8b9f8067ef09aa09c8f9d652f0d9ac5e99d083722089a6d91323cffd8b2dcf08",
-      "removed": false
-  }
-  ],
-  "subscription": "0xf90906914486a9c22d620e50022b38d5"
-}
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>```json tab:subscribe_newAccountBlockByAddressFilter
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>{
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>      &quot;result&quot;: [
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>          {
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>              &quot;hash&quot;: &quot;72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68&quot;,
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>              &quot;height&quot;: &quot;15&quot;,
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>              &quot;removed&quot;: false
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>          }
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>      ],
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>      &quot;subscription&quot;: &quot;0xf90906914486a9c22d620e50022b38d5&quot;
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>    }
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>}
-</code></pre></div>
-```json tab:subscribe_newUnreceivedBlockByAddressFilter
-{
-"jsonrpc": "2.0",
-"id": 1,
-"result": {
-  "result": [
-  {
-      "hash": "72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68",
-      "received": false,
-      "removed": false
-  },
-  {
-      "hash": "72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68",
-      "received": true,
-      "removed": false
-  },
-  {
-      "hash": "72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68",
-      "received": false,
-      "removed": true
-  }
-  ],
-  "subscription": "0xf90906914486a9c22d620e50022b38d5"
-}
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>```json tab:subscribe_newVmLogFilter
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>{
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>      &quot;result&quot;: [
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>          {
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>              &quot;vmlog&quot;: {
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>                  &quot;topics&quot;: [
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>                      &quot;aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb&quot;,
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>                      &quot;000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935&quot;
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>                  ],
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>                  &quot;data&quot;: &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo=&quot;
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>              },
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>              &quot;accountBlockHash&quot;: &quot;de8cd1dc188fd4bf44c0cb90958ffbcccab5766840d56f7b35443a1a1c5c9d3e&quot;,
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>              &quot;accountBlockHeight&quot;: &quot;10&quot;,
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>              &quot;address&quot;: &quot;vite_78926f48bccef67a3b9cc64fdfe864f2a708ebce1d0bbe9aef&quot;,
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>              &quot;removed&quot;: false
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>          }
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>      ],
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>      &quot;subscription&quot;: &quot;0xf90906914486a9c22d620e50022b38d5&quot;
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>    }
-<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>}
-</code></pre></div>
-:::</li>
+<li><code>removed</code>: <code>bool</code>  <code>true</code> means the event log was reverted</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:6"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><input id="__tabbed_7_5" name="__tabbed_7" type="radio" /><input id="__tabbed_7_6" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Request</label><label for="__tabbed_7_2">subscribe_newSnapshotBlockFilter</label><label for="__tabbed_7_3">subscribe_newAccountBlockFilter</label><label for="__tabbed_7_4">subscribe_newAccountBlockByAddressFilter</label><label for="__tabbed_7_5">subscribe_newUnreceivedBlockByAddressFilter</label><label for="__tabbed_7_6">subscribe_newVmLogFilter</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_getChangesByFilterId&quot;</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5d47f2e0a532923f7ee53e7b465381f197a669e86155d541b3b7f3d63f07a0e2&quot;</span><span class="p">,</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;124&quot;</span><span class="p">,</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;78b19cb84ac293d4af3f36e741938929f6d3311362e1265e87bbaa74e5fcef09&quot;</span><span class="p">,</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;125&quot;</span><span class="p">,</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94437996b3e70afd5d8593e2020ae56f63dbbc538df1ead1633340393bd52c1a&quot;</span><span class="p">,</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;126&quot;</span><span class="p">,</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9cc9ba996a4192e35ddbfe3ba448611fc06f6342463e21d3300e58e9772b348f&quot;</span><span class="p">,</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8b9f8067ef09aa09c8f9d652f0d9ac5e99d083722089a6d91323cffd8b2dcf08&quot;</span><span class="p">,</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68&quot;</span><span class="p">,</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68&quot;</span><span class="p">,</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">            </span><span class="nt">&quot;received&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68&quot;</span><span class="p">,</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">            </span><span class="nt">&quot;received&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">            </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;72ec861cb2f6c32a48632407f3aa1b05d5ad450ef75fa7660dd39d7be6d3ab68&quot;</span><span class="p">,</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">            </span><span class="nt">&quot;received&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">            </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">                </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">                    </span><span class="s2">&quot;aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb&quot;</span><span class="p">,</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">                    </span><span class="s2">&quot;000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935&quot;</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">                </span><span class="p">],</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">                </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo=&quot;</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">            </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;de8cd1dc188fd4bf44c0cb90958ffbcccab5766840d56f7b35443a1a1c5c9d3e&quot;</span><span class="p">,</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">            </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">            </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_78926f48bccef67a3b9cc64fdfe864f2a708ebce1d0bbe9aef&quot;</span><span class="p">,</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">            </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xf90906914486a9c22d620e50022b38d5&quot;</span>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="subscribe_subscribe"><code>subscribe_subscribe</code></h2>
-<p>This Websocket API should be used with the following event types. A single callback returns up to 128 blocks or logs.</p>
+<p>This WebSocket API should be used with the following event types. A single callback returns up to 128 blocks or logs.</p>
 <h3 id="newsnapshotblock"><code>newSnapshotBlock</code></h3>
 <p>Subscribe to new snapshot blocks. New snapshot blocks will be returned in callback</p>
 <ul>
@@ -4127,82 +4268,111 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-<code>json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_subscribe",
-    "params": ["newSnapshotBlock"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>```json tab:Response
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>{
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    &quot;result&quot;: &quot;0xa809145803ebb2a52229aefcbd52a99d&quot;
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>}
-</code></pre></div></code>json tab:Callback
-{
-    "jsonrpc": "2.0",
-    "method": "subscribe_subscription",
-    "params": {
-        "subscription": "0xa809145803ebb2a52229aefcbd52a99d",
-        "result": [
-            {
-                "hash": "22c38acb79e2de0de3c5a09618054b93ac7c7e82f41f9e15d754e58694eefe16",
-                "height": "250", 
-                "removed": false
-            }
-        ]
-    }
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>:::
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>### `newAccountBlock`
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Subscribe to new account blocks. New account blocks will be returned in callback
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>- **Parameters**: none
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>- **Returns**:  
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    - `string`  Subscription id
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>- **Callback**:  
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    * `subscription`: `string`  Subscription id
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    * `result`: `Array&lt;AccountBlockMessage&gt;`
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        * `hash`: `hash`  Hash of account block
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>        * `removed`: `bool`  `true` means the account block was reverted. For new account block, the field is `false`
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>::: demo
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>```json tab:Request
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>{
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    &quot;method&quot;: &quot;subscribe_subscribe&quot;,
-<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>    &quot;params&quot;: [&quot;newAccountBlock&quot;]
-<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>}
-</code></pre></div>
-```json tab:Response
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0xa809145803ebb2a52229aefcbd52a99d"
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>```json tab:Callback
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>{
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    &quot;method&quot;: &quot;subscribe_subscription&quot;,
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    &quot;params&quot;: {
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>        &quot;subscription&quot;: &quot;0xa809145803ebb2a52229aefcbd52a99d&quot;,
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>        &quot;result&quot;: [
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>            {
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>                &quot;hash&quot;: &quot;20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c&quot;,
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>                &quot;removed&quot;: false
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>            }
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        ]
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    }
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Request</label><label for="__tabbed_8_2">Response</label><label for="__tabbed_8_3">Callback</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;newSnapshotBlock&quot;</span><span class="p">]</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span><span class="p">,</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">                </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;22c38acb79e2de0de3c5a09618054b93ac7c7e82f41f9e15d754e58694eefe16&quot;</span><span class="p">,</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">                </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;250&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="newaccountblock"><code>newAccountBlock</code></h3>
+<p>Subscribe to new account blocks. New account blocks will be returned in callback</p>
+<ul>
+<li>
+<p><strong>Parameters</strong>: none</p>
+</li>
+<li>
+<p><strong>Returns</strong>:  </p>
+<ul>
+<li><code>string</code>  Subscription id</li>
+</ul>
+</li>
+<li>
+<p><strong>Callback</strong>:  </p>
+<ul>
+<li><code>subscription</code>: <code>string</code>  Subscription id</li>
+<li><code>result</code>: <code>Array&lt;AccountBlockMessage&gt;</code><ul>
+<li><code>hash</code>: <code>hash</code>  Hash of account block</li>
+<li><code>removed</code>: <code>bool</code>  <code>true</code> means the account block was reverted. For new account block, the field is <code>false</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Request</label><label for="__tabbed_9_2">Response</label><label for="__tabbed_9_3">Callback</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;newAccountBlock&quot;</span><span class="p">]</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span><span class="p">,</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">                </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c&quot;</span><span class="p">,</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="newaccountblockbyaddress"><code>newAccountBlockByAddress</code></h3>
 <p>Subscribe to new account blocks by address. New account blocks will be returned in callback</p>
 <ul>
@@ -4229,85 +4399,114 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-<code>json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_subscribe",
-    "params": ["newAccountBlockByAddress", "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>```json tab:Response
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>{
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    &quot;result&quot;: &quot;0xa809145803ebb2a52229aefcbd52a99d&quot;
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>}
-</code></pre></div></code>json tab:Callback
-{
-    "jsonrpc": "2.0",
-    "method": "subscribe_subscription",
-    "params": {
-        "subscription": "0xa809145803ebb2a52229aefcbd52a99d",
-        "result": [
-            {
-                "hash": "20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c",
-                "height": "1",
-                "removed": false
-            }
-        ]
-    }
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>:::
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>### `newUnreceivedBlockByAddress`
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Subscribe to unreceived blocks by address. New unreceived blocks will be returned in callback
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>- **Parameters**:
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>  * `address`  Address of account
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>- **Returns**:  
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    - `string`  Subscription id
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>- **Callback**:  
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>    * `subscription`: `string`  Subscription id
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    * `result`: `Array&lt;UnreceivedBlockMessage&gt;`
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>        * `hash`: `string hash`  Hash of unreceived block
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>        * `received`: `bool`  `true` means the block was received
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>        * `removed`: `bool`  `true` means the unreceived block was reverted. For new unreceived blocks, both `removed` and `received` is `false`. 
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>::: demo
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>```json tab:Request
-<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>{
-<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>    &quot;method&quot;: &quot;subscribe_subscribe&quot;,
-<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>    &quot;params&quot;: [&quot;newUnreceivedBlockByAddress&quot;, &quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;]
-<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>}
-</code></pre></div>
-```json tab:Response
-{
-     "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0xa809145803ebb2a52229aefcbd52a99d"
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>```json tab:Callback
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>{
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    &quot;method&quot;: &quot;subscribe_subscription&quot;,
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    &quot;params&quot;: {
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>        &quot;subscription&quot;: &quot;0xa809145803ebb2a52229aefcbd52a99d&quot;,
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>        &quot;result&quot;: [
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>            {
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>                &quot;hash&quot;: &quot;20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c&quot;,
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>                &quot;received&quot;: false,
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>                &quot;removed&quot;: false
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>            }
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>        ]
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>    }
-<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Request</label><label for="__tabbed_10_2">Response</label><label for="__tabbed_10_3">Callback</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">{</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;newAccountBlockByAddress&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span><span class="p">]</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span><span class="p">,</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">                </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c&quot;</span><span class="p">,</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">                </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h3 id="newunreceivedblockbyaddress"><code>newUnreceivedBlockByAddress</code></h3>
+<p>Subscribe to unreceived blocks by address. New unreceived blocks will be returned in callback</p>
+<ul>
+<li><strong>Parameters</strong>:</li>
+<li>
+<p><code>address</code>  Address of account</p>
+</li>
+<li>
+<p><strong>Returns</strong>:  </p>
+<ul>
+<li><code>string</code>  Subscription id</li>
+</ul>
+</li>
+<li>
+<p><strong>Callback</strong>:  </p>
+<ul>
+<li><code>subscription</code>: <code>string</code>  Subscription id</li>
+<li><code>result</code>: <code>Array&lt;UnreceivedBlockMessage&gt;</code><ul>
+<li><code>hash</code>: <code>string hash</code>  Hash of unreceived block</li>
+<li><code>received</code>: <code>bool</code>  <code>true</code> means the block was received</li>
+<li><code>removed</code>: <code>bool</code>  <code>true</code> means the unreceived block was reverted. For new unreceived blocks, both <code>removed</code> and <code>received</code> is <code>false</code>. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><input id="__tabbed_11_3" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Request</label><label for="__tabbed_11_2">Response</label><label for="__tabbed_11_3">Callback</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;newUnreceivedBlockByAddress&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span><span class="p">]</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">{</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0xa809145803ebb2a52229aefcbd52a99d&quot;</span><span class="p">,</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">                </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20009ee78d5f77122d215c3021f839b4024e4f2701e57bdb574e0cae1ae44e6c&quot;</span><span class="p">,</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">                </span><span class="nt">&quot;received&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h3 id="newvmlog"><code>newVmLog</code></h3>
 <p>Subscribe to smart contract event logs. New event logs will be returned in callback</p>
 <ul>
@@ -4350,55 +4549,65 @@ Note that if <code>subscribe_getChangesByFilterId</code> is not be called for mo
 </ul>
 </li>
 </ul>
-<p>::: demo
-<code>json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "subscribe_subscribe",
-    "params": [
-        "newVmLog",
-        {
-            "addressHeightRange": {
-                "vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f": {
-                    "fromHeight": "0",
-                    "toHeight": "0"
-                }
-            }
-        }
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>```json tab:Response
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>{
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    &quot;result&quot;: &quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>}
-</code></pre></div></code>json tab:Callback
-{
-    "jsonrpc": "2.0",
-    "method": "subscribe_subscription",
-    "params": {
-        "subscription": "0x4b97e0674a5ebef942dbb07709c4a608",
-        "result": [
-            {
-                "vmlog": {
-                    "topics": [
-                        "aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb",
-                        "000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935"
-                    ],
-                    "data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo="
-                },
-                "accountBlockHash": "23ea04b0dea4b9d0aa4d1f84b246b298a30faba753fa48303ad2deb29cd27f40",
-                "accountBlockHeight": "10",
-                "address": "vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f",
-                "removed": false
-            }
-        ]
-    }
-}
-```
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Request</label><label for="__tabbed_12_2">Response</label><label for="__tabbed_12_3">Callback</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscribe&quot;</span><span class="p">,</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">        </span><span class="s2">&quot;newVmLog&quot;</span><span class="p">,</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">            </span><span class="nt">&quot;addressHeightRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="w">                </span><span class="nt">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="w">                    </span><span class="nt">&quot;fromHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="w">                    </span><span class="nt">&quot;toHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span>
+</span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">{</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">{</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subscribe_subscription&quot;</span><span class="p">,</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">        </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x4b97e0674a5ebef942dbb07709c4a608&quot;</span><span class="p">,</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">        </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="w">                </span><span class="nt">&quot;vmlog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">                    </span><span class="nt">&quot;topics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="w">                        </span><span class="s2">&quot;aa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb&quot;</span><span class="p">,</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">                        </span><span class="s2">&quot;000000000000000000000000bb6ad02107a4422d6a324fd2e3707ad53cfed935&quot;</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">                    </span><span class="p">],</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a><span class="w">                    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo=&quot;</span>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">                </span><span class="nt">&quot;accountBlockHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23ea04b0dea4b9d0aa4d1f84b246b298a30faba753fa48303ad2deb29cd27f40&quot;</span><span class="p">,</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a><span class="w">                </span><span class="nt">&quot;accountBlockHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f48f811a1800d9bde268e3d2eacdc4b4f8b9110e017bd7a76f&quot;</span><span class="p">,</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="w">                </span><span class="nt">&quot;removed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

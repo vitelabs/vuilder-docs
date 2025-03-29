@@ -15,7 +15,7 @@
         <link rel="next" href="../../soliditypp/fundamentals/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3491,8 +3527,8 @@
 <p>This package generates URIs that you can embed in a QR code for a user to scan with their Wallet. After the connection is established, transactions initiated by your Web App are relayed to the connected Wallet where the user can confirm or cancel it. This process ensures that the Web App you are interacting with never sees your private keys as the signing process happens on your phone.</p>
 <p>See <a href="https://docs.vite.org/vite-docs/articles/vite-connect.html">here</a> for more introduction about ViteConnect.</p>
 <h2 id="installation">Installation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@vite/connector
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@vite/connector
+</span></code></pre></div>
 <h2 id="connector-class"><code>Connector</code> Class</h2>
 <p>Instances of <code>Connector</code> represent a user's ViteConnect session.
 - <strong>Constructor</strong>: 
@@ -3509,10 +3545,10 @@
         - <code>name: string</code>
         - <code>lastAccount?: string</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">Connector</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/connector&#39;</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bridge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wss://biforst.vite.net&#39;</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">vcInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Connector</span><span class="p">({</span><span class="w"> </span><span class="nx">bridge</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">Connector</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/connector&#39;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bridge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;wss://biforst.vite.net&#39;</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">vcInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Connector</span><span class="p">({</span><span class="w"> </span><span class="nx">bridge</span><span class="w"> </span><span class="p">});</span>
+</span></code></pre></div></p>
 <h2 id="properties">Properties</h2>
 <table>
 <thead>
@@ -3598,20 +3634,22 @@
 - <strong>Returns</strong>:
     - <code>Promise&lt;void&gt;</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">createSession</span><span class="p">();</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">qrCodeData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">uri</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// renderQRCode(qrCodeData);</span>
-</code></pre></div></p>
-<p>:::warning Important
-It is crucial that you call <code>createSession</code> before using <code>vcInstance.uri</code> otherwise the Vite Wallet will not be able to connect.
-:::</p>
-<p>:::tip
-To persist a session after your Web App stops, you can store the <code>session</code> data in <code>localStorage</code> and add it to the config object when instantiating <code>Connector</code> to restore the session.
-:::</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;vcSession&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">session</span><span class="p">);</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">vcInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Connector</span><span class="p">({</span><span class="w"> </span><span class="nx">session</span><span class="o">:</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;vcSession&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// vcInstance can now be used to sign transactions without needing the user to connect again</span>
-</code></pre></div>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">await</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">createSession</span><span class="p">();</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">qrCodeData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">uri</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// renderQRCode(qrCodeData);</span>
+</span></code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>It is crucial that you call <code>createSession</code> before using <code>vcInstance.uri</code> otherwise the Vite Wallet will not be able to connect.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To persist a session after your Web App stops, you can store the <code>session</code> data in <code>localStorage</code> and add it to the config object when instantiating <code>Connector</code> to restore the session.</p>
+</div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;vcSession&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">session</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">vcInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Connector</span><span class="p">({</span><span class="w"> </span><span class="nx">session</span><span class="o">:</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;vcSession&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// vcInstance can now be used to sign transactions without needing the user to connect again</span>
+</span></code></pre></div>
 <h3 id="sendcustomrequest"><code>sendCustomRequest</code></h3>
 <p>Send various requests to the ViteConnect server. A common request is sending an unsigned transaction so that it will be signed in the Wallet.
 - <strong>Parameters</strong>: 
@@ -3633,25 +3671,25 @@ To persist a session after your Web App stops, you can store the <code>session</
 - <strong>Returns</strong>:
     - <code>Promise&lt;Any&gt;</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// @vite/vitejs is a separate package you need to install for this example</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sendVcTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;callContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">fromViteAddress</span><span class="p">,</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">contractABI</span><span class="p">,</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">toViteAddress</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="p">,</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="c1">// This equals 1 VITE since VITE has 18 decimals</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}).</span><span class="nx">accountBlock</span><span class="p">;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">vcInstance</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="p">.</span><span class="nx">sendCustomRequest</span><span class="p">({</span><span class="w"> </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_signAndSendTx&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">signedBlock</span><span class="o">:</span><span class="w"> </span><span class="nx">Block</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">signedBlock</span><span class="p">);</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// @vite/vitejs is a separate package you need to install for this example</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sendVcTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;callContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">fromViteAddress</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">contractABI</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">toViteAddress</span><span class="p">,</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="c1">// This equals 1 VITE since VITE has 18 decimals</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}).</span><span class="nx">accountBlock</span><span class="p">;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">vcInstance</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="p">.</span><span class="nx">sendCustomRequest</span><span class="p">({</span><span class="w"> </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_signAndSendTx&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">signedBlock</span><span class="o">:</span><span class="w"> </span><span class="nx">Block</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">signedBlock</span><span class="p">);</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <h3 id="killsession"><code>killSession</code></h3>
 <p>Disconnect the Wallet and close the session
 - <strong>Parameters</strong>: 
@@ -3660,8 +3698,8 @@ To persist a session after your Web App stops, you can store the <code>session</
 - <strong>Returns</strong>:
     - <code>Promise&lt;void&gt;</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">killSession</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">killSession</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="startbizheartbeat"><code>startBizHeartBeat</code></h3>
 <p>Start sending heartbeat messages
 - <strong>Parameters</strong>: 
@@ -3669,11 +3707,12 @@ To persist a session after your Web App stops, you can store the <code>session</
 - <strong>Returns</strong>:
     - void
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">startBizHeartBeat</span><span class="p">();</span>
-</code></pre></div>
-:::tip Heartbeat
-If the Web App hasn't sent a message for more than 10s after the connection is established, the session could be closed because the Wallet will send a disconnect message for not receiving your messages within 10s. You do not need to call this method - it will be called automatically when a session is created or updated.
-:::</p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">startBizHeartBeat</span><span class="p">();</span>
+</span></code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Heartbeat</p>
+<p>If the Web App hasn't sent a message for more than 10s after the connection is established, the session could be closed because the Wallet will send a disconnect message for not receiving your messages within 10s. You do not need to call this method - it will be called automatically when a session is created or updated.</p>
+</div>
 <h3 id="stopbizheartbeat"><code>stopBizHeartBeat</code></h3>
 <p>Stop sending heartbeat messages
 - <strong>Parameters</strong>: 
@@ -3681,8 +3720,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - void
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">stopBizHeartBeat</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">stopBizHeartBeat</span><span class="p">();</span>
+</span></code></pre></div></p>
 <blockquote>
 <p>Note: if this method is called, the session will be closed after idle for 10s.</p>
 </blockquote>
@@ -3693,8 +3732,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - void
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="approverequest"><code>approveRequest</code></h3>
 <p>Notify the Web App that an RPC request has been approved with response
 - <strong>Parameters</strong>: 
@@ -3705,8 +3744,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - <code>void</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveRequest</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveRequest</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="rejectrequest"><code>rejectRequest</code></h3>
 <p>Notify the Web App that an RPC request has been rejected with error
 - <strong>Parameters</strong>: 
@@ -3717,8 +3756,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - <code>void</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveRequest</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveRequest</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="approvesession"><code>approveSession</code></h3>
 <p>When the Web App sends a new session or session update request, it will wait for the response. The Wallet should call <code>approveSession</code> to approve the request or reject it with <code>rejectSession</code>
 - <strong>Parameters</strong>: 
@@ -3728,8 +3767,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - <code>void</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveSession</span><span class="p">(</span><span class="nx">sessionStatus</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">approveSession</span><span class="p">(</span><span class="nx">sessionStatus</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="rejectsession"><code>rejectSession</code></h3>
 <p>When the Web App sends a new session or session update request, it will wait for the response. The Wallet should call <code>approveSession</code> to approve the request or reject it with <code>rejectSession</code>
 - <strong>Parameters</strong>: 
@@ -3738,8 +3777,8 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - <code>void</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">rejectSession</span><span class="p">(</span><span class="nx">sessionError</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">rejectSession</span><span class="p">(</span><span class="nx">sessionError</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="updatesession"><code>updateSession</code></h3>
 <p>Update the current session with new chain id or connected account is changed. </p>
 <blockquote>
@@ -3751,30 +3790,32 @@ If the Web App hasn't sent a message for more than 10s after the connection is e
 - <strong>Returns</strong>:
     - <code>void</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">updateSession</span><span class="p">(</span><span class="nx">sessionStatus</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">updateSession</span><span class="p">(</span><span class="nx">sessionStatus</span><span class="p">);</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="on"><code>on</code></h3>
 <p>Trigger callback functions for various events.
 - <strong>Parameters</strong>: 
     - <code>event: string</code>
-        - <code>'connect'</code> When <code>approveSession</code> is called for a new session request or the user connects his Wallet
-        - <code>'disconnect'</code> When <code>killSession</code> or <code>rejectSession</code> is called or the user logs out from his Wallet
-        - <code>'session_request'</code> When <code>createSession</code> request is received 
-        - <code>'session_update'</code> When <code>updateSession</code> is called or <code>approveSession</code> is called for a session update request
-        - <code>'vc_peerPing'</code> When a heartbeat message is received
-        - <code>'error'</code> When <code>vc_sessionRequest</code> or <code>connect</code> returns error
+    - <code>'connect'</code> When <code>approveSession</code> is called for a new session request or the user connects his Wallet
+    - <code>'disconnect'</code> When <code>killSession</code> or <code>rejectSession</code> is called or the user logs out from his Wallet
+    - <code>'session_request'</code> When <code>createSession</code> request is received 
+    - <code>'session_update'</code> When <code>updateSession</code> is called or <code>approveSession</code> is called for a session update request
+    - <code>'vc_peerPing'</code> When a heartbeat message is received
+    - <code>'error'</code> When <code>vc_sessionRequest</code> or <code>connect</code> returns error
     - <code>callback: (error: Error | null, payload: any | null) =&gt; void</code> The callback function to call when the <code>event</code> is triggered
 - <strong>Returns</strong>:
-    - <code>void</code>
-- <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="c1">// vcInstance can start prompting transactions on the user&#39;s Vite Wallet app</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">});</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="c1">// User&#39;s Vite Wallet app is no longer connected</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">})</span>
-</code></pre></div></p>
+    - <code>void</code></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="c1">// vcInstance can start prompting transactions on the user&#39;s Vite Wallet app</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">});</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nx">vcInstance</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;disconnect&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="c1">// User&#39;s Vite Wallet app is no longer connected</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">})</span>
+</span></code></pre></div>
+</div>
 
 
 

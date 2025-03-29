@@ -15,7 +15,7 @@
         <link rel="next" href="../net/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1012,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3475,90 +3511,102 @@
 
 
 <h1 id="wallet-api">Wallet API</h1>
-<p>:::tip
-To enable Wallet RPC API on the node, add "wallet" namespace in "PublicModules" in node_config.json
-:::</p>
-<p>:::danger Dangerous RPC calls
-Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0"</code> could be dangerous. Configure "HttpHost" and "WSHost" to "127.0.0.1" or remove wallet namespace from "PublicModules" in node_config.json after the node is set up.
-:::</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To enable the Wallet RPC API on the node, add the "wallet" namespace to "PublicModules" in <code>node_config.json</code>.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Dangerous RPC calls</p>
+<p>Exposing the wallet module to the public Internet (e.g., setting <code>"HttpHost": "0.0.0.0"</code>) is risky. Configure "HttpHost" and "WSHost" to "127.0.0.1" or remove the wallet namespace from "PublicModules" in <code>node_config.json</code> after setup.</p>
+</div>
 <p>Definitions:
-* <strong>Standard Directory</strong>: The default wallet directory on the node. For mainnet node on Linux or Mac, this directory is "~/.gvite/maindata/wallet"
-* <strong>Entropy File</strong>: A JSON keystore file to save entropy encrypted with AES-256 algorithm
-* <strong>Passphrase</strong>: A Scrypt password that is used to derive AES-256 key for entropy encryption. Please note this is NOT the bip39 passphrase. By default, an empty bip39 passphrase <code>''</code> is used by wallet module when creating seeds from mnemonics and the value cannot be customized.
-* <strong>Primary Address</strong>: For each entropy file, the first Vite address at index 0 is called primary address.</p>
+* <strong>Standard Directory</strong>: The default wallet directory on the node. For a mainnet node on Linux or Mac, this directory is <code>~/.gvite/maindata/wallet</code>.
+* <strong>Entropy File</strong>: A JSON keystore file that stores entropy encrypted with the AES-256 algorithm.
+* <strong>Passphrase</strong>: A Scrypt password used to derive the AES-256 key for entropy encryption. Note: This is NOT the bip39 passphrase. By default, the wallet module uses an empty bip39 passphrase (<code>''</code>) when creating seeds from mnemonics, and this value cannot be customized.
+* <strong>Primary Address</strong>: For each entropy file, the first Vite address at index 0 is called the primary address.</p>
 <h2 id="wallet_getentropyfilesinstandarddir"><code>wallet_getEntropyFilesInStandardDir</code></h2>
-<p>List all entropy files in default wallet directory</p>
+<p>List all entropy files in the default wallet directory.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
 <p><strong>Returns</strong>:</p>
 <ul>
-<li><code>Array&lt;string&gt;</code> Absolute paths of entropy file</li>
+<li><code>Array&lt;string&gt;</code>: Absolute paths of entropy files.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_getEntropyFilesInStandardDir",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>```json tab:Response
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_5b013ec4f3c235da12e47b525713e2f5edd0b04df965fafc22&quot;,
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_67de981eff372d4a757541b05f0e8a269eee11c2f6c9fbdae6&quot;,
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_f24bb4eceadc65020de5de6a4aeb22c52edd6cb72ee2279a97&quot;
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ]
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_getEntropyFilesInStandardDir&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_5b013ec4f3c235da12e47b525713e2f5edd0b04df965fafc22&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_67de981eff372d4a757541b05f0e8a269eee11c2f6c9fbdae6&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_f24bb4eceadc65020de5de6a4aeb22c52edd6cb72ee2279a97&quot;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_getallentropyfiles"><code>wallet_getAllEntropyFiles</code></h2>
-<p>List all entropy files installed on node</p>
+<p>List all entropy files installed on the node.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
 <p><strong>Returns</strong>:</p>
 <ul>
-<li><code>Array&lt;string&gt;</code> Absolute paths of entropy file</li>
+<li><code>Array&lt;string&gt;</code>: Absolute paths of entropy files.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "wallet_getAllEntropyFiles",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>```json tab:Response
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_5b013ec4f3c235da12e47b525713e2f5edd0b04df965fafc22&quot;,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_67de981eff372d4a757541b05f0e8a269eee11c2f6c9fbdae6&quot;
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    ]
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Request</label><label for="__tabbed_2_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_getAllEntropyFiles&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_5b013ec4f3c235da12e47b525713e2f5edd0b04df965fafc22&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_67de981eff372d4a757541b05f0e8a269eee11c2f6c9fbdae6&quot;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_exportmnemonic"><code>wallet_exportMnemonic</code></h2>
 <p>Export mnemonic phrase from entropy file</p>
 <ul>
@@ -3575,29 +3623,34 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>string</code>  Mnemonic phrase</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_exportMnemonic",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e",
-        "123456"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>```json tab:Response
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &quot;result&quot;: &quot;goddess crush pattern cluster level combine survey give seminar uniform invite beach&quot;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Request</label><label for="__tabbed_3_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_exportMnemonic&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="s2">&quot;123456&quot;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;goddess crush pattern cluster level combine survey give seminar uniform invite beach&quot;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_unlock"><code>wallet_unlock</code></h2>
 <p>Unlock an entropy file with passphrase</p>
 <ul>
@@ -3611,29 +3664,34 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li>
 <p><strong>Returns</strong>: null</p>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_unlock",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e",
-        "123456"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>```json tab:Response
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;result&quot;: null
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Request</label><label for="__tabbed_4_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_unlock&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="s2">&quot;123456&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_lock"><code>wallet_lock</code></h2>
 <p>Lock an entropy file</p>
 <ul>
@@ -3646,28 +3704,33 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li>
 <p><strong>Returns</strong>: null</p>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_lock",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>```json tab:Response
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;result&quot;: null
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Request</label><label for="__tabbed_5_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_lock&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_deriveaddressesbyindexrange"><code>wallet_deriveAddressesByIndexRange</code></h2>
 <p>Derive addresses from an entropy file by index range. The entropy file must be unlocked or the method will return an error.</p>
 <ul>
@@ -3685,40 +3748,46 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>Array&lt;address&gt;</code>  Addresses derived</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_deriveAddressesByIndexRange",
-    "params": [
-        "/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e",
-        0,
-        10
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>```json tab:Response
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        &quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;,
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        &quot;vite_659fbce2a908bdab3b7c46348f249c90c812e36b9ceac67aa0&quot;,
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        &quot;vite_cc373442a471a8dd4b2240d5a74f8e4037177a8795d30bdfd7&quot;,
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        &quot;vite_1beb02f13af1b16a317c927d470ca3118ba738e22da3f8bf6e&quot;,
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        &quot;vite_d1c10321319de24bcbd865e7f4127f5873bf9c251f0a4abb00&quot;,
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        &quot;vite_acf35393ba47b8216ebbc5252e8884d518971a57c11b5866e1&quot;,
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        &quot;vite_87df61f0feddb6121fecf7d5ba8d7e56443d53ead06da90a06&quot;,
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        &quot;vite_8de52abce25c65116b08d84966d67e3dd7860848b52f388d23&quot;,
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        &quot;vite_ed346025dc7196ed000caa429306bbed1bda42010597d63676&quot;,
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        &quot;vite_783baa0caccff4d365f09873660208ee727bfc5d9710b267e5&quot;]
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Request</label><label for="__tabbed_6_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_deriveAddressesByIndexRange&quot;</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="mi">10</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="s2">&quot;vite_659fbce2a908bdab3b7c46348f249c90c812e36b9ceac67aa0&quot;</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="s2">&quot;vite_cc373442a471a8dd4b2240d5a74f8e4037177a8795d30bdfd7&quot;</span><span class="p">,</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="s2">&quot;vite_1beb02f13af1b16a317c927d470ca3118ba738e22da3f8bf6e&quot;</span><span class="p">,</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="s2">&quot;vite_d1c10321319de24bcbd865e7f4127f5873bf9c251f0a4abb00&quot;</span><span class="p">,</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="s2">&quot;vite_acf35393ba47b8216ebbc5252e8884d518971a57c11b5866e1&quot;</span><span class="p">,</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="s2">&quot;vite_87df61f0feddb6121fecf7d5ba8d7e56443d53ead06da90a06&quot;</span><span class="p">,</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="s2">&quot;vite_8de52abce25c65116b08d84966d67e3dd7860848b52f388d23&quot;</span><span class="p">,</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="s2">&quot;vite_ed346025dc7196ed000caa429306bbed1bda42010597d63676&quot;</span><span class="p">,</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="s2">&quot;vite_783baa0caccff4d365f09873660208ee727bfc5d9710b267e5&quot;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_createentropyfile"><code>wallet_createEntropyFile</code></h2>
 <p>Create a new entropy file</p>
 <ul>
@@ -3736,32 +3805,37 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>filePath</code>: <code>string</code>  Absolute path of the entropy file</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "wallet_createEntropyFile",
-    "params": [
-        "123456"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>```json tab:Response
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    &quot;id&quot;: 2,
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        &quot;mnemonics&quot;: &quot;pear lonely piece base local lift material damp animal siege error throw ride flag version dumb parent clever upper toe lumber great wild vivid&quot;,
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        &quot;primaryAddress&quot;: &quot;vite_f646dc1f32b0ea88289bbfe4e4138d26edc9f9eac33a9e5292&quot;,
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        &quot;filePath&quot;: &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_f646dc1f32b0ea88289bbfe4e4138d26edc9f9eac33a9e5292&quot;
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    }
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>}
-</code></pre></div>
-:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Request</label><label for="__tabbed_7_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_createEntropyFile&quot;</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s2">&quot;123456&quot;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="nt">&quot;mnemonics&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pear lonely piece base local lift material damp animal siege error throw ride flag version dumb parent clever upper toe lumber great wild vivid&quot;</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="nt">&quot;primaryAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_f646dc1f32b0ea88289bbfe4e4138d26edc9f9eac33a9e5292&quot;</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_f646dc1f32b0ea88289bbfe4e4138d26edc9f9eac33a9e5292&quot;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_deriveaddressbyindex"><code>wallet_deriveAddressByIndex</code></h2>
 <p>Derive address from an entropy file by index. The entropy file must be unlocked or the method will return an error.</p>
 <ul>
@@ -3780,33 +3854,38 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>privateKey</code>: <code>base64</code>  Address's private key in base64 format</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "wallet_deriveAddressByIndex",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e",
-        0
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>```json tab:Response
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    &quot;id&quot;: 2,
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        &quot;bip44Path&quot;: &quot;m/44&#39;/666666&#39;/1&#39;&quot;,
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        &quot;address&quot;: &quot;vite_8431a5acb599da19529c3e8bd099087a9d550fb29039dada28&quot;,
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        &quot;privateKey&quot;: &quot;SKxAWibv4u85xMdRByCaveOwjw0bhempG9/zi59TjJUESNFMNvoE+wP/X/Zz+Tc3ObdZVO53UQT5BS8xATefbg==&quot;
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    }
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Request</label><label for="__tabbed_8_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_deriveAddressByIndex&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">        </span><span class="mi">0</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">        </span><span class="nt">&quot;bip44Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;m/44&#39;/666666&#39;/1&#39;&quot;</span><span class="p">,</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_8431a5acb599da19529c3e8bd099087a9d550fb29039dada28&quot;</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">        </span><span class="nt">&quot;privateKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SKxAWibv4u85xMdRByCaveOwjw0bhempG9/zi59TjJUESNFMNvoE+wP/X/Zz+Tc3ObdZVO53UQT5BS8xATefbg==&quot;</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_deriveaddressbypath"><code>wallet_deriveAddressByPath</code></h2>
 <p>Derive address from an entropy file by bip44 path. The entropy file must be unlocked or the method will return an error.</p>
 <ul>
@@ -3825,33 +3904,38 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>privateKey</code>: <code>base64</code>  Address's private key in base64 format</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "wallet_deriveAddressByPath",
-    "params": [
-        "vite_b1c00ae7dfd5b935550a6e2507da38886abad2351ae78d4d9a",
-        "m/44'/666666'/2'/4'"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>```json tab:Response
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &quot;id&quot;: 2,
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        &quot;bip44Path&quot;: &quot;m/44&#39;/666666&#39;/2&#39;/4&#39;&quot;,
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        &quot;address&quot;: &quot;vite_a5efba49303b46c42c7e89b6cf5facd897d3a444fdb37af64e&quot;,
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        &quot;privateKey&quot;: &quot;HSe4vB20dKTHYz+xzlAJ+wDhQQTJnJfemLTjbkPBb6ql/LS+lob/77NOdRfky3VWjai4g81mGR8L+goQDgEKoA==&quot;
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    }
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Request</label><label for="__tabbed_9_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_deriveAddressByPath&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="s2">&quot;vite_b1c00ae7dfd5b935550a6e2507da38886abad2351ae78d4d9a&quot;</span><span class="p">,</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="s2">&quot;m/44&#39;/666666&#39;/2&#39;/4&#39;&quot;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="nt">&quot;bip44Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;m/44&#39;/666666&#39;/2&#39;/4&#39;&quot;</span><span class="p">,</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_a5efba49303b46c42c7e89b6cf5facd897d3a444fdb37af64e&quot;</span><span class="p">,</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nt">&quot;privateKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HSe4vB20dKTHYz+xzlAJ+wDhQQTJnJfemLTjbkPBb6ql/LS+lob/77NOdRfky3VWjai4g81mGR8L+goQDgEKoA==&quot;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_recoverentropyfile"><code>wallet_recoverEntropyFile</code></h2>
 <p>Restore an entropy file from mnemonic phrase</p>
 <ul>
@@ -3870,33 +3954,38 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>filePath</code>: <code>string</code>  Absolute path of the entropy file</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_recoverEntropyFile",
-    "params": [
-        "utility client point estate auction region jump hat sick blast tomorrow pottery detect mixture clog able person matrix blast volume decide april congress resource",
-        "123456"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>```json tab:Response
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        &quot;mnemonics&quot;: &quot;utility client point estate auction region jump hat sick blast tomorrow pottery detect mixture clog able person matrix blast volume decide april congress resource&quot;,
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        &quot;primaryAddress&quot;: &quot;vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0&quot;,
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        &quot;filePath&quot;: &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0&quot;
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    }
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Request</label><label for="__tabbed_10_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_recoverEntropyFile&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="s2">&quot;utility client point estate auction region jump hat sick blast tomorrow pottery detect mixture clog able person matrix blast volume decide april congress resource&quot;</span><span class="p">,</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="s2">&quot;123456&quot;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="nt">&quot;mnemonics&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;utility client point estate auction region jump hat sick blast tomorrow pottery detect mixture clog able person matrix blast volume decide april congress resource&quot;</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">        </span><span class="nt">&quot;primaryAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0&quot;</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="nt">&quot;filePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_981bca7a348de85bd431b842d4b6c17044335f71e5f3da59c0&quot;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_isunlocked"><code>wallet_isUnlocked</code></h2>
 <p>Check if the entropy file is unlocked</p>
 <ul>
@@ -3912,28 +4001,33 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>bool</code>: <code>true</code> means the entropy file is unlocked</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_isUnlocked",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>```json tab:Response
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    &quot;result&quot;: true
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Request</label><label for="__tabbed_11_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_isUnlocked&quot;</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_findaddressinentropyfile"><code>wallet_findAddressInEntropyFile</code></h2>
 <p>Find an address in entropy file and return the index. Returns an error if the entropy file is locked or the address is not found in the entropy file.</p>
 <ul>
@@ -3951,32 +4045,37 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>index</code>: <code>uint32</code>  Index of address</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_findAddressInEntropyFile",
-    "params": [
-        "/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e",
-        "vite_3fd41bb6ba4f15d5e74214a16153ff2f5abce67f73dc0dc07b"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>```json tab:Response
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        &quot;entropyFile&quot;: &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;,
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        &quot;index&quot;: 84
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    }
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Request</label><label for="__tabbed_12_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_findAddressInEntropyFile&quot;</span><span class="p">,</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">        </span><span class="s2">&quot;vite_3fd41bb6ba4f15d5e74214a16153ff2f5abce67f73dc0dc07b&quot;</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">        </span><span class="nt">&quot;entropyFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">        </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_findaddress"><code>wallet_findAddress</code></h2>
 <p>Find an address in current unlocked entropy file and return the index. Returns an error if the address is not found.</p>
 <ul>
@@ -3993,31 +4092,36 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>index</code>: <code>uint32</code>  Index of address</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 4,
-    "method": "wallet_findAddress",
-    "params": [
-        "vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>```json tab:Response
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        &quot;entropyFile&quot;: &quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;,
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        &quot;index&quot;: 84
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    }
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Request</label><label for="__tabbed_13_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_findAddress&quot;</span><span class="p">,</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="s2">&quot;vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="nt">&quot;entropyFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/wallet/vite_15391ac8b09d4e8ad78bfe5f9f9ab9682fe689572f6f53655e&quot;</span><span class="p">,</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">        </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_createtransaction"><code>wallet_createTransaction</code></h2>
 <p>Send a transaction with the address in entropy file. If entropy file is not specified, this method will search in all entropy files with the passphrase for the address.</p>
 <blockquote>
@@ -4043,33 +4147,38 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li><code>hash</code>  Hash of the account block that has been sent</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "wallet_createTransaction",
-    "params": [{
-        "entropyFile": "vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906",
-        "address": "vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906",
-        "toAddress": "vite_086f3decd9d08cc06162b20482ea6eff323667f4bf7fcbe7bf",
-        "tokenId": "tti_5649544520544f4b454e6e40",
-        "passphrase": "123",
-        "amount": "10000000000000000000"
-    }]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>```json tab:Response
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    &quot;result&quot;: &quot;3dca3d96d0c0d1bb09d1f3ff9e4743a88d427e5c38e853f928b451f2183ff0f3&quot;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Request</label><label for="__tabbed_14_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_createTransaction&quot;</span><span class="p">,</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">        </span><span class="nt">&quot;entropyFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">        </span><span class="nt">&quot;toAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_086f3decd9d08cc06162b20482ea6eff323667f4bf7fcbe7bf&quot;</span><span class="p">,</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">        </span><span class="nt">&quot;tokenId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">        </span><span class="nt">&quot;passphrase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000000000000000000&quot;</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3dca3d96d0c0d1bb09d1f3ff9e4743a88d427e5c38e853f928b451f2183ff0f3&quot;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_addentropystore"><code>wallet_addEntropyStore</code></h2>
 <p>Install a new entropy file on the node. This method is used to add an entropy file not in standard directory.</p>
 <ul>
@@ -4082,33 +4191,39 @@ Expose wallet module to public Internet, e.g. setting <code>"HttpHost": "0.0.0.0
 <li>
 <p><strong>Returns</strong>: null</p>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "wallet_addEntropyStore",
-    "params": [
-        "/Users/xxx/Library/GVite/testdata/anotherFolder/vite_086f3decd9d08cc06162b20482ea6eff323667f4bf7fcbe7bf"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>```json tab:Response
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    &quot;result&quot;: null
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Request</label><label for="__tabbed_15_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_addEntropyStore&quot;</span><span class="p">,</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">        </span><span class="s2">&quot;/Users/xxx/Library/GVite/testdata/anotherFolder/vite_086f3decd9d08cc06162b20482ea6eff323667f4bf7fcbe7bf&quot;</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="wallet_signdata"><code>wallet_signData</code></h2>
 <p>Sign a 32 byte hex string with private key of the address. The address must be found in the current unlocked entropy file or the method will return an error.</p>
-<p>:::tip
-The common use case of this method is to sign an account block hash to obtain the signature of the block
-:::</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The common use case of this method is to sign an account block hash to obtain the signature of the block</p>
+</div>
 <ul>
 <li>
 <p><strong>Parameters</strong>:  </p>
@@ -4125,30 +4240,35 @@ The common use case of this method is to sign an account block hash to obtain th
 <li><code>pubkey</code>: <code>string</code>  Public key in hex format</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:</p>
-</li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "wallet_signData",
-    "params": ["vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906", "e039dfc08f5c5e13a480dc598f9ec75797b3ac721ef7af371509cedd5cc64542"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>```json tab:Response
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>{
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        &quot;message&quot;: &quot;e039dfc08f5c5e13a480dc598f9ec75797b3ac721ef7af371509cedd5cc64542&quot;,
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        &quot;signedData&quot;: &quot;cbe51cde010b9c18aca33bd0cd05554af5410a23f077782ff7e9a7b039486c161aa8a7a148ad3e29d55321ef2012c4d3dca679d07a0d0c83c47d0e65bd9f1d0c&quot;,
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>        &quot;pubkey&quot;: &quot;660329bffc2f328cf183e1b7cae3f8b6545548f8e913adab3229492732e0ba56&quot;
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    }
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Request</label><label for="__tabbed_16_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wallet_signData&quot;</span><span class="p">,</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;e039dfc08f5c5e13a480dc598f9ec75797b3ac721ef7af371509cedd5cc64542&quot;</span><span class="p">]</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e039dfc08f5c5e13a480dc598f9ec75797b3ac721ef7af371509cedd5cc64542&quot;</span><span class="p">,</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">        </span><span class="nt">&quot;signedData&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cbe51cde010b9c18aca33bd0cd05554af5410a23f077782ff7e9a7b039486c161aa8a7a148ad3e29d55321ef2012c4d3dca679d07a0d0c83c47d0e65bd9f1d0c&quot;</span><span class="p">,</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">        </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;660329bffc2f328cf183e1b7cae3f8b6545548f8e913adab3229492732e0ba56&quot;</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

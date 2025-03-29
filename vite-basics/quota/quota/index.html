@@ -15,7 +15,7 @@
         <link rel="next" href="../fee/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -1068,7 +1104,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1148,7 +1184,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3565,9 +3601,10 @@
 </blockquote>
 <h2 id="epoch">Epoch</h2>
 <p>An epoch on Vite refers to continuous 75 snapshot blocks, approximately 75 seconds. Epoch is used to measure available Quota and transaction processing capacity for an address.</p>
-<p>:::tip Epoch v.s Round
-A <a href="../../consensus/snapshot-block-producer/#how-an-sbp-works">Round</a> is precisely 75 seconds, and it reflects the timeframe how often the SBPs are selected, while an Epoch stands for 75 snapshot blocks, it could be longer than 75 seconds if one or more of the SBPs misses to produce the block.
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Epoch v.s Round</p>
+<p>A <a href="../../consensus/snapshot-block-producer/#how-an-sbp-works">Round</a> is precisely 75 seconds, and it reflects the timeframe how often the SBPs are selected, while an Epoch stands for 75 snapshot blocks, it could be longer than 75 seconds if one or more of the SBPs misses to produce the block.</p>
+</div>
 <h2 id="quota-calculation">Quota Calculation</h2>
 <p>Quota is received according to the following formulas:</p>
 <p>$$Q_{PoW}=Qm \times (1- \frac{2}{1+e^{Qc \times \xi d \times \rho d}})$$
@@ -3605,9 +3642,10 @@ $$</p>
 <p><strong>UTPE</strong>: Unit transactions per epoch, referring to the number of basic transactions (consuming 21000 raw Quota or 1 Quota) that an address can send in every 75 snapshot blocks</p>
 <p>$$UTPE=UTPS \times 75$$</p>
 <p>The <strong>Available Quota</strong> of an address is determined by UTPS, Quota consumption during the last 74 snapshot blocks, and PoW. For example, Address<sub>A</sub> locked 10000 VITE and obtains 1 UTPS Quota (non-accumulated), and if the address has no transaction in the last 74 snapshot blocks, the Available Quota for Address<sub>A</sub> is 75 Quota. Similarly, Address<sub>B</sub> locked 10000 VITE and obtains 1 UTPS Quota (non-accumulated), and there is no transaction for the address in the last 74 snapshot blocks, meanwhile it also calculated a PoW that is equivalent to 2 Quota. In this case, the available Quota of Address<sub>B</sub> is 77 Quota.</p>
-<p>:::tip Quota Cap for a Single Transaction
-For a single transaction, the maximum quota it can consume is $\frac{Qm}{21000}\approx47.62$ Quota
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Quota Cap for a Single Transaction</p>
+<p>For a single transaction, the maximum quota it can consume is $\frac{Qm}{21000}\approx47.62$ Quota</p>
+</div>
 <p>For practical use, we calculated $(\xi d \times \rho d)$ or $(\xi s \times \rho s)$ under different parameters and mapped the values to Quota, UTPS and UTPE, as displayed in the following table:</p>
 <table>
 <thead>

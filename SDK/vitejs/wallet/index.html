@@ -15,7 +15,7 @@
         <link rel="next" href="wallet-class/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3595,8 +3631,8 @@
 <h1 id="module">Module</h1>
 <p>Vite wallet adopts <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">BIP-39</a> that uses the PBKDF2 function to generate a wallet's seed from a mnemonic phrase (i.e. password) and an optional passphrase (i.e. salt). From this seed, public and private keys are derived. Losing the mnemonic phrase or the passphrase will result in the loss of a wallet's seed and private keys. For more information about key derivation on Vite, see <a href="../../../vite-basics/cryptography/address-derivation/">Address Derivation</a>.</p>
 <h2 id="module-import">Module Import</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">wallet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="methods">Methods</h2>
 <h3 id="createwallet"><code>createWallet</code></h3>
 <p>Create a new <code>Wallet</code> instance. See <a href="wallet-class/">Wallet Class</a>
@@ -3607,15 +3643,15 @@
 - <strong>Returns</strong>
     - <code>Wallet</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createWallet</span><span class="p">();</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">rootPath</span><span class="p">);</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">mnemonics</span><span class="p">);</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">entropy</span><span class="p">);</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">seedHex</span><span class="p">);</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">firstAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstAddress</span><span class="p">;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createWallet</span><span class="p">(</span><span class="mf">256</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">EN</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myPassword&#39;</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createWallet</span><span class="p">();</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">rootPath</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">entropy</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">seedHex</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">firstAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myWallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firstAddress</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createWallet</span><span class="p">(</span><span class="mf">256</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">EN</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myPassword&#39;</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="getwallet"><code>getWallet</code></h3>
 <p>Restore <code>Wallet</code> instance from a mnemonic phrase. See <a href="wallet-class/">Wallet Class</a>
 - <strong>Parameters</strong> 
@@ -3625,10 +3661,10 @@
 - <strong>Returns</strong>
     - <code>Wallet</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getWallet</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getWallet</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">EN</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myPassword&#39;</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getWallet</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">myWallet2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getWallet</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">EN</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myPassword&#39;</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="createmnemonics"><code>createMnemonics</code></h3>
 <p>Create a random mnemonic phrase
 - <strong>Parameters</strong> 
@@ -3637,10 +3673,10 @@
 - <strong>Returns</strong>
     - <code>mnemonic: string</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">english24Words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">portuguese12Words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">(</span><span class="mf">128</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">portuguese</span><span class="p">);</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">japaneseMnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">(</span><span class="mf">256</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">japanese</span><span class="p">)</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">english24Words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">portuguese12Words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">(</span><span class="mf">128</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">portuguese</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">japaneseMnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">(</span><span class="mf">256</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">japanese</span><span class="p">)</span>
+</span></code></pre></div></p>
 <h3 id="validatemnemonics"><code>validateMnemonics</code></h3>
 <p>Determine if the input is a valid mnemonic phrase
 - <strong>Parameters</strong> 
@@ -3649,9 +3685,9 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the mnemonic phrase is valid.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">validateMnemonics</span><span class="p">(</span><span class="nx">mnemonic</span><span class="p">);</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">validateMnemonics</span><span class="p">(</span><span class="nx">japanMnemonic</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">japanese</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">validateMnemonics</span><span class="p">(</span><span class="nx">mnemonic</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">validateMnemonics</span><span class="p">(</span><span class="nx">japanMnemonic</span><span class="p">,</span><span class="w"> </span><span class="nx">bip39</span><span class="p">.</span><span class="nx">wordlists</span><span class="p">.</span><span class="nx">japanese</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="deriveaddress"><code>deriveAddress</code></h3>
 <p>Generate address from a combination of mnemonic phrase, index, and optional passphrase
 - <strong>Parameters</strong> 
@@ -3667,12 +3703,12 @@
         - <code>privateKey: Hex</code> Private key
         - <code>address: Address</code> Vite address
 - <strong>Example</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">({</span><span class="w"> </span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">mnemonics</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">});</span>
-</code></pre></div></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">({</span><span class="w"> </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">mnemonics</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="deriveaddresslist"><code>deriveAddressList</code></h3>
 <p>Derive a list of addresses from a combination of mnemonic phrase, index range, and optional passphrase 
 - <strong>Parameters</strong> 
@@ -3689,13 +3725,13 @@
         - <code>privateKey: Hex</code> Private key
         - <code>address: Address</code> Vite address
 - <strong>Example</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">addressList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddressList</span><span class="p">({</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">mnemonics</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">startIndex</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">endIndex</span><span class="o">:</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">});</span>
-</code></pre></div></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">addressList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddressList</span><span class="p">({</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">mnemonics</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">startIndex</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">endIndex</span><span class="o">:</span><span class="w"> </span><span class="mf">9</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="isvalidaddress"><code>isValidAddress</code></h3>
 <p>Determine if the input is a valid Vite address
 - <strong>Parameters</strong> 
@@ -3703,11 +3739,11 @@
 - <strong>Returns</strong>
     - <code>0 | 1 | 2</code> 0: Illegal. 1: User Address. 2: Contract Address.
 - <strong>Example</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">({</span><span class="w"> </span><span class="nx">mnemonics</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">wallet</span><span class="p">.</span><span class="nx">isValidAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">wallet</span><span class="p">.</span><span class="nx">isValidAddress</span><span class="p">(</span><span class="nx">originalAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0</span>
-</code></pre></div></p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveAddress</span><span class="p">({</span><span class="w"> </span><span class="nx">mnemonics</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">wallet</span><span class="p">.</span><span class="nx">isValidAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">wallet</span><span class="p">.</span><span class="nx">isValidAddress</span><span class="p">(</span><span class="nx">originalAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0</span>
+</span></code></pre></div></p>
 <h2 id="more-methods">More Methods</h2>
 <p>The following methods are for advanced usage.</p>
 <h3 id="getentropyfrommnemonics"><code>getEntropyFromMnemonics</code></h3>
@@ -3718,9 +3754,9 @@
 - <strong>Returns</strong>
     - <code>Hex</code> Entropy with length of 16 bytes (12-word mnemonics) or 32 bytes (24-word mnemonics)
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">entropy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getEntropyFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">entropy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getEntropyFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="createseed"><code>createSeed</code></h3>
 <p>Create a random seed for deriving addresses from
 - <strong>Parameters</strong> 
@@ -3733,8 +3769,8 @@
         - <code>seed: Buffer</code> 64-bytes seed
         - <code>seedHex: Hex</code> Seed as a hex string
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mnemonic</span><span class="p">,</span><span class="w"> </span><span class="nx">seed</span><span class="p">,</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createSeed</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mnemonic</span><span class="p">,</span><span class="w"> </span><span class="nx">seed</span><span class="p">,</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createSeed</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="getseedfrommnemonics"><code>getSeedFromMnemonics</code></h3>
 <p>Derive seed from a mnemonic phrase
 - <strong>Parameters</strong> 
@@ -3746,9 +3782,9 @@
         - <code>seed: Buffer</code> 64-bytes seed
         - <code>seedHex: Hex</code> Seed as a hex string
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seed</span><span class="p">,</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seed</span><span class="p">,</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="getmnemonicsfromentropy"><code>getMnemonicsFromEntropy</code></h3>
 <p>Get mnemonic phrase from an entropy
 - <strong>Parameters</strong> 
@@ -3757,11 +3793,11 @@
 - <strong>Returns</strong>
     - <code>mnemonic: string</code> Mnemonic phrase
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">entropy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getEntropyFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getMnemonicsFromEntropy</span><span class="p">(</span><span class="nx">entropy</span><span class="p">);</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">mnemonics2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">entropy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getEntropyFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getMnemonicsFromEntropy</span><span class="p">(</span><span class="nx">entropy</span><span class="p">);</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">mnemonics2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="getpath"><code>getPath</code></h3>
 <p>Get derivation path
 - <strong>Parameters</strong> 
@@ -3769,8 +3805,8 @@
 - <strong>Returns</strong>
     - <code>string</code> Derivation path
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">derivationPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getPath</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">derivationPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getPath</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="derivekeypairbypath"><code>deriveKeyPairByPath</code></h3>
 <p>Derive keypair from a seed and derivation path
 - <strong>Parameters</strong> 
@@ -3781,10 +3817,10 @@
         - <code>privateKey: Hex</code>
         - <code>publicKey: Hex</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveKeyPairByPath</span><span class="p">(</span><span class="nx">seedHex</span><span class="p">,</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getPath</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveKeyPairByPath</span><span class="p">(</span><span class="nx">seedHex</span><span class="p">,</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getPath</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span>
+</span></code></pre></div></p>
 <h3 id="derivekeypairbyindex"><code>deriveKeyPairByIndex</code></h3>
 <p>Derive keypair from a seed and derivation index
 - <strong>Parameters</strong> 
@@ -3795,10 +3831,10 @@
         - <code>privateKey: Hex</code>
         - <code>publicKey: Hex</code>
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveKeyPairByIndex</span><span class="p">(</span><span class="nx">seedHex</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mnemonics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createMnemonics</span><span class="p">();</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seedHex</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getSeedFromMnemonics</span><span class="p">(</span><span class="nx">mnemonics</span><span class="p">);</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">deriveKeyPairByIndex</span><span class="p">(</span><span class="nx">seedHex</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span></code></pre></div></p>
 <h3 id="createaddressbyprivatekey"><code>createAddressByPrivateKey</code></h3>
 <p>Get address from a private key
 - <strong>Parameters</strong> 
@@ -3810,8 +3846,8 @@
         - <code>privateKey: Hex</code> Private key
         - <code>address: Address</code> Vite address
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="getaddressfrompublickey"><code>getAddressFromPublicKey</code></h3>
 <p>Get address from a public key
 - <strong>Parameters</strong> 
@@ -3819,10 +3855,10 @@
 - <strong>Returns</strong>
     - <code>Address</code> Address
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromPublicKey</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">);</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">address</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">viteAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromPublicKey</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">);</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">address</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">viteAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="getoriginaladdressfromaddress"><code>getOriginalAddressFromAddress</code></h3>
 <p>Get original address from an address. </p>
 <blockquote>
@@ -3832,10 +3868,10 @@
 - <strong>Returns</strong>
     - <code>Hex</code> Original address
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromPublicKey</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">);</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">originalAddress</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getOriginalAddressFromAddress</span><span class="p">(</span><span class="nx">viteAddress</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">publicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">originalAddress</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromPublicKey</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">);</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">originalAddress</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getOriginalAddressFromAddress</span><span class="p">(</span><span class="nx">viteAddress</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="getaddressfromoriginaladdress"><code>getAddressFromOriginalAddress</code></h3>
 <p>Get address from an original address</p>
@@ -3846,10 +3882,10 @@
 - <strong>Returns</strong>
     - <code>Address</code> Address
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromOriginalAddress</span><span class="p">(</span><span class="nx">originalAddress</span><span class="p">);</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">address</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">viteAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">originalAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">getAddressFromOriginalAddress</span><span class="p">(</span><span class="nx">originalAddress</span><span class="p">);</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">address</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">viteAddress</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 </blockquote>
 
 

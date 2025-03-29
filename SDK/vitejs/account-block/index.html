@@ -15,7 +15,7 @@
         <link rel="next" href="account-block-class/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3852,9 +3888,9 @@
 </blockquote>
 <p>See <a href="../../vite-basics/ledger/account-chains.md">here</a> for more information about account block and account chain.</p>
 <h2 id="module-import">Module Import</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">,</span><span class="w"> </span><span class="nx">utils</span><span class="p">,</span><span class="w"> </span><span class="nx">AccountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">,</span><span class="w"> </span><span class="nx">utils</span><span class="p">,</span><span class="w"> </span><span class="nx">AccountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="methods">Methods</h2>
 <h3 id="createaccountblock"><code>createAccountBlock</code></h3>
 <p>Create an <code>AccountBlock</code> instance with a given type
@@ -3864,16 +3900,16 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">account</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;44e69ea04fe830c9075c01e46f102d0c543b4119ce13ec575aee2e96501049fc&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">});</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSetPreviousAccountBlock</span><span class="p">();</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nx">block</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSend</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nx">account</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;44e69ea04fe830c9075c01e46f102d0c543b4119ce13ec575aee2e96501049fc&#39;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">});</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSetPreviousAccountBlock</span><span class="p">();</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nx">block</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSend</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h2 id="transaction-types">Transaction Types</h2>
 <p>The possible transaction types that are accepted by <code>createAccountBlock</code> method are listed below. In fact, they are methods of <code>Account</code> class that we will cover in <a href="account/">Account Class</a> chapter.</p>
 <h3 id="receive"><code>receive</code></h3>
@@ -3885,11 +3921,11 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 4</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 4</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="send"><code>send</code></h3>
 <p>Transaction type for sending a transaction
 - <strong>Parameters</strong> 
@@ -3902,14 +3938,14 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="createcontract"><code>createContract</code></h3>
 <p>Block type for creating a smart contract
 - <strong>Parameters</strong> 
@@ -3924,14 +3960,14 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;createContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 1</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;inputs&quot;</span><span class="o">:</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;addr&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">}],</span><span class="s2">&quot;payable&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">&quot;stateMutability&quot;</span><span class="o">:</span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;constructor&quot;</span><span class="p">},</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b50610141806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806391a6cb4b14610046575b600080fd5b6100896004803603602081101561005c57600080fd5b81019080803574ffffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008b565b005b8074ffffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff163460405160405180820390838587f1505050508074ffffffffffffffffffffffffffffffffffffffffff167faa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb346040518082815260200191505060405180910390a25056fea165627a7a7230582023e9669dd6fec3b6b2a84a1fd7c9939f49197203d0e1db312278e633c219c2480029&#39;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">]</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;createContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 1</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;inputs&quot;</span><span class="o">:</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;addr&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">}],</span><span class="s2">&quot;payable&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">&quot;stateMutability&quot;</span><span class="o">:</span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;constructor&quot;</span><span class="p">},</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b50610141806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806391a6cb4b14610046575b600080fd5b6100896004803603602081101561005c57600080fd5b81019080803574ffffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008b565b005b8074ffffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff163460405160405180820390838587f1505050508074ffffffffffffffffffffffffffffffffffffffffff167faa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb346040518082815260200191505060405180910390a25056fea165627a7a7230582023e9669dd6fec3b6b2a84a1fd7c9939f49197203d0e1db312278e633c219c2480029&#39;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">]</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="callcontract"><code>callContract</code></h3>
 <p>Block type for calling a contract
 - <strong>Parameters</strong> 
@@ -3947,18 +3983,18 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;callContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">contractAddress</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;sbpName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">blockProducingAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">rewardWithdrawAddress</span><span class="p">],</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="p">,</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;callContract&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">contractAddress</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;sbpName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">blockProducingAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">rewardWithdrawAddress</span><span class="p">],</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="registersbp"><code>registerSBP</code></h3>
 <p>Block type for registering an SBP</p>
 <blockquote>
@@ -3973,13 +4009,13 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;registerSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">rewardWithdrawAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;registerSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">rewardWithdrawAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="updatesbpblockproducingaddress"><code>updateSBPBlockProducingAddress</code></h3>
 <p>Block type for updating an SBP's block producing address
@@ -3991,12 +4027,12 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;updateSBPBlockProducingAddress&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;updateSBPBlockProducingAddress&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="revokesbp"><code>revokeSBP</code></h3>
 <p>Block type for cancelling an SBP
 - <strong>Parameters</strong> 
@@ -4006,11 +4042,11 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;revokeSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;revokeSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="withdrawsbpreward"><code>withdrawSBPReward</code></h3>
 <p>Block type for withdrawing an SBP's mining rewards
 - <strong>Parameters</strong> 
@@ -4021,12 +4057,12 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;withdrawSBPReward&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;withdrawSBPReward&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="voteforsbp"><code>voteForSBP</code></h3>
 <p>Block type for voting for an SBP
 - <strong>Parameters</strong> 
@@ -4036,11 +4072,11 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;voteForSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;voteForSBP&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="cancelsbpvoting"><code>cancelSBPVoting</code></h3>
 <p>Block type for cancelling voting
 - <strong>Parameters</strong> 
@@ -4049,10 +4085,10 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelSBPVoting&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelSBPVoting&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="stakeforquota"><code>stakeForQuota</code></h3>
 <p>Block type for supply a beneficiary address with quota
 - <strong>Parameters</strong> 
@@ -4064,12 +4100,12 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;stakeForQuota&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nx">beneficiaryAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;134&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;stakeForQuota&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nx">beneficiaryAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;134&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="cancelquotastake"><code>cancelQuotaStake</code></h3>
 <p>Block type for cancelling locking for quota and withdrawing the locked tokens.
 - <strong>Parameters</strong> 
@@ -4079,11 +4115,11 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelQuotaStake&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;401d46c2330d3c76c8f0da6be2a24b17c5e3ece9c28d80a74e91146d1f95ad2e&#39;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelQuotaStake&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;401d46c2330d3c76c8f0da6be2a24b17c5e3ece9c28d80a74e91146d1f95ad2e&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="issuetoken"><code>issueToken</code></h3>
 <p>Block type for creating a new token</p>
 <blockquote>
@@ -4112,17 +4148,17 @@
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;issueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nx">tokenName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TestCoin&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nx">isReIssuable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nx">maxSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10000000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nx">isOwnerBurnOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nx">totalSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;100000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nx">tokenSymbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">});</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;issueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nx">tokenName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TestCoin&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nx">isReIssuable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nx">maxSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10000000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nx">isOwnerBurnOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nx">totalSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;100000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nx">tokenSymbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">});</span>
+</span></code></pre></div></li>
 </ul>
 <h3 id="reissuetoken"><code>reIssueToken</code></h3>
 <p>Block type for re-issuing additional amount of tokens</p>
@@ -4137,13 +4173,13 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;reIssueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_f1fdb1fce23ca4a2c760012c&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;reIssueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_f1fdb1fce23ca4a2c760012c&#39;</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="burntoken"><code>burnToken</code></h3>
 <p>Block type for burning tokens</p>
@@ -4157,33 +4193,43 @@
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;burnToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;burnToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="disablereissuetoken"><code>disableReIssueToken</code></h3>
 <p>Block type for changing a re-issuable token to non-re-issuable</p>
-<blockquote>
-<p>Note: only the owner of the token can do this.</p>
-</blockquote>
-<p>:::warning
-This action cannot be reversed
-:::
-- <strong>Parameters</strong> 
-    - <code>object</code>
-        - <code>address: Address</code> Address of account (i.e. token owner)
-        - <code>tokenId: TokenId</code> Token id
-- <strong>Returns</strong>
-    - <code>AccountBlock</code> instance
-- <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;disableReIssueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">});</span>
-</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the owner of the token can do this.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This action cannot be reversed</p>
+</div>
+<ul>
+<li><strong>Parameters</strong> <ul>
+<li><code>object</code><ul>
+<li><code>address: Address</code> Address of account (i.e. token owner)</li>
+<li><code>tokenId: TokenId</code> Token id</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Returns</strong><ul>
+<li><code>AccountBlock</code> instance</li>
+</ul>
+</li>
+<li><strong>Example</strong>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;disableReIssueToken&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">});</span>
+</span></code></pre></div></li>
+</ul>
 <h3 id="transfertokenownership"><code>transferTokenOwnership</code></h3>
 <p>Block type for transferring a token's ownership</p>
 <blockquote>
@@ -4196,12 +4242,12 @@ This action cannot be reversed
 - <strong>Returns</strong>
     - <code>AccountBlock</code> instance
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;transferTokenOwnership&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nx">newOwnerAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_869a06b8963bd5d88a004723ad5d45f345a71c0884e2c80e88&#39;</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;transferTokenOwnership&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nx">newOwnerAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_869a06b8963bd5d88a004723ad5d45f345a71c0884e2c80e88&#39;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h2 id="utils-methods"><code>utils</code> Methods</h2>
 <h3 id="isvalidaccountblockwithouthash"><code>isValidAccountBlockWithoutHash</code></h3>
@@ -4223,18 +4269,18 @@ This action cannot be reversed
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the account block is valid
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlockWithoutHash</span><span class="p">({</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;105&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">});</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlockWithoutHash</span><span class="p">({</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;105&#39;</span><span class="p">,</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;</span><span class="p">,</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">});</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="isvalidaccountblockwithoutsignature"><code>isValidAccountBlockWithoutSignature</code></h3>
 <p>Determine if an account block is valid regardless of signature
 - <strong>Parameters</strong> 
@@ -4255,19 +4301,19 @@ This action cannot be reversed
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the account block is valid
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlockWithoutSignature</span><span class="p">({</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;105&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="p">});</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlockWithoutSignature</span><span class="p">({</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span><span class="p">,</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nx">fee</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nx">hash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span><span class="p">,</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;105&#39;</span><span class="p">,</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;</span><span class="p">,</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="p">});</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="isvalidaccountblock"><code>isValidAccountBlock</code></h3>
 <p>Determine if an account block is complete and ready to be sent 
 - <strong>Parameters</strong> 
@@ -4290,22 +4336,23 @@ This action cannot be reversed
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the account block is valid.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">});</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSetPreviousAccountBlock</span><span class="p">();</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nx">block</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">});</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nx">block</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="k">await</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">autoSetPreviousAccountBlock</span><span class="p">();</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nx">block</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidAccountBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="getaccountblockhash"><code>getAccountBlockHash</code></h3>
 <p>Calculate the hash of an account block</p>
-<p>:::tip
-Prefer using <code>block.hash</code> as this will give you the hash of a valid account block. If a block is invalid, <code>block.hash</code> will return <code>null</code>.
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Prefer using <code>block.hash</code> as this will give you the hash of a valid account block. If a block is invalid, <code>block.hash</code> will return <code>null</code>.</p>
+</div>
 <ul>
 <li><strong>Parameters</strong><ul>
 <li><code>accountBlock: object</code> Fields are described above in <a href="account-block-class/#properties">Properties</a><ul>
@@ -4334,30 +4381,31 @@ Prefer using <code>block.hash</code> as this will give you the hash of a valid a
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">({</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;d517e8d4dc9c676876b72ad0cbb4c45890804aa438edd1f171ffc66276202a95&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">});</span>
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="p">});</span>
-<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">(</span><span class="nx">block</span><span class="p">);</span>
-<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hash:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">);</span><span class="w"> </span><span class="c1">// b8db850e1a71d028e5e0e24045bce033b5e430e3da84b524de254a2a6f61fc1d</span>
-<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;block.hash:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span><span class="w"> </span><span class="c1">// null</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">({</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&#39;</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;d517e8d4dc9c676876b72ad0cbb4c45890804aa438edd1f171ffc66276202a95&#39;</span><span class="p">,</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">,</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">});</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;558c6873d27c903ec9067cf54432e9d16d9b31474adab165ad1f6cc392beeb8d&#39;</span><span class="p">,</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="p">});</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">(</span><span class="nx">block</span><span class="p">);</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hash:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">hash</span><span class="p">);</span><span class="w"> </span><span class="c1">// b8db850e1a71d028e5e0e24045bce033b5e430e3da84b524de254a2a6f61fc1d</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;block.hash:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">block</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span><span class="w"> </span><span class="c1">// null</span>
+</span></code></pre></div></li>
 </ul>
 <h3 id="signaccountblock"><code>signAccountBlock</code></h3>
 <p>Calculate the signature of a signed account block. </p>
-<p>:::tip
-Use the <code>block.sign</code> method to automatically set the signature and public key of the block. See <a href="account-block-class/#sign">here</a> for details.
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the <code>block.sign</code> method to automatically set the signature and public key of the block. See <a href="account-block-class/#sign">here</a> for details.</p>
+</div>
 <ul>
 <li><strong>Parameters</strong><ul>
 <li><code>accountBlock: object</code> Fields are described above in <a href="account-block-class/#properties">Properties</a><ul>
@@ -4388,25 +4436,25 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">blockProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;d517e8d4dc9c676876b72ad0cbb4c45890804aa438edd1f171ffc66276202a95&#39;</span><span class="p">,</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">,</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p">};</span>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">(</span><span class="nx">blockProps</span><span class="p">);</span>
-<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">signAccountBlock</span><span class="p">(</span>
-<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">        </span><span class="nx">hash</span><span class="p">,</span>
-<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">        </span><span class="p">...</span><span class="nx">blockProps</span><span class="p">,</span>
-<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">    </span><span class="nx">privateKey</span><span class="p">,</span>
-<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="p">);</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wallet</span><span class="p">.</span><span class="nx">createAddressByPrivateKey</span><span class="p">();</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">blockProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nx">blockType</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nx">previousHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;d517e8d4dc9c676876b72ad0cbb4c45890804aa438edd1f171ffc66276202a95&#39;</span><span class="p">,</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">,</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p">};</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getAccountBlockHash</span><span class="p">(</span><span class="nx">blockProps</span><span class="p">);</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">signAccountBlock</span><span class="p">(</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">        </span><span class="nx">hash</span><span class="p">,</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">        </span><span class="p">...</span><span class="nx">blockProps</span><span class="p">,</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">    </span><span class="nx">privateKey</span><span class="p">,</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="p">);</span>
+</span></code></pre></div></li>
 </ul>
 <h3 id="messagetodata"><code>messageToData</code></h3>
 <p>Encode a message string into base64 format according to <a href="https://docs.vite.org/vite-docs/vep/vep-8.html">VEP-8</a>.</p>
@@ -4420,8 +4468,8 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">messageToData</span><span class="p">(</span><span class="s1">&#39;1212hhhh&#39;</span><span class="p">);</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">messageToData</span><span class="p">(</span><span class="s1">&#39;1212hhhh&#39;</span><span class="p">);</span>
+</span></code></pre></div></li>
 </ul>
 <h3 id="isrequestblock"><code>isRequestBlock</code></h3>
 <p>Determine if an account block is request transaction based on its <code>blockType</code>
@@ -4430,14 +4478,14 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the block is a request transaction.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">});</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isRequestBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="nx">blockType</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;send&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">});</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isRequestBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="nx">blockType</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="isresponseblock"><code>isResponseBlock</code></h3>
 <p>Determine if an account block is response transaction based on its <code>blockType</code>
 - <strong>Parameters</strong>
@@ -4445,12 +4493,12 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the block is a response transaction.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span><span class="p">,</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">});</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isResponseBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="nx">blockType</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;receive&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">});</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isResponseBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">.</span><span class="nx">blockType</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="getcreatecontractdata"><code>getCreateContractData</code></h3>
 <p>Generate data of <code>AccountBlock</code> for creating smart contract
 - <strong>Parameters</strong>
@@ -4464,14 +4512,14 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 - <strong>Returns</strong>
     - <code>Base64</code>: Encoded data string
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getCreateContractData</span><span class="p">({</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nx">randomDegree</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nx">quotaMultiplier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="p">,</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b506101ca806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806380ae0ea114610046575b600080fd5b6100bd6004803603602081101561005c57600080fd5b810190808035906020019064010000000081111561007957600080fd5b82018360208201111561008b57600080fd5b803590602001918460208302840111640100000000831117156100ad57600080fd5b90919293919293905050506100bf565b005b60006002838390508115156100d057fe5b061415156100dd57600080fd5b600080905060008090505b8383905081101561018a576000848483818110151561010357fe5b9050602002013590506000858560018501818110151561011f57fe5b905060200201359050808401935080841015151561013c57600080fd5b600081111561017d578173ffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff168260405160405180820390838587f1505050505b50506002810190506100e8565b50348114151561019957600080fd5b50505056fea165627a7a723058203cef4a3f93b33e64e99e0f88f586121282084394f6d4b70f1030ca8c360b74620029&#39;</span><span class="p">,</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getCreateContractData</span><span class="p">({</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nx">randomDegree</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nx">quotaMultiplier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10&#39;</span><span class="p">,</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b506101ca806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806380ae0ea114610046575b600080fd5b6100bd6004803603602081101561005c57600080fd5b810190808035906020019064010000000081111561007957600080fd5b82018360208201111561008b57600080fd5b803590602001918460208302840111640100000000831117156100ad57600080fd5b90919293919293905050506100bf565b005b60006002838390508115156100d057fe5b061415156100dd57600080fd5b600080905060008090505b8383905081101561018a576000848483818110151561010357fe5b9050602002013590506000858560018501818110151561011f57fe5b905060200201359050808401935080841015151561013c57600080fd5b600081111561017d578173ffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff168260405160405180820390838587f1505050505b50506002810190506100e8565b50348114151561019957600080fd5b50505056fea165627a7a723058203cef4a3f93b33e64e99e0f88f586121282084394f6d4b70f1030ca8c360b74620029&#39;</span><span class="p">,</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="getcallcontractdata"><code>getCallContractData</code></h3>
 <p>Generate data of <code>AccountBlock</code> for calling a contract
 - <strong>Parameters</strong>
@@ -4482,14 +4530,14 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 - <strong>Returns</strong>
     - <code>Base64</code>: Encoded data string
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Snapshot_Gid</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">Snapshot_Gid</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SBP Name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="w"> </span><span class="p">];</span>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">abi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">;</span>
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1">// It&#39;s ok to omit methodName only if the abi contains one method</span>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getCallContractData</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="p">,</span><span class="w"> </span><span class="nx">abi</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Snapshot_Gid</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">Snapshot_Gid</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SBP Name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="w"> </span><span class="p">];</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">abi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">;</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1">// It&#39;s ok to omit methodName only if the abi contains one method</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">getCallContractData</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="p">,</span><span class="w"> </span><span class="nx">abi</span><span class="w"> </span><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="gettransactiontype"><code>getTransactionType</code></h3>
 <p>Return the <a href="#transaction-types">Transaction Type</a> of a contract call
 - <strong>Parameters</strong>
@@ -4500,16 +4548,16 @@ Use the <code>block.sign</code> method to automatically set the signature and pu
 - <strong>Returns</strong>
     - <code>txType : TxType</code> Transaction type
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelSBPVoting&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="p">});</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getTransactionType</span><span class="p">(</span><span class="nx">block</span><span class="p">));</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1">// {</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="c1">//  transactionType: &#39;CancelSBPVoting&#39;,</span>
-<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1">//  contractAddress: &#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;,</span>
-<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="c1">//  abi: { type: &#39;function&#39;, name: &#39;CancelSBPVoting&#39;, inputs: [] }</span>
-<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="c1">// }</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">createAccountBlock</span><span class="p">(</span><span class="s1">&#39;cancelSBPVoting&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="p">});</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">accountBlock</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getTransactionType</span><span class="p">(</span><span class="nx">block</span><span class="p">));</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1">// {</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="c1">//  transactionType: &#39;CancelSBPVoting&#39;,</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1">//  contractAddress: &#39;vite_0000000000000000000000000000000000000004d28108e76b&#39;,</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="c1">//  abi: { type: &#39;function&#39;, name: &#39;CancelSBPVoting&#39;, inputs: [] }</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="c1">// }</span>
+</span></code></pre></div></p>
 
 
 

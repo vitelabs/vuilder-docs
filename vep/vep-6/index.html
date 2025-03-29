@@ -15,7 +15,7 @@
         <link rel="next" href="../vep-7/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3294,18 +3330,18 @@
 <h2 id="introduction">Introduction</h2>
 <p>This specification defines standard URI format used in Vite</p>
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">request</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vite&quot;</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">[</span><span class="n">target_address</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;@&quot;</span><span class="w"> </span><span class="n">chain_id</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="n">function_name</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;?&quot;</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="p">]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">target_address</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">vite_address</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">chain_id</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">function_name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">STRING</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">vite_address</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">&quot;vite_&quot;</span><span class="w"> </span><span class="mi">50</span><span class="o">*</span><span class="n">HEXDIG</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">VNS_NAME</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">parameters</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;&amp;&quot;</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">parameter</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="s">&quot;=&quot;</span><span class="w"> </span><span class="n">value</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">key</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tti&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;amount&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;fee&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;data&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">value</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">vite_address</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">token_type_id</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">STRING</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">token_type_id</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tti_&quot;</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="n">HEXDIG</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">number</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">]</span>
-</code></pre></div>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">request</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vite&quot;</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">[</span><span class="n">target_address</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;@&quot;</span><span class="w"> </span><span class="n">chain_id</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="n">function_name</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;?&quot;</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">target_address</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">vite_address</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">chain_id</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">function_name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">STRING</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">vite_address</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">&quot;vite_&quot;</span><span class="w"> </span><span class="mi">50</span><span class="o">*</span><span class="n">HEXDIG</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">VNS_NAME</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">parameters</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;&amp;&quot;</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">parameter</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="s">&quot;=&quot;</span><span class="w"> </span><span class="n">value</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">key</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tti&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;amount&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;fee&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;data&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">value</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">vite_address</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">token_type_id</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">STRING</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">token_type_id</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;tti_&quot;</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="n">HEXDIG</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">number</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">&quot;e&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="n">DIGIT</span><span class="w"> </span><span class="p">]</span>
+</span></code></pre></div>
 <p><strong><em>STRING</em></strong> - A <code>URLEncode</code> string, using <strong><em>%</em></strong> to escape all of delimiters. Delimiters that need to be escaped include <strong><em>@/?&amp;=%:</em></strong></p>
 <p><strong><em>number</em></strong> - A number represented in scientific notation</p>
 <p><strong><em>VNS_NAME</em></strong> - Vite name service. Specific standard is being worked out</p>

@@ -15,7 +15,7 @@
         <link rel="next" href="../../vuilder/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3396,16 +3432,16 @@
 <p><code>solppc-js</code> is a JavaScript binding for the <a href="https://github.com/vitelabs/soliditypp">Solidity++ compiler</a>.</p>
 <h2 id="how-to-install-solppc-js">How to Install solppc-js</h2>
 <p>Install the latest stable version of the Solidity++ compiler from npm:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>solppc
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>solppc
+</span></code></pre></div>
 <h3 id="usage-in-command-line">Usage in Command-Line</h3>
 <p>If this package is installed globally (<code>npm install -g solppc</code>), a command-line tool called <code>solppcjs</code> will be available.</p>
 <p>To see all the supported features, execute:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>solppcjs<span class="w"> </span>--help
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>solppcjs<span class="w"> </span>--help
+</span></code></pre></div>
 <p>To compile a contract that imports other contracts via relative paths:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>solppcjs<span class="w"> </span>--bin<span class="w"> </span>--include-path<span class="w"> </span>node_modules/<span class="w"> </span>--base-path<span class="w"> </span>.<span class="w"> </span>MainContract.solpp
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>solppcjs<span class="w"> </span>--bin<span class="w"> </span>--include-path<span class="w"> </span>node_modules/<span class="w"> </span>--base-path<span class="w"> </span>.<span class="w"> </span>MainContract.solpp
+</span></code></pre></div>
 Use the <code>--base-path</code> and <code>--include-path</code> options to describe the layout of your project.</p>
 <ul>
 <li><code>--base-path</code> represents the root of your own source tree </li>
@@ -3430,96 +3466,96 @@ The compiler refers to files from outside of these directories using absolute pa
 filesystem access. A workaround is to collect the names of dependencies, return an error, and keep re-running the compiler until all dependencies are resolved.</p>
 <h4 id="example-usage-without-the-import-callback">Example usage without the import callback</h4>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;contract C { function f() public async { } }&#39;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">outputSelection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">};</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">)));</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">// `output` here contains the JSON output as specified in the documentation</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">contractName</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nx">contractName</span><span class="w"> </span><span class="o">+</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="s1">&#39;: &#39;</span><span class="w"> </span><span class="o">+</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">      </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">][</span><span class="nx">contractName</span><span class="p">].</span><span class="nx">evm</span><span class="p">.</span><span class="nx">bytecode</span><span class="p">.</span><span class="nx">object</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">  </span><span class="p">);</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;contract C { function f() public async { } }&#39;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">outputSelection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">};</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">)));</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">// `output` here contains the JSON output as specified in the documentation</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">contractName</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nx">contractName</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">      </span><span class="s1">&#39;: &#39;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">      </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">][</span><span class="nx">contractName</span><span class="p">].</span><span class="nx">evm</span><span class="p">.</span><span class="nx">bytecode</span><span class="p">.</span><span class="nx">object</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">}</span>
+</span></code></pre></div>
 <h4 id="example-usage-with-import-callback">Example usage with import callback</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;import &quot;lib.solpp&quot;; contract C { function f() public sync { L.f(); } }&#39;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nx">outputSelection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">};</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="kd">function</span><span class="w"> </span><span class="nx">findImports</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;lib.solpp&#39;</span><span class="p">)</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span><span class="nx">contents</span><span class="o">:</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="s1">&#39;library L { function f() internal returns (uint) { return 7; } }&#39;</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p">};</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;File not found&#39;</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="p">}</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c1">// New syntax (supported from 0.5.12, mandatory from 0.6.0)</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">import</span><span class="o">:</span><span class="w"> </span><span class="nx">findImports</span><span class="w"> </span><span class="p">})</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="p">);</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="c1">// `output` here contains the JSON output as specified in the documentation</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">contractName</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="nx">contractName</span><span class="w"> </span><span class="o">+</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">      </span><span class="s1">&#39;: &#39;</span><span class="w"> </span><span class="o">+</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">      </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">][</span><span class="nx">contractName</span><span class="p">].</span><span class="nx">evm</span><span class="p">.</span><span class="nx">bytecode</span><span class="p">.</span><span class="nx">object</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">  </span><span class="p">);</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;import &quot;lib.solpp&quot;; contract C { function f() public sync { L.f(); } }&#39;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nx">outputSelection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="s1">&#39;*&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="p">};</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="kd">function</span><span class="w"> </span><span class="nx">findImports</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">path</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;lib.solpp&#39;</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span><span class="nx">contents</span><span class="o">:</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="s1">&#39;library L { function f() internal returns (uint) { return 7; } }&#39;</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;File not found&#39;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="p">}</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c1">// New syntax (supported from 0.5.12, mandatory from 0.6.0)</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">  </span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">import</span><span class="o">:</span><span class="w"> </span><span class="nx">findImports</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="p">);</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="c1">// `output` here contains the JSON output as specified in the documentation</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">contractName</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">    </span><span class="nx">contractName</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">      </span><span class="s1">&#39;: &#39;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">      </span><span class="nx">output</span><span class="p">.</span><span class="nx">contracts</span><span class="p">[</span><span class="s1">&#39;test.solpp&#39;</span><span class="p">][</span><span class="nx">contractName</span><span class="p">].</span><span class="nx">evm</span><span class="p">.</span><span class="nx">bytecode</span><span class="p">.</span><span class="nx">object</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>The <code>smtSolver</code> callback function is used to solve SMT queries generated by Solidity's SMTChecker. In case you have an SMT solver installed locally, it can be used to solve the given queries, where the callback must synchronously return either an error or the result from the solver. A default <code>smtSolver</code> callback is distributed by <code>solppc-js</code>, which relies on either Z3 or CVC4 being installed locally.</p>
 <h4 id="example-usage-with-smtsolver-callback">Example usage with smtSolver callback</h4>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">smt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;smtsolver&#39;</span><span class="p">);</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Note that this example only works via node and not in the browser.</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pragma experimental SMTChecker; contract C { function f(uint x) public async { assert(x &gt; 0); } }&#39;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">};</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">smtSolver</span><span class="o">:</span><span class="w"> </span><span class="nx">smt</span><span class="p">.</span><span class="nx">smtSolver</span><span class="w"> </span><span class="p">})</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">);</span>
-</code></pre></div>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc&#39;</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">smt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;smtsolver&#39;</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// Note that this example only works via node and not in the browser.</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">language</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Solidity&#39;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nx">sources</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="s1">&#39;test.solpp&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pragma experimental SMTChecker; contract C { function f(uint x) public async { assert(x &gt; 0); } }&#39;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">};</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="kd">var</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="nx">solppc</span><span class="p">.</span><span class="nx">compile</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">smtSolver</span><span class="o">:</span><span class="w"> </span><span class="nx">smt</span><span class="p">.</span><span class="nx">smtSolver</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">);</span>
+</span></code></pre></div>
 The assertion is clearly false, and an <code>assertion failure</code> warning
 should be returned.</p>
 <h4 id="low-level-api">Low-level API</h4>
@@ -3535,31 +3571,31 @@ should be returned.</p>
 <p>When using libraries, the resulting bytecode will contain placeholders for the real addresses of the referenced libraries. These have to be updated, via a process called linking, before deploying the contract.</p>
 <p>The <code>linker</code> module (<code>require('solppc/linker')</code>) offers helpers to accomplish this.</p>
 <p>The <code>linkBytecode</code> method provides a simple helper for linking:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/linker&#39;</span><span class="p">);</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">bytecode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">linker</span><span class="p">.</span><span class="nx">linkBytecode</span><span class="p">(</span><span class="nx">bytecode</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MyLibrary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_01020304050607...&#39;</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/linker&#39;</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">bytecode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">linker</span><span class="p">.</span><span class="nx">linkBytecode</span><span class="p">(</span><span class="nx">bytecode</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MyLibrary</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_01020304050607...&#39;</span><span class="w"> </span><span class="p">});</span>
+</span></code></pre></div>
 <p>As of Solidity 0.4.11 the compiler supports <a href="https://solidity.readthedocs.io/en/develop/using-the-compiler.html#compiler-input-and-output-json-description">standard JSON input and output</a> which outputs a <em>link references</em> map. This gives a map of library names to offsets in the bytecode to replace the addresses at. It also doesn't have the limitation on library file and contract name lengths.</p>
 <p>There is a method available in the <code>linker</code> module called <code>findLinkReferences</code> which can find such link references in bytecode produced by an older compiler:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/linker&#39;</span><span class="p">);</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linkReferences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">linker</span><span class="p">.</span><span class="nx">findLinkReferences</span><span class="p">(</span><span class="nx">bytecode</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/linker&#39;</span><span class="p">);</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">linkReferences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">linker</span><span class="p">.</span><span class="nx">findLinkReferences</span><span class="p">(</span><span class="nx">bytecode</span><span class="p">);</span>
+</span></code></pre></div>
 <h2 id="browser-usage">Browser Usage</h2>
 <p>Add the version of <code>solppc</code> you want to use into <code>index.html</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">script</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://github.com/vitelabs/soliditypp/releases/download/latest/soljson.js&quot;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">script</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://github.com/vitelabs/soliditypp/releases/download/latest/soljson.js&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
 <p>This will load <code>solppc</code> into the global variable <code>window.Module</code>. Then use this inside Javascript as:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">wrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/wrapper&#39;</span><span class="p">);</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wrapper</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Module</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">wrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;solppc/wrapper&#39;</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wrapper</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Module</span><span class="p">);</span>
+</span></code></pre></div>
 <p>Or in ES6 syntax:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">wrapper</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;solppc/wrapper&#39;</span><span class="p">;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wrapper</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Module</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">wrapper</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;solppc/wrapper&#39;</span><span class="p">;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">solppc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">wrapper</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">Module</span><span class="p">);</span>
+</span></code></pre></div>
 
 
 

@@ -15,7 +15,7 @@
         <link rel="next" href="../vite-vm-instructions/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3308,13 +3344,13 @@
 <h2 id="execution-context">Execution Context</h2>
 <p>Each transaction with one of the three new types contains an execution context data stored in the database.</p>
 <p>The execution context is defined as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nx">referrer</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">Hash</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">callback</span><span class="w"> </span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">stack</span><span class="w">  </span><span class="p">[]</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">memory</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nx">referrer</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span><span class="nx">Hash</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">callback</span><span class="w"> </span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">stack</span><span class="w">  </span><span class="p">[]</span><span class="nx">big</span><span class="p">.</span><span class="nx">Int</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">memory</span><span class="w"> </span><span class="p">[]</span><span class="kt">byte</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>For a <code>SendSyncCall</code> transaction, its execution context includes:
 - <code>referrer</code> holds the send transaction hash of the upstream (origin) sync call.
 - <code>callback</code> holds the 4-bytes method id of the callback function entry.
@@ -3328,116 +3364,116 @@
 <p><img alt="referrer" src="../assets/vite-vm-01.png" /></p>
 <h2 id="synccall-instruction">SyncCall Instruction</h2>
 <p>The <code>synccall</code> instruction is implemented in pseudocode as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opSynccall</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">toAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenID</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span><span class="w"> </span><span class="nx">inOffset</span><span class="p">,</span><span class="w"> </span><span class="nx">inSize</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">calldata</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">mem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">inOffset</span><span class="p">,</span><span class="w"> </span><span class="nx">inSize</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">originSendBlock</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="c1">// upstream call</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="c1">// load origin from VM context, it was saved by previous callbackdest</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">tx</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ViteRequestTransaction</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="nx">from</span><span class="p">:</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="nx">to</span><span class="p">:</span><span class="w"> </span><span class="nx">toAddress</span><span class="p">,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="kd">type</span><span class="p">:</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="p">,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="nx">value</span><span class="p">:</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="nx">token</span><span class="p">:</span><span class="w"> </span><span class="nx">tokenID</span><span class="p">,</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="nx">data</span><span class="p">:</span><span class="w"> </span><span class="nx">calldata</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nx">executionContext</span><span class="p">:</span><span class="w"> </span><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nx">referrer</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">Hash</span><span class="p">,</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nx">callback</span><span class="p">:</span><span class="w"> </span><span class="nx">callback</span><span class="p">,</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">            </span><span class="nx">stack</span><span class="p">:</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">,</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="nx">memory</span><span class="p">:</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">memory</span><span class="p">,</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="nx">vite</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opSynccall</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">toAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenID</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span><span class="w"> </span><span class="nx">inOffset</span><span class="p">,</span><span class="w"> </span><span class="nx">inSize</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">calldata</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">mem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">inOffset</span><span class="p">,</span><span class="w"> </span><span class="nx">inSize</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">originSendBlock</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="c1">// upstream call</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="c1">// load origin from VM context, it was saved by previous callbackdest</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nx">tx</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ViteRequestTransaction</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="nx">from</span><span class="p">:</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="nx">to</span><span class="p">:</span><span class="w"> </span><span class="nx">toAddress</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="kd">type</span><span class="p">:</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="nx">value</span><span class="p">:</span><span class="w"> </span><span class="nx">amount</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="nx">token</span><span class="p">:</span><span class="w"> </span><span class="nx">tokenID</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="nx">data</span><span class="p">:</span><span class="w"> </span><span class="nx">calldata</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nx">executionContext</span><span class="p">:</span><span class="w"> </span><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nx">referrer</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">Hash</span><span class="p">,</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nx">callback</span><span class="p">:</span><span class="w"> </span><span class="nx">callback</span><span class="p">,</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">            </span><span class="nx">stack</span><span class="p">:</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">,</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">            </span><span class="nx">memory</span><span class="p">:</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">memory</span><span class="p">,</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="nx">vite</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="return-instruction">Return Instruction</h2>
 <p>The <code>return</code> instruction is implemented in pseudocode as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opReturn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">offset</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">ret</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">mem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">offset</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">sendType</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">BlockType</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">// need to trigger a callback transaction</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendFailureCallback</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="c1">// get the send-block of the original call</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="c1">// the return statement is not in a callback function</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="c1">// so origin is the latest send transaction</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="c1">// the return statement is in a callback function</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="c1">// load origin from VM context, it was saved by previous callbackdest</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">BlockType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="nx">callback</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">callback</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">            </span><span class="c1">// calldata of the callback: [callback_id][return_data]</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="nx">data</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">concat</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">ret</span><span class="p">)</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">            </span><span class="nx">tx</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ViteRequestTransaction</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">                </span><span class="nx">from</span><span class="p">:</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">                </span><span class="nx">to</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">                </span><span class="kd">type</span><span class="p">:</span><span class="w"> </span><span class="nx">SendCallback</span><span class="p">,</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                </span><span class="nx">data</span><span class="p">:</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="nx">executionContext</span><span class="p">:</span><span class="w"> </span><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">                    </span><span class="nx">referrer</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">Hash</span><span class="p">,</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">            </span><span class="nx">vite</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opReturn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">offset</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">ret</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">mem</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">offset</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">sendType</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">BlockType</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">// need to trigger a callback transaction</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendFailureCallback</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="c1">// get the send-block of the original call</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="c1">// the return statement is not in a callback function</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="c1">// so origin is the latest send transaction</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="c1">// the return statement is in a callback function</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="c1">// load origin from VM context, it was saved by previous callbackdest</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">BlockType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendSyncCall</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="nx">callback</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">callback</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">            </span><span class="c1">// calldata of the callback: [callback_id][return_data]</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="nx">data</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">concat</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span><span class="w"> </span><span class="nx">ret</span><span class="p">)</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">            </span><span class="nx">tx</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ViteRequestTransaction</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">                </span><span class="nx">from</span><span class="p">:</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">                </span><span class="nx">to</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">                </span><span class="kd">type</span><span class="p">:</span><span class="w"> </span><span class="nx">SendCallback</span><span class="p">,</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                </span><span class="nx">data</span><span class="p">:</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="nx">executionContext</span><span class="p">:</span><span class="w"> </span><span class="nx">ExecutionContext</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">                    </span><span class="nx">referrer</span><span class="p">:</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">Hash</span><span class="p">,</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">            </span><span class="nx">vite</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="callbackdest-instruction">CallbackDest Instruction</h2>
 <p>The <code>callbackdest</code> instruction is implemented in pseudocode as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opCallbackDest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">sendType</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">BlockType</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendFailureCallback</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nx">referrer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">referrer</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="c1">// validate sync call send block</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">ToAddress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="c1">// get upstream origin send block</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">referrer</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="c1">// validate origin send block</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">ToAddress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="c1">// save origin send block to VM context</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">origin</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="c1">// restore stack</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">stack</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="c1">// push success flag (act as RETURN instruction in EVM)</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="c1">// push true</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">            </span><span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// sendType == SendFailureCallback</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">            </span><span class="c1">// push false</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">        </span><span class="c1">// restore memory</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">memory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">memory</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">opCallbackDest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">sendType</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">BlockType</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendFailureCallback</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nx">referrer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">referrer</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="c1">// validate sync call send block</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">ToAddress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">sendBlock</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="c1">// get upstream origin send block</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nx">origin</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">referrer</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="c1">// validate origin send block</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">origin</span><span class="p">.</span><span class="nx">ToAddress</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">this</span><span class="p">.</span><span class="nx">address</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="c1">// save origin send block to VM context</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Origin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">origin</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="c1">// restore stack</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">stack</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">stack</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="c1">// push success flag (act as RETURN instruction in EVM)</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">sendType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">SendCallback</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="c1">// push true</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">            </span><span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// sendType == SendFailureCallback</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">            </span><span class="c1">// push false</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">            </span><span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">        </span><span class="c1">// restore memory</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="nx">vm</span><span class="p">.</span><span class="nx">memory</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">referrer</span><span class="p">.</span><span class="nx">executionContext</span><span class="p">.</span><span class="nx">memory</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="advanced-example">Advanced example</h2>
 <details>
   <summary>Show</summary>
@@ -3449,144 +3485,144 @@
 ### Solidity Compiler and EVM
 
 Pseudo assembly code for contract `A`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>function_selector:
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>if method_id == sig_hash(add)
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    jump(tag_function_add)
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>else
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    fallback()
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>stop
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>tag_function_add:
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>a, b := abi_decode(calldata)
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>tmp := checked_add(a, b)
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>ret := abi_encode(tmp)
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>return(ret)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>function_selector:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>if method_id == sig_hash(add)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    jump(tag_function_add)
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>else
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    fallback()
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>stop
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>tag_function_add:
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>a, b := abi_decode(calldata)
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>tmp := checked_add(a, b)
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>ret := abi_encode(tmp)
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>return(ret)
+</span></code></pre></div>
 
 Pseudo assembly code for contract `B`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>function_selector:
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>if method_id == sig_hash(sum)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    jump(tag_function_sum)
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>else
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    fallback()
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>stop
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>tag_function_sum:
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>a, b, c := abi_decode(calldata)
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>contract_address := contractA
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>method_id := sig_hash(add)
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>params := abi_encode(a, b)
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>call(contract_address, method_id, params)
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>partialResult := abi_decode(returndata)
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>params := abi_encode(partialResult, c)
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>call(contract_address, method_id, params)
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>ret := abi_decode(returndata)
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>return(ret)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>function_selector:
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>if method_id == sig_hash(sum)
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    jump(tag_function_sum)
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>else
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    fallback()
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>stop
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>tag_function_sum:
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>a, b, c := abi_decode(calldata)
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>contract_address := contractA
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>method_id := sig_hash(add)
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>params := abi_encode(a, b)
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>call(contract_address, method_id, params)
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>partialResult := abi_decode(returndata)
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>params := abi_encode(partialResult, c)
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>call(contract_address, method_id, params)
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>ret := abi_decode(returndata)
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>return(ret)
+</span></code></pre></div>
 
 Pseudo assembly code for contract `C`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>function_selector:
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>if method_id == sig_hash(test)
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    jump(tag_function_test)
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>else
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    fallback()
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>stop
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>tag_function_test:
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>contract_address := contractB
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>method_id := sig_hash(sum)
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>params := abi_encode(1, 2, 3)
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>call(contract_address, method_id, params)
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>ret := abi_decode(returndata)
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>data = ret
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>return
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>function_selector:
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>if method_id == sig_hash(test)
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    jump(tag_function_test)
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>else
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    fallback()
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>stop
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>tag_function_test:
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>contract_address := contractB
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>method_id := sig_hash(sum)
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>params := abi_encode(1, 2, 3)
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>call(contract_address, method_id, params)
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>ret := abi_decode(returndata)
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>data = ret
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>return
+</span></code></pre></div>
 
 ![compiled from solidity](./assets/vite-vm-03.png)
 
 ### Solidity++ Compiler
 
 Pseudo assembly code for contract `A`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>function_selector:
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>if method_id == sig_hash(add)
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    jump(tag_function_add)
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>else
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    fallback()
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>stop
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>tag_function_add:
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>a, b := abi_decode(calldata)
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>tmp := checked_add(a, b)
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>ret := abi_encode(tmp)
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>return(ret)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>function_selector:
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>if method_id == sig_hash(add)
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    jump(tag_function_add)
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>else
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    fallback()
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>stop
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>tag_function_add:
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>a, b := abi_decode(calldata)
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>tmp := checked_add(a, b)
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>ret := abi_encode(tmp)
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>return(ret)
+</span></code></pre></div>
 
 Pseudo assembly code for contract `B`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>function_selector:
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>if method_id == sig_hash(sum)
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    jump(tag_function_sum)
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>else if method_id == 0x00000001
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    jump(tag_callback_01)
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>else if method_id == 0x00000002
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    jump(tag_callback_02)
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>else
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    fallback()
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>stop
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>tag_function_sum:
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>a, b, c := abi_decode(calldata)
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>contract_address := contractA
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>method_id := sig_hash(add)
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>params := abi_encode(a, b)
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>callback_id := 0x00000001
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>synccall(contract_address, method_id, params, callback_id)
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>stop
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>tag_callback_01:
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>callbackdest
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>p := abi_decode(calldata)
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>contract_address := contractA
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>method_id := sig_hash(add)
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>params := abi_encode(p, c)
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>callback_id := 0x00000002
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>synccall(contract_address, method_id, params, callback_id)
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>stop
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>tag_callback_02:
-<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>callbackdest
-<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>ret := abi_decode(calldata)
-<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>return(ret)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>function_selector:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>if method_id == sig_hash(sum)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    jump(tag_function_sum)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>else if method_id == 0x00000001
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    jump(tag_callback_01)
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>else if method_id == 0x00000002
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    jump(tag_callback_02)
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>else
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    fallback()
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>stop
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>tag_function_sum:
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>a, b, c := abi_decode(calldata)
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>contract_address := contractA
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>method_id := sig_hash(add)
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>params := abi_encode(a, b)
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>callback_id := 0x00000001
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>synccall(contract_address, method_id, params, callback_id)
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>stop
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>tag_callback_01:
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>callbackdest
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>p := abi_decode(calldata)
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>contract_address := contractA
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>method_id := sig_hash(add)
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>params := abi_encode(p, c)
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>callback_id := 0x00000002
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>synccall(contract_address, method_id, params, callback_id)
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>stop
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>tag_callback_02:
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>callbackdest
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>ret := abi_decode(calldata)
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>return(ret)
+</span></code></pre></div>
 
 Pseudo assembly code for contract `C`:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>function_selector:
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>if method_id == sig_hash(test)
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    jump(tag_function_test)
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>else if method_id == 0x00000001
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    jump(tag_callback_01)
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>else
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    fallback()
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>stop
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>tag_function_test:
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>contract_address := contractB
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>method_id := sig_hash(sum)
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>params := abi_encode(1, 2, 3)
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>callback_id := 0x00000001
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>synccall(contract_address, method_id, params, callback_id)
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>stop
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>tag_callback_01:
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>callbackdest
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>ret := abi_decode(calldata)
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>return(ret)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>function_selector:
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>if method_id == sig_hash(test)
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    jump(tag_function_test)
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>else if method_id == 0x00000001
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    jump(tag_callback_01)
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>else
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    fallback()
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>stop
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>tag_function_test:
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>contract_address := contractB
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>method_id := sig_hash(sum)
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>params := abi_encode(1, 2, 3)
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>callback_id := 0x00000001
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>synccall(contract_address, method_id, params, callback_id)
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>stop
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>tag_callback_01:
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>callbackdest
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>ret := abi_decode(calldata)
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>return(ret)
+</span></code></pre></div>
 
 ![compiled from soliditypp](./assets/vite-vm-04.png)
 

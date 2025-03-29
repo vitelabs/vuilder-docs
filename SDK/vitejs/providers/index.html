@@ -15,7 +15,7 @@
         <link rel="next" href="../viteapi-class/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3469,17 +3505,18 @@
 <p>IPC provider is a good option when using a local node since it gives the most secure connection.</p>
 <h2 id="websocket">WebSocket</h2>
 <h3 id="installation">Installation</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-ws
-</code></pre></div>
-<blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-ws
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Starting from 2.3.19, package @vite/vitejs-ws is consolidated into @vite/vitejs, so there's no need to install it separately. </p>
-</blockquote>
+</div>
 <h3 id="module-import">Module Import</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ws&quot;</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// After 2.3.19 </span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ws&quot;</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// After 2.3.19 </span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="ws_rpc-class"><code>WS_RPC</code> Class</h3>
 <ul>
 <li>
@@ -3499,67 +3536,68 @@
 </li>
 <li>
 <p><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">providerWsURLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">localnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ws://localhost:23457&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">testnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;wss://buidl.vite.net/gvite/ws&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">mainnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;wss://node.vite.net/gvite/ws&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">};</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ws&quot;</span><span class="p">;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">wsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">providerWsURLs</span><span class="p">.</span><span class="nx">localnet</span><span class="p">,</span><span class="w"> </span><span class="mf">60000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">retryTimes</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">retryInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">5000</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">providerWsURLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">localnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ws://localhost:23457&#39;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">testnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;wss://buidl.vite.net/gvite/ws&#39;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">mainnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;wss://node.vite.net/gvite/ws&#39;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">};</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">import</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ws&quot;</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">wsProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">providerWsURLs</span><span class="p">.</span><span class="nx">localnet</span><span class="p">,</span><span class="w"> </span><span class="mf">60000</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">retryTimes</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">retryInterval</span><span class="o">:</span><span class="w"> </span><span class="mf">5000</span><span class="w"> </span><span class="p">});</span>
+</span></code></pre></div></p>
 </li>
 </ul>
 <h3 id="reconnecthandler-and-subscription-renewal">ReconnectHandler and Subscription Renewal</h3>
 <p>In 2.3.19, <code>ReconnectHandler</code>, <code>AlwaysReconnect</code> and <code>RenewSubscription</code> are added to support flexible reconnection mechanism and subscription renewal.</p>
-<p>:::warning Breaking Change
-<code>retryTimes</code> and <code>retryInterval</code> are moved from the options of provider to <code>ReconnectHandler</code>'s constructor. 
-:::</p>
+<div class="admonition warning">
+<p class="admonition-title">Breaking Change</p>
+<p><code>retryTimes</code> and <code>retryInterval</code> are moved from the options of provider to <code>ReconnectHandler</code>'s constructor.</p>
+</div>
 <p>Let's see a few examples.</p>
 <ol>
 <li>Auto resubscribe with maximum 5 retries and 1000ms interval.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RenewSubscription</span><span class="p">(</span><span class="nx">retryTimes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">retryInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RenewSubscription</span><span class="p">(</span><span class="nx">retryTimes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">retryInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">));</span>
+</span></code></pre></div>
 <ol>
 <li>Auto resubscribe with maximum retries and default 10000ms interval.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RenewSubscription</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_VALUE</span><span class="p">));</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">RenewSubscription</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_VALUE</span><span class="p">));</span>
+</span></code></pre></div>
 <ol>
 <li>Auto reconnect with unlimited retries and default 10000ms interval. </li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AlwaysReconnect</span><span class="p">());</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">},</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AlwaysReconnect</span><span class="p">());</span>
+</span></code></pre></div>
 <ol>
 <li>Use default handler (auto reconnect with 10 retries and 10000ms interval).</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">});</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WS_RPC</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">wsURL</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ViteAPI</span><span class="p">(</span><span class="nx">ws</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connected&quot;</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">});</span>
+</span></code></pre></div>
 <h2 id="http">HTTP</h2>
 <h3 id="installation_1">Installation</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-http
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-http
+</span></code></pre></div>
 <blockquote>
 <p>Starting from 2.3.19, package @vite/vitejs-http is consolidated into @vite/vitejs, so there's no need to install the package separately. </p>
 </blockquote>
 <h3 id="module-import_1">Module Import</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-http&quot;</span><span class="p">;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// After 2.3.19 </span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-http&quot;</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// After 2.3.19 </span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="http_rpc-class"><code>HTTP_RPC</code> Class</h3>
 <ul>
 <li><strong>Constructor</strong><ul>
@@ -3572,30 +3610,30 @@
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-http&quot;</span><span class="p">;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">providerHttpURLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nx">localnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:23456&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nx">testnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://buidl.vite.net/gvite&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nx">mainnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://node.vite.net/gvite&#39;</span><span class="p">,</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">};</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">httpProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="p">(</span><span class="nx">providerHttpURLs</span><span class="p">.</span><span class="nx">mainnet</span><span class="p">);</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-http&quot;</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">providerHttpURLs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nx">localnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:23456&#39;</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nx">testnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://buidl.vite.net/gvite&#39;</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nx">mainnet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://node.vite.net/gvite&#39;</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">};</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">httpProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HTTP_RPC</span><span class="p">(</span><span class="nx">providerHttpURLs</span><span class="p">.</span><span class="nx">mainnet</span><span class="p">);</span>
+</span></code></pre></div></li>
 </ul>
 <h2 id="ipc">IPC</h2>
 <h3 id="installation_2">Installation</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-ipc
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>npm<span class="w"> </span>i<span class="w"> </span>@vite/vitejs-ipc
+</span></code></pre></div>
 <blockquote>
 <p>Starting from 2.3.19, package @vite/vitejs-ipc is consolidated into @vite/vitejs, so there's no need to install the package separately. </p>
 </blockquote>
 <h3 id="module-import_2">Module Import</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ipc&quot;</span><span class="p">;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">// After 2.3.19 </span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ipc&quot;</span><span class="p">;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">// After 2.3.19 </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs&quot;</span><span class="p">;</span>
+</span></code></pre></div>
 <h3 id="ipc_rpc-class"><code>IPC_RPC</code> Class</h3>
 <ul>
 <li><strong>Constructor</strong><ul>
@@ -3608,10 +3646,10 @@
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ipc&quot;</span><span class="p">;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ipcProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="p">(</span><span class="s2">&quot;~/.gvite/maindata/gvite.ipc&quot;</span><span class="p">);</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@vite/vitejs-ipc&quot;</span><span class="p">;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ipcProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">IPC_RPC</span><span class="p">(</span><span class="s2">&quot;~/.gvite/maindata/gvite.ipc&quot;</span><span class="p">);</span>
+</span></code></pre></div></li>
 </ul>
 
 

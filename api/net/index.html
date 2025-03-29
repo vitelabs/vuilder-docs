@@ -15,7 +15,7 @@
         <link rel="next" href="../subscribe/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1012,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3277,99 +3313,109 @@
 
 
 <h1 id="net-api">Net API</h1>
-<p>:::tip
-To enable Net RPC API on the node, add "net" namespace in "PublicModules" in node_config.json
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable the Net RPC API on a node, add <code>"net"</code> to the <code>PublicModules</code> section in <code>node_config.json</code>.</p>
+</div>
 <p>Definitions:
-* <strong>Node Id</strong>: A 32 bytes Ed25519 public key derived from the 64-byte private key stored in "~/.gvite/maindata/net/peerKey" or specified in "PeerKey" in node_config.json
-* <strong>Node Name</strong>: A human-readable name specified in "Identity" in node_config.json
-* <strong>Node Address</strong>: Node's IP address + port
-* <strong>Net Id</strong>: "NetID" configured in node_config.json. "1" stands for mainnet.
-* <strong>Block Propagate Latency</strong>: The time difference between the broadcast time of the snapshot block and the block timestamp. In milliseconds.
-* <strong>Reliable Peer</strong>: When "WhiteBlockList" is configured in node_config.json, for each peer whose height does not exceed the sum of 86400 and the maximum height in the list, each snapshot block in the whitelist will be checked on the peer. If the check fails, the peer is considered unreliable. Or when "BlackBlockHashList" is set, if a block in the blacklist can be obtained from the peer, the peer is also considered unreliable. All peers are reliable by default.
-* <strong>Sync Start Height</strong>: The height at which the current synchronization loop starts. The value is the current height of the node rounded down by 100 and added by 1. If the snapshot block at the height cannot be obtained from peers, the synchronizer will try 100 blocks backward again, or will start from the irreversible height of the node. For new nodes the value is 0.
-* <strong>Sync End Height</strong>: The height of the median node sorted by peer's height at which the current synchronization loop ends. For new nodes the value is 0.
-* <strong>Irreversible Height</strong>: In each <a href="../../vite-basics/consensus/snapshot-block-producer/">round</a>, starting from the first snapshot block height, when more than two-thirds of SBPs have produced blocks, we call the height at this block irreversible height for the round.
-* <strong>Chunk</strong>: A chunk is a continuous range of snapshot blocks represented by a starting block and an ending block.</p>
-<blockquote>
-<p>Note: For synced nodes (state = 2), the sync start height and end height will not change.</p>
-</blockquote>
+* <strong>Node ID</strong>: A 32-byte Ed25519 public key derived from the 64-byte private key stored in <code>~/.gvite/maindata/net/peerKey</code> or specified as <code>PeerKey</code> in <code>node_config.json</code>.
+* <strong>Node Name</strong>: A human-readable name specified as <code>Identity</code> in <code>node_config.json</code>.
+* <strong>Node Address</strong>: The IP address and port of the node.
+* <strong>Network ID</strong>: Configured as <code>NetID</code> in <code>node_config.json</code>. <code>1</code> represents the mainnet.
+* <strong>Block Propagation Delay</strong>: The time difference, in milliseconds, between the broadcast of a snapshot block and its timestamp.
+* <strong>Reliable Node</strong>: A node is considered reliable if its height does not exceed the maximum height in the <code>WhiteBlockList</code> by more than 86400 and all snapshot blocks in the list are validated by the node. If <code>BlackBlockHashList</code> is configured and a node provides a block in the blacklist, it is deemed unreliable. By default, all nodes are considered reliable.
+* <strong>Sync Start Height</strong>: The starting height of the current sync cycle, calculated as the node's current height rounded down to the nearest 100 plus 1. If the snapshot block at this height cannot be retrieved, the synchronizer will attempt up to 100 blocks backward or start from the node's irreversible height. For new nodes, this value is <code>0</code>.
+* <strong>Sync End Height</strong>: The ending height of the current sync cycle, determined as the median height of all connected nodes. For new nodes, this value is <code>0</code>.
+* <strong>Irreversible Height</strong>: The height at which more than two-thirds of SBPs have produced blocks in a <a href="../../vite-basics/consensus/snapshot-block-producer/">round</a>. This height is considered irreversible.
+* <strong>Block Segment</strong>: A continuous range of snapshot blocks represented by a start and end block.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For fully synced nodes (state = 2), the sync start and end heights remain unchanged.</p>
+</div>
 <h2 id="net_syncinfo"><code>net_syncInfo</code></h2>
-<p>Get node's synchronization status</p>
+<p>Retrieve the sync status of the node.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
 <p><strong>Returns</strong>: <code>SyncInfo</code></p>
 <ul>
-<li><code>from</code>: <code>string</code> Sync start height</li>
-<li><code>to</code>: <code>string</code> Sync end height</li>
-<li><code>current</code>: <code>string</code> Node's current height</li>
-<li><code>state</code>: <code>uint</code> Sync state: 0 - not start, 1 - syncing, 2 - complete, 3 - error, 4 - cancelled</li>
-<li><code>status</code>: <code>string</code> Sync state description</li>
+<li><code>from</code>: <code>string</code> The sync start height.</li>
+<li><code>to</code>: <code>string</code> The sync end height.</li>
+<li><code>current</code>: <code>string</code> The current height of the node.</li>
+<li><code>state</code>: <code>uint</code> The sync state: 0 - Not started, 1 - Syncing, 2 - Completed, 3 - Error, 4 - Canceled.</li>
+<li><code>status</code>: <code>string</code> A description of the sync state.</li>
 </ul>
 </li>
 <li>
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "net_syncInfo",
-    "params": null
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>```json tab:Response
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;id&quot;: 2,
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;from&quot;: &quot;100917901&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        &quot;to&quot;: &quot;100918103&quot;,
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        &quot;current&quot;: &quot;100917954&quot;,
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;state&quot;: 1,
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        &quot;status&quot;: &quot;Synchronising&quot;
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net_syncInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100917901&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100918103&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100917954&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Syncing&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="net_syncdetail"><code>net_syncDetail</code></h2>
-<p>Get node's synchronization status in detail</p>
+<p>Retrieve the detailed sync status of the node.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
 <p><strong>Returns</strong>: <code>SyncDetail</code></p>
 <ul>
-<li><code>from</code>: <code>string</code>  Sync start height</li>
-<li><code>to</code>: <code>string</code>  Sync end height</li>
-<li><code>current</code>: <code>string</code>  Node's current height</li>
-<li><code>state</code>: <code>string</code>  Sync state. This field returns the same value with <code>status</code></li>
-<li><code>status</code>: <code>string</code>  Sync state description</li>
-<li><code>tasks</code>: <code>Array&lt;string&gt;</code>  Current download tasks. Only nodes in synchronising state have download tasks.</li>
+<li><code>from</code>: <code>string</code> The sync start height.</li>
+<li><code>to</code>: <code>string</code> The sync end height.</li>
+<li><code>current</code>: <code>string</code> The current height of the node.</li>
+<li><code>state</code>: <code>string</code> The sync state. This field returns the same value as <code>status</code>.</li>
+<li><code>status</code>: <code>string</code> A description of the sync state.</li>
+<li><code>tasks</code>: <code>Array&lt;string&gt;</code> The current download tasks. Only nodes in the syncing state have download tasks.</li>
 <li><code>connections</code>: <code>Array&lt;SyncConnectionStatus&gt;</code><ul>
-<li><code>address</code>: <code>string</code>  Connected peer address, consisting of the first 16-byte of node id + "@" + node's ip address + port</li>
-<li><code>speed</code>: <code>string</code>  Downloading speed from the peer</li>
-<li><code>task</code>: <code>string</code>  Current download task</li>
+<li><code>address</code>: <code>string</code> The address of the connected node, composed of the first 16 bytes of the node ID + "@" + the node's IP address and port.</li>
+<li><code>speed</code>: <code>string</code> The download speed from the node.</li>
+<li><code>task</code>: <code>string</code> The current download task.</li>
 </ul>
 </li>
-<li><code>chunks</code>: <code>Array&lt;SnapshotRange&gt;</code>  Verified snapshot chunks waiting for inserting into local ledger<ul>
-<li><code>height</code>: <code>uint64</code>  Snapshot block height</li>
-<li><code>hash</code>: <code>hash</code>  Snapshot block hash</li>
+<li><code>chunks</code>: <code>Array&lt;SnapshotRange&gt;</code> Verified snapshot block segments waiting to be inserted into the local ledger.<ul>
+<li><code>height</code>: <code>uint64</code> The height of the snapshot block.</li>
+<li><code>hash</code>: <code>hash</code> The hash of the snapshot block.</li>
 </ul>
 </li>
-<li><code>caches</code>: <code>Array&lt;Segment&gt;</code>  Unverified snapshot chunks stored in cache<ul>
-<li><code>From</code>: <code>uint64</code>  Start snapshot block height</li>
-<li><code>To</code>: <code>uint64</code>  End snapshot block height</li>
-<li><code>Hash</code>: <code>hash</code>  Segment hash</li>
-<li><code>PreHash</code>: <code>hash</code>  Previous segment hash</li>
-<li><code>Points</code>: <code>Array&lt;HashHeight&gt;</code>  Hash height points contained in the segment<ul>
-<li><code>height</code>: <code>uint64</code>  Snapshot block height</li>
-<li><code>hash</code>: <code>hash</code>  Snapshot block hash</li>
+<li><code>caches</code>: <code>Array&lt;Segment&gt;</code> Unverified snapshot block segments stored in the cache.<ul>
+<li><code>From</code>: <code>uint64</code> The starting height of the snapshot block segment.</li>
+<li><code>To</code>: <code>uint64</code> The ending height of the snapshot block segment.</li>
+<li><code>Hash</code>: <code>hash</code> The hash of the block segment.</li>
+<li><code>PreHash</code>: <code>hash</code> The hash of the previous block segment.</li>
+<li><code>Points</code>: <code>Array&lt;HashHeight&gt;</code> The hash height points contained in the block segment.<ul>
+<li><code>height</code>: <code>uint64</code> The height of the snapshot block.</li>
+<li><code>hash</code>: <code>hash</code> The hash of the snapshot block.</li>
 </ul>
 </li>
 </ul>
@@ -3380,384 +3426,416 @@ To enable Net RPC API on the node, add "net" namespace in "PublicModules" in nod
 <p><strong>Example</strong>:</p>
 </li>
 </ul>
-<p>::: demo</p>
-<p>```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 2,
-    "method": "net_syncDetail",
-    "params": null
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>```json tab:Response
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;id&quot;: 4,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;from&quot;: 692001,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;to&quot;: 727000,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;current&quot;: 692084,
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;state&quot;: &quot;Synchronising&quot;,
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;status&quot;: &quot;Synchronising&quot;,
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        &quot;tasks&quot;: [
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            &quot;692001-693000 done&quot;,
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            &quot;693001-694000 pending&quot;
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        ],
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        &quot;connections&quot;: [
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            {
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                &quot;address&quot;: &quot;24a160122317e6e4940ef2a91242b07f@118.25.49.80:8484&quot;,
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>                &quot;speed&quot;: &quot;0.00 Byte/s&quot;,
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                &quot;task&quot;: &quot;&quot;
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            },
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            {
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                &quot;address&quot;: &quot;04508fbe0512c01a48c8a450425547de@118.24.112.185:8484&quot;,
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                &quot;speed&quot;: &quot;0.00 Byte/s&quot;,
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                &quot;task&quot;: &quot;&quot;
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            }
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        ],
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        &quot;chunks&quot;: [
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>            [
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                {
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>                    &quot;height&quot;: 692000,
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>                    &quot;hash&quot;: &quot;74add6f7f61c33dd741276d97d8ade4456c47485da78752587aef8a209fe7e88&quot;
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                },
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>                {
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                    &quot;height&quot;: 693000,
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                    &quot;hash&quot;: &quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                }
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>            ]
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        ],
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        &quot;caches&quot;: [
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>            {
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                &quot;From&quot;: 691001,
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>                &quot;To&quot;: 693000,
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>                &quot;Hash&quot;: &quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;,
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>                &quot;PrevHash&quot;: &quot;028e2730c8fad34b53b8d8f5a41881024fa8b87a97a9cfc61f0e0c83984336a0&quot;
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>            },
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>            {
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>                &quot;From&quot;: 694001,
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>                &quot;To&quot;: 696000,
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>                &quot;Hash&quot;: &quot;e14662c3e9a9751b28822f2640be79cf13bd778c6b3158c8f6ff584fbf89fa24&quot;,
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>                &quot;PrevHash&quot;: &quot;c6cd65717345f017309ee961a6bcda9ba021e0ed5913d8111471ff09fc95590c&quot;
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>            },
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>            {
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>                &quot;From&quot;: 698001,
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                &quot;To&quot;: 699000,
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                &quot;Hash&quot;: &quot;4e067e54b9e966b264053c271c7d976065b8a0796d6995b9dda45e11339e0b57&quot;,
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>                &quot;PrevHash&quot;: &quot;26a6bdcfd3d9f58951eb76ebd4784160e98098564cc31e236618f045cb90f365&quot;
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>            }
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>        ]
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    }
-<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Request</label><label for="__tabbed_2_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net_syncDetail&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">692001</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">727000</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">692084</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Syncing&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Syncing&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">            </span><span class="s2">&quot;692001-693000 Completed&quot;</span><span class="p">,</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="s2">&quot;693001-694000 Pending&quot;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="nt">&quot;connections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24a160122317e6e4940ef2a91242b07f@118.25.49.80:8484&quot;</span><span class="p">,</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                </span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00 Byte/s&quot;</span><span class="p">,</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">                </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;04508fbe0512c01a48c8a450425547de@118.24.112.185:8484&quot;</span><span class="p">,</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                </span><span class="nt">&quot;speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.00 Byte/s&quot;</span><span class="p">,</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">        </span><span class="nt">&quot;chunks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">            </span><span class="p">[</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">                    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">692000</span><span class="p">,</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">                    </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74add6f7f61c33dd741276d97d8ade4456c47485da78752587aef8a209fe7e88&quot;</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">                    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">693000</span><span class="p">,</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">                    </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">        </span><span class="nt">&quot;caches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">                </span><span class="nt">&quot;From&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">691001</span><span class="p">,</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">                </span><span class="nt">&quot;To&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">693000</span><span class="p">,</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">                </span><span class="nt">&quot;Hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b6af1c6fb3b502268b17928b1d91206e71003f614c134f8865bf6886d88d8e30&quot;</span><span class="p">,</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">                </span><span class="nt">&quot;PrevHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;028e2730c8fad34b53b8d8f5a41881024fa8b87a97a9cfc61f0e0c83984336a0&quot;</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">                </span><span class="nt">&quot;From&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">694001</span><span class="p">,</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">                </span><span class="nt">&quot;To&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">696000</span><span class="p">,</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">                </span><span class="nt">&quot;Hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e14662c3e9a9751b28822f2640be79cf13bd778c6b3158c8f6ff584fbf89fa24&quot;</span><span class="p">,</span>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">                </span><span class="nt">&quot;PrevHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c6cd65717345f017309ee961a6bcda9ba021e0ed5913d8111471ff09fc95590c&quot;</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">                </span><span class="nt">&quot;From&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">698001</span><span class="p">,</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">                </span><span class="nt">&quot;To&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">699000</span><span class="p">,</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">                </span><span class="nt">&quot;Hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4e067e54b9e966b264053c271c7d976065b8a0796d6995b9dda45e11339e0b57&quot;</span><span class="p">,</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">                </span><span class="nt">&quot;PrevHash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;26a6bdcfd3d9f58951eb76ebd4784160e98098564cc31e236618f045cb90f365&quot;</span>
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="net_nodeinfo"><code>net_nodeInfo</code></h2>
-<p>Get the detailed information of the node and connected peers</p>
+<p>Retrieve detailed information about the node and its connected peers.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
 <p><strong>Returns</strong>: <code>NodeInfo</code></p>
 <ul>
-<li><code>id</code>: <code>string</code> Node id</li>
-<li><code>name</code>: <code>string</code> Node name</li>
-<li><code>netId</code>: <code>int</code>  Network id </li>
-<li><code>version</code>: <code>int</code>  Node version. Returns 0 for all nodes.</li>
-<li><code>address</code>: <code>string</code>  Node address. Not implemented. Returns empty string at the moment</li>
-<li><code>peerCount</code>: <code>int</code>  Number of peers connected</li>
-<li><code>peers</code>: <code>Array&lt;PeerInfo&gt;</code> Peers connected<ul>
-<li><code>id</code>: <code>string</code>  Peer id</li>
-<li><code>name</code>: <code>string</code>  Peer name</li>
-<li><code>version</code>: <code>int</code>  Peer version. Returns 0 for all nodes.</li>
-<li><code>height</code>: <code>int</code>  Peer's current height</li>
-<li><code>address</code>: <code>string</code>  Peer's ip address + port</li>
-<li><code>flag</code>: <code>byte</code>  Connect type. 0 - inbound, 1 - outbound</li>
-<li><code>superior</code>: <code>bool</code>  <code>true</code> means the peer is an SBP</li>
-<li><code>reliable</code>: <code>bool</code>  <code>true</code> means the peer is reliable</li>
-<li><code>createAt</code> : <code>string</code>  The datetime when this peer was connected</li>
-<li><code>readQueue</code>: <code>int</code>  The current message queue length to be read by the peer</li>
-<li><code>writeQueue</code>: <code>int</code>  The peer's current message queue length to be written to other peers</li>
-<li><code>peers</code>: <code>Array&lt;string&gt;</code>  List of peer ids that the peer is currently connected to</li>
+<li><code>id</code>: <code>string</code> The node ID.</li>
+<li><code>name</code>: <code>string</code> The node name.</li>
+<li><code>netId</code>: <code>int</code> The network ID.</li>
+<li><code>version</code>: <code>int</code> The node version. All nodes return <code>0</code>.</li>
+<li><code>address</code>: <code>string</code> The node address. Not implemented. Currently returns an empty string.</li>
+<li><code>peerCount</code>: <code>int</code> The number of connected peers.</li>
+<li><code>peers</code>: <code>Array&lt;PeerInfo&gt;</code> The connected peers.<ul>
+<li><code>id</code>: <code>string</code> The peer ID.</li>
+<li><code>name</code>: <code>string</code> The peer name.</li>
+<li><code>version</code>: <code>int</code> The peer version. All peers return <code>0</code>.</li>
+<li><code>height</code>: <code>int</code> The current height of the peer.</li>
+<li><code>address</code>: <code>string</code> The IP address and port of the peer.</li>
+<li><code>flag</code>: <code>byte</code> The connection type. <code>0</code> - Inbound, <code>1</code> - Outbound.</li>
+<li><code>superior</code>: <code>bool</code> <code>true</code> if the peer is an SBP.</li>
+<li><code>reliable</code>: <code>bool</code> <code>true</code> if the peer is reliable.</li>
+<li><code>createAt</code>: <code>string</code> The time the peer connected.</li>
+<li><code>readQueue</code>: <code>int</code> The current length of the peer's message read queue.</li>
+<li><code>writeQueue</code>: <code>int</code> The current length of the peer's message write queue.</li>
+<li><code>peers</code>: <code>Array&lt;string&gt;</code> The list of peer IDs currently connected to the peer.</li>
 </ul>
 </li>
-<li><code>height</code>: <code>uint64</code> Node height</li>
-<li><code>nodes</code>: <code>int</code>  Node table size. Not implemented. Returns 0 at the moment.</li>
-<li><code>latency</code>: <code>Array&lt;int&gt;</code>  An array of 4 integers in order containing the current block broadcast latency, the average block broadcast latency within 1 hour, the average block broadcast latency within 12 hours, and the average block broadcast latency within 24 hours. In milliseconds.</li>
-<li><code>broadCheckFailedRatio</code>: <code>float32</code>  The ratio of account blocks received within 16 seconds with confirmations exceeding 100</li>
-<li><code>server</code>: <code>Array&lt;SyncConnectionStatus&gt;</code> Not implemented. Returns empty array at the moment.</li>
+<li><code>height</code>: <code>uint64</code> The node height.</li>
+<li><code>nodes</code>: <code>int</code> The size of the node table. Not implemented. Currently returns <code>0</code>.</li>
+<li><code>latency</code>: <code>Array&lt;int&gt;</code> An array of four integers representing the current block broadcast delay, the average block broadcast delay over the past hour, the average block broadcast delay over the past 12 hours, and the average block broadcast delay over the past 24 hours, respectively. The unit is milliseconds.</li>
+<li><code>broadCheckFailedRatio</code>: <code>float32</code> The ratio of accounts that received more than 100 confirmations within 16 seconds.</li>
+<li><code>server</code>: <code>Array&lt;SyncConnectionStatus&gt;</code> Not implemented. Currently returns an empty array.</li>
 </ul>
 </li>
 <li>
-<p><strong>Example</strong>: </p>
+<p><strong>Example</strong>:</p>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 3,
-    "method": "net_nodeInfo",
-    "params": null
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>```json tab:Response
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        &quot;id&quot;: &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;name&quot;: &quot;ESP-FullNode.001&quot;,
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        &quot;netId&quot;: 1,
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        &quot;version&quot;: 0,
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        &quot;address&quot;: &quot;&quot;,
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        &quot;peerCount&quot;: 3,
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        &quot;peers&quot;: [
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            {
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                &quot;id&quot;: &quot;8d8b0b17411b85e943043759ddca4e641a8cc9f6ae47d4b3f767635358c42e76&quot;,
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                &quot;name&quot;: &quot;MIK33&quot;,
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                &quot;version&quot;: 0,
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                &quot;height&quot;: 100933254,
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                &quot;address&quot;: &quot;173.212.248.239:56996&quot;,
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                &quot;flag&quot;: 0,
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                &quot;superior&quot;: false,
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                &quot;reliable&quot;: true,
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                &quot;createAt&quot;: &quot;2022-08-19 16:07:16&quot;,
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                &quot;readQueue&quot;: 0,
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>                &quot;writeQueue&quot;: 0,
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>                &quot;peers&quot;: [
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>                    &quot;836c6ccf6582a9c8d2bc96aa7d2aed8e8e693e4050af0b4f01ad7375d9739aac&quot;,
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>                    &quot;918a47b9b0958412659723a3459c50e0197dc4239eafa57e540cacd2ab418f96&quot;,
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                    &quot;8e1521741c92b2b9c502996d3c7424c6e500e52ed1c065ffa0378b2835a12dc1&quot;,
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>                    &quot;aa0e28a73212030ce62cf2c2090134ca90fb5e5a37e98513266551462e0dcf25&quot;,
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>                    &quot;bf14738360ff11517769b3a6f09fc41f81be77f8d8e4494cba9a7a5ddd845929&quot;,
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>                    &quot;9e41b1a3ff686074515db5fdf7de9515d04adc110b4ceefaa84409dfa5bc759e&quot;,
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>                    &quot;e3245a342927df824aa72ec392a74ea5312f165700552057c9f40a9ff22f0589&quot;,
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>                    &quot;9a85aa364ae14c6b9c64180ce1fb97d0debd1b433f5aa734f42d73feeba52b6c&quot;
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>                ]
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>            },
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>            {
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>                &quot;id&quot;: &quot;9402381bbdc2cbc3280e38dbcbb76cc293f802789e6c4fcb0f339f540ba47548&quot;,
-<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>                &quot;name&quot;: &quot;concat0&quot;,
-<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>                &quot;version&quot;: 0,
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>                &quot;height&quot;: 100933253,
-<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>                &quot;address&quot;: &quot;144.91.84.68:39782&quot;,
-<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>                &quot;flag&quot;: 0,
-<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>                &quot;superior&quot;: false,
-<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>                &quot;reliable&quot;: true,
-<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>                &quot;createAt&quot;: &quot;2022-03-01 14:05:47&quot;,
-<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>                &quot;readQueue&quot;: 0,
-<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>                &quot;writeQueue&quot;: 0,
-<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>                &quot;peers&quot;: [
-<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>                    &quot;a5df8cab8c6996322553c360f490adca265bdbaccf964425f8137283d7f89272&quot;,
-<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>                    &quot;db9ec3aa4c8637c2dadb8f2898e84d91ab29795ae56b2b2b05dd5a8b39d977df&quot;,
-<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>                    &quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;,
-<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>                    &quot;e2c87c9eb5966f1d7de679bc9d72abdd19557c6ca235b85de38565a4e7cca7e7&quot;,
-<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>                    &quot;a15e0067d90ff678052ebe55fbbf89468b1d80e8ffc1b76cd0d6e0285117f70d&quot;,
-<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>                    &quot;9c560323d72b643742f120f498791cc7a0d107e55e632d3dc8244f3feba95833&quot;,
-<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>                    &quot;89d433317c349235a429966a47b17039708429b3ab06283e6ad43af1312e0ab9&quot;,
-<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
-<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>                    &quot;d13da3047b319c7da19f96200473a8cd08e43641081d37a93691ff38c13587e2&quot;,
-<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>                    &quot;9ffb393ba09f56db9aea74300562360911b64fddfdc463b262dbc37ecad6fb86&quot;
-<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>                ]
-<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>            },
-<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>            {
-<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>                &quot;id&quot;: &quot;9508ce5c35989d6df24757f5c14cfe775449fe03fae69da4a96e001aacd4a426&quot;,
-<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>                &quot;name&quot;: &quot;nimu&quot;,
-<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>                &quot;version&quot;: 0,
-<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>                &quot;height&quot;: 100933253,
-<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a>                &quot;address&quot;: &quot;207.180.250.64:51858&quot;,
-<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>                &quot;flag&quot;: 0,
-<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a>                &quot;superior&quot;: false,
-<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>                &quot;reliable&quot;: true,
-<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>                &quot;createAt&quot;: &quot;2022-08-19 06:46:23&quot;,
-<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>                &quot;readQueue&quot;: 0,
-<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>                &quot;writeQueue&quot;: 0,
-<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a>                &quot;peers&quot;: [
-<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a>                    &quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;,
-<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>                    &quot;8e20a38270d2e19c186d37f113f075bf6cd6b6949ffa9790b4c0281e215de1b2&quot;,
-<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>                    &quot;99f746721c7aeacfb3587859e0cdfae1049b7b0875400e58c7d476fefa7155c8&quot;,
-<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>                    &quot;9dc1ba02d3592de3f1506a09c4c416b7e6cb4ffae5fc8654432b3efcedf799f7&quot;,
-<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a>                    &quot;08e69aca38eb71c155234a93a32a7a642f4bb2efebd9837227dcf57892ff1d26&quot;,
-<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a>                    &quot;0f6c334025afa0db6583f1d86b314ed0778031b9e42a5f6bf834ef4e102feb70&quot;,
-<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a>                    &quot;96feeb78b2bcd4fd55bc47b4fb49f039e12e3a68a7acac78b909dbace39f0954&quot;,
-<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>                    &quot;97266099862560c6cde73e767add04e391e37fc86fe52fdd9372b01ac9e4af38&quot;,
-<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>                    &quot;805dcb1cdc2514b4fdecfd9cbfd2291e2bfb17a75fcad46153703db08fdbd341&quot;,
-<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>                    &quot;97275bef2b7dcaf023c75fa5b8fea4fb9550d6b74b7a18faa9b4e12caf33df49&quot;
-<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a>                ]
-<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a>            }
-<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a>        ],
-<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>        &quot;height&quot;: 100933262,
-<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>        &quot;nodes&quot;: 0,
-<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>        &quot;latency&quot;: [
-<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>            23,
-<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a>            77,
-<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a>            74,
-<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a>            72
-<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a>        ],
-<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a>        &quot;broadCheckFailedRatio&quot;: 0.027027028,
-<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a>        &quot;server&quot;: {
-<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a>            &quot;connections&quot;: []
-<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a>        }
-<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a>    }
-<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Request</label><label for="__tabbed_3_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net_nodeInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ESP-FullNode.001&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&quot;netId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="nt">&quot;peerCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="nt">&quot;peers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8d8b0b17411b85e943043759ddca4e641a8cc9f6ae47d4b3f767635358c42e76&quot;</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIK33&quot;</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">                </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">                </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100933254</span><span class="p">,</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;173.212.248.239:56996&quot;</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">                </span><span class="nt">&quot;flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">                </span><span class="nt">&quot;superior&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">                </span><span class="nt">&quot;reliable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">                </span><span class="nt">&quot;createAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-08-19 16:07:16&quot;</span><span class="p">,</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">                </span><span class="nt">&quot;readQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">                </span><span class="nt">&quot;writeQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">                </span><span class="nt">&quot;peers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">                    </span><span class="s2">&quot;836c6ccf6582a9c8d2bc96aa7d2aed8e8e693e4050af0b4f01ad7375d9739aac&quot;</span><span class="p">,</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">                    </span><span class="s2">&quot;918a47b9b0958412659723a3459c50e0197dc4239eafa57e540cacd2ab418f96&quot;</span><span class="p">,</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">                    </span><span class="s2">&quot;8e1521741c92b2b9c502996d3c7424c6e500e52ed1c065ffa0378b2835a12dc1&quot;</span><span class="p">,</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">                    </span><span class="s2">&quot;aa0e28a73212030ce62cf2c2090134ca90fb5e5a37e98513266551462e0dcf25&quot;</span><span class="p">,</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">                    </span><span class="s2">&quot;bf14738360ff11517769b3a6f09fc41f81be77f8d8e4494cba9a7a5ddd845929&quot;</span><span class="p">,</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">                    </span><span class="s2">&quot;9e41b1a3ff686074515db5fdf7de9515d04adc110b4ceefaa84409dfa5bc759e&quot;</span><span class="p">,</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">                    </span><span class="s2">&quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;</span><span class="p">,</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">                    </span><span class="s2">&quot;e3245a342927df824aa72ec392a74ea5312f165700552057c9f40a9ff22f0589&quot;</span><span class="p">,</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">                    </span><span class="s2">&quot;9a85aa364ae14c6b9c64180ce1fb97d0debd1b433f5aa734f42d73feeba52b6c&quot;</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">                </span><span class="p">]</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9402381bbdc2cbc3280e38dbcbb76cc293f802789e6c4fcb0f339f540ba47548&quot;</span><span class="p">,</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;concat0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">                </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">                </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100933253</span><span class="p">,</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;144.91.84.68:39782&quot;</span><span class="p">,</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">                </span><span class="nt">&quot;flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">                </span><span class="nt">&quot;superior&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">                </span><span class="nt">&quot;reliable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">                </span><span class="nt">&quot;createAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-03-01 14:05:47&quot;</span><span class="p">,</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">                </span><span class="nt">&quot;readQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">                </span><span class="nt">&quot;writeQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">                </span><span class="nt">&quot;peers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="w">                    </span><span class="s2">&quot;a5df8cab8c6996322553c360f490adca265bdbaccf964425f8137283d7f89272&quot;</span><span class="p">,</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">                    </span><span class="s2">&quot;db9ec3aa4c8637c2dadb8f2898e84d91ab29795ae56b2b2b05dd5a8b39d977df&quot;</span><span class="p">,</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">                    </span><span class="s2">&quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;</span><span class="p">,</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="w">                    </span><span class="s2">&quot;e2c87c9eb5966f1d7de679bc9d72abdd19557c6ca235b85de38565a4e7cca7e7&quot;</span><span class="p">,</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">                    </span><span class="s2">&quot;a15e0067d90ff678052ebe55fbbf89468b1d80e8ffc1b76cd0d6e0285117f70d&quot;</span><span class="p">,</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">                    </span><span class="s2">&quot;9c560323d72b643742f120f498791cc7a0d107e55e632d3dc8244f3feba95833&quot;</span><span class="p">,</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="w">                    </span><span class="s2">&quot;89d433317c349235a429966a47b17039708429b3ab06283e6ad43af1312e0ab9&quot;</span><span class="p">,</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="w">                    </span><span class="s2">&quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;</span><span class="p">,</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="w">                    </span><span class="s2">&quot;d13da3047b319c7da19f96200473a8cd08e43641081d37a93691ff38c13587e2&quot;</span><span class="p">,</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="w">                    </span><span class="s2">&quot;9ffb393ba09f56db9aea74300562360911b64fddfdc463b262dbc37ecad6fb86&quot;</span>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">                </span><span class="p">]</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9508ce5c35989d6df24757f5c14cfe775449fe03fae69da4a96e001aacd4a426&quot;</span><span class="p">,</span>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nimu&quot;</span><span class="p">,</span>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="w">                </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">                </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100933253</span><span class="p">,</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;207.180.250.64:51858&quot;</span><span class="p">,</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="w">                </span><span class="nt">&quot;flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">                </span><span class="nt">&quot;superior&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">                </span><span class="nt">&quot;reliable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="w">                </span><span class="nt">&quot;createAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-08-19 06:46:23&quot;</span><span class="p">,</span>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">                </span><span class="nt">&quot;readQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="w">                </span><span class="nt">&quot;writeQueue&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="w">                </span><span class="nt">&quot;peers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">                    </span><span class="s2">&quot;91590a7475ec17834eae6119afe750f11c4e103e2fb78d1986bdd86a8980de43&quot;</span><span class="p">,</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">                    </span><span class="s2">&quot;8e20a38270d2e19c186d37f113f075bf6cd6b6949ffa9790b4c0281e215de1b2&quot;</span><span class="p">,</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="w">                    </span><span class="s2">&quot;99f746721c7aeacfb3587859e0cdfae1049b7b0875400e58c7d476fefa7155c8&quot;</span><span class="p">,</span>
+</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="w">                    </span><span class="s2">&quot;9dc1ba02d3592de3f1506a09c4c416b7e6cb4ffae5fc8654432b3efcedf799f7&quot;</span><span class="p">,</span>
+</span><span id="__span-5-78"><a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="w">                    </span><span class="s2">&quot;08e69aca38eb71c155234a93a32a7a642f4bb2efebd9837227dcf57892ff1d26&quot;</span><span class="p">,</span>
+</span><span id="__span-5-79"><a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="w">                    </span><span class="s2">&quot;0f6c334025afa0db6583f1d86b314ed0778031b9e42a5f6bf834ef4e102feb70&quot;</span><span class="p">,</span>
+</span><span id="__span-5-80"><a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="w">                    </span><span class="s2">&quot;96feeb78b2bcd4fd55bc47b4fb49f039e12e3a68a7acac78b909dbace39f0954&quot;</span><span class="p">,</span>
+</span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">                    </span><span class="s2">&quot;97266099862560c6cde73e767add04e391e37fc86fe52fdd9372b01ac9e4af38&quot;</span><span class="p">,</span>
+</span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="w">                    </span><span class="s2">&quot;805dcb1cdc2514b4fdecfd9cbfd2291e2bfb17a75fcad46153703db08fdbd341&quot;</span><span class="p">,</span>
+</span><span id="__span-5-83"><a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a><span class="w">                    </span><span class="s2">&quot;97275bef2b7dcaf023c75fa5b8fea4fb9550d6b74b7a18faa9b4e12caf33df49&quot;</span>
+</span><span id="__span-5-84"><a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="w">                </span><span class="p">]</span>
+</span><span id="__span-5-85"><a id="__codelineno-5-85" name="__codelineno-5-85" href="#__codelineno-5-85"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-5-86"><a id="__codelineno-5-86" name="__codelineno-5-86" href="#__codelineno-5-86"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-5-87"><a id="__codelineno-5-87" name="__codelineno-5-87" href="#__codelineno-5-87"></a><span class="w">        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100933262</span><span class="p">,</span>
+</span><span id="__span-5-88"><a id="__codelineno-5-88" name="__codelineno-5-88" href="#__codelineno-5-88"></a><span class="w">        </span><span class="nt">&quot;nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-89"><a id="__codelineno-5-89" name="__codelineno-5-89" href="#__codelineno-5-89"></a><span class="w">        </span><span class="nt">&quot;latency&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-90"><a id="__codelineno-5-90" name="__codelineno-5-90" href="#__codelineno-5-90"></a><span class="w">            </span><span class="mi">23</span><span class="p">,</span>
+</span><span id="__span-5-91"><a id="__codelineno-5-91" name="__codelineno-5-91" href="#__codelineno-5-91"></a><span class="w">            </span><span class="mi">77</span><span class="p">,</span>
+</span><span id="__span-5-92"><a id="__codelineno-5-92" name="__codelineno-5-92" href="#__codelineno-5-92"></a><span class="w">            </span><span class="mi">74</span><span class="p">,</span>
+</span><span id="__span-5-93"><a id="__codelineno-5-93" name="__codelineno-5-93" href="#__codelineno-5-93"></a><span class="w">            </span><span class="mi">72</span>
+</span><span id="__span-5-94"><a id="__codelineno-5-94" name="__codelineno-5-94" href="#__codelineno-5-94"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-5-95"><a id="__codelineno-5-95" name="__codelineno-5-95" href="#__codelineno-5-95"></a><span class="w">        </span><span class="nt">&quot;broadCheckFailedRatio&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.027027028</span><span class="p">,</span>
+</span><span id="__span-5-96"><a id="__codelineno-5-96" name="__codelineno-5-96" href="#__codelineno-5-96"></a><span class="w">        </span><span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-97"><a id="__codelineno-5-97" name="__codelineno-5-97" href="#__codelineno-5-97"></a><span class="w">            </span><span class="nt">&quot;connections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-5-98"><a id="__codelineno-5-98" name="__codelineno-5-98" href="#__codelineno-5-98"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-99"><a id="__codelineno-5-99" name="__codelineno-5-99" href="#__codelineno-5-99"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-100"><a id="__codelineno-5-100" name="__codelineno-5-100" href="#__codelineno-5-100"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="net_nodes"><code>net_nodes</code></h2>
-<p>Get all alive peers in node table</p>
+<p>Retrieve all live nodes in the node table.</p>
 <blockquote>
-<p>Note: Alive peers are not connected peers. Alive peers are nodes stored in node's peer table and can be pinged through</p>
+<p>Note: Live nodes are not necessarily connected nodes. Live nodes are those stored in the node table and reachable via ping.</p>
 </blockquote>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
-<p><strong>Returns</strong>: </p>
+<p><strong>Returns</strong>:</p>
 <ul>
-<li><code>Count</code>: <code>int</code> Number of alive peers</li>
+<li><code>Count</code>: <code>int</code> The number of live nodes.</li>
 <li><code>Nodes</code>: <code>Array&lt;Node&gt;</code><ul>
-<li><code>id</code>: <code>string</code>  Node id</li>
-<li><code>address</code>: <code>string</code>  Node's IP address + port</li>
-<li><code>net</code>: <code>int</code>  Network id</li>
-<li><code>ext</code>: <code>Array&lt;byte&gt;</code>  Additional message. Default is null</li>
+<li><code>id</code>: <code>string</code> The node ID.</li>
+<li><code>address</code>: <code>string</code> The IP address and port of the node.</li>
+<li><code>net</code>: <code>int</code> The network ID.</li>
+<li><code>ext</code>: <code>Array&lt;byte&gt;</code> Additional information. Defaults to null.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>Example</strong>: </p>
+<p><strong>Example</strong>:</p>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "net_nodes",
-    "params": null
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>```json tab:Response
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        &quot;Count&quot;: 13,
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        &quot;Nodes&quot;: [
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            {
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                &quot;id&quot;: &quot;95d52a0b506cd29a8153b4777a9c1d3852a15ae604daeb3376260201661c0259&quot;,
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                &quot;address&quot;: &quot;173.249.53.109:8483&quot;,
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            },
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            {
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                &quot;id&quot;: &quot;c537033862e4a4178260536bfebfc5898d94dcde0a2c7c894df341c6871974dd&quot;,
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                &quot;address&quot;: &quot;144.91.86.89:8483&quot;,
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            },
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            {
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                &quot;id&quot;: &quot;e9dcad1603c29de4fb636707d60c76c9f1ff28eb4040d5602576aab78c94db69&quot;,
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                &quot;address&quot;: &quot;161.35.129.182:8483&quot;,
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                &quot;ext&quot;: &quot;3MLy0o+z4lmDN4NrF8yK65PFtM9A683ElMU7Y55bXY2w4oNw9O3aGQQ5r+8Bf8E91lFATMrT1DrD4spEmHgRs/GoSCdKX16t8d3TU9oBVgrQW2Hk6QQ4gh2dHBLzb9QC&quot;
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            },
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            {
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                &quot;id&quot;: &quot;f738db16fb0b8b15efff3e367c05d49d3993b67b2cd3b8ddd96a6b01cf6a7af7&quot;,
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                &quot;address&quot;: &quot;163.47.117.157:8483&quot;,
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            },
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            {
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                &quot;id&quot;: &quot;8ff65551f0dbe604f8cf9c18322cd85ddf5bfc0362e1df3e426d3032fd843b94&quot;,
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                &quot;address&quot;: &quot;173.249.45.46:8483&quot;,
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>            },
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>            {
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                &quot;id&quot;: &quot;874c9e4f5b34d0c26b7e6ad27bec231948c11157f1dc2977dffed88361280d31&quot;,
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                &quot;address&quot;: &quot;95.216.50.183:8483&quot;,
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>            },
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            {
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                &quot;id&quot;: &quot;9fb855389ddb6fb9b3a3e6ec4f3121e2216354a12203581105889323518ba812&quot;,
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                &quot;address&quot;: &quot;161.97.153.45:8483&quot;,
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>            },
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>            {
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>                &quot;id&quot;: &quot;993d43801d63433657cb35d4f5c75bdd92a62f646e19ef961a193a558c4ab007&quot;,
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>                &quot;address&quot;: &quot;173.249.5.87:8483&quot;,
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>            },
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>            {
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>                &quot;id&quot;: &quot;9c724d1179c5b6e09733651ff83a61227320bee604d6cd220d67799556b8f19f&quot;,
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>                &quot;address&quot;: &quot;5.189.150.247:8483&quot;,
-<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>            },
-<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>            {
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>                &quot;id&quot;: &quot;9d1bfbbdd92e8c520703a4f76da9ce8cc5954dc584eb21663606cfbc78d381bd&quot;,
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>                &quot;address&quot;: &quot;3.143.25.47:8483&quot;,
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>            },
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>            {
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>                &quot;id&quot;: &quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;,
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>                &quot;address&quot;: &quot;161.97.118.202:8483&quot;,
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>            },
-<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>            {
-<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>                &quot;id&quot;: &quot;9d0f2f7545c0f997cc752d72c2a1f37bb294bd9293e2ff489c4a31fe646cfaff&quot;,
-<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>                &quot;address&quot;: &quot;62.171.182.175:8483&quot;,
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>            },
-<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>            {
-<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>                &quot;id&quot;: &quot;99c52026f5469c95c85796c4495c5e804ec57fbfc306f09a512d83fdfdb9ab93&quot;,
-<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>                &quot;address&quot;: &quot;135.181.51.68:8483&quot;,
-<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>                &quot;net&quot;: 1,
-<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>                &quot;ext&quot;: null
-<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>            }
-<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>        }
-<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>    }
-<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Request</label><label for="__tabbed_4_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net_nodes&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&quot;Count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&quot;Nodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;95d52a0b506cd29a8153b4777a9c1d3852a15ae604daeb3376260201661c0259&quot;</span><span class="p">,</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;173.249.53.109:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c537033862e4a4178260536bfebfc5898d94dcde0a2c7c894df341c6871974dd&quot;</span><span class="p">,</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;144.91.86.89:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e9dcad1603c29de4fb636707d60c76c9f1ff28eb4040d5602576aab78c94db69&quot;</span><span class="p">,</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;161.35.129.182:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3MLy0o+z4lmDN4NrF8yK65PFtM9A683ElMU7Y55bXY2w4oNw9O3aGQQ5r+8Bf8E91lFATMrT1DrD4spEmHgRs/GoSCdKX16t8d3TU9oBVgrQW2Hk6QQ4gh2dHBLzb9QC&quot;</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f738db16fb0b8b15efff3e367c05d49d3993b67b2cd3b8ddd96a6b01cf6a7af7&quot;</span><span class="p">,</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;163.47.117.157:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8ff65551f0dbe604f8cf9c18322cd85ddf5bfc0362e1df3e426d3032fd843b94&quot;</span><span class="p">,</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;173.249.45.46:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;874c9e4f5b34d0c26b7e6ad27bec231948c11157f1dc2977dffed88361280d31&quot;</span><span class="p">,</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;95.216.50.183:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9fb855389ddb6fb9b3a3e6ec4f3121e2216354a12203581105889323518ba812&quot;</span><span class="p">,</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;161.97.153.45:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;993d43801d63433657cb35d4f5c75bdd92a62f646e19ef961a193a558c4ab007&quot;</span><span class="p">,</span>
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;173.249.5.87:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9c724d1179c5b6e09733651ff83a61227320bee604d6cd220d67799556b8f19f&quot;</span><span class="p">,</span>
+</span><span id="__span-7-57"><a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5.189.150.247:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-58"><a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-59"><a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-60"><a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-61"><a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-62"><a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9d1bfbbdd92e8c520703a4f76da9ce8cc5954dc584eb21663606cfbc78d381bd&quot;</span><span class="p">,</span>
+</span><span id="__span-7-63"><a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.143.25.47:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-65"><a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-68"><a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9e067c62c8bf64322a039165eb2431a3b5c6405faf5dfe9133d147a6752eac08&quot;</span><span class="p">,</span>
+</span><span id="__span-7-69"><a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;161.97.118.202:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-70"><a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-71"><a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-72"><a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-73"><a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-74"><a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9d0f2f7545c0f997cc752d72c2a1f37bb294bd9293e2ff489c4a31fe646cfaff&quot;</span><span class="p">,</span>
+</span><span id="__span-7-75"><a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;62.171.182.175:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-76"><a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-77"><a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-78"><a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-7-79"><a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-80"><a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;99c52026f5469c95c85796c4495c5e804ec57fbfc306f09a512d83fdfdb9ab93&quot;</span><span class="p">,</span>
+</span><span id="__span-7-81"><a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a><span class="w">                </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;135.181.51.68:8483&quot;</span><span class="p">,</span>
+</span><span id="__span-7-82"><a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a><span class="w">                </span><span class="nt">&quot;net&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-83"><a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a><span class="w">                </span><span class="nt">&quot;ext&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-7-84"><a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-85"><a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-7-86"><a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-87"><a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="net_peercount"><code>net_peerCount</code></h2>
-<p>Get the number of connected peers</p>
+<p>Retrieve the number of connected peers.</p>
 <ul>
 <li>
-<p><strong>Parameters</strong>: none</p>
+<p><strong>Parameters</strong>: None</p>
 </li>
 <li>
-<p><strong>Returns</strong>: </p>
+<p><strong>Returns</strong>:</p>
 <ul>
-<li><code>int</code>  Number of peers connected</li>
+<li><code>int</code> The number of connected peers.</li>
 </ul>
 </li>
 <li>
-<p><strong>Example</strong>: </p>
+<p><strong>Example</strong>:</p>
 </li>
 </ul>
-<p>::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "net_peerCount",
-    "params": null
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>```json tab:Response
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;result&quot;: 8
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
-</code></pre></div></p>
-<p>:::</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Request</label><label for="__tabbed_5_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;net_peerCount&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

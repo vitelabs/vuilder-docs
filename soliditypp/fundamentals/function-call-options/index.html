@@ -15,7 +15,7 @@
         <link rel="next" href="../error-handling/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3151,42 +3187,43 @@
 
 <h1 id="function-call-options">Function Call Options</h1>
 <p>When calling functions of other contracts, you can specify the amount of a specific token to send, with the call options: <code>{token: "tti_564954455820434f494e69b5", value: 1e18}</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">InfoFeed</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">getBalance</span><span class="p">(</span>vitetoken<span class="w"> </span>token<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>balance<span class="p">(</span>token<span class="p">);</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">info</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">ret</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span><span class="m m-Decimal">42</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Consumer</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>InfoFeed<span class="w"> </span>feed<span class="p">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">payable</span><span class="w"> </span>addr<span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span>feed<span class="w"> </span><span class="o">=</span><span class="w"> </span>InfoFeed<span class="p">(</span>addr<span class="p">);</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">callFeed</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="c1">// send 1 VX with the call</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span>feed<span class="p">.</span>info<span class="p">{</span>token<span class="o">:</span><span class="w"> </span><span class="s2">&quot;tti_564954455820434f494e69b5&quot;</span><span class="p">,</span><span class="w"> </span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">&gt;=</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">InfoFeed</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">getBalance</span><span class="p">(</span>vitetoken<span class="w"> </span>token<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span>balance<span class="p">(</span>token<span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">info</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="kt">payable</span><span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">ret</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="kt">return</span><span class="w"> </span><span class="m m-Decimal">42</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">contract</span><span class="w"> </span><span class="ni">Consumer</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span>InfoFeed<span class="w"> </span>feed<span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">payable</span><span class="w"> </span>addr<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span>feed<span class="w"> </span><span class="o">=</span><span class="w"> </span>InfoFeed<span class="p">(</span>addr<span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">callFeed</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="c1">// send 1 VX with the call</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span>feed<span class="p">.</span>info<span class="p">{</span>token<span class="o">:</span><span class="w"> </span><span class="s2">&quot;tti_564954455820434f494e69b5&quot;</span><span class="p">,</span><span class="w"> </span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>If the <code>token</code> call option is omitted, the <em>VITE</em> token is sent by default.</p>
 <p>The following code:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>feed<span class="p">.</span>info<span class="p">{</span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>feed<span class="p">.</span>info<span class="p">{</span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
+</span></code></pre></div>
 is equivalent to:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>feed<span class="p">.</span>info<span class="p">{</span>token<span class="o">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span><span class="w"> </span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
-</code></pre></div></p>
-<p>::: tip Notice
-The <code>gas</code>,<code>salt</code> keys in a call option are not supported in Solidity++.
-:::</p>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>feed<span class="p">.</span>info<span class="p">{</span>token<span class="o">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span><span class="w"> </span>value<span class="o">:</span><span class="w"> </span><span class="err">1</span>e18<span class="p">}();</span>
+</span></code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>gas</code>,<code>salt</code> keys in a call option are not supported in Solidity++.</p>
+</div>
 
 
 

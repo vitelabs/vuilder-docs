@@ -15,7 +15,7 @@
         <link rel="next" href="../../../common-patterns/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3346,15 +3382,17 @@
 <ul>
 <li><strong>Start:</strong> Press <code>F5</code> in VSCode to launch the debugger. This will compile your current contract and load the debugging interface in a browser window. </li>
 </ul>
-<blockquote>
-<p>Note: The extension has a local <code>gvite</code> node. Selecting "debug" in the network dropdown list to use this node.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The extension has a local <code>gvite</code> node. Selecting "debug" in the network dropdown list to use this node.</p>
+</div>
 <ul>
 <li><strong>Stop:</strong> Press <code>Shift+F5</code> in VSCode to stop the debugger.</li>
 </ul>
-<p>:::warning
-Please note that all the contracts deployed will be cleaned up on the local debug node after the debugger is stopped.
-:::</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that all the contracts deployed will be cleaned up on the local debug node after the debugger is stopped.</p>
+</div>
 <h2 id="layout">Layout</h2>
 <p>The debugger UI has several areas.</p>
 <p><img alt="" src="../assets/know-more-01.png" /></p>
@@ -3366,12 +3404,13 @@ Please note that all the contracts deployed will be cleaned up on the local debu
 <p><code>custom</code> is added in <strong>Solidity++ 0.8</strong>, which allows to use a customized node.</p>
 </blockquote>
 <ul>
-<li>
-<p><strong>Current Node</strong>: Shows the current connected network's RPC endpoint.</p>
-<blockquote>
-<p>Tips: you can add this endpoint into the desktop wallet's network setting to send or receive transactions on the node.</p>
-</blockquote>
-</li>
+<li><strong>Current Node</strong>: Shows the current connected network's RPC endpoint.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>you can add this endpoint into the desktop wallet's network setting to send or receive transactions on the node.</p>
+</div>
+<ul>
 <li>
 <p><strong>Snapshot Block Height</strong>: Shows the snapshot block height for the connected network. The local <code>debug</code> network will start at 1 each time the debugger is launched.</p>
 </li>
@@ -3395,19 +3434,22 @@ Please note that all the contracts deployed will be cleaned up on the local debu
 <p><strong>amount</strong>: Send a certain amount of token to the contract upon deployment.</p>
 </li>
 </ul>
-<blockquote>
-<p>Note: The contract constructor <strong><em>must</em></strong> be <code>payable</code> to accept token transfer on deployment. Otherwise the deployment will fail.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The contract constructor <strong><em>must</em></strong> be <code>payable</code> to accept token transfer on deployment. Otherwise the deployment will fail.</p>
+</div>
 <ul>
 <li><strong>Response Latency Time</strong>: 
 This parameter specifies the required confirmation depth (i.e. number of snapshot blocks) on any request transaction before the deployed contract will send a response transaction. This value ranges from 0 to 75, where 0 means there is no waiting period and respond block will be produced immediately.</li>
 </ul>
-<blockquote>
-<p>Note: Larger response latency means slower contract response</p>
-</blockquote>
-<p>:::tip 
-If the contract uses timestamp, snapshot block height, or random numbers, this parameter <strong><em>must</em></strong> be above 0. 
-:::</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Larger response latency means slower contract response</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the contract uses timestamp, snapshot block height, or random numbers, this parameter <strong><em>must</em></strong> be above 0. </p>
+</div>
 <ul>
 <li>
 <p><strong>Quota multiplier</strong>: This parameter modifies the amount of quota consumed by all request transactions that call the contract. Quota charged on the contract's response transactions are not affected. The Quota multiplier has a range from 10 to 100, which corresponds to a range of 1x to 10x quota consumption. For example, a value of 15 means that the requested transaction to the contract uses 1.5x the default rate.</p>
@@ -3428,15 +3470,17 @@ If the contract uses timestamp, snapshot block height, or random numbers, this p
 <p><strong>show offchain code</strong>: Shows the contract's compiled offchain code. </p>
 </li>
 </ul>
-<blockquote>
-<p>Note: offchain (getter) function has been deprecated in Solidity++ 0.8. Developer should use <code>query</code> function to access the public fields of the contract.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>offchain (getter) function has been deprecated in Solidity++ 0.8. Developer should use <code>query</code> function to access the public fields of the contract.</p>
+</div>
 <h3 id="interact-with-contract">Interact with Contract</h3>
 <p><img alt="" src="../assets/know-more-03.png" /></p>
 <p>This area will only appear after the contract has been deployed or loaded, and is used to call functions on a given contract.</p>
-<p>:::tip Load an existing contract
-You can load a previously deployed contract by filling in the address and hit the "Load Contract" button. This is very useful to load an old contract deployed on the testnet or mainnet.
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Load an existing contract</p>
+<p>You can load a previously deployed contract by filling in the address and hit the "Load Contract" button. This is very useful to load an old contract deployed on the testnet or mainnet.</p>
+</div>
 <ul>
 <li>
 <p><strong>Contract Name/Address</strong>: Shows the address of deployed contracts.</p>
@@ -3447,16 +3491,18 @@ You can load a previously deployed contract by filling in the address and hit th
 </ul>
 <h3 id="log">Log</h3>
 <p>The log area shows the details of <code>Send</code> or <code>Receive</code> transactions for the current address. In general, a <code>Send</code> transaction corresponds the request to call the contract and <code>Receive</code> transaction is the execution.</p>
-<blockquote>
-<p>Note: If your contract emits <code>Event</code>, the event can be found in the corresponding <code>Receive</code> transaction. </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your contract emits <code>Event</code>, the event can be found in the corresponding <code>Receive</code> transaction. </p>
+</div>
 <h2 id="debugger-settings">Debugger Settings</h2>
 <ul>
 <li><strong>Mnemonic Words</strong>: Shows the mnemonic phrase that are used to generate the wallet addresses in the extension.</li>
 </ul>
-<p>:::danger Do NOT use your primary wallet for testing
-Keep your wallet's mnemonic words safe. Do NOT use your primary wallet (that have large funds in the mainnet or any wallet you will use normally in the web/desktop/app wallet) for debugging/testing purpose. You should generate a separate test wallet or use Vite Connect(on mainnet). 
-:::</p>
+<div class="admonition danger">
+<p class="admonition-title">Do NOT use your primary wallet for testing</p>
+<p>Keep your wallet's mnemonic words safe. Do NOT use your primary wallet (that have large funds in the mainnet or any wallet you will use normally in the web/desktop/app wallet) for debugging/testing purpose. You should generate a separate test wallet or use Vite Connect(on mainnet). </p>
+</div>
 <ul>
 <li><strong>Vite Connect</strong>: Instead of using the local wallet generated from mnemonic words, this option allows to use ViteConnect to connect a wallet in the Vite Wallet app.</li>
 </ul>

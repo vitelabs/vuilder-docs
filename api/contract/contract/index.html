@@ -15,7 +15,7 @@
         <link rel="next" href="../built-in-contracts/quota/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1014,7 +1050,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3549,9 +3585,10 @@
 
 
 <h1 id="contract-api">Contract API</h1>
-<p>:::tip
-To enable Contract RPC API on the node, add "contract" namespace in "PublicModules" in node_config.json
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable the Contract RPC API on the node, add the "contract" namespace in "PublicModules" in node_config.json</p>
+</div>
 <h2 id="contract_createcontractaddress"><code>contract_createContractAddress</code></h2>
 <p>Create a new contract address</p>
 <ul>
@@ -3559,8 +3596,8 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <p><strong>Parameters</strong>: </p>
 <ul>
 <li><code>address</code>: <code>address</code>  Account address</li>
-<li><code>height</code>: <code>uint64 string</code>  Height of account block</li>
-<li><code>previousHash</code>: <code>hash</code>  Hash of previous account block</li>
+<li><code>height</code>: <code>uint64 string</code>  Height of the account block</li>
+<li><code>previousHash</code>: <code>hash</code>  Hash of the previous account block</li>
 </ul>
 </li>
 <li>
@@ -3569,37 +3606,42 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>address</code>  New contract address</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_createContractAddress",
-    "params": [
-        "vite_a5a7f08011c2f0e40ccd41b5b79afbfb818d565f566002d3c6",
-        "2",
-        "3a56babeb0a8140b12ac55e91d2e05c41f908ebe99767b0e4aa5cd7af22d6de7"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>```json tab:Response
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &quot;result&quot;: &quot;vite_96a7911037179451bada2ab05ee070ba83dcfa2fac2ad6d770&quot;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_createContractAddress&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="s2">&quot;vite_a5a7f08011c2f0e40ccd41b5b79afbfb818d565f566002d3c6&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="s2">&quot;3a56babeb0a8140b12ac55e91d2e05c41f908ebe99767b0e4aa5cd7af22d6de7&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_96a7911037179451bada2ab05ee070ba83dcfa2fac2ad6d770&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getcontractinfo"><code>contract_getContractInfo</code></h2>
 <p>Get contract information by address</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>address</code>: <code>address</code>  Address of contract</li>
+<li><code>address</code>: <code>address</code>  Address of the contract</li>
 </ul>
 </li>
 <li>
@@ -3612,32 +3654,37 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>quotaMultiplier</code>: <code>uint8</code> <a href="../../../vite-basics/smart-contract/#quota-multiplier">Quota multiplier</a></li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getContractInfo",
-    "params": ["vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>```json tab:Response
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;code&quot;: &quot;AWCAYEBSYAQ2EGEAQVdgADV8AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQBGP/////FoBjkabLSxRhAEZXW2AAgP1bYQCJYASANgNgIIEQFWEAXFdgAID9W4EBkICANXT///////////////////////////8WkGAgAZCSkZBQUFBhAItWWwBbgHT///////////////////////////8WRmn/////////////FjRgQFFgQFGAggOQg4WH8VBQUFCAdP///////////////////////////xZ/qmUoH130tL08cfK6JZBbkHIF/OCAmoFu+OBLTUlqhbs0YEBRgIKBUmAgAZFQUGBAUYCRA5CiUFb+oWVienpyMFgg5BEYZploBADsJutGp1y0+UwegyI5VjOkuA+v2lg7JFoAKQ==&quot;,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;gid&quot;: &quot;00000000000000000002&quot;,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;responseLatency&quot;: 2,
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;randomDegree&quot;: 1,
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;quotaMultiplier&quot;: 10
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    }
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Request</label><label for="__tabbed_2_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getContractInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8&quot;</span><span class="p">]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AWCAYEBSYAQ2EGEAQVdgADV8AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQBGP/////FoBjkabLSxRhAEZXW2AAgP1bYQCJYASANgNgIIEQFWEAXFdgAID9W4EBkICANXT///////////////////////////8WkGAgAZCSkZBQUFBhAItWWwBbgHT///////////////////////////8WRmn/////////////FjRgQFFgQFGAggOQg4WH8VBQUFCAdP///////////////////////////xZ/qmUoH130tL08cfK6JZBbkHIF/OCAmoFu+OBLTUlqhbs0YEBRgIKBUmAgAZFQUGBAUYCRA5CiUFb+oWVienpyMFgg5BEYZploBADsJutGp1y0+UwegyI5VjOkuA+v2lg7JFoAKQ==&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;gid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000000000000002&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;responseLatency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">&quot;randomDegree&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;quotaMultiplier&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_calloffchainmethod"><code>contract_callOffChainMethod</code></h2>
 <p>Call an offchain method in Solidity++ 0.4</p>
 <ul>
@@ -3659,29 +3706,34 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <blockquote>
 <p>Note: Offchain method has been replaced by view functions in Solidity++ 0.8</p>
 </blockquote>
-<ul>
-<li><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_callOffChainMethod",
-    "params": [{
-      "address": "vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8",
-      "code": "YIBgQFJgBDYQYEJXYAA1fAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkARj/////xaAY8GjSGUUYERXYEJWWwBbYEpgYFZbYEBRgIKBUmAgAZFQUGBAUYCRA5DzW2AAYABgAFBUkFBgblZbkFb+oWVienpyMFggSaCBXUGf/Mh5lfHDLvGQt9g3K+aLjE2PrRxcLb6RSWQAKQ==",
-      "data": "waNIZQ=="
-    }]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>```json tab:Response
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &quot;result&quot;: &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</code></pre></div>
-:::</li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Request</label><label for="__tabbed_3_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_callOffChainMethod&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YIBgQFJgBDYQYEJXYAA1fAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkARj/////xaAY8GjSGUUYERXYEJWWwBbYEpgYFZbYEBRgIKBUmAgAZFQUGBAUYCRA5DzW2AAYABgAFBUkFBgblZbkFb+oWVienpyMFggSaCBXUGf/Mh5lfHDLvGQt9g3K+aLjE2PrRxcLb6RSWQAKQ==&quot;</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;waNIZQ==&quot;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_query"><code>contract_query</code></h2>
 <p>Call a view function in Solidity++ 0.8</p>
 <ul>
@@ -3698,37 +3750,42 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>base64</code>  Encoded calling result in base64 string</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_query",
-    "params": [{
-      "address": "vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8",
-      "data": "waNIZQ=="
-    }]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>```json tab:Response
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;result&quot;: &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Request</label><label for="__tabbed_4_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_query&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_22f4f195b6b0f899ea263241a377dbcb86befb8075f93eeac8&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;waNIZQ==&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getcontractstorage"><code>contract_getContractStorage</code></h2>
 <p>Query for a contract's states by search key</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>addr</code>: <code>address</code>  Address of contract</li>
-<li><code>prefix</code>: <code>hex</code>  Search key or prefix of search key of the state. Empty string means to fetch all states.</li>
+<li><code>addr</code>: <code>address</code>  Address of the contract</li>
+<li><code>prefix</code>: <code>hex</code>  Search key or prefix of the search key of the state. An empty string means to fetch all states.</li>
 </ul>
 </li>
 <li>
@@ -3737,37 +3794,42 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>map&lt;hex, hex&gt;</code>  Map of key-state in hex format</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "contract_getContractStorage",
-    "params": ["vite_8cf2663cc949442db2d3f78f372621733292d1fb0b846f1651","ffe6859e"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>```json tab:Response
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        &quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c5&quot;: &quot;10a160f67e2e49af69dbe44e1836a68eaf63942000&quot;,
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        &quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c6&quot;: &quot;057dc3fa&quot;,
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        &quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c7&quot;: &quot;021e19e0c9bab2400000&quot;
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    }
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Request</label><label for="__tabbed_5_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getContractStorage&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;vite_8cf2663cc949442db2d3f78f372621733292d1fb0b846f1651&quot;</span><span class="p">,</span><span class="s2">&quot;ffe6859e&quot;</span><span class="p">]</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="nt">&quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10a160f67e2e49af69dbe44e1836a68eaf63942000&quot;</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="nt">&quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;057dc3fa&quot;</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="nt">&quot;ffe6859e4c369fdb232c625fc49ab073dc558f710b2b46f15e2387418b70b2c7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;021e19e0c9bab2400000&quot;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getquotabyaccount"><code>contract_getQuotaByAccount</code></h2>
-<p>Get the quota of an account. The returned result in in raw quota.</p>
+<p>Get the quota of an account. The returned result is in raw quota.</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>addr</code>: <code>address</code>  Address of account</li>
+<li><code>addr</code>: <code>address</code>  Address of the account</li>
 </ul>
 </li>
 <li>
@@ -3778,32 +3840,37 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>stakeAmount</code>: <code>bigint string</code>  Amount of VITE coins staked for the account</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getQuotaByAccount",
-    "params": [
-        "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>```json tab:Response
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        &quot;currentQuota&quot;: &quot;1554000&quot;,
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        &quot;maxQuota&quot;: &quot;1575000&quot;,
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        &quot;stakeAmount&quot;: &quot;10000000000000000000000&quot;
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    }
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Request</label><label for="__tabbed_6_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getQuotaByAccount&quot;</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">&quot;currentQuota&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1554000&quot;</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="nt">&quot;maxQuota&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1575000&quot;</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="nt">&quot;stakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10000000000000000000000&quot;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getstakelist"><code>contract_getStakeList</code></h2>
 <p>Get the staking records of an account. The returned result is in ascending order by expiration height</p>
 <blockquote>
@@ -3813,7 +3880,7 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>address</code>: <code>address</code>  Address of account</li>
+<li><code>address</code>: <code>address</code>  Address of the account</li>
 <li><code>pageIndex</code>: <code>int</code>  Page index, starting with 0</li>
 <li><code>pageSize</code>: <code>int</code>  Page size. Maximum 1000.</li>
 </ul>
@@ -3824,7 +3891,7 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>totalStakeAmount</code>: <code>bigint string</code>  Total staking amount</li>
 <li><code>totalStakeCount</code>: <code>int</code>  Total staking records</li>
 <li><code>stakeList</code>: <code>Array&lt;StakeInfo&gt;</code><ul>
-<li><code>stakeAddress</code>: <code>address</code>  Address of staking account</li>
+<li><code>stakeAddress</code>: <code>address</code>  Address of the staking account</li>
 <li><code>stakeAmount</code>: <code>bigint string</code>  Staking amount</li>
 <li><code>expirationHeight</code>: <code>uint64 string</code>  Lock-up expiration height</li>
 <li><code>beneficiary</code>: <code>address</code>  Quota beneficiary</li>
@@ -3839,47 +3906,52 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 </li>
 </ul>
 <blockquote>
-<p>Note: <code>isDelegated</code>, <code>delegateAddress</code> and <code>bid</code> is deprecated</p>
+<p>Note: <code>isDelegated</code>, <code>delegateAddress</code> and <code>bid</code> are deprecated</p>
 </blockquote>
-<ul>
-<li><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "1.0",
-    "id": 1,
-    "method": "contract_getStakeList",
-    "params": [
-        "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a",
-        0,
-        10
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>```json tab:Response
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        &quot;totalStakeAmount&quot;: &quot;1000000000000000000000&quot;,
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        &quot;totalStakeCount&quot;: 1,
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        &quot;stakeList&quot;: [
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            {
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>                &quot;stakeAmount&quot;: &quot;1000000000000000000000&quot;,
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                &quot;beneficiary&quot;: &quot;vite_bd756f144d6aba40262c0d3f282b521779378f329198b591c3&quot;,
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>                &quot;expirationHeight&quot;: &quot;1360&quot;,
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                &quot;expirationTime&quot;: 1567490923,
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                &quot;isDelegated&quot;: false,
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>                &quot;delegateAddress&quot;: &quot;vite_0000000000000000000000000000000000000000a4f3a0cb58&quot;,
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>                &quot;stakeAddress&quot;: &quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;,
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>                &quot;bid&quot;: 0,
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>                &quot;id&quot;: &quot;349ec3cec028b9768b05d75a384402dfbd790d406b1d2e54841f5bd3b8bdbf67&quot;
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            }
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        ]
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    }
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>}
-</code></pre></div>
-:::</li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Request</label><label for="__tabbed_7_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getStakeList&quot;</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="mi">10</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="nt">&quot;totalStakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="nt">&quot;totalStakeCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="nt">&quot;stakeList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">                </span><span class="nt">&quot;stakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">                </span><span class="nt">&quot;beneficiary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_bd756f144d6aba40262c0d3f282b521779378f329198b591c3&quot;</span><span class="p">,</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">                </span><span class="nt">&quot;expirationHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1360&quot;</span><span class="p">,</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">                </span><span class="nt">&quot;expirationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1567490923</span><span class="p">,</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">                </span><span class="nt">&quot;isDelegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">                </span><span class="nt">&quot;delegateAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000000a4f3a0cb58&quot;</span><span class="p">,</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">                </span><span class="nt">&quot;stakeAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span><span class="p">,</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">                </span><span class="nt">&quot;bid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;349ec3cec028b9768b05d75a384402dfbd790d406b1d2e54841f5bd3b8bdbf67&quot;</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getrequiredstakeamount"><code>contract_getRequiredStakeAmount</code></h2>
 <p>Calculate the minimum required staking amount of Vite coins in order to obtain the quota</p>
 <ul>
@@ -3895,28 +3967,33 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>string bigint</code>: Minimum staking amount</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getRequiredStakeAmount",
-    "params": [
-        "280"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>```json tab:Response
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    &quot;result&quot;: &quot;134000000000000000000&quot;
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Request</label><label for="__tabbed_8_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getRequiredStakeAmount&quot;</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="s2">&quot;280&quot;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;134000000000000000000&quot;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getdelegatedstakeinfo"><code>contract_getDelegatedStakeInfo</code></h2>
 <p>Get a legacy delegated staking record. </p>
 <blockquote>
@@ -3935,7 +4012,7 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li>
 <p><strong>Returns</strong>: <code>StakeInfo</code></p>
 <ul>
-<li><code>stakeAddress</code>: <code>address</code>  Address of staking account</li>
+<li><code>stakeAddress</code>: <code>address</code>  Address of the staking account</li>
 <li><code>stakeAmount</code>: <code>bigint string</code>  Staking amount</li>
 <li><code>expirationHeight</code>: <code>uint64 string</code>  Lock-up expiration height</li>
 <li><code>beneficiary</code>: <code>address</code>  Quota beneficiary</li>
@@ -3946,43 +4023,48 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>bid</code>: <code>uint8</code>  Business id</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 17,
-    "method": "contract_getDelegatedStakeInfo",
-    "params": [
-        {
-            "stakeAddress": "vite_56d8bd5c897ebd7e606c23b392d4a336222dd908437565a43c",
-            "delegateAddress": "vite_0000000000000000000000000000000000000006e82b8ba657",
-            "beneficiary": "vite_0000000000000000000000000000000000000006e82b8ba657",
-            "bid": 1
-        }
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>```json tab:Response
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &quot;id&quot;: 17,
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        &quot;stakeAmount&quot;: &quot;502000000000000000000&quot;,
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        &quot;beneficiary&quot;: &quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;,
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        &quot;expirationHeight&quot;: &quot;9503969&quot;,
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        &quot;expirationTime&quot;: 1570194042,
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        &quot;isDelegated&quot;: true,
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        &quot;delegateAddress&quot;: &quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;,
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        &quot;stakeAddress&quot;: &quot;vite_56d8bd5c897ebd7e606c23b392d4a336222dd908437565a43c&quot;,
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        &quot;bid&quot;: 1,
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        &quot;id&quot;: null
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    }
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Request</label><label for="__tabbed_9_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getDelegatedStakeInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">            </span><span class="nt">&quot;stakeAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_56d8bd5c897ebd7e606c23b392d4a336222dd908437565a43c&quot;</span><span class="p">,</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">            </span><span class="nt">&quot;delegateAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;</span><span class="p">,</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">            </span><span class="nt">&quot;beneficiary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">            </span><span class="nt">&quot;bid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="nt">&quot;stakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;502000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="nt">&quot;beneficiary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;</span><span class="p">,</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nt">&quot;expirationHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9503969&quot;</span><span class="p">,</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="nt">&quot;expirationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1570194042</span><span class="p">,</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="nt">&quot;isDelegated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="nt">&quot;delegateAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000006e82b8ba657&quot;</span><span class="p">,</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">        </span><span class="nt">&quot;stakeAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_56d8bd5c897ebd7e606c23b392d4a336222dd908437565a43c&quot;</span><span class="p">,</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">        </span><span class="nt">&quot;bid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbplist"><code>contract_getSBPList</code></h2>
 <p>Get all SBPs registered by address. The returned result also includes the ones that have been cancelled in history</p>
 <ul>
@@ -4005,39 +4087,44 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>revokeTime</code>: <code>int64</code>  The timestamp when the SBP was canceled. For valid SBP this field is 0.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBPList",
-    "params": [
-        "vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>```json tab:Response
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        {
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            &quot;name&quot;: &quot;s1&quot;,
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            &quot;blockProducingAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            &quot;rewardWithdrawAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            &quot;stakeAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>            &quot;stakeAmount&quot;: &quot;1000000000000000000000000&quot;,
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>            &quot;expirationHeight&quot;: &quot;7776000&quot;,
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            &quot;expirationTime&quot;: 1575266076,
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            &quot;revokeTime&quot;: 0
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        }
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    ]
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Request</label><label for="__tabbed_10_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPList&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">        </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">            </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">            </span><span class="nt">&quot;rewardWithdrawAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">            </span><span class="nt">&quot;stakeAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">            </span><span class="nt">&quot;stakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">            </span><span class="nt">&quot;expirationHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7776000&quot;</span><span class="p">,</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">            </span><span class="nt">&quot;expirationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1575266076</span><span class="p">,</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">            </span><span class="nt">&quot;revokeTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbprewardpendingwithdrawal"><code>contract_getSBPRewardPendingWithdrawal</code></h2>
 <p>Query for an SBP's unclaimed rewards</p>
 <ul>
@@ -4058,37 +4145,42 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>allRewardWithdrawed</code>: <code>bool</code>  <code>true</code> means the SBP has been cancelled and there is no unclaimed rewards left</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBPRewardPendingWithdrawal",
-    "params": [
-        "s1"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>```json tab:Response
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        &quot;blockProducingReward&quot;: &quot;1499714611872146118517&quot;,
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        &quot;votingReward&quot;: &quot;746306845207209076970&quot;,
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        &quot;totalReward&quot;: &quot;2246021457079355195487&quot;,
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        &quot;producedBlocks&quot;: &quot;0&quot;,
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        &quot;targetBlocks&quot;: &quot;0&quot;,
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        &quot;allRewardWithdrawed&quot;: false
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    }
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Request</label><label for="__tabbed_11_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPRewardPendingWithdrawal&quot;</span><span class="p">,</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="s2">&quot;s1&quot;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="nt">&quot;blockProducingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1499714611872146118517&quot;</span><span class="p">,</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">        </span><span class="nt">&quot;votingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;746306845207209076970&quot;</span><span class="p">,</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="nt">&quot;totalReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2246021457079355195487&quot;</span><span class="p">,</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span><span class="nt">&quot;producedBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">        </span><span class="nt">&quot;targetBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="nt">&quot;allRewardWithdrawed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbprewardbytimestamp"><code>contract_getSBPRewardByTimestamp</code></h2>
-<p>Query for all SBP rewards according to the cycle of timestamp. The method maps the given timestamp to cycle and returns the SBP rewards generated in the cycle. </p>
+<p>Query for all SBP rewards according to the cycle of the timestamp. The method maps the given timestamp to the cycle and returns the SBP rewards generated in the cycle. </p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
@@ -4112,50 +4204,55 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>cycle</code>: <code>uint64 string</code>  Cycle index</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBPRewardByTimestamp",
-    "params": [
-        1567440000
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>```json tab:Response
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        &quot;rewardMap&quot;: {
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>            &quot;s1&quot;: {
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>                &quot;blockProducingReward&quot;: &quot;1499714611872146118517&quot;,
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>                &quot;votingReward&quot;: &quot;746306845207209076970&quot;,
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>                &quot;totalReward&quot;: &quot;2246021457079355195487&quot;,
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>                &quot;producedBlocks&quot;: &quot;3153&quot;,
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>                &quot;targetBlocks&quot;: &quot;3168&quot;,
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>                &quot;allRewardWithdrawed&quot;: false
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            },
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>            &quot;s2&quot;: {
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>                &quot;blockProducingReward&quot;: &quot;0&quot;,
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>                &quot;votingReward&quot;: &quot;0&quot;,
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>                &quot;totalReward&quot;: &quot;0&quot;,
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>                &quot;producedBlocks&quot;: &quot;0&quot;,
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>                &quot;targetBlocks&quot;: &quot;3168&quot;,
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>                &quot;allRewardWithdrawed&quot;: false
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>            }
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>        },
-<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>        &quot;startTime&quot;: 1567396800,
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>        &quot;endTime&quot;: 1567483200,
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>        &quot;cycle&quot;: &quot;104&quot;
-<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    }
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Request</label><label for="__tabbed_12_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPRewardByTimestamp&quot;</span><span class="p">,</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="mi">1567440000</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">        </span><span class="nt">&quot;rewardMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">            </span><span class="nt">&quot;s1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">                </span><span class="nt">&quot;blockProducingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1499714611872146118517&quot;</span><span class="p">,</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">                </span><span class="nt">&quot;votingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;746306845207209076970&quot;</span><span class="p">,</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">                </span><span class="nt">&quot;totalReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2246021457079355195487&quot;</span><span class="p">,</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">                </span><span class="nt">&quot;producedBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3153&quot;</span><span class="p">,</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">                </span><span class="nt">&quot;targetBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3168&quot;</span><span class="p">,</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">                </span><span class="nt">&quot;allRewardWithdrawed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">            </span><span class="nt">&quot;s2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">                </span><span class="nt">&quot;blockProducingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">                </span><span class="nt">&quot;votingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">                </span><span class="nt">&quot;totalReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">                </span><span class="nt">&quot;producedBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">                </span><span class="nt">&quot;targetBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3168&quot;</span><span class="p">,</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">                </span><span class="nt">&quot;allRewardWithdrawed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="w">        </span><span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1567396800</span><span class="p">,</span>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="w">        </span><span class="nt">&quot;endTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1567483200</span><span class="p">,</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="w">        </span><span class="nt">&quot;cycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;104&quot;</span>
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbprewardbycycle"><code>contract_getSBPRewardByCycle</code></h2>
 <p>Query for all SBP rewards by cycle</p>
 <ul>
@@ -4181,50 +4278,55 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>cycle</code>: <code>uint64 string</code>  Cycle index</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBPRewardByCycle",
-    "params": [
-        "104"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>```json tab:Response
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        &quot;rewardMap&quot;: {
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>            &quot;s1&quot;: {
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>                &quot;blockProducingReward&quot;: &quot;1499714611872146118517&quot;,
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>                &quot;votingReward&quot;: &quot;746306845207209076970&quot;,
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>                &quot;totalReward&quot;: &quot;2246021457079355195487&quot;,
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>                &quot;producedBlocks&quot;: &quot;3153&quot;,
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>                &quot;targetBlocks&quot;: &quot;3168&quot;,
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>                &quot;allRewardWithdrawed&quot;: false
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>            },
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>            &quot;s2&quot;: {
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>                &quot;blockProducingReward&quot;: &quot;0&quot;,
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>                &quot;votingReward&quot;: &quot;0&quot;,
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>                &quot;totalReward&quot;: &quot;0&quot;,
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>                &quot;producedBlocks&quot;: &quot;0&quot;,
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>                &quot;targetBlocks&quot;: &quot;3168&quot;,
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>                &quot;allRewardWithdrawed&quot;: false
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>            }
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>        },
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>        &quot;startTime&quot;: 1567396800,
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>        &quot;endTime&quot;: 1567483200,
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>        &quot;cycle&quot;: &quot;104&quot;
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>    }
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Request</label><label for="__tabbed_13_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPRewardByCycle&quot;</span><span class="p">,</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="s2">&quot;104&quot;</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="nt">&quot;rewardMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">            </span><span class="nt">&quot;s1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">                </span><span class="nt">&quot;blockProducingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1499714611872146118517&quot;</span><span class="p">,</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">                </span><span class="nt">&quot;votingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;746306845207209076970&quot;</span><span class="p">,</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">                </span><span class="nt">&quot;totalReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2246021457079355195487&quot;</span><span class="p">,</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">                </span><span class="nt">&quot;producedBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3153&quot;</span><span class="p">,</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">                </span><span class="nt">&quot;targetBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3168&quot;</span><span class="p">,</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">                </span><span class="nt">&quot;allRewardWithdrawed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">            </span><span class="p">},</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">            </span><span class="nt">&quot;s2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">                </span><span class="nt">&quot;blockProducingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">                </span><span class="nt">&quot;votingReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">                </span><span class="nt">&quot;totalReward&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">                </span><span class="nt">&quot;producedBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="w">                </span><span class="nt">&quot;targetBlocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3168&quot;</span><span class="p">,</span>
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">                </span><span class="nt">&quot;allRewardWithdrawed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-25-23"><a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="w">        </span><span class="nt">&quot;startTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1567396800</span><span class="p">,</span>
+</span><span id="__span-25-24"><a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="w">        </span><span class="nt">&quot;endTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1567483200</span><span class="p">,</span>
+</span><span id="__span-25-25"><a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="w">        </span><span class="nt">&quot;cycle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;104&quot;</span>
+</span><span id="__span-25-26"><a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-25-27"><a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbp"><code>contract_getSBP</code></h2>
 <p>Get SBP information by name</p>
 <ul>
@@ -4247,37 +4349,42 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>revokeTime</code>: <code>int64</code>  The timestamp when the SBP was canceled. For valid SBP this field is 0.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBP",
-    "params": [
-        "s1"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>```json tab:Response
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        &quot;name&quot;: &quot;s1&quot;,
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        &quot;blockProducingAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        &quot;rewardWithdrawAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        &quot;stakeAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        &quot;stakeAmount&quot;: &quot;500000000000000000000000&quot;,
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        &quot;expirationHeight&quot;: &quot;7776000&quot;,
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        &quot;expirationTime&quot;: 1575268146,
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        &quot;revokeTime&quot;: 0
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    }
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Request</label><label for="__tabbed_14_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBP&quot;</span><span class="p">,</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">        </span><span class="s2">&quot;s1&quot;</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">        </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">        </span><span class="nt">&quot;rewardWithdrawAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span><span class="nt">&quot;stakeAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">        </span><span class="nt">&quot;stakeAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500000000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">        </span><span class="nt">&quot;expirationHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7776000&quot;</span><span class="p">,</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">        </span><span class="nt">&quot;expirationTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1575268146</span><span class="p">,</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">        </span><span class="nt">&quot;revokeTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbpvotelist"><code>contract_getSBPVoteList</code></h2>
 <p>Get all SBP's current votes</p>
 <ul>
@@ -4292,44 +4399,49 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>votes</code>: <code>bigint string</code>  Number of votes</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getSBPVoteList",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>```json tab:Response
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        {
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>            &quot;sbpName&quot;: &quot;s1&quot;,
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>            &quot;blockProducingAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>            &quot;votes&quot;: &quot;100000000000000000000&quot;
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>        },
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        {
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>            &quot;sbpName&quot;: &quot;s2&quot;,
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>            &quot;blockProducingAddress&quot;: &quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;,
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>            &quot;votes&quot;: &quot;50000000000000000000&quot;
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>        }
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    ]
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Request</label><label for="__tabbed_15_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPVoteList&quot;</span><span class="p">,</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">            </span><span class="nt">&quot;sbpName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">            </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">            </span><span class="nt">&quot;votes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000000000000000000&quot;</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">            </span><span class="nt">&quot;sbpName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s2&quot;</span><span class="p">,</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">            </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;</span><span class="p">,</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">            </span><span class="nt">&quot;votes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;50000000000000000000&quot;</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getvotedsbp"><code>contract_getVotedSBP</code></h2>
 <p>Get the current voted SBP by account</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>address</code>: <code>address</code>  Address of account</li>
+<li><code>address</code>: <code>address</code>  Address of the account</li>
 </ul>
 </li>
 <li>
@@ -4340,32 +4452,37 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>votes</code>: <code>bigint string</code>  Number of votes. This also refers to the account's available VITE balance</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "1.0",
-    "id": 1,
-    "method": "contract_getVotedSBP",
-    "params": [
-        "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>```json tab:Response
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>{
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        &quot;blockProducerName&quot;: &quot;s1&quot;,
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        &quot;status&quot;: 1,
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>        &quot;votes&quot;: &quot;599960989999999999999999997&quot;
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    }
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Request</label><label for="__tabbed_16_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getVotedSBP&quot;</span><span class="p">,</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">        </span><span class="s2">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">        </span><span class="nt">&quot;blockProducerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">        </span><span class="nt">&quot;votes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;599960989999999999999999997&quot;</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_getsbpvotedetailsbycycle"><code>contract_getSBPVoteDetailsByCycle</code></h2>
 <p>Get the voting details of all SBPs by cycle</p>
 <ul>
@@ -4385,51 +4502,56 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>addressVoteMap</code>: <code>map&lt;address, bigint string&gt;</code>  Address-votes map</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "1.0",
-    "id": 1,
-    "method": "contract_getSBPVoteDetailsByCycle",
-    "params": [
-        "104"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>```json tab:Response
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>{
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        {
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>            &quot;blockProducerName&quot;: &quot;s1&quot;,
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>            &quot;totalVotes&quot;: &quot;100000000000000000000&quot;,
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>            &quot;blockProducingAddress&quot;: &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;,
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>            &quot;historyProducingAddresses&quot;: [
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>                &quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>            ],
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>            &quot;addressVoteMap&quot;: {
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>                &quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;: &quot;100000000000000000000&quot;
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>            }
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>        },
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>        {
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>            &quot;blockProducerName&quot;: &quot;s2&quot;,
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>            &quot;totalVotes&quot;: &quot;50000000000000000000&quot;,
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>            &quot;blockProducingAddress&quot;: &quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;,
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>            &quot;historyProducingAddresses&quot;: [
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>                &quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;
-<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>            ],
-<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>            &quot;addressVoteMap&quot;: {
-<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>                &quot;vite_56fd05b23ff26cd7b0a40957fb77bde60c9fd6ebc35f809c23&quot;: &quot;50000000000000000000&quot;
-<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>            }
-<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>        }
-<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>    ]
-<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Request</label><label for="__tabbed_17_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">{</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getSBPVoteDetailsByCycle&quot;</span><span class="p">,</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">        </span><span class="s2">&quot;104&quot;</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">            </span><span class="nt">&quot;blockProducerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">            </span><span class="nt">&quot;totalVotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="w">            </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span><span class="p">,</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="w">            </span><span class="nt">&quot;historyProducingAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">                </span><span class="s2">&quot;vite_e41be57d38c796984952fad618a9bc91637329b5255cb18906&quot;</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="w">            </span><span class="nt">&quot;addressVoteMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a><span class="w">                </span><span class="nt">&quot;vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100000000000000000000&quot;</span>
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a><span class="w">            </span><span class="nt">&quot;blockProducerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s2&quot;</span><span class="p">,</span>
+</span><span id="__span-33-18"><a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a><span class="w">            </span><span class="nt">&quot;totalVotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;50000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-33-19"><a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a><span class="w">            </span><span class="nt">&quot;blockProducingAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;</span><span class="p">,</span>
+</span><span id="__span-33-20"><a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a><span class="w">            </span><span class="nt">&quot;historyProducingAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a><span class="w">                </span><span class="s2">&quot;vite_0acbb1335822c8df4488f3eea6e9000eabb0f19d8802f57c87&quot;</span>
+</span><span id="__span-33-22"><a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-33-23"><a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a><span class="w">            </span><span class="nt">&quot;addressVoteMap&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-24"><a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a><span class="w">                </span><span class="nt">&quot;vite_56fd05b23ff26cd7b0a40957fb77bde60c9fd6ebc35f809c23&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;50000000000000000000&quot;</span>
+</span><span id="__span-33-25"><a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-33-26"><a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-33-27"><a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-33-28"><a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_gettokeninfolist"><code>contract_getTokenInfoList</code></h2>
 <p>Get all tokens</p>
 <ul>
@@ -4459,45 +4581,50 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 </li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getTokenInfoList",
-    "params": [
-        0,
-        10
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>```json tab:Response
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>{
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        &quot;totalCount&quot;: 1,
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        &quot;tokenInfoList&quot;: [
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>            {
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>                &quot;tokenName&quot;: &quot;Vite Token&quot;,
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>                &quot;tokenSymbol&quot;: &quot;VITE&quot;,
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>                &quot;totalSupply&quot;: &quot;1000000000000000000000000000&quot;,
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>                &quot;decimals&quot;: 18,
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>                &quot;owner&quot;: &quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;,
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>                &quot;tokenId&quot;: &quot;tti_5649544520544f4b454e6e40&quot;,
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>                &quot;maxSupply&quot;: &quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;,
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>                &quot;isReIssuable&quot;: true,
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>                &quot;index&quot;: 0,
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>                &quot;isOwnerBurnOnly&quot;: false
-<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>            }
-<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>        ]
-<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>    }
-<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Request</label><label for="__tabbed_18_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getTokenInfoList&quot;</span><span class="p">,</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">        </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">        </span><span class="mi">10</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">        </span><span class="nt">&quot;totalCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">        </span><span class="nt">&quot;tokenInfoList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">                </span><span class="nt">&quot;tokenName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vite Token&quot;</span><span class="p">,</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">                </span><span class="nt">&quot;tokenSymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VITE&quot;</span><span class="p">,</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">                </span><span class="nt">&quot;totalSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000000000000000000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">                </span><span class="nt">&quot;decimals&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">                </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;</span><span class="p">,</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">                </span><span class="nt">&quot;tokenId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">                </span><span class="nt">&quot;maxSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;</span><span class="p">,</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">                </span><span class="nt">&quot;isReIssuable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">                </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">                </span><span class="nt">&quot;isOwnerBurnOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_gettokeninfobyid"><code>contract_getTokenInfoById</code></h2>
 <p>Get token by id</p>
 <ul>
@@ -4522,46 +4649,51 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>index</code>: <code>uint16</code> Token index</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getTokenInfoById",
-    "params": [
-        "tti_5649544520544f4b454e6e40"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>```json tab:Response
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>{
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        &quot;tokenName&quot;: &quot;VITE&quot;,
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        &quot;tokenSymbol&quot;: &quot;VITE&quot;,
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        &quot;totalSupply&quot;: &quot;999369292029736282857580488&quot;,
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        &quot;decimals&quot;: 18,
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        &quot;owner&quot;: &quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;,
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        &quot;tokenId&quot;: &quot;tti_5649544520544f4b454e6e40&quot;,
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>        &quot;maxSupply&quot;: &quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;,
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        &quot;isReIssuable&quot;: true,
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        &quot;index&quot;: 0,
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>        &quot;isOwnerBurnOnly&quot;: false
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>    }
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Request</label><label for="__tabbed_19_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getTokenInfoById&quot;</span><span class="p">,</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">        </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">{</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="nt">&quot;tokenName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VITE&quot;</span><span class="p">,</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">        </span><span class="nt">&quot;tokenSymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VITE&quot;</span><span class="p">,</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="nt">&quot;totalSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999369292029736282857580488&quot;</span><span class="p">,</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">        </span><span class="nt">&quot;decimals&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">        </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;</span><span class="p">,</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">        </span><span class="nt">&quot;tokenId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">        </span><span class="nt">&quot;maxSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;</span><span class="p">,</span>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">        </span><span class="nt">&quot;isReIssuable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">        </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="w">        </span><span class="nt">&quot;isOwnerBurnOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="contract_gettokeninfolistbyowner"><code>contract_getTokenInfoListByOwner</code></h2>
 <p>Get tokens issued by owner</p>
 <ul>
 <li>
 <p><strong>Parameters</strong>: </p>
 <ul>
-<li><code>address</code>: <code>address</code>  Address of owner account</li>
+<li><code>address</code>: <code>address</code>  Address of the owner account</li>
 </ul>
 </li>
 <li>
@@ -4579,41 +4711,46 @@ To enable Contract RPC API on the node, add "contract" namespace in "PublicModul
 <li><code>index</code>: <code>uint16</code> Token index</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "contract_getTokenInfoListByOwner",
-    "params": [
-        "vite_0000000000000000000000000000000000000004d28108e76b"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>```json tab:Response
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>{
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    &quot;result&quot;: [
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>        {
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>            &quot;tokenName&quot;: &quot;VITE&quot;,
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>            &quot;tokenSymbol&quot;: &quot;VITE&quot;,
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>            &quot;totalSupply&quot;: &quot;999411106171319027184734227&quot;,
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>            &quot;decimals&quot;: 18,
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>            &quot;owner&quot;: &quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;,
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>            &quot;tokenId&quot;: &quot;tti_5649544520544f4b454e6e40&quot;,
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>            &quot;maxSupply&quot;: &quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;,
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>            &quot;isReIssuable&quot;: true,
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>            &quot;index&quot;: 0,
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>            &quot;isOwnerBurnOnly&quot;: false
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        }
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    ]
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Request</label><label for="__tabbed_20_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract_getTokenInfoListByOwner&quot;</span><span class="p">,</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">        </span><span class="s2">&quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">{</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="w">            </span><span class="nt">&quot;tokenName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VITE&quot;</span><span class="p">,</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="w">            </span><span class="nt">&quot;tokenSymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VITE&quot;</span><span class="p">,</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="w">            </span><span class="nt">&quot;totalSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999411106171319027184734227&quot;</span><span class="p">,</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="w">            </span><span class="nt">&quot;decimals&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="w">            </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_0000000000000000000000000000000000000004d28108e76b&quot;</span><span class="p">,</span>
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="w">            </span><span class="nt">&quot;tokenId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tti_5649544520544f4b454e6e40&quot;</span><span class="p">,</span>
+</span><span id="__span-39-12"><a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="w">            </span><span class="nt">&quot;maxSupply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;115792089237316195423570985008687907853269984665640564039457584007913129639935&quot;</span><span class="p">,</span>
+</span><span id="__span-39-13"><a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="w">            </span><span class="nt">&quot;isReIssuable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-39-14"><a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a><span class="w">            </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-39-15"><a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a><span class="w">            </span><span class="nt">&quot;isOwnerBurnOnly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-39-16"><a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-39-17"><a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-39-18"><a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

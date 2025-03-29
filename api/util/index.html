@@ -15,7 +15,7 @@
         <link rel="next" href="../../SDK/vitejs/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1012,7 +1048,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3277,51 +3313,55 @@
 
 
 <h1 id="util-and-dashboard-api">Util and Dashboard API</h1>
-<p>:::tip
-To enable Util and (or) Dashboard RPC API on the node, add "util" and (or) "dashboard" namespace in "PublicModules" in node_config.json
-:::</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable the Util and/or Dashboard RPC API on the node, add the "util" and/or "dashboard" namespaces to "PublicModules" in <code>node_config.json</code>.</p>
+</div>
 <h2 id="util_getpownonce"><code>util_getPoWNonce</code></h2>
-<p>Calculate PoW nonce according to difficulty. See <a href="../../vite-basics/quota/quota/#calculating-pow-puzzle">here</a> for more information.</p>
+<p>Calculate the PoW nonce based on the difficulty. See <a href="../../vite-basics/quota/quota/#calculating-pow-puzzle">here</a> for more details.</p>
 <ul>
 <li><strong>Parameters</strong>: <ul>
-<li><code>difficulty</code>: <code>bigint string</code>  PoW difficulty</li>
-<li><code>hash</code>: <code>hash</code>  32 byte $Blake2b(address + previousHash)$ hash</li>
+<li><code>difficulty</code>: <code>bigint string</code>  PoW difficulty.</li>
+<li><code>hash</code>: <code>hash</code>  32-byte $Blake2b(address + previousHash)$ hash.</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>For example, if address is "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a", previousHash is "0000000000000000000000000000000000000000000000000000000000000000", then the hash is "8689fc3e7d0bcad0a1213fd90ab53437ce745408750f7303a16c75bad28da8c3"</p>
+<p>For example, if the address is "vite_ab24ef68b84e642c0ddca06beec81c9acb1977bbd7da27a87a" and the previousHash is "0000000000000000000000000000000000000000000000000000000000000000", then the hash is "8689fc3e7d0bcad0a1213fd90ab53437ce745408750f7303a16c75bad28da8c3".</p>
 </blockquote>
 <ul>
-<li>
-<p><strong>Returns</strong>: </p>
-<ul>
-<li><code>base64</code>:  nonce</li>
+<li><strong>Returns</strong>: <ul>
+<li><code>base64</code>:  Nonce.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "util_getPoWNonce",
-    "params": [
-        "67108863",
-        "35c82fe515c2982c5ef75226eab35f3fb14952f8ef59005f02893cd3dca4db09"
-    ]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>```json tab:Response
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;id&quot;: 1,
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    &quot;result&quot;: &quot;e5WeaVy7tSs=&quot;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Request</label><label for="__tabbed_1_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;util_getPoWNonce&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="s2">&quot;67108863&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="s2">&quot;35c82fe515c2982c5ef75226eab35f3fb14952f8ef59005f02893cd3dca4db09&quot;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e5WeaVy7tSs=&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="dashboard_processinfo"><code>dashboard_processInfo</code></h2>
 <p>Get go-vite information</p>
 <ul>
@@ -3342,33 +3382,38 @@ To enable Util and (or) Dashboard RPC API on the node, add "util" and (or) "dash
 <li><code>pid</code>: <code>int</code>  Go-vite process id</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "dashboard_processInfo",
-    "params": ["233"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>```json tab:Response
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;build_version&quot;: &quot;v2.11.3-nightly-202207201142&quot;,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;commit_version&quot;: &quot;af5b3bf85a76212304872b6c60381df5b50e6532&quot;,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;nodeName&quot;: &quot;s1&quot;,
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;pid&quot;: 1,
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;reqId&quot;: &quot;233&quot;,
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        &quot;rewardAddress&quot;: &quot;&quot;
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    }
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Request</label><label for="__tabbed_2_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dashboard_processInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;233&quot;</span><span class="p">]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;build_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v2.11.3-nightly-202207201142&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;commit_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;af5b3bf85a76212304872b6c60381df5b50e6532&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;nodeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s1&quot;</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">&quot;pid&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nt">&quot;reqId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;233&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">&quot;rewardAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="dashboard_runtimeinfo"><code>dashboard_runtimeInfo</code></h2>
 <p>Get go-vite runtime information</p>
 <ul>
@@ -3397,45 +3442,50 @@ To enable Util and (or) Dashboard RPC API on the node, add "util" and (or) "dash
 <li><code>signData</code>: <code>hex</code>  64 byte signature of the current snapshot block hash signed by node's PeerKey </li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "dashboard_runtimeInfo",
-    "params": ["56678abcd"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>```json tab:Response
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        &quot;accountPendingNum&quot;: &quot;0&quot;,
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;delayTime&quot;: [
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            11659,
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            12311,
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            0,
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            0
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        ],
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        &quot;latestSnapshot&quot;: {
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            &quot;Hash&quot;: &quot;405ff8f0c48b838e293a640eccc13e3ce150fe7e472d8ccf6c87c09ff448a816&quot;,
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            &quot;Height&quot;: 22655149,
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            &quot;Time&quot;: 1661708711000
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        },
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        &quot;peersNum&quot;: 2,
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        &quot;producer&quot;: &quot;vite_360232b0378111b122685a15e612143dc9a89cfa7e803f4b5a&quot;,
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        &quot;reqId&quot;: &quot;56678abcd&quot;,
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        &quot;signData&quot;: &quot;0x30b146b755c1b29ff3492df0ab079875a585fb4aa3080306149cfa1ef997f39f412f592058ed6b561f860300997c8620828d4830041a58177c760faed14af808&quot;,
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        &quot;snapshotPendingNum&quot;: 0,
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        &quot;updateTime&quot;: 1661708719144
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    }
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Request</label><label for="__tabbed_3_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dashboard_runtimeInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;56678abcd&quot;</span><span class="p">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">&quot;accountPendingNum&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nt">&quot;delayTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">            </span><span class="mi">11659</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">            </span><span class="mi">12311</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">            </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="mi">0</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="nt">&quot;latestSnapshot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">            </span><span class="nt">&quot;Hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;405ff8f0c48b838e293a640eccc13e3ce150fe7e472d8ccf6c87c09ff448a816&quot;</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">            </span><span class="nt">&quot;Height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22655149</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">            </span><span class="nt">&quot;Time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1661708711000</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nt">&quot;peersNum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="nt">&quot;producer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite_360232b0378111b122685a15e612143dc9a89cfa7e803f4b5a&quot;</span><span class="p">,</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nt">&quot;reqId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;56678abcd&quot;</span><span class="p">,</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">        </span><span class="nt">&quot;signData&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0x30b146b755c1b29ff3492df0ab079875a585fb4aa3080306149cfa1ef997f39f412f592058ed6b561f860300997c8620828d4830041a58177c760faed14af808&quot;</span><span class="p">,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="nt">&quot;snapshotPendingNum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="nt">&quot;updateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1661708719144</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="dashboard_osinfo"><code>dashboard_osInfo</code></h2>
 <p>Get node's operating system information</p>
 <ul>
@@ -3460,37 +3510,42 @@ To enable Util and (or) Dashboard RPC API on the node, add "util" and (or) "dash
 <li><code>gorountine</code>: <code>int</code>  Number of Go routines</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "dashboard_osInfo",
-    "params": ["111"]
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>```json tab:Response
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;result&quot;: {
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        &quot;cpuNum&quot;: 4,
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        &quot;gorountine&quot;: 106,
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        &quot;kernelVersion&quot;: &quot;5.4.0-70-generic&quot;,
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        &quot;memFree&quot;: 5318713344,
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        &quot;memTotal&quot;: 8348397568,
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        &quot;os&quot;: &quot;linux&quot;,
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        &quot;platform&quot;: &quot;ubuntu&quot;,
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        &quot;platformFamily&quot;: &quot;debian&quot;,
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        &quot;platformVersion&quot;: &quot;20.04&quot;,
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        &quot;reqId&quot;: &quot;111&quot;
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    }
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Request</label><label for="__tabbed_4_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dashboard_osInfo&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;111&quot;</span><span class="p">]</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&quot;cpuNum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&quot;gorountine&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="nt">&quot;kernelVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5.4.0-70-generic&quot;</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="nt">&quot;memFree&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5318713344</span><span class="p">,</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="nt">&quot;memTotal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8348397568</span><span class="p">,</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="nt">&quot;os&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux&quot;</span><span class="p">,</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ubuntu&quot;</span><span class="p">,</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="nt">&quot;platformFamily&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;debian&quot;</span><span class="p">,</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="nt">&quot;platformVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20.04&quot;</span><span class="p">,</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">        </span><span class="nt">&quot;reqId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;111&quot;</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 <h2 id="dashboard_netid"><code>dashboard_netId</code></h2>
 <p>Get network id</p>
 <ul>
@@ -3503,26 +3558,31 @@ To enable Util and (or) Dashboard RPC API on the node, add "util" and (or) "dash
 <li><code>string</code>  Vite Network id. 1 is the mainnet.</li>
 </ul>
 </li>
-<li>
-<p><strong>Example</strong>:
-::: demo
-```json tab:Request
-{
-    "jsonrpc": "2.0",
-    "id": 0,
-    "method": "dashboard_netId",
-    "params": []
-}
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>```json tab:Response
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;id&quot;: 0,
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;result&quot;: 1
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
-</code></pre></div>
-:::</p>
-</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Request</label><label for="__tabbed_5_2">Response</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dashboard_netId&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
 
 
 

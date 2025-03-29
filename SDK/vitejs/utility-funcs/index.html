@@ -15,7 +15,7 @@
         <link rel="next" href="../constants-and-errors/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3646,8 +3682,8 @@
 
 <h1 id="utility-functions">Utility Functions</h1>
 <h2 id="module-import">Module Import</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">utils</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">utils</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="methods">Methods</h2>
 <h3 id="uristringify"><code>uriStringify</code></h3>
 <p>Generate a <a href="https://docs.vite.org/vite-docs/vep/vep-6.html">VEP-6</a> compatible Vite URI based on the given parameters
@@ -3666,14 +3702,14 @@
 - <strong>Returns</strong>
     - <code>uri : string</code> Vite URI string
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">utils</span><span class="p">.</span><span class="nx">uriStringify</span><span class="p">({</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nx">target_address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_fa1d81d93bcc36f234f7bccf1403924a0834609f4b2e9856ad&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MTIzYWJjZA&#39;</span><span class="w"> </span><span class="p">},</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nx">function_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;echo&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">})</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">);</span><span class="w"> </span><span class="c1">// vite:vite_fa1d81d93bcc36f234f7bccf1403924a0834609f4b2e9856ad/echo?amount=1&amp;data=MTIzYWJjZA</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">utils</span><span class="p">.</span><span class="nx">uriStringify</span><span class="p">({</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nx">target_address</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_fa1d81d93bcc36f234f7bccf1403924a0834609f4b2e9856ad&#39;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MTIzYWJjZA&#39;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nx">function_name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;echo&#39;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">})</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">);</span><span class="w"> </span><span class="c1">// vite:vite_fa1d81d93bcc36f234f7bccf1403924a0834609f4b2e9856ad/echo?amount=1&amp;data=MTIzYWJjZA</span>
+</span></code></pre></div></p>
 <h3 id="isvalidtokenid"><code>isValidTokenId</code></h3>
 <p>Determine if a token id is valid
 - <strong>Parameters</strong>
@@ -3681,9 +3717,9 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the token id is valid.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidTokenId</span><span class="p">(</span><span class="nx">viteTokenId</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidTokenId</span><span class="p">(</span><span class="nx">viteTokenId</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="getoriginaltokenidfromtokenid"><code>getOriginalTokenIdFromTokenId</code></h3>
 <p>Get <a href="../../../vite-basics/token-model/#token-id">Original Token ID</a> from a token id
 - <strong>Parameters</strong>
@@ -3691,9 +3727,9 @@
 - <strong>Returns</strong>
     - <code>Hex</code> Original token id
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getOriginalTokenIdFromTokenId</span><span class="p">(</span><span class="nx">viteTokenId</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5649544520544f4b454e</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">viteTokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getOriginalTokenIdFromTokenId</span><span class="p">(</span><span class="nx">viteTokenId</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5649544520544f4b454e</span>
+</span></code></pre></div></p>
 <h3 id="gettokenidfromoriginaltokenid"><code>getTokenIdFromOriginalTokenId</code></h3>
 <p>Get token id from <a href="../../../vite-basics/token-model/#token-id">Original Token ID</a>
 - <strong>Parameters</strong>
@@ -3701,8 +3737,8 @@
 - <strong>Returns</strong>
     - <code>TokenId</code> Token id
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getTokenIdFromOriginalTokenId</span><span class="p">(</span><span class="s1">&#39;5649544520544f4b454e&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// tti_5649544520544f4b454e6e40</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getTokenIdFromOriginalTokenId</span><span class="p">(</span><span class="s1">&#39;5649544520544f4b454e&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// tti_5649544520544f4b454e6e40</span>
+</span></code></pre></div></p>
 <h3 id="isvalidsbpname"><code>isValidSBPName</code></h3>
 <p>Determine if the input is a valid SBP name. See <a href="../../../vite-basics/consensus/snapshot-block-producer/">SBP Name</a> for details.
 - <strong>Parameters</strong>
@@ -3710,9 +3746,9 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the SBP name is valid.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidSBPName</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidSBPName</span><span class="p">(</span><span class="s1">&#39;n!&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidSBPName</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isValidSBPName</span><span class="p">(</span><span class="s1">&#39;n!&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="isinteger"><code>isInteger</code></h3>
 <p>Determine if the input is an integer
 - <strong>Parameters</strong>
@@ -3720,12 +3756,12 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input string is an integer.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="isnonnegativeinteger"><code>isNonNegativeInteger</code></h3>
 <p>Determine if the input is a non-negative integer
 - <strong>Parameters</strong>
@@ -3733,12 +3769,12 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input string is a non-negative integer.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isNonNegativeInteger</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="issafeinteger"><code>isSafeInteger</code></h3>
 <p>Determine if the input is a safe integer
 - <strong>Parameters</strong>
@@ -3746,12 +3782,12 @@
 - <strong>Returns</strong>
     - <code>-1 | 0 | 1</code> -1: not an integer; 0: unsafe integer or decimal; 1: safe integer
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="mf">3.14</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;-1000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="s1">&#39;1,000&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// -1</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isSafeInteger</span><span class="p">(</span><span class="mf">3.14</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0</span>
+</span></code></pre></div></p>
 <h3 id="isarray"><code>isArray</code></h3>
 <p>Determine if the input is an array - uses as a fallback function if <code>Array.isArray</code> doesn't exist in your runtime environment.
 - <strong>Parameters</strong>
@@ -3759,10 +3795,10 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input is an array.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">([]));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">({}));</span><span class="w"> </span><span class="c1">// false</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">([]));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">({}));</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="isobject"><code>isObject</code></h3>
 <p>Determine if the input is an object
 - <strong>Parameters</strong>
@@ -3770,11 +3806,11 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input is an object.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">([]));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">({}));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{}));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">([]));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">({}));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{}));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(</span><span class="mf">42</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="ishexstring"><code>isHexString</code></h3>
 <p>Determine if the input is a hex string
 - <strong>Parameters</strong>
@@ -3782,9 +3818,9 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input is a hex string.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexString</span><span class="p">(</span><span class="s1">&#39;5649544520544f4b454e&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexString</span><span class="p">(</span><span class="s1">&#39;vite&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexString</span><span class="p">(</span><span class="s1">&#39;5649544520544f4b454e&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isHexString</span><span class="p">(</span><span class="s1">&#39;vite&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="isbase64string"><code>isBase64String</code></h3>
 <p>Determine if the input is a base64 string
 - <strong>Parameters</strong>
@@ -3792,10 +3828,10 @@
 - <strong>Returns</strong>
     - <code>boolean</code> If <code>true</code>, the input is a base64 string.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="sb">`Hello world!`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBase64String</span><span class="p">(</span><span class="nx">encoded</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBase64String</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="sb">`Hello world!`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBase64String</span><span class="p">(</span><span class="nx">encoded</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isBase64String</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
 <h3 id="blake2b"><code>blake2b</code></h3>
 <p>A reference to the <code>blake2b</code> function from <a href="https://github.com/dcposch/blakejs">blakejs/blake2b</a></p>
 <h3 id="blake2bhex"><code>blake2bHex</code></h3>
@@ -3815,8 +3851,8 @@
         - <code>privateKey: Buffer</code> private key in 64 bytes buffer array
         - <code>publicKey: Buffer</code> public key in 32 bytes buffer array
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">keyPair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">keyPair</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">keyPair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">keyPair</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="getpublickey"><code>getPublicKey</code></h3>
 <p>Get the public key from a private key; the private key must be derived from an Ed25519 key pair.
 - <strong>Parameters</strong>
@@ -3824,11 +3860,11 @@
 - <strong>Returns</strong>
     - <code>Buffer</code> public key in 32 bytes buffer array
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">,</span><span class="w"> </span><span class="nx">_Buffer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">;</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">keyPair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">keyPair</span><span class="p">();</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">// https://nodejs.org/api/buffer.html#static-method-buffercomparebuf1-buf2</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">getPublicKey</span><span class="p">(</span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">),</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0 (the two arguments have the same value)</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">,</span><span class="w"> </span><span class="nx">_Buffer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">keyPair</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">keyPair</span><span class="p">();</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">// https://nodejs.org/api/buffer.html#static-method-buffercomparebuf1-buf2</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">getPublicKey</span><span class="p">(</span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">),</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">));</span><span class="w"> </span><span class="c1">// 0 (the two arguments have the same value)</span>
+</span></code></pre></div></p>
 <h3 id="sign"><code>sign</code></h3>
 <p>Sign a hex string with a private key
 - <strong>Parameters</strong>
@@ -3837,10 +3873,10 @@
 - <strong>Returns</strong>
     - <code>Hex</code> Signature
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="s1">&#39;vite&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 76697465</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hex&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// &#39;vite&#39;</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// af35bbea83eda460bd8b4a16d5bf9f175b90e3d035e47bcdd676f214f4ecd79bdb192b2c5fbbff896e841d3614f19ce25f1fc079e778ba271288f427e626dc0b</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="s1">&#39;vite&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 76697465</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hex&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// &#39;vite&#39;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// af35bbea83eda460bd8b4a16d5bf9f175b90e3d035e47bcdd676f214f4ecd79bdb192b2c5fbbff896e841d3614f19ce25f1fc079e778ba271288f427e626dc0b</span>
+</span></code></pre></div></p>
 <h3 id="verify"><code>verify</code></h3>
 <p>Determine if a signature is valid
 - <strong>Parameters</strong>
@@ -3850,11 +3886,11 @@
 - <strong>Returns</strong>
     - <code>Boolean</code> If <code>true</code>, the signature is valid.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="sb">`Let&#39;s build something cool`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 76697465</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hex&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// `Let&#39;s build something cool`</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// af35bbea83eda460bd8b4a16d5bf9f175b90e3d035e47bcdd676f214f4ecd79bdb192b2c5fbbff896e841d3614f19ce25f1fc079e778ba271288f427e626dc0b</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)));</span><span class="w"> </span><span class="c1">// true</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">encoded</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="sb">`Let&#39;s build something cool`</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 76697465</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hex&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">());</span><span class="w"> </span><span class="c1">// `Let&#39;s build something cool`</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">privateKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">));</span><span class="w"> </span><span class="c1">// af35bbea83eda460bd8b4a16d5bf9f175b90e3d035e47bcdd676f214f4ecd79bdb192b2c5fbbff896e841d3614f19ce25f1fc079e778ba271288f427e626dc0b</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">keyPair</span><span class="p">.</span><span class="nx">publicKey</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)));</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></p>
 <h3 id="random"><code>random</code></h3>
 <p>Generate random buffer array</p>
 <p><strong>Notes</strong>: This is used by scrypt salt when generating the keystore
@@ -3863,10 +3899,10 @@
 - <strong>Returns</strong>
     - <code>any</code> A random buffer array
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bufferArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bufferArray</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 32</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mf">5</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">bufferArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bufferArray</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 32</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ed25519</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mf">5</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</span></code></pre></div></p>
 
 
 

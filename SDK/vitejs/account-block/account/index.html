@@ -15,7 +15,7 @@
         <link rel="next" href="../receive-task/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3559,12 +3595,12 @@
 </ul>
 </li>
 <li><strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Account</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Account</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">account</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">account</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
-</code></pre></div></li>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accountBlock</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Account</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accountBlock</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Account</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">account</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">viteApi</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">account</span><span class="p">.</span><span class="nx">setPrivateKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">);</span>
+</span></code></pre></div></li>
 </ul>
 <h2 id="methods">Methods</h2>
 <h3 id="receive"><code>receive</code></h3>
@@ -3573,10 +3609,10 @@
     - <code>object</code>
         - <code>sendBlockHash: Hex</code> Hash of the request transaction
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">receive</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 4</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">receive</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 4</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">sendBlockHash</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;156a47de8b5a690562278360e41e337ee4f1b4aa8d979f377beb0cc70f939032&#39;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="send"><code>send</code></h3>
 <p>Send a transaction
 - <strong>Parameters</strong> 
@@ -3586,13 +3622,13 @@
         - <code>amount: BigInt = '0'</code> Amount of tokens to send (in base unit, e.g. <code>1000000000000000000</code> stands for 1 VITE)
         - <code>data?: Base64</code> Additional data
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pinFMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB&#39;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="createcontract"><code>createContract</code></h3>
 <p>Deploy a smart contract
 - <strong>Parameters</strong> 
@@ -3604,13 +3640,13 @@
         - <code>abi?: object | Array&lt;object&gt;</code> ABI of the constructor. If your contract doesn't have a constructor, ignore this field.
         - <code>params?: string | Array&lt;string | boolean&gt;</code> Passed-in parameter(s) of the constructor. If your contract doesn't have a constructor, ignore this field.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">createContract</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 1</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;inputs&quot;</span><span class="o">:</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;addr&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">}],</span><span class="s2">&quot;payable&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">&quot;stateMutability&quot;</span><span class="o">:</span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;constructor&quot;</span><span class="p">},</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b50610141806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806391a6cb4b14610046575b600080fd5b6100896004803603602081101561005c57600080fd5b81019080803574ffffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008b565b005b8074ffffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff163460405160405180820390838587f1505050508074ffffffffffffffffffffffffffffffffffffffffff167faa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb346040518082815260200191505060405180910390a25056fea165627a7a7230582023e9669dd6fec3b6b2a84a1fd7c9939f49197203d0e1db312278e633c219c2480029&#39;</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">]</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">createContract</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;inputs&quot;</span><span class="o">:</span><span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;addr&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;address&quot;</span><span class="p">}],</span><span class="s2">&quot;payable&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">&quot;stateMutability&quot;</span><span class="o">:</span><span class="s2">&quot;nonpayable&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;constructor&quot;</span><span class="p">},</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;608060405234801561001057600080fd5b50610141806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806391a6cb4b14610046575b600080fd5b6100896004803603602081101561005c57600080fd5b81019080803574ffffffffffffffffffffffffffffffffffffffffff16906020019092919050505061008b565b005b8074ffffffffffffffffffffffffffffffffffffffffff164669ffffffffffffffffffff163460405160405180820390838587f1505050508074ffffffffffffffffffffffffffffffffffffffffff167faa65281f5df4b4bd3c71f2ba25905b907205fce0809a816ef8e04b4d496a85bb346040518082815260200191505060405180910390a25056fea165627a7a7230582023e9669dd6fec3b6b2a84a1fd7c9939f49197203d0e1db312278e633c219c2480029&#39;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">responseLatency</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;vite_13f1f8e230f2ffa1e030e664e525033ff995d6c2bb15af4cf9&#39;</span><span class="p">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="callcontract"><code>callContract</code></h3>
 <p>Call smart contract
 - <strong>Parameters</strong> 
@@ -3623,17 +3659,17 @@
         - <code>amount: BigInt = '0'</code> Amount of tokens to send (in base unit, e.g. <code>1000000000000000000</code> stands for 1 VITE)
         - <code>fee: BigInt = '0'</code> Transaction fee
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">account</span><span class="p">.</span><span class="nx">callContract</span><span class="p">({</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">contractAddress</span><span class="p">,</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;sbpName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">blockProducingAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">rewardWithdrawAddress</span><span class="p">],</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">constant</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;~@vite/vitejs&#39;</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">,</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">constant</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">account</span><span class="p">.</span><span class="nx">callContract</span><span class="p">({</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">abi</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">abi</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">toAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">Contracts</span><span class="p">.</span><span class="nx">RegisterSBP</span><span class="p">.</span><span class="nx">contractAddress</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;sbpName&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">blockProducingAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">rewardWithdrawAddress</span><span class="p">],</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="nx">Vite_TokenId</span><span class="p">,</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="registersbp"><code>registerSBP</code></h3>
 <p>Register an new SBP</p>
 <p><strong>Note</strong>: To register an SBP node, transferring 1,000,000 <code>VITE</code> is required. The transferred VITE will be locked for 7,776,000 snapshot blocks (about 3 months), after which it can be withdrawn if you choose to cancel your SBP.
@@ -3644,12 +3680,12 @@
         - <code>rewardWithdrawAddress: Address</code> See <a href="../../../../vite-basics/consensus/snapshot-block-producer/">Reward Withdrawal Address</a>
         - <code>amount: BigInt = '1000000000000000000000000'</code> A default amount of 1M VITE is required for SBP registration.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">registerSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">rewardWithdrawAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">registerSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">rewardWithdrawAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="updatesbpblockproducingaddress"><code>updateSBPBlockProducingAddress</code></h3>
 <p>Update an SBP's block producing address
 - <strong>Parameters</strong> 
@@ -3657,21 +3693,21 @@
         - <code>sbpName: string</code> See <a href="../../../../vite-basics/consensus/snapshot-block-producer/">SBP name</a>
         - <code>blockProducingAddress: Address</code> New block producing address
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">updateSBPBlockProducingAddress</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">updateSBPBlockProducingAddress</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">blockProducingAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_5e8d4ac7dc8b75394cacd21c5667d79fe1824acb46c6b7ab1f&#39;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="revokesbp"><code>revokeSBP</code></h3>
 <p>Cancel an SBP's registration
 - <strong>Parameters</strong> 
     - <code>object</code>
         - <code>sbpName: string</code> Name of the SBP
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">revokeSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">revokeSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="withdrawsbpreward"><code>withdrawSBPReward</code></h3>
 <p>Withdraw an SBP's mining rewards
 - <strong>Parameters</strong> 
@@ -3679,28 +3715,28 @@
         - <code>sbpName: string</code> Name of the SBP
         - <code>receiveAddress: Address</code> An address to receive rewards
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">withdrawSBPReward</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">withdrawSBPReward</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="voteforsbp"><code>voteForSBP</code></h3>
 <p>Vote for an SBP
 - <strong>Parameters</strong> 
     - <code>object</code>
         - <code>sbpName: string</code> Name of the SBP
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">voteForSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">voteForSBP</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">sbpName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST_NODE&#39;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="cancelsbpvoting"><code>cancelSBPVoting</code></h3>
 <p>Cancel voting
 - <strong>Parameters</strong> 
     - none
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">cancelSBPVoting</span><span class="p">();</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">cancelSBPVoting</span><span class="p">();</span>
+</span></code></pre></div></p>
 <h3 id="stakeforquota"><code>stakeForQuota</code></h3>
 <p>Supply a beneficiary address with quota
 - <strong>Parameters</strong> 
@@ -3710,11 +3746,11 @@
 <blockquote>
 <p>Note: the minimum locking amount is 134 VITE.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">stakeForQuota</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">beneficiaryAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;134&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">stakeForQuota</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nx">beneficiaryAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;134&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mf">18</span><span class="p">),</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="cancelquotastake"><code>cancelQuotaStake</code></h3>
 <p>Cancel locking for quota and withdraw the locked tokens.
@@ -3722,10 +3758,10 @@
     - <code>object</code>
         - <code>id: string</code> Locking id - referring to the hash of the locking transaction.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">cancelQuotaStake</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;401d46c2330d3c76c8f0da6be2a24b17c5e3ece9c28d80a74e91146d1f95ad2e&#39;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">cancelQuotaStake</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;401d46c2330d3c76c8f0da6be2a24b17c5e3ece9c28d80a74e91146d1f95ad2e&#39;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="issuetoken"><code>issueToken</code></h3>
 <p>Create a new token
 - <strong>Parameters</strong> 
@@ -3739,16 +3775,16 @@
         - <code>isOwnerBurnOnly: boolean</code> Only applies to re-issuable token. If <code>true</code>, the token can only burned by owner. For non-re-issuable token, fill in <code>false</code>.
     &gt; Note: <code>isOwnerBurnOnly</code> is deprecated and removed from the latest go-vite release.
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">issueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nx">tokenName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TestCoin&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nx">isReIssuable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nx">maxSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10000000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nx">isOwnerBurnOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nx">totalSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;100000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nx">tokenSymbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">issueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nx">tokenName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TestCoin&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nx">isReIssuable</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nx">maxSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;10000000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nx">isOwnerBurnOnly</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nx">totalSupply</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;100000000000000000000000&#39;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nx">decimals</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nx">tokenSymbol</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TEST&#39;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">});</span>
+</span></code></pre></div></p>
 <h3 id="reissuetoken"><code>reIssueToken</code></h3>
 <p>Re-issue additional amount of tokens</p>
 <blockquote>
@@ -3759,12 +3795,12 @@
         - <code>amount: BigInt</code> Amount of tokens to mint (in base unit, e.g. <code>1000000000000000000000</code> stands for <code>1000</code> for a 18-decimal token)
         - <code>receiveAddress: Address</code> Address to receive newly minted tokens
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">reIssueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_f1fdb1fce23ca4a2c760012c&#39;</span><span class="p">,</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">reIssueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_f1fdb1fce23ca4a2c760012c&#39;</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nx">receiveAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_553462bca137bac29f440e9af4ab2e2c1bb82493e41d2bc8b2&#39;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="burntoken"><code>burnToken</code></h3>
 <p>Burn tokens</p>
@@ -3775,43 +3811,58 @@
         - <code>tokenId: TokenId</code> Token id
         - <code>amount: BigInt</code> Amount of tokens to mint (in base unit, e.g. <code>1000000000000000000000</code> stands for <code>1000</code> for a 18-decimal token)
 - <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">burnToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">});</span>
-</code></pre></div></p>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">burnToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1000000000000000000000&#39;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">});</span>
+</span></code></pre></div></p>
 </blockquote>
 <h3 id="disablereissuetoken"><code>disableReIssueToken</code></h3>
 <p>Change a re-issuable token to non-re-issuable</p>
-<blockquote>
-<p>Note: only the owner of the token can do this.</p>
-</blockquote>
-<p>:::warning
-This action cannot be reversed
-:::
-- <strong>Parameters</strong> 
-    - <code>object</code>
-        - <code>tokenId: TokenId</code> Token id
-- <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">disableReIssueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">});</span>
-</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the owner of the token can do this.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This action cannot be reversed</p>
+</div>
+<ul>
+<li><strong>Parameters</strong> <ul>
+<li><code>object</code><ul>
+<li><code>tokenId: TokenId</code> Token id</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Example</strong>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">disableReIssueToken</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">});</span>
+</span></code></pre></div></li>
+</ul>
 <h3 id="transfertokenownership"><code>transferTokenOwnership</code></h3>
 <p>Block type for transferring a token's ownership</p>
-<blockquote>
-<p>Note: only applicable to re-issuable tokens and only the owner of the token can do this.
-- <strong>Parameters</strong> 
-    - <code>object</code>
-        - <code>tokenId</code>: <code>string tokenId</code> Token id
-        - <code>newOwnerAddress</code>: <code>string address</code> Address of new owner
-- <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">transferTokenOwnership</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">newOwnerAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_869a06b8963bd5d88a004723ad5d45f345a71c0884e2c80e88&#39;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">});</span>
-</code></pre></div></p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only applicable to re-issuable tokens and only the owner of the token can do this.</p>
+</div>
+<ul>
+<li><strong>Parameters</strong> <ul>
+<li><code>object</code><ul>
+<li><code>tokenId</code>: <code>string tokenId</code> Token id</li>
+<li><code>newOwnerAddress</code>: <code>string address</code> Address of new owner</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Example</strong>
+    <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nx">account</span><span class="p">.</span><span class="nx">transferTokenOwnership</span><span class="p">({</span><span class="w"> </span><span class="c1">// blockType: 2</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nx">tokenId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tti_5649544520544f4b454e6e40&#39;</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">newOwnerAddress</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;vite_869a06b8963bd5d88a004723ad5d45f345a71c0884e2c80e88&#39;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">});</span>
+</span></code></pre></div></li>
+</ul>
 
 
 

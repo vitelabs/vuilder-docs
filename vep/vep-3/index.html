@@ -15,7 +15,7 @@
         <link rel="next" href="../vep-5/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3386,40 +3422,40 @@
 <p>Since Vite adopts ED25519 for signature, other than secp256k1 used in BIP32, we need to find a key derivation method which is compatible with BIP32. The actual signature implementation in Vite is similar to <a href="https://cardanolaunch.com/assets/Ed25519_BIP.pdf">ed25519-bip32</a>.</p>
 <h3 id="bip44-compatibility">BIP44 Compatibility</h3>
 <p><a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP44</a> defines a BIP32-compatible path patten that supports multiple cryptocurrencies:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>m / purpose&#39; / coin_type&#39; / account&#39; / change / address_index
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>m / purpose&#39; / coin_type&#39; / account&#39; / change / address_index
+</span></code></pre></div>
 The prefix is always like:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>m/44&#39;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>m/44&#39;
+</span></code></pre></div>
 We have registered <code>coin_type</code> <strong>666666</strong> at <a href="https://github.com/satoshilabs/slips/blob/master/slip-0044.md">SLIP-0044</a>, so a BIP44 Vite path starts with:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>m/44&#39;/666666&#39;/
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>m/44&#39;/666666&#39;/
+</span></code></pre></div>
 Attached an index <code>x</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>m/44&#39;/666666&#39;/x&#39;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>m/44&#39;/666666&#39;/x&#39;
+</span></code></pre></div>
 * x: Index. Particularly, we define the address associated with <code>m/44'/666666'/0'</code> as <strong>Primary Address</strong> of the mnemonic.</p>
 <h2 id="test-case">Test Case</h2>
 <h3 id="entropy">Entropy</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>87ad0e066111ed827dc1f7be4d1bf53b9a7be84021a0950418d3f45ed4d54f1c
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>87ad0e066111ed827dc1f7be4d1bf53b9a7be84021a0950418d3f45ed4d54f1c
+</span></code></pre></div>
 <h3 id="mnemonic-phrase">Mnemonic Phrase</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>marble half light season burst scorpion warfare discover salad hand wool jaguar police vintage above cross never camp crunch trim unhappy height detect opinion
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>marble half light season burst scorpion warfare discover salad hand wool jaguar police vintage above cross never camp crunch trim unhappy height detect opinion
+</span></code></pre></div>
 <h3 id="bip39-seed">BIP39 Seed</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2ba1d8e696d17ac4d75b9f479c527450d439c9acd2b4d542d27e3a7f3418cd241717d2db41f47d8bbae9fc90fe551c4db87f7491104f030f6eceaf1b24f15f4d
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2ba1d8e696d17ac4d75b9f479c527450d439c9acd2b4d542d27e3a7f3418cd241717d2db41f47d8bbae9fc90fe551c4db87f7491104f030f6eceaf1b24f15f4d
+</span></code></pre></div>
 <h3 id="derived-vite-ed25519-seeds-and-addresses">Derived Vite ED25519 Seeds and Addresses</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>m/44&#39;/666666&#39;/0&#39; bb369222613ad7b1a646d84d8c749c30cfa5879f5152b7bd7c1f9f6553ce0eb5  vite_da3ca9bac9f05fce8f4eead36610756b6eb48282ff10a81d6d
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>m/44&#39;/666666&#39;/1&#39; 529892283122a9a09059a73147cb9feea480bb3feed91e7968243f4b67ccb3ea  vite_e5deb80a64f51593398ba1049af435291e3cb5c69a66755f13
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>m/44&#39;/666666&#39;/2&#39; 9ef6f33aaf05fa1cf6e8c396b01a5ea08295a829b595f636759343d363a6a967  vite_fbdd0c038f808560f9637754cbbbfa95ed2e7cdb96113ea7eb
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>m/44&#39;/666666&#39;/3&#39; 6da0edd6d81033b4b2d41f376574448876e7b4f841aedd7deaf8bb6d7934b800  vite_2aa258c33a2d16d01da651a9423abc384f6367112c0f73fa5d
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>m/44&#39;/666666&#39;/4&#39; 98d2311c78e6407bf0c443ab51593c4b663ce3af3165a48a278ed0a6a2f701f3  vite_b8d401c1c7b3f32bf7d9c7a44c8d594fcdad103bb6775bd016
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>m/44&#39;/666666&#39;/5&#39; bd18f1dfc81bc742cda2c3739a42fb622415d62b8fd6035ff8bad2a9b13f26b6  vite_7aba6649b09a43130445dd70857e77bef347e2da2a7b81f608
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>m/44&#39;/666666&#39;/6&#39; b1cf0511a4bb7a154cf0f6c416a3186c4d6fe8cd53413c6503e80445918837e8  vite_5ef7da6c7fb79051921d0c6cf7440fb9f1b46d7aaf5607a069
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>m/44&#39;/666666&#39;/7&#39; 2b31aa5f86e1207baa4ec93dd397c878ef53255a3ca64cafa970bb6513fb7099  vite_6ebaad8ee67e5368884ae2de652024093453ec13d8f17e0afa
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>m/44&#39;/666666&#39;/8&#39; 87210e4ec4776ab5e6bc146255b1e649f6a4f99e754ff31e421e2f43784f2aff  vite_ec84678c2d6f1f12596552a0d676ab233d17249463973f7238
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>m/44&#39;/666666&#39;/9&#39; e02109c47903e2f8858660f30642e3698a263f0277ad2f364527bc75275a82ec  vite_1720f21b3a66c30da966ef51dc59c091543da012bcb69ae8a4
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>m/44&#39;/666666&#39;/0&#39; bb369222613ad7b1a646d84d8c749c30cfa5879f5152b7bd7c1f9f6553ce0eb5  vite_da3ca9bac9f05fce8f4eead36610756b6eb48282ff10a81d6d
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>m/44&#39;/666666&#39;/1&#39; 529892283122a9a09059a73147cb9feea480bb3feed91e7968243f4b67ccb3ea  vite_e5deb80a64f51593398ba1049af435291e3cb5c69a66755f13
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>m/44&#39;/666666&#39;/2&#39; 9ef6f33aaf05fa1cf6e8c396b01a5ea08295a829b595f636759343d363a6a967  vite_fbdd0c038f808560f9637754cbbbfa95ed2e7cdb96113ea7eb
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>m/44&#39;/666666&#39;/3&#39; 6da0edd6d81033b4b2d41f376574448876e7b4f841aedd7deaf8bb6d7934b800  vite_2aa258c33a2d16d01da651a9423abc384f6367112c0f73fa5d
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>m/44&#39;/666666&#39;/4&#39; 98d2311c78e6407bf0c443ab51593c4b663ce3af3165a48a278ed0a6a2f701f3  vite_b8d401c1c7b3f32bf7d9c7a44c8d594fcdad103bb6775bd016
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>m/44&#39;/666666&#39;/5&#39; bd18f1dfc81bc742cda2c3739a42fb622415d62b8fd6035ff8bad2a9b13f26b6  vite_7aba6649b09a43130445dd70857e77bef347e2da2a7b81f608
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>m/44&#39;/666666&#39;/6&#39; b1cf0511a4bb7a154cf0f6c416a3186c4d6fe8cd53413c6503e80445918837e8  vite_5ef7da6c7fb79051921d0c6cf7440fb9f1b46d7aaf5607a069
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>m/44&#39;/666666&#39;/7&#39; 2b31aa5f86e1207baa4ec93dd397c878ef53255a3ca64cafa970bb6513fb7099  vite_6ebaad8ee67e5368884ae2de652024093453ec13d8f17e0afa
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>m/44&#39;/666666&#39;/8&#39; 87210e4ec4776ab5e6bc146255b1e649f6a4f99e754ff31e421e2f43784f2aff  vite_ec84678c2d6f1f12596552a0d676ab233d17249463973f7238
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>m/44&#39;/666666&#39;/9&#39; e02109c47903e2f8858660f30642e3698a263f0277ad2f364527bc75275a82ec  vite_1720f21b3a66c30da966ef51dc59c091543da012bcb69ae8a4
+</span></code></pre></div>
 
 
 

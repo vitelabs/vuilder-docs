@@ -15,7 +15,7 @@
         <link rel="next" href="../../../wallet/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -932,7 +968,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1014,7 +1050,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3368,40 +3404,41 @@
 <h2 id="contract-address">Contract Address</h2>
 <p><code>vite_000000000000000000000000000000000000000595292d996d</code></p>
 <h2 id="abi">ABI</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="c1">// Issue new token</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;IssueToken&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isReIssuable&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenName&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenSymbol&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;totalSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;decimals&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint8&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;maxSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isOwnerBurnOnly&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1">// Re-issue. Mint additional tokens</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;receiveAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="c1">// Burn</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Burn&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[]},</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="c1">// Transfer ownership of re-issuable token</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;TransferOwnership&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;newOwner&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="c1">// Change token type from re-issuable to non-reissuable</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;DisableReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="c1">// Get token information</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;GetTokenInformation&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="c1">// Token issuance event</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;issue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="c1">// Token re-issuance event</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;reIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="c1">// Burn event</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;burn&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;burnAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="c1">// Ownership transfer event</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;transferOwnership&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;owner&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="c1">// Token type change event</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;disableReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="c1">// Callback for GetTokenInformation</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;callback&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;GetTokenInformation&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;exist&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isReIssuable&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenName&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenSymbol&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;totalSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;decimals&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint8&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;maxSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isOwnerBurnOnly&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;index&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint16&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ownerAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]}</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">]</span>
-</code></pre></div>
-<p>:::warning
-Due to historical reason, this contract also contains a number of other ABIs that are NOT listed in this page. These functions are deprecated and no longer in use. Do NOT use them in your code.
-:::</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">// Issue new token</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;IssueToken&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isReIssuable&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenName&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenSymbol&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;totalSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;decimals&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint8&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;maxSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isOwnerBurnOnly&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="c1">// Re-issue. Mint additional tokens</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;receiveAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="c1">// Burn</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Burn&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[]},</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="c1">// Transfer ownership of re-issuable token</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;TransferOwnership&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;newOwner&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="c1">// Change token type from re-issuable to non-reissuable</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;DisableReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="c1">// Get token information</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;GetTokenInformation&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="c1">// Token issuance event</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;issue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="c1">// Token re-issuance event</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;reIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="c1">// Burn event</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;burn&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;burnAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// Ownership transfer event</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;transferOwnership&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;owner&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]},</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="c1">// Token type change event</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;disableReIssue&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;indexed&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}]},</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="c1">// Callback for GetTokenInformation</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;callback&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;GetTokenInformation&quot;</span><span class="p">,</span><span class="nt">&quot;inputs&quot;</span><span class="p">:[{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tokenId&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;exist&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isReIssuable&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenName&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;tokenSymbol&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;totalSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;decimals&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint8&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;maxSupply&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;isOwnerBurnOnly&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bool&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;index&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;uint16&quot;</span><span class="p">},{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;ownerAddress&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;address&quot;</span><span class="p">}]}</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">]</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to historical reasons, this contract also contains a number of other ABIs that are NOT listed on this page. These functions are deprecated and no longer in use. Do NOT use them in your code.</p>
+</div>
 <h3 id="issuetoken"><code>IssueToken</code></h3>
-<p>Mint a new token with initial supply. The minted token will be sent to the issuer's account. The cost to mint a token is 1,000 VITE</p>
+<p>Mint a new token with an initial supply. The minted token will be sent to the issuer's account. The cost to mint a token is 1,000 VITE.</p>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>tokenName</code>: <code>string</code> <a href="../../../../vite-basics/token-model/#minting">Token name</a></li>
 <li><code>tokenSymbol</code>: <code>string</code> <a href="../../../../vite-basics/token-model/#minting">Token symbol</a></li>
 <li><code>totalSupply</code>: <code>bigint</code> <a href="../../../../vite-basics/token-model/#minting">Total initial supply</a></li>
@@ -3410,16 +3447,20 @@ Due to historical reason, this contract also contains a number of other ABIs tha
 <li><code>isReIssuable</code>: <code>bool</code> <a href="../../../../vite-basics/token-model/#minting">Reissuable flag</a></li>
 <li><code>isOwnerBurnOnly</code>: <code>bool</code> <code>true</code> means the token can only be burned by the owner. <strong>Deprecated</strong></li>
 </ul>
+</li>
+</ul>
 <h3 id="reissue"><code>ReIssue</code></h3>
 <p>Mint additional units of a re-issuable token and increase the token's total supply. Tokens with fixed supply cannot be reissued.</p>
 <blockquote>
 <p>Note: Only the token owner can perform this operation.</p>
 </blockquote>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>tokenId</code>: <code>tokenId</code> <a href="../../../../vite-basics/token-model/#re-issuance">Token id</a></li>
 <li><code>amount</code>: <code>bigint</code> <a href="../../../../vite-basics/token-model/#re-issuance">Reissue amount</a></li>
 <li><code>receiveAddress</code>: <code>address</code> <a href="../../../../vite-basics/token-model/#re-issuance">Receive Address</a></li>
+</ul>
+</li>
 </ul>
 <h3 id="burn"><code>Burn</code></h3>
 <p>Burn units of a re-issuable token and reduce the total supply. Tokens with fixed supply cannot be burned.</p>
@@ -3427,37 +3468,46 @@ Due to historical reason, this contract also contains a number of other ABIs tha
 <li><strong>Parameters</strong>: none</li>
 </ul>
 <h3 id="transferownership"><code>TransferOwnership</code></h3>
-<p>Transfer a re-issuable token's ownership to another account</p>
-<blockquote>
-<p>Note: Only the token owner can perform this operation.</p>
-</blockquote>
+<p>Transfer a re-issuable token's ownership to another account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the token owner can perform this operation.</p>
+</div>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>tokenId</code>: <code>tokenId</code> <a href="../../../../vite-basics/token-model/#ownership-transfer">Token id</a></li>
 <li><code>newOwner</code>: <code>address</code> <a href="../../../../vite-basics/token-model/#ownership-transfer">New Owner</a></li>
 </ul>
+</li>
+</ul>
 <h3 id="disablereissue"><code>DisableReIssue</code></h3>
-<p>Permanently change a re-issuable token to non-reissuable</p>
-<blockquote>
-<p>Note: Only the token owner can perform this operation.</p>
-</blockquote>
+<p>Permanently change a re-issuable token to non-reissuable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the token owner can perform this operation.</p>
+</div>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>tokenId</code>: <code>tokenId</code> <a href="../../../../vite-basics/token-model/#disabling-re-issuance">Token id</a></li>
 </ul>
+</li>
+</ul>
 <h3 id="gettokeninformation"><code>GetTokenInformation</code></h3>
-<p>Get a token's information. This function is provided for another contract to get a token's information within the contract. For client program you should call RPC <code>contract_getTokenInfoById</code></p>
+<p>Get a token's information. This function is provided for another contract to get a token's information within the contract. For client programs, you should call RPC <code>contract_getTokenInfoById</code>.</p>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>tokenId</code>: <code>tokenId</code> Token id</li>
 </ul>
+</li>
+</ul>
 <h3 id="callback-gettokeninformation">Callback <code>GetTokenInformation</code></h3>
-<p>The callback function of <code>GetTokenInformation</code>. This will be called back by Asset contract to return result.</p>
-<blockquote>
-<p>Note: The current Solidity++ 0.8.0 does not support for more than 9 arguments. Solidity++ 0.8.2 will expand this limit to 16.</p>
-</blockquote>
+<p>The callback function of <code>GetTokenInformation</code>. This will be called back by the Asset contract to return the result.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current Solidity++ 0.8.0 does not support more than 9 arguments. Solidity++ 0.8.2 will expand this limit to 16.</p>
+</div>
 <ul>
-<li><strong>Parameters</strong>: </li>
+<li><strong>Parameters</strong>: <ul>
 <li><code>id</code>: <code>bytes32</code> Hash of <code>GetTokenInformation</code> transaction</li>
 <li><code>tokenId</code>: <code>tokenId</code> Token id</li>
 <li><code>exist</code>: <code>bool</code> <code>true</code> means the token exists</li>
@@ -3470,6 +3520,8 @@ Due to historical reason, this contract also contains a number of other ABIs tha
 <li><code>isOwnerBurnOnly</code>: <code>bool</code> <code>true</code> means the token can only be burned by the owner. <strong>Deprecated</strong></li>
 <li><code>index</code>: <code>uint16</code> <a href="../../../../vite-basics/token-model/#token-index">Token index</a></li>
 <li><code>ownerAddress</code>: <code>address</code> Address of token owner</li>
+</ul>
+</li>
 </ul>
 
 

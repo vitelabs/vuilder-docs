@@ -15,7 +15,7 @@
         <link rel="next" href="../promise-await/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3157,71 +3193,71 @@
 <p>Let's examine the following example:
 * Contract <code>A</code> has an <code>add()</code> method that returns the sum of two unsigned integers.
 * Contract <code>B</code> has a <code>test()</code> method that calculates the sum of <code>1</code> and <code>2</code> by calling <code>A.add()</code>, and stores the result in the storage variable <code>data</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">^</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">add</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="kt">function</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>callback<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>callback<span class="p">.</span><span class="kt">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="c1">// send callback to return data to the caller</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span>callback<span class="p">(</span>a<span class="w"> </span><span class="o">+</span><span class="w"> </span>b<span class="p">);</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">contract</span><span class="w"> </span><span class="ni">B</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span>A<span class="w"> </span>contractA<span class="p">;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="p">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">addr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span>contractA<span class="w"> </span><span class="o">=</span><span class="w"> </span>A<span class="p">(</span>addr<span class="p">);</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">test</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span>contractA<span class="p">.</span>add<span class="p">(</span><span class="m m-Decimal">1</span><span class="p">,</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">,</span><span class="w"> </span><span class="kt">this</span><span class="p">.</span>callback_onAdd<span class="p">);</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">callback_onAdd</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">result</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="c1">// receive data from the called contract</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="kt">require</span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>contractA<span class="p">));</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>result<span class="p">;</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">^</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">add</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="kt">function</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>callback<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>callback<span class="p">.</span><span class="kt">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="c1">// send callback to return data to the caller</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span>callback<span class="p">(</span>a<span class="w"> </span><span class="o">+</span><span class="w"> </span>b<span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">contract</span><span class="w"> </span><span class="ni">B</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span>A<span class="w"> </span>contractA<span class="p">;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">data</span><span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">addr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span>contractA<span class="w"> </span><span class="o">=</span><span class="w"> </span>A<span class="p">(</span>addr<span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">test</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span>contractA<span class="p">.</span>add<span class="p">(</span><span class="m m-Decimal">1</span><span class="p">,</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">,</span><span class="w"> </span><span class="kt">this</span><span class="p">.</span>callback_onAdd<span class="p">);</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">callback_onAdd</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">result</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="c1">// receive data from the called contract</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="kt">require</span><span class="p">(</span><span class="k">msg.sender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span>contractA<span class="p">));</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span>result<span class="p">;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>We add an additional parameter <code>callback</code> of type <code>function(uint) external</code> to <code>A.add()</code>.</p>
 <p>When contract <code>B</code> calls contract <code>A</code>, it needs to pass the callback function <code>this.callback_onAdd</code> as an argument of <code>A.add()</code>.</p>
 <p>Contract <code>A</code> can obtain the address of the caller and the selector of the callback function through the <code>callback</code> parameter. It puts the result of <code>a + b</code> in the first argument and initiates a call to the <code>callback</code> function to return data to <code>B</code>.</p>
 <p>In the callback function <code>callback_onAdd()</code> of contract <code>B</code>, it gets the result of <code>A.add()</code> from the parameter <code>result</code> and assigns it to the storage variable <code>data</code>.</p>
 <p>The next example is the same as introduced in the Sync / Async Functions chapter but using a callback function:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">^</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">add</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="kt">function</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>callback<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>callback<span class="p">.</span><span class="kt">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="c1">// send callback to return data to the caller</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span>callback<span class="p">(</span>a<span class="w"> </span><span class="o">+</span><span class="w"> </span>b<span class="p">);</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">contract</span><span class="w"> </span><span class="ni">B</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span>A<span class="w"> </span>contractA<span class="p">;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">total</span><span class="p">;</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">addr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span>contractA<span class="w"> </span><span class="o">=</span><span class="w"> </span>A<span class="p">(</span>addr<span class="p">);</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">invoke</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span>contractA<span class="p">.</span>add<span class="p">(</span>a<span class="p">,</span><span class="w"> </span>b<span class="p">,</span><span class="w"> </span><span class="kt">this</span><span class="p">.</span>sum<span class="p">);</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">sum</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">result</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span>total<span class="w"> </span><span class="o">+=</span><span class="w"> </span>result<span class="p">;</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-solidity highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pragma<span class="w"> </span>soliditypp<span class="w"> </span><span class="o">^</span><span class="m m-Decimal">0</span><span class="p">.</span><span class="m m-Decimal">8</span><span class="p">.</span><span class="m m-Decimal">0</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">contract</span><span class="w"> </span><span class="ni">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">add</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="kt">function</span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>callback<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span>callback<span class="p">.</span><span class="kt">address</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">address</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="c1">// send callback to return data to the caller</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span>callback<span class="p">(</span>a<span class="w"> </span><span class="o">+</span><span class="w"> </span>b<span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">contract</span><span class="w"> </span><span class="ni">B</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span>A<span class="w"> </span>contractA<span class="p">;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="k">public </span><span class="nv">total</span><span class="p">;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="kt">constructor</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">addr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span>contractA<span class="w"> </span><span class="o">=</span><span class="w"> </span>A<span class="p">(</span>addr<span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">invoke</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span>contractA<span class="p">.</span>add<span class="p">(</span>a<span class="p">,</span><span class="w"> </span>b<span class="p">,</span><span class="w"> </span><span class="kt">this</span><span class="p">.</span>sum<span class="p">);</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="nv">sum</span><span class="p">(</span><span class="kt">uint</span><span class="w"> </span><span class="nv">result</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span>total<span class="w"> </span><span class="o">+=</span><span class="w"> </span>result<span class="p">;</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>It works fine and the code doesn't look too complicated, no pain at all, right? Once the call stack gets deeper, you will find yourself in the <em>Callback Hell</em>: Using low-level callbacks makes code difficult to write and understand. It also increases the difficulty of identifying the control flow for a contract.</p>
 <blockquote>
 <p>The maximum depth of call stack for Solidity++ is <strong>512</strong>.</p>

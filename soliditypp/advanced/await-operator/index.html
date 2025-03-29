@@ -15,7 +15,7 @@
         <link rel="next" href="../../../vep/vep-3/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +56,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -103,6 +113,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -930,7 +966,7 @@
         
   
   <span class="md-ellipsis">
-    JSON-RPC API
+    Overview
     
   </span>
   
@@ -1010,7 +1046,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Get Started
     
   </span>
   
@@ -3254,38 +3290,38 @@
 <h2 id="solidity-compiler-and-evm">Solidity Compiler and EVM</h2>
 <p>Before starting, let's take a look at the output from Solidity compiler for an example.</p>
 <p>Pseudo assembly code for contract <code>A</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>function_selector:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>if method_id == sig_hash(add)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    jump(tag_function_add)
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>else
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    fallback()
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>stop
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>tag_function_add:
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>a, b := abi_decode(calldata)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tmp := checked_add(a, b)
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>ret := abi_encode(tmp)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>return(ret)
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>function_selector:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>if method_id == sig_hash(add)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    jump(tag_function_add)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>else
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    fallback()
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>stop
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>tag_function_add:
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>a, b := abi_decode(calldata)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>tmp := checked_add(a, b)
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>ret := abi_encode(tmp)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>return(ret)
+</span></code></pre></div></p>
 <p>Pseudo assembly code for contract <code>B</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>function_selector:
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>if method_id == sig_hash(test)
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    jump(tag_function_test)
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>else
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    fallback()
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>stop
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>tag_function_test:
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>contract_address := contractA
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>method_id := sig_hash(add)
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>params := abi_encode(1, 2)
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>call(contract_address, method_id, params)
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>ret := abi_decode(returndata)
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>data = ret
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>return
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>function_selector:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>if method_id == sig_hash(test)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    jump(tag_function_test)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>else
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    fallback()
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>stop
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>tag_function_test:
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>contract_address := contractA
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>method_id := sig_hash(add)
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>params := abi_encode(1, 2)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>call(contract_address, method_id, params)
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>ret := abi_decode(returndata)
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>data = ret
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>return
+</span></code></pre></div></p>
 <p>I use an anatomy diagram to show the control flow:</p>
 <p><img alt="compiled from solidity" src="../assets/await-operator-02.png" /></p>
 <p>As shown by the red arrows in the diagram, the EVM executes external function calls through the <code>call</code> and <code>return</code> instructions.</p>
@@ -3305,44 +3341,44 @@
 <p>This design allows the compiler to generate code that can run on an asynchronous VM for contracts written in a programming language similar to Solidity.</p>
 <p>The example will be compiled to the following code:</p>
 <p>Pseudo assembly code for contract <code>A</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>function_selector:
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>if method_id == sig_hash(add)
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    jump(tag_function_add)
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>else
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    fallback()
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>stop
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>tag_function_add:
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>a, b := abi_decode(calldata)
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>tmp := checked_add(a, b)
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>ret := abi_encode(tmp)
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>return(ret)
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>function_selector:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>if method_id == sig_hash(add)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    jump(tag_function_add)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>else
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    fallback()
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>stop
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>tag_function_add:
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>a, b := abi_decode(calldata)
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>tmp := checked_add(a, b)
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>ret := abi_encode(tmp)
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>return(ret)
+</span></code></pre></div></p>
 <p>Pseudo assembly code for contract <code>B</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>function_selector:
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>method_id := calldata(0, 4)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>if method_id == sig_hash(test)
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    jump(tag_function_test)
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&lt;strong&gt;else if method_id == 0x00000001
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    jump(tag_callback_01)&lt;/strong&gt;
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>else
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    fallback()
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>stop
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>tag_function_test:
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>contract_address := contractA
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>method_id := sig_hash(add)
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>params := abi_encode(1, 2)
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>&lt;strong&gt;callback_id := 0x00000001
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>synccall(contract_address, method_id, params, callback_id)&lt;/strong&gt;
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>stop
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>&lt;strong&gt;tag_callback_01:
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>callbackdest
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>ret := abi_decode(calldata)
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>return(ret)
-</code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>function_selector:
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>method_id := calldata(0, 4)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>if method_id == sig_hash(test)
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    jump(tag_function_test)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&lt;strong&gt;else if method_id == 0x00000001
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    jump(tag_callback_01)&lt;/strong&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>else
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    fallback()
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>stop
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>tag_function_test:
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>contract_address := contractA
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>method_id := sig_hash(add)
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>params := abi_encode(1, 2)
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>&lt;strong&gt;callback_id := 0x00000001
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>synccall(contract_address, method_id, params, callback_id)&lt;/strong&gt;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>stop
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>&lt;strong&gt;tag_callback_01:
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>callbackdest
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>ret := abi_decode(calldata)
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>return(ret)
+</span></code></pre></div></p>
 <p>Again, let's put these in an anatomy diagram:</p>
 <p><img alt="compiled from soliditypp" src="../assets/await-operator-03.png" /></p>
 <p>The assembly code in blue is generated by the Solidity++ compiler specifically for the Vite VM.</p>
